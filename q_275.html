@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 275</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_274.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_276.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 275 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization is migrating business critical applications to Google Cloud across multiple projects. You only have the required IAM permission at the Google Cloud organization level. You want to grant project access to support engineers from two partner organizations using their existing identity provider (IdP) credentials. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Create two single sign-on (SSO) profiles for the internal and partner IdPs by using SSO for Cloud Identity.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Create users manually by using the Google Cloud console. Assign the users to groups.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Create two workforce identity pools for the partner IdPs.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Sync user identities from their existing IdPs to Cloud Identity by using Google Cloud Directory Sync (GCDS).</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Create two workforce identity pools for the partner IdPs.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ Workforce Identity Federation (Federacja Tożsamości Pracowników) jest najnowocześniejszym i zalecanym przez Google sposobem na nadawanie dostępu do konsoli i API Google Cloud dla użytkowników zewnętrznych (np. inżynierów wsparcia partnerów) przy użyciu ich własnych, istniejących systemów tożsamości (SAML/OIDC), bez konieczności tworzenia dla nich kont w chmurze klienta.
+
+Zalety tego rozwiązania:
+a. **Brak synchronizacji tożsamości:** Nie musimy tworzyć kont gości ani synchronizować tożsamości do naszego Cloud Identity (brak narzutu na administrację).
+b. **Logowanie federacyjne:** Inżynierowie partnera logują się swoimi firmowymi kontami (np. z Azure AD partnera).
+c. **Zarządzanie cyklem życia:** Jeśli pracownik partnera odejdzie z pracy, jego konto zostanie zablokowane w jego lokalnym systemie IdP, co automatycznie odetnie mu dostęp do Twojego GCP, zapewniając wysokie bezpieczeństwo.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Create two single sign-on (SSO) profiles... by using SSO for Cloud Identity.
+   * Dlaczego nieprawidłowa: Tradycyjne logowanie jednokrotne (SSO) w Cloud Identity pozwala na skonfigurowanie tylko jednego aktywnego profilu SSO (dostawcy tożsamości) dla całej domeny organizacji. Nie pozwala na jednoczesną federację z wieloma zewnętrznymi IdP partnerów biznesowych w ten sposób bez migracji kont.
+B. Create users manually by using the Google Cloud console. Assign the users to groups.
+   * Dlaczego nieprawidłowa: Ręczne tworzenie setek kont dla zewnętrznych inżynierów i zarządzanie ich hasłami generuje olbrzymi narzut administracyjny i zwiększa ryzyko pozostawienia aktywnych "kont widmo" (stale aktywne konta byłych pracowników partnera), co narusza zasady bezpieczeństwa.
+D. Sync user identities from their existing IdPs to Cloud Identity by using Google Cloud Directory Sync (GCDS).
+   * Dlaczego nieprawidłowa: GCDS wymaga bezpośredniego połączenia LDAP (np. Active Directory) i służy do synchronizacji wewnątrz jednej firmy. Synchronizacja tożsamości z zewnętrznych systemów AD partnerów handlowych do Twojej domeny jest technicznie trudna, narusza granice bezpieczeństwa i wymaga tworzenia kont w Twoim systemie Cloud Identity.
+
+4. Wskazówki, hinty, tips and tricks:
+* Dostęp do GCP dla zewnętrznych pracowników (partnerzy/kontrahenci) przy użyciu ich własnych IdP -> Zawsze wybieraj **Workforce Identity Federation**.
+* Workforce Identity Federation eliminuje potrzebę tworzenia i licencjonowania kont w Twoim Cloud Identity.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Grant project access to partner organizations using their existing IdP -> Create workforce identity pools.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/iam/docs/workforce-identity-federation" target="_blank">Workforce Identity Federation overview</a>
+<a href="https://cloud.google.com/iam/docs/workforce-sign-in" target="_blank">Workforce Identity sign-in guide</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

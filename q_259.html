@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 259</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_258.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_260.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 259 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your team maintains 1PB of sensitive data within BigQuery that contains personally identifiable information (PII). You need to provide access to this dataset to another team within your organization for analysis purposes. You must share the BigQuery dataset with the other team while protecting the PII. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Utilize BigQuery's row-level access policies to mask PII columns based on the other team's user identities.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Export the BigQuery dataset to Cloud Storage. Create a VPC Service Control perimeter and allow only their team's project access to the bucket.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Implement data pseudonymization techniques to replace the PII fields with non-identifiable values. Grant the other team access to the pseudonymized dataset.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Create a filtered copy of the dataset and replace the sensitive data with hash values in a separate project. Grant the other team access to this new project.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Implement data pseudonymization techniques to replace the PII fields with non-identifiable values. Grant the other team access to the pseudonymized dataset.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ pseudonimizacja danych (data pseudonymization) pozwala na pełną ochronę prywatności klientów (PII) przed zespołem analitycznym, jednocześnie umożliwiając im wykonywanie zaawansowanych analiz statystycznych i korelacji na pełnym zbiorze danych (1 PB).
+
+Dlaczego to najlepsza metoda:
+a. **Zachowanie użyteczności danych:** Zastąpienie wrażliwych identyfikatorów (np. nazwisk, PESELi) unikalnymi pseudonimami (np. wygenerowanymi tokenami) pozwala analitykom na śledzenie zachowań unikalnych użytkowników w czasie i łączenie rekordów (np. ten sam klient wykonał operacje A i B), ponieważ pseudonimy są spójne.
+b. **Bezpieczeństwo (PII Protection):** Zespół analityczny nie ma możliwości bezpośredniego zidentyfikowania osób fizycznych, ponieważ nie posiada klucza dekodującego (tabeli mapowania), który pozostaje bezpiecznie w zespole źródłowym. Jest to zalecana praktyka w ramach GDPR.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Utilize BigQuery's row-level access policies to mask PII columns based on the other team's user identities.
+   * Dlaczego nieprawidłowa: Sformułowanie to zawiera błąd techniczny. W BigQuery zasady dostępu na poziomie wiersza (row-level access policies) służą do filtrowania i ukrywania *wierszy* (rekordów) spełniających określone kryteria. Do ukrywania lub maskowania *kolumn* (takich jak kolumny PII) służą zasady na poziomie kolumn (column-level security) lub dynamiczne maskowanie danych (dynamic data masking), a nie row-level policies.
+B. Export the BigQuery dataset to Cloud Storage. Create a VPC Service Control perimeter...
+   * Dlaczego nieprawidłowa: Eksport 1 petabajta danych do Cloud Storage generuje olbrzymie koszty przechowywania i transferu oraz narzut operacyjny. Perymetr VPC SC chroni przed eksfiltracją sieciową, ale nie maskuje i nie usuwa danych PII z plików – zespół analityczny nadal miałby wgląd w surowe, niezaszyfrowane dane PII wewnątrz perymetru.
+D. Create a filtered copy of the dataset and replace the sensitive data with hash values in a separate project...
+   * Dlaczego nieprawidłowa: Tworzenie fizycznej kopii zbioru o rozmiarze 1 PB w innym projekcie podwaja koszty przechowywania danych w BigQuery (kolejny 1 PB danych) oraz wymaga ciągłej synchronizacji zmian w tle, co jest nieefektywne w porównaniu z udostępnieniem jednego pseudonimizowanego zbioru/widoku (opcja C).
+
+4. Wskazówki, hinty, tips and tricks:
+* Aby bezpiecznie udostępnić duże zbiory danych analitycznych bez ujawniania PII -> Stosuj **pseudonimizację (pseudonymization)** lub **dynamiczne maskowanie danych (dynamic data masking)**.
+* Pamiętaj o różnicach technicznych w BigQuery:
+  - Row-level security = ukrywanie wierszy (np. tylko klienci z Polski).
+  - Column-level security / Data Masking = ukrywanie/maskowanie kolumn (np. zamiana cyfr PESEL na 'X').
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Share BigQuery dataset containing PII + protect PII -> Implement data pseudonymization techniques.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/dlp/docs/pseudonymization" target="_blank">Pseudonymizing sensitive data in Cloud DLP</a>
+<a href="https://cloud.google.com/bigquery/docs/column-level-security-intro" target="_blank">Column-level security in BigQuery</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

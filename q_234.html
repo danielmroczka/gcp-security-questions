@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 234</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_233.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_235.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 234 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+Your organization uses BigQuery to process highly sensitive, structured datasets. Following the "need to know" principle, you need to create the Identity and Access Management (IAM) design to meet the needs of these users: - Business user: must access curated reports. - Data engineer: must administrate the data lifecycle in the platform. - Security operator: must review user activity on the data platform. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Configure data access log for BigQuery services, and grant Project Viewer role to security operator.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Set row-based access control based on the "region" column, and filter the record from the United States for data engineers.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Create curated tables in a separate dataset and assign the role roles/bigquery.dataViewer.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Generate a CSV data file based on the business user's needs, and send the data to their email addresses.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+<br/>
+</span>
+</div>
+</div>
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Create curated tables in a separate dataset and assign the role roles/bigquery.dataViewer.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ separacja danych na poziomie zbiorów danych (datasets) w BigQuery jest standardową i najbezpieczniejszą metodą implementacji zasady najmniejszych uprawnień (least privilege) dla użytkowników biznesowych, którzy potrzebują wglądu jedynie w przetworzone i bezpieczne raporty.
+
+Analiza techniczna:
+a. **Zasada Need to Know:** Biznesowi użytkownicy nie powinni mieć dostępu do surowych, wrażliwych danych. Stworzenie wydzielonego zbioru danych (dataset) zawierającego wyłącznie wyselekcjonowane i zagregowane tabele/widoki (curated tables/views) izoluje wrażliwe informacje u źródła.
+b. **Rola Data Viewer:** Przypisanie roli `roles/bigquery.dataViewer` do tego dedykowanego zbioru danych pozwala użytkownikom biznesowym na odpytywanie i przeglądanie danych raportowych, jednocześnie blokując im możliwość modyfikacji danych lub wglądu w inne, nieautoryzowane zbiory danych w projekcie.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Configure data access log for BigQuery services, and grant Project Viewer role...
+   * Dlaczego nieprawidłowa: Rola `Project Viewer` na poziomie projektu daje uprawnienia do odczytu metadanych wszystkich zasobów w tym projekcie (w tym wszystkich tabel w BigQuery). Jest to zbyt szerokie uprawnienie dla security operatora i użytkowników biznesowych, naruszające zasadę least privilege.
+B. Set row-based access control based on the "region" column...
+   * Dlaczego nieprawidłowa: Filtrowanie rekordów dla inżynierów danych (Data Engineers) uniemożliwiłoby im poprawne administrowanie cyklem życia danych w pełnym zakresie (potrzebują oni pełnego dostępu administrative/lifecycle, a nie ograniczonego widoku wierszy).
+D. Generate a CSV data file based on the business user's needs, and send the data to their email...
+   * Dlaczego nieprawidłowa: Ręczne lub automatyczne wysyłanie plików CSV e-mailem jest niebezpieczne (dane mogą zostać przechwycone, brak kontroli po wysłaniu pliku) i nieefektywne w porównaniu z kontrolowanym dostępem przez natywne mechanizmy BigQuery.
+
+4. Wskazówki, hinty, tips and tricks:
+* Aby ograniczyć dostęp użytkownikom do wrażliwych tabel w BigQuery, dobrą praktyką jest stosowanie **Autoryzowanych Widoków (Authorized Views)** lub dedykowanych zbiorów danych (Datasets) z rolą **BigQuery Data Viewer**.
+* Operator bezpieczeństwa (Security Operator) powinien mieć dostęp do logów audytowych w Cloud Logging, a nie bezpośrednie role projektowe w BigQuery.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Business user curated reports access -> Separate dataset + `roles/bigquery.dataViewer`.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/bigquery/docs/dataset-access-controls" target="_blank">Controlling access to datasets in BigQuery</a>
+<a href="https://cloud.google.com/bigquery/docs/authorized-views" target="_blank">Creating and using authorized views</a>
+</pre>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

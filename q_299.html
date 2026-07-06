@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 299</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_298.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_300.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 299 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+You manage multiple internal-only applications that are hosted within different Google Cloud projects. You are deploying a new application that requires external internet access. To maintain security, you want to clearly separate this new application from internal systems. Your solution must have effective security isolation for the new externally-facing application. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Deploy the application within the same project as an internal application. Use a Shared VPC model to manage network configurations.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Place the application in the same project as an existing internal application, and adjust firewall rules to allow external traffic.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Create a VPC Service Controls perimeter, and place the new application's project within that perimeter.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Create a new project for the application, and use VPC Network Peering to access necessary resources in the internal projects.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+<br/>
+</span>
+</div>
+</div>
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+D. Create a new project for the application, and use VPC Network Peering to access necessary resources in the internal projects.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź D jest prawidłowa, ponieważ umieszczenie nowej aplikacji zewnętrznej w wydzielonym projekcie (Dedicated Project) oraz sieci VPC jest podstawową zasadą izolacji bezpieczeństwa (security isolation) w chmurze.
+
+Dlaczego to zapewnia najlepszą izolację:
+a. **Izolacja na poziomie projektu (Blast Radius):** Projekt jest główną granicą bezpieczeństwa w GCP. Jeśli zewnętrzna aplikacja zostanie zhakowana (skompromitowana), napastnik nie uzyska automatycznie dostępu do zasobów wewnętrznych aplikacji, które znajdują się w innych projektach.
+b. **Kontrolowana łączność (VPC Peering):** Użycie VPC Network Peering pozwala na bezpieczną, prywatną komunikację sieciową między siecią VPC aplikacji zewnętrznej a sieciami wewnętrznymi tylko na portach i dla zasobów, które zostaną jawnie dopuszczone przez reguły firewall.
+c. **Separacja administracyjna:** Pozwala na przydzielenie zespołowi deweloperskiemu uprawnień do zarządzania tą jedną aplikacją bez dawania im dostępu do systemów wewnętrznych.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Deploy the application within the same project as an internal application. Use a Shared VPC model...
+   * Dlaczego nieprawidłowa: Umieszczenie publicznej aplikacji w tym samym projekcie co krytyczne systemy wewnętrzne drastycznie zwiększa ryzyko (blast radius). Napastnik, przejmując uprawnienia w projekcie (np. przez podatność aplikacji), uzyska bezpośredni dostęp do innych zasobów w tym samym projekcie. Shared VPC współdzieli sieć, ale nie naprawia braku izolacji na poziomie zasobów projektu.
+B. Place the application in the same project... and adjust firewall rules to allow external traffic.
+   * Dlaczego nieprawidłowa: Podobnie jak opcja A, brak separacji na poziomie projektu jest poważnym błędem. Otwarcie zapory sieciowej dla ruchu zewnętrznego bezpośrednio do projektu z zasobami wewnętrznymi stwarza wysokie ryzyko wycieku danych w przypadku błędnej konfiguracji firewall.
+C. Create a VPC Service Controls perimeter, and place the new application's project within that perimeter.
+   * Dlaczego nieprawidłowa: Perymetr VPC Service Controls (VPC SC) służy do izolowania usług zarządzanych (np. zakaz wywoływania API BigQuery z zewnątrz perymetru). Sam perymetr nie służy do separacji ruchu sieciowego dla nowo wdrażanej publicznej aplikacji webowej i nie zastępuje potrzeby wdrożenia jej w osobnym projekcie w celu izolacji maszyn.
+
+4. Wskazówki, hinty, tips and tricks:
+* Podstawową granicą izolacji (security boundary) w GCP jest **Projekt (Project)**.
+* Zawsze wdrażaj aplikacje o różnym profilu ryzyka (np. publiczne vs. wewnętrzne) w osobnych projektach GCP.
+* Używaj VPC Peering lub Shared VPC do bezpiecznego łączenia wydzielonych środowisk.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Separate external application from internal systems + security isolation -> Create a new project for the application.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects" target="_blank">Creating and managing projects in GCP</a>
+<a href="https://cloud.google.com/vpc/docs/vpc-peering" target="_blank">VPC Network Peering overview</a>
+</pre>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

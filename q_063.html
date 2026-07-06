@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 63</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_062.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_064.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 63 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+For compliance reasons, an organization needs to ensure that in-scope PCI Kubernetes Pods reside on `in-scope` Nodes only. These Nodes can only contain the `in-scope` Pods. How should the organization achieve this objective?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Add a nodeSelector field to the pod configuration to only use the Nodes labeled inscope: true.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Create a node pool with the label inscope: true and a Pod Security Policy that only allows the Pods to run on Nodes with that label.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Place a taint on the Nodes with the label inscope: true and effect NoSchedule and a toleration to match in the Pod configuration.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Run all in-scope Pods in the namespace in-scope-pci.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4 d-none">
+<h2>Wyjaśnienie</h2>
+<pre>1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Place a taint on the Nodes with the label inscope: true and effect NoSchedule and a toleration to match in the Pod configuration.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Prawidłowa odpowiedź opiera się na mechanizmach Taints i Tolerations dostępnych w Kubernetes, a tym samym w Google Kubernetes Engine (GKE), które są kluczowe do realizacji zaawansowanych strategii planowania Podów i izolacji obciążeń. W kontekście zgodności z PCI DSS (Payment Card Industry Data Security Standard), izolacja zasobów jest krytyczna i często wymaga gwarancji, że wrażliwe obciążenia nie współdzielą infrastruktury fizycznej (węzłów) z obciążeniami, które nie są objęte zakresem PCI lub są mniej zaufane.
+
+Analiza techniczna i architektoniczna:
+Mechanizm Taints i Tolerations działa na zasadzie "odpychania" i "przyciągania".
+Taint (Skażenie): Nakładany jest na węzeł (Node). Oznacza on, że węzeł "nie chce" uruchamiać Podów, chyba że posiadają one odpowiednią Tolerancję. Taint składa się z klucza (key), wartości (value) i efektu (effect). W tym scenariuszu klucz i wartość mogą być ustawione na inscope: true, a efekt na NoSchedule.
+ Efekt NoSchedule oznacza, że żaden nowy Pod nie zostanie zaplanowany na tym węźle, chyba że posiada odpowiednią Tolerancję. To bezpośrednio odpowiada na drugą część pytania: "These Nodes can only contain the in-scope Pods". Wszystkie Pody, które nie mają tolerancji dla tainty inscope: true:NoSchedule, zostaną przez scheduler Kubernetes'a zignorowane i nie zostaną umieszczone na tych węzłach.
+Toleration (Tolerancja): Dodawana jest do konfiguracji Podu. Określa ona, że dany Pod "toleruje" konkretny Taint i może zostać na nim zaplanowany. Pody PCI, które mają zostać uruchomione na węzłach oznaczonych jako inscope: true, muszą posiadać tolerancję dopasowaną do Taintu na tych węzłach. Taka tolerancja umożliwi schedulerowi umieszczenie tych Podów na skażonych węzłach, spełniając wymóg "in-scope PCI Kubernetes Pods reside on in-scope Nodes only".
+
+Zalety i zgodność z najlepszymi praktykami GCP:
+1.  Silna izolacja: Taints i Tolerations zapewniają dwukierunkową izolację. Z jednej strony, tylko autoryzowane Pody (z Tolerancją) mogą trafić na wyznaczone węzły. Z drugiej strony, wyznaczone węzły mogą zawierać tylko te autoryzowane Pody, ponieważ wszystkie inne Pody są "odpychane". To jest kluczowe dla wymogów compliance, takich jak PCI DSS, które często wymagają ścisłej separacji środowisk.
+2.  Elastyczność planowania: Pozwala to na precyzyjne sterowanie planowaniem Podów, co jest niezbędne w złożonych środowiskach korporacyjnych. Można tworzyć dedykowane pule węzłów dla różnych typów obciążeń, np. produkcyjnych, testowych, PCI, wrażliwych danych, itd.
+3.  Zgodność z Kubernetes Native: Jest to natywny mechanizm Kubernetes, co oznacza jego pełne wsparcie w GKE, dobrą integrację z ekosystemem i stabilność.
+4.  Bezpieczeństwo: Zapobiega przypadkowemu lub nieautoryzowanemu umieszczaniu Podów z mniej restrykcyjnymi wymaganiami bezpieczeństwa na węzłach przeznaczonych dla obciążeń o wysokiej wrażliwości. Zmniejsza to powierzchnię ataku i ryzyko naruszenia danych.
+5.  Skalowalność i zarządzanie: Chociaż ręczne dodawanie Taintów i Toleracji może wydawać się pracochłonne, w GKE można tworzyć Node Pools z predefiniowanymi Taintami, co ułatwia zarządzanie i skalowanie. Pody mogą być automatycznie konfigurowane z odpowiednimi Toleracjami za pomocą narzędzi do zarządzania konfiguracją lub mechanizmów CD/CI.
+
+Podsumowując, połączenie Taintów na węzłach z efektem NoSchedule i odpowiadających im Toleracji w konfiguracji Podów jest jedynym spośród przedstawionych rozwiązań, które w pełni spełnia oba wymagania pytania: zapewnia, że Pody PCI trafiają wyłącznie na węzły PCI ORAZ że na węzłach PCI mogą być uruchamiane wyłącznie Pody PCI.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+
+A. Add a nodeSelector field to the pod configuration to only use the Nodes labeled inscope: true.
+Dlaczego jest niepoprawna: Opcja ta jest błędna, ponieważ rozwiązuje tylko jeden z dwóch postawionych warunków. nodeSelector to mechanizm "przyciągania" (affinity). Oznacza to, że Pod z nodeSelector: inscope: true zostanie zaplanowany *tylko* na węzłach, które posiadają etykietę inscope: true. Spełnia to wymóg "in-scope PCI Kubernetes Pods reside on in-scope Nodes only". Jednakże, nodeSelector *nie zapobiega* sytuacji, w której inne Pody, które *nie* mają określonego nodeSelector (lub mają inny), zostaną również zaplanowane na tych samych węzłach. Scheduler Kubernetes domyślnie będzie próbował umieścić Pody na dowolnym dostępnym węźle. W rezultacie, węzły z etykietą inscope: true mogłyby nadal zawierać Pody, które nie są objęte zakresem PCI, co naruszałoby wymóg "These Nodes can only contain the in-scope Pods". Brak jest więc gwarancji ekskluzywności.
+
+B. Create a node pool with the label inscope: true and a Pod Security Policy that only allows the Pods to run on Nodes with that label.
+Dlaczego jest niepoprawna: Ta opcja jest błędna z kilku powodów:
+1.  Pod Security Policy (PSP) jest mechanizmem kontroli dostępu do zasobów Podu i kontroli jego uprawnień (np. czy może uruchamiać kontenery jako root, czy ma dostęp do hostPath, czy może używać uprzywilejowanych kontenerów), a nie do sterowania tym, na których węzłach fizycznych Pod ma się znaleźć. PSP nie ma wbudowanej funkcjonalności do narzucania ograniczeń planowania Podów na podstawie etykiet węzłów.
+2.  Pod Security Policy (PSP) został oznaczony jako przestarzały (deprecated) w Kubernetes v1.21 i usunięty w v1.25. Został zastąpiony przez Pod Security Admission (PSA). Chociaż PSA jest nowszym i zalecanym mechanizmem, podobnie jak PSP, jego głównym celem jest egzekwowanie standardów bezpieczeństwa Podów poprzez kontrolę kontekstu bezpieczeństwa Podów, a nie ich fizycznego umiejscowienia na węzłach.
+3.  Nawet jeśli stworzona zostanie pula węzłów z etykietą inscope: true, to samo w sobie nie zapobiegnie umieszczeniu na nich Podów spoza zakresu PCI, jeśli nie ma mechanizmu "odpychającego".
+
+D. Run all in-scope Pods in the namespace in-scope-pci.
+Dlaczego jest niepoprawna: Ta opcja jest błędna, ponieważ Namespaces (przestrzenie nazw) zapewniają izolację logiczną wewnątrz API Kubernetes, ale nie gwarantują izolacji fizycznej na poziomie węzłów (maszyn wirtualnych). Pody z różnych przestrzeni nazw (np. in-scope-pci i default) mogą swobodnie działać na tym samym węźle fizycznym, jeśli scheduler Kubernetes uzna ten węzeł za odpowiedni. Namespaces służą do logicznego grupowania zasobów, zarządzania dostępem za pomocą Role-Based Access Control (RBAC) w obrębie danego projektu oraz do organizacji klastra, ale nie do fizycznej separacji obciążeń. Wymóg "Nodes can only contain the in-scope Pods" oznacza fizyczną izolację, której Namespaces nie są w stanie zapewnić.
+
+4. Wskazówki, hinty, tips and tricks:
+*   Kluczowe słowa w pytaniu: Zawsze szukaj w pytaniu słów kluczowych wskazujących na konkretne wymagania. W tym przypadku frazy "only on X" (tylko na węzłach X) i "X can only contain Y" (węzły X mogą zawierać tylko Pody Y) są absolutnie krytyczne. Oznaczają one dwukierunkową, wzajemną ekskluzywność.
+*   "Only on X" vs. "X can only contain Y":
+    *   Jeśli pytanie mówi tylko "Pody A mają być na węzłach X" (ale nie ma wymogu, że na węzłach X mogą być *tylko* Pody A), to nodeSelector lub Node Affinity może być wystarczający.
+    *   Jeśli pytanie zawiera oba warunki – "Pody A mają być na węzłach X" ORAZ "Na węzłach X mogą być *tylko* Pody A" – to jest to niemal pewny znak, że potrzebujesz Taints i Tolerations. Taints są mechanizmem "odpychającym", który gwarantuje, że nikt niepożądany nie trafi na węzeł.
+*   PCI DSS i inne wymogi compliance: Wymogi zgodności, takie jak PCI DSS, HIPAA, SOC 2, często narzucają ścisłe zasady izolacji danych i przetwarzania. W Kubernetes, Taints i Tolerations są podstawowym narzędziem do fizycznej izolacji obciążeń na poziomie węzłów, co jest często interpretowane jako sposób na spełnienie tych wymogów.
+*   Rozróżnienie izolacji:
+    *   Izolacja logiczna (namespaces, RBAC, Network Policies)
+    *   Izolacja fizyczna/na poziomie węzłów (Taints/Tolerations, Node Affinity, dedykowane Node Pools)
+    *   Izolacja bezpieczeństwa Podów (Pod Security Admission/Policies)
+*   Deprecated Features: Zwróć uwagę na funkcje, które są przestarzałe lub usunięte (np. Pod Security Policy). Egzaminy GCP starają się testować wiedzę na temat aktualnych i zalecanych rozwiązań.
+*   Czytaj pytanie uważnie: Pułapki językowe często polegają na subtelnych różnicach w słowach "może", "musi", "tylko". Dokładna analiza tych słów jest kluczowa.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+*   Jeśli pytanie wspomina o "izolacji obciążeń na poziomie węzłów" lub "dedykowanych węzłach dla konkretnych Podów" ORAZ o "zapobieganiu uruchamianiu innych Podów na tych samych węzłach", szukaj odpowiedzi zawierającej "Taint" i "Toleration".
+*   Gdy celem jest ścisła "zgodność z normami bezpieczeństwa" (np. PCI DSS) wymagająca "separacji fizycznej" środowisk w Kubernetes, rozwiązanie oparte na Taints i Tolerations jest najczęściej prawidłową odpowiedzią.
+*   Jeśli wymagane jest, aby "tylko specyficzne Pody" mogły być planowane na "specyficznych węzłach" ORAZ, że "żadne inne Pody" nie mogły na tych węzłach być uruchamiane, Taints z efektem NoSchedule są niezbędne. nodeSelector jest niewystarczający w takim scenariuszu.
+*   Gdy w pytaniu pojawiają się frazy takie jak "Nodes can *only* contain X Pods", natychmiast rozważ Taints jako mechanizm aktywnego odpychania niepożądanych Podów.
+*   Jeśli pytanie odnosi się do "kontroli kontekstu bezpieczeństwa Podu" lub "ograniczeń uprawnień Podu", szukaj odpowiedzi związanych z Pod Security Admission (lub Pod Security Policy, jeśli pytanie jest starsze). Jeśli pytanie dotyczy "gdzie Pod jest planowany", te opcje są zazwyczaj błędne.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/kubernetes-engine/docs/how-to/node-taints" target="_blank">Używanie Taintów węzłów w GKE</a>
+<a href="https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/" target="_blank">Kubernetes Documentation: Taints and Tolerations</a>
+<a href="https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/" target="_blank">Kubernetes Documentation: Assigning Pods to Nodes</a>
+<a href="https://cloud.google.com/kubernetes-engine/docs/concepts/pod-security-admission" target="_blank">GKE Documentation: Overview of Pod Security Admission</a>
+<a href="https://cloud.google.com/kubernetes-engine/docs/concepts/workload-isolation" target="_blank">GKE Documentation: Workload isolation on GKE</a></pre>
+</div>
+
+</div>
+<script src="navigation.js"></script></body>
+</html>

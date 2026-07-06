@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 341</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_340.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_342.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 341 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+Your organization is deploying a new web application on Compute Engine and needs robust perimeter security. You need to protect the application from common web attacks, including SQL injection and cross-site scripting (XSS), while also controlling network traffic based on the source IP address and user identity. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Implement Cloud Load Balancing and Cloud DNS. Set up Cloud CDN to cache content and mitigate some DDoS attacks. Configure Cloud Armor to provide layer 7 protection.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Deploy Cloud Armor with its default WAF rules enabled. Configure network firewall rules on the Compute Engine instances to control all traffic based on source IP addresses. Use Cloud IAM to manage which users have roles granting access to the web application.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Use Google Cloud Armor with pre-configured WAF rules to filter malicious traffic. Implement VPC Service Controls to create a secure perimeter around the application's resources. Manage users with Cloud IAM.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Deploy Cloud Armor, and configure Cloud Firewall rules to control traffic based on source IP addresses. Integrate with Identity-Aware Proxy to control access based on user identity.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+<br/>
+</span>
+</div>
+</div>
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>✅ PRAWIDŁOWA ODPOWIEDŹ: D
+
+Prawidłowa odpowiedź: D – Deploy Cloud Armor, and configure Cloud Firewall rules to control traffic based on source IP addresses. Integrate with Identity-Aware Proxy to control user-level access.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DLACZEGO D JEST PRAWIDŁOWE?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Pytanie wymaga ochrony przed: SQL injection, XSS (L7) + kontrola na podstawie source IP + kontrola dostępu użytkownika. Odpowiedź D:
+- Cloud Armor = WAF (SQL injection, XSS, OWASP Top 10).
+- Cloud Firewall rules = kontrola source IP (L3/L4).
+- IAP = granularna kontrola dostępu na poziomie użytkownika (tożsamość).
+Każde narzędzie adresuje inną warstwę bezpieczeństwa.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DLACZEGO INNE OPCJE SĄ BŁĘDNE?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A. ❌ Cloud CDN + Cloud Armor "Layer 3 DDoS" = Cloud CDN nie jest narzędziem bezpieczeństwa. Brak user-level access control.
+B. ❌ "Default WAF rules" bez konfiguracji = niewystarczające dla zaawansowanej ochrony. Brak user-level access control.
+C. ❌ VPC Service Controls = perymetr dla managed services (nie Compute Engine VMs). Nie odpowiada na wymaganie IP-based + user control.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WSKAZÓWKI EGZAMINACYJNE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• WAF (SQL injection, XSS) = Cloud Armor.
+• IP-based control = Cloud Firewall.
+• User-level access = IAP.
+• Te trzy narzędzia często występują razem w odpowiedziach egzaminacyjnych.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+REGUŁY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Wielowarstwowa ochrona: Cloud Armor (L7) + Firewall (L3/L4) + IAP (tożsamość).
+• Cloud CDN ≠ security narzędzie.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DODATKOWE ŹRÓDŁA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• https://cloud.google.com/armor/docs/cloud-armor-overview
+• https://cloud.google.com/iap/docs/concepts-overview</pre>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

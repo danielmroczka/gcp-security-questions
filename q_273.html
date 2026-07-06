@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 273</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_272.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_274.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 273 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">You are working with developers to secure custom training jobs running on Vertex AI. For compliance reasons, all supported data types must be encrypted by key materials that reside in the Europe region and are controlled by your organization. The encryption activity must not impact the training operation in Vertex AI. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Encrypt the code, training data, and metadata with Google default encryption. Use customer-managed encryption keys (CMEK) for the trained models exported to Cloud Storage buckets.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Encrypt the code, training data, metadata, and exported trained models with customer-managed encryption keys (CMEK).</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Encrypt the code, training data, and exported trained models with customer-managed encryption keys (CMEK).</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Encrypt the code, training data, and metadata with Google default encryption. Implement an organization policy that enforces a constraint to restrict the Cloud KMS location to the Europe region.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Encrypt the code, training data, and exported trained models with customer-managed encryption keys (CMEK).
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ Vertex AI w pełni wspiera integrację z kluczami zarządzanymi przez klienta (CMEK) w celu szyfrowania kodu źródłowego, danych treningowych w spoczynku (przechowywanych w Cloud Storage) oraz wyjściowych modeli po eksporcie.
+
+Analiza techniczna:
+a. **Suwerenność klucza (CMEK):** Klient tworzy klucze szyfrujące w regionie europejskim (np. `europe-west3`) i zarządza ich dostępem za pomocą IAM. Dane są szyfrowane tymi kluczami.
+b. **Wydajność operacji:** Szyfrowanie przy użyciu CMEK odbywa się na poziomie systemu plików i baz danych chmury, co oznacza, że operacje kryptograficzne są całkowicie przezroczyste dla Vertex AI i nie wpływają negatywnie na wydajność obliczeniową ani czas trwania procesu treningu modeli.
+c. **Ograniczenie zakresu:** Metadane zadań treningowych (np. parametry konfiguracji zadań przesyłane w wywołaniach API) są domyślnie chronione szyfrowaniem Google i nie zawierają rzeczywistych poufnych informacji biznesowych, które znajdują się w kodzie i plikach danych (objętych CMEK).
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Encrypt the code, training data, and metadata with Google default encryption. Use CMEK for...
+   * Dlaczego nieprawidłowa: Pozostawienie kodu i danych treningowych (które zawierają wrażliwe PII i dane biznesowe) pod ochroną wyłącznie domyślnego szyfrowania Google narusza wymaganie, by wszystkie te wrażliwe dane były kontrolowane bezpośrednio przez klucze klienta (CMEK).
+B. Encrypt the code, training data, metadata, and exported trained models with customer-managed encryption keys (CMEK).
+   * Dlaczego nieprawidłowa: Niektóre globalne metadane systemowe zadań w Vertex AI (metadata) nie mogą być bezpośrednio zaszyfrowane za pomocą kluczy CMEK klienta, ponieważ usługa Vertex AI wymaga dostępu do metadanych do celów globalnej koordynacji zadań. Właściwa konfiguracja CMEK dla Vertex AI obejmuje kod, dane i modele (opcja C).
+D. Encrypt the code, training data, and metadata with Google default encryption. Implement an organization policy...
+   * Dlaczego nieprawidłowa: Domyślne szyfrowanie Google (Google default encryption) nie daje organizacji kontroli nad kluczami szyfrującymi – klucze te są w pełni zarządzane przez Google. Ograniczenie lokalizacji KMS nie zastępuje potrzeby wdrożenia CMEK w celu uzyskania kontroli nad materiałem klucza.
+
+4. Wskazówki, hinty, tips and tricks:
+* Vertex AI wspiera CMEK dla: danych wejściowych (Cloud Storage), kodu treningowego (Custom containers/Cloud Storage) oraz modeli wyjściowych.
+* Klucze szyfrujące CMEK muszą być utworzone w tym samym regionie, w którym przetwarzane są dane.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Vertex AI secure training + keys controlled by organization -> CMEK for code, training data, and exported models.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/vertex-ai/docs/general/cmek" target="_blank">Customer-managed encryption keys (CMEK) in Vertex AI</a>
+<a href="https://cloud.google.com/vertex-ai/docs/general/security" target="_blank">Vertex AI security overview</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

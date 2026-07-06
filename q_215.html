@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 215</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_214.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_216.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 215 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+You are a Cloud Identity administrator for your organization. In your Google Cloud environment, groups are used to manage user permissions. Each application team has a dedicated group. Your team is responsible for creating these groups and the application teams can manage the team members on their own through the Google Cloud console. You must ensure that the application teams can only add users from within your organization to their groups. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Change the configuration of the relevant groups in the Google Workspace Admin console to prevent external users from being added to the group.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Set an Identity and Access Management (IAM) policy that includes a condition that restricts group membership to user principals that belong to your organization.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Define an Identity and Access Management (IAM) deny policy that denies the assignment of principals that are outside your organization to the groups in scope.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Export the Cloud Identity logs to BigQuery. Configure an alert for external members added to groups. Have the alert trigger a Cloud Function instance that removes the external members from the group.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+<br/>
+</span>
+</div>
+</div>
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+A. Change the configuration of the relevant groups in the Google Workspace Admin console to prevent external users from being added to the group.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź A jest prawidłowa, ponieważ najprostszym, najbardziej niezawodnym i zalecanym sposobem na ograniczenie członkostwa w grupach wyłącznie do użytkowników wewnętrznych jest zmiana ustawień udostępniania i członkostwa w Google Workspace / Cloud Identity Admin Console.
+
+Jak to działa:
+a. Grupy Cloud Identity są zarządzane z poziomu konsoli Google Admin.
+b. W ustawieniach grupy administrator może wyłączyć opcję "Zezwalaj członkom spoza organizacji" (Allow members outside your organization).
+c. Gdy ta opcja jest wyłączona, właściciele i menedżerowie grup (np. zespoły aplikacyjne) otrzymają błąd i nie będą mogli dodać do grupy żadnego adresu e-mail spoza domeny firmowej. Zabezpiecza to przed przypadkowym wyciekiem uprawnień do zewnętrznych podmiotów.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+B. Set an Identity and Access Management (IAM) policy that includes a condition...
+   * Dlaczego nieprawidłowa: Warunki IAM (IAM Conditions) mogą ograniczać dostęp do zasobów na podstawie różnych kryteriów (np. IP, czasu), ale nie kontrolują bezpośrednio procesu dodawania członków do grup tożsamości w Cloud Identity. Użytkownicy nadal mogliby być dodawani do grup.
+C. Define an Identity and Access Management (IAM) deny policy that denies the assignment of principals...
+   * Dlaczego nieprawidłowa: Polityki blokowania IAM (Deny Policies) zapobiegają przypisywaniu ról IAM do określonych tożsamości, ale nie blokują możliwości dodawania zewnętrznych użytkowników do samych grup w katalogu Cloud Identity.
+D. Export the Cloud Identity logs to BigQuery. Configure an alert... trigger a Cloud Function...
+   * Dlaczego nieprawidłowa: Jest to podejście reaktywne i nadmiernie skomplikowane. Wymaga utrzymywania dodatkowego kodu, integracji logów i generuje opóźnienie (napastnik miałby dostęp do zasobów przez czas potrzebny na uruchomienie funkcji). Najlepszą praktyką jest blokada prewencyjna u źródła (opcja A).
+
+4. Wskazówki, hinty, tips and tricks:
+* Zarządzanie grupami w GCP odbywa się za pomocą konsoli **Google Workspace / Cloud Identity Admin Console**.
+* Kontrola członkostwa w grupach (wewnętrzni vs. zewnętrzni członkowie) powinna być realizowana na poziomie konfiguracji samej grupy w katalogu tożsamości.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Zablokowanie dodawania zewnętrznych użytkowników do grup -> Zmiana konfiguracji w Google Workspace Admin console.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://support.google.com/a/answer/167094" target="_blank">Manage group sharing settings in Google Workspace</a>
+<a href="https://cloud.google.com/identity/docs/groups" target="_blank">Managing Cloud Identity Groups</a>
+</pre>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

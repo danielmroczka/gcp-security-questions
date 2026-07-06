@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 263</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_262.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_264.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 263 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization relies heavily on virtual machines (VMs) in Compute Engine. Due to team growth and resource demands, VM sprawl is becoming problematic. Maintaining consistent security hardening and timely package updates poses an increasing challenge. You need to centralize VM image management and automate the enforcement of security baselines throughout the virtual machine lifecycle. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Use VM Manager to automatically distribute and apply patches to VMs across your projects. Integrate VM Manager with hardened, organization-standard VM images stored in a central repository.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Configure the sole-tenancy feature in Compute Engine for all projects. Set up custom organization policies in Policy Controller to restrict the operating systems and image sources that teams are allowed to use.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Create a Cloud Build trigger to build a pipeline that generates hardened VM images. Run vulnerability scans in the pipeline, and store images with passing scans in a registry. Use instance templates pointing to this registry.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Activate Security Command Center Enterprise. Use VM discovery and posture management features to monitor hardening state and trigger automatic responses upon detection of issues.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+A. Use VM Manager to automatically distribute and apply patches to VMs across your projects. Integrate VM Manager with hardened, organization-standard VM images stored in a central repository.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź A jest prawidłowa, ponieważ łączy centralne zarządzanie utwardzonymi obrazami maszyn wirtualnych z automatyzacją procesu instalowania poprawek (patching) w skali całej organizacji.
+
+Zalety tego rozwiązania:
+a. **Centralny rejestr obrazów (Central Repository):** Stworzenie zaufanego projektu, w którym przechowywane są certyfikowane, utwardzone obrazy maszyn (hardened images) pozwala na wymuszenie stosowania wyłącznie tych obrazów przez inne zespoły (np. za pomocą polityki organizacji `constraints/compute.trustedImageProjects`).
+b. **Automatyzacja poprawek (VM Manager):** Usługa OS Patch Management w VM Managerze pozwala na definiowanie harmonogramów aktualizacji systemów operacyjnych dla wszystkich maszyn wirtualnych w wielu projektach jednocześnie. Gwarantuje to, że nowo uruchomione maszyny oraz te już działające są stale patchowane i zgodne z baselinem bezpieczeństwa.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+B. Configure the sole-tenancy feature in Compute Engine for all projects...
+   * Dlaczego nieprawidłowa: Sole-tenancy (wyłączna dzierżawa) gwarantuje, że maszyny wirtualne działają na dedykowanym fizycznym sprzęcie. Służy to do celów licencyjnych i izolacji fizycznej, ale nie rozwiązuje problemów z aktualizacją oprogramowania (patching) i zapobieganiem VM sprawl.
+C. Create a Cloud Build trigger to build a pipeline... Use instance templates pointing to this registry.
+   * Dlaczego nieprawidłowa: Choć budowanie obrazów w Cloud Build jest poprawną praktyką, to samo utworzenie szablonów instancji (instance templates) nie rozwiązuje problemu ciągłego zarządzania aktualizacjami (patching) na już działających maszynach wirtualnych w ich cyklu życia, co wymaga systemu takiego jak VM Manager.
+D. Activate Security Command Center Enterprise. Use VM discovery and posture management...
+   * Dlaczego nieprawidłowa: SCC Enterprise pozwala na monitorowanie stanu maszyn i zgłaszanie alertów o braku poprawek (compliance), ale nie jest dedykowanym narzędziem do bezpośredniego wdrażania aktualizacji pakietów systemowych na maszynach w taki sposób jak VM Manager.
+
+4. Wskazówki, hinty, tips and tricks:
+* VM Sprawl i spójność poprawek systemowych -> Zawsze używaj **VM Manager** (OS Patch Management).
+* Do wymuszenia bezpiecznych obrazów bazowych stosuj **Trusted Image Projects** na poziomie polityki organizacji.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Centralize VM image management + automate patch enforcement -> VM Manager + central repository of hardened images.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/compute/docs/os-patch-management" target="_blank">OS patch management overview</a>
+<a href="https://cloud.google.com/compute/docs/images/sharing-images-across-projects" target="_blank">Sharing images across projects</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

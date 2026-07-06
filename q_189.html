@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 189</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_188.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_190.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 189 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+Your application is deployed as a highly available, cross-region solution behind a global external HTTP(S) load balancer. You notice significant spikes in traffic from multiple IP addresses, but it is unknown whether the IPs are malicious. You are concerned about your application's availability. You want to limit traffic from these clients over a specified time interval.<br/>What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Configure a throttle action by using Google Cloud Armor to limit the number of requests per client over a specified time interval.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Configure a rate_based_ban action by using Google Cloud Armor and set the ban_duration_sec parameter to the specified time interval.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Configure a firewall rule in your VPC to throttle traffic from the identified IP addresses.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Configure a deny action by using Google Cloud Armor to deny the clients that issued too many requests over the specified time interval.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4 d-none"  >
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+A. Configure a throttle action by using Google Cloud Armor to limit the number of requests per client over a specified time interval.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Aplikacja doświadcza nagłych skoków natężenia ruchu (traffic spikes) z wielu adresów IP. Ponieważ intencje klientów i status adresów IP (czy są złośliwe, czy to np. nagły wzrost popularności serwisu) nie są znane, priorytetem jest zabezpieczenie dostępności aplikacji przy jednoczesnym uniknięciu fałszywych dopasowań (false positives) i całkowitego zablokowania potencjalnych, prawdziwych klientów.
+Google Cloud Armor posiada mechanizm ograniczania natężenia ruchu (Rate Limiting). Konfiguracja akcji typu **Throttle** pozwala na nałożenie limitu na liczbę żądań HTTP(S), jakie dany klient może wysłać w określonym przedziale czasu (np. maksymalnie 100 żądań na minutę). Jeśli limit zostanie przekroczony, nadmiarowy ruch jest odrzucany, a po zresetowaniu licznika czasu klient może ponownie wysyłać zapytania. Jest to optymalny kompromis chroniący serwery aplikacyjne przed przeciążeniem bez odcinania dostępu klientom na stałe.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+- B. Configure a rate_based_ban action...: Akcja typu ban całkowicie blokuje (zrzuca cały ruch) z danego adresu IP na określony czas (np. 5 minut) po przekroczeniu limitu. Przy braku pewności, czy ruch jest złośliwy, może to doprowadzić do zablokowania prawdziwych użytkowników na długi czas.
+- C. Configure a firewall rule in your VPC to throttle traffic...: Zapory sieciowe VPC (VPC Firewall Rules) działają w warstwach 3 i 4 modelu OSI (IP/porty) i nie posiadają funkcji inspekcji warstwy aplikacyjnej L7 ani natywnej obsługi throttlingu zapytań HTTP w czasie.
+- D. Configure a deny action by using Google Cloud Armor to deny the clients that issued too many requests...: Zwykła akcja `deny` w Cloud Armor po prostu bezwarunkowo blokuje ruch na podstawie reguły (np. adresu IP), ale nie jest to mechanizm dynamicznego rate-limitingu (nie potrafi zliczać zapytań w oknie czasowym per-client).
+
+4. Wskazówki, hinty, tips and tricks:
+- Jeśli ruch pochodzi z nieznanych źródeł (nie wiemy, czy to atak, czy legalni klienci) i celem jest ochrona wydajności / dostępności (availability), wybieramy **Throttle** (dławienie ruchu ponad limit).
+- Jeśli celem jest twarde odcięcie ataku typu Brute Force lub DDoS ze znanych złośliwych IP, wybieramy **rate_based_ban**.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+- "limit traffic from clients" + "unknown whether IPs are malicious" + "limit over time interval" -> Cloud Armor -> throttle action.
+
+6. Dodatkowe źródła i dokumentacja:
+- Google Cloud Armor Rate Limiting: <a href="https://cloud.google.com/armor/docs/rate-limiting-overview" target="_blank">https://cloud.google.com/armor/docs/rate-limiting-overview</a>
+</pre>
+</div>
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

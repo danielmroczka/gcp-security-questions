@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 253</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_252.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_254.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 253 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization is building a chatbot that is powered by generative AI to deliver automated conversations with internal employees. You must ensure that no data with personally identifiable information (PII) is communicated through the chatbot. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Encrypt data at rest for both input and output by using Cloud KMS, and apply least privilege access to the encryption keys.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Discover and transform PII data in both input and output by using the Cloud Data Loss Prevention (Cloud DLP) API.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Prevent PII data exfiltration by using VPC-SC to create a safe scope around your chatbot.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Scan both input and output by using data encryption tools from the Google Cloud Marketplace.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">B</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+B. Discover and transform PII data in both input and output by using the Cloud Data Loss Prevention (Cloud DLP) API.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź B jest prawidłowa, ponieważ Cloud Data Loss Prevention (Cloud DLP) API jest dedykowaną usługą w GCP służącą do skanowania, wykrywania (discovery) i transformacji (np. maskowania, redagowania) danych wrażliwych w czasie rzeczywistym w strumieniach tekstowych.
+
+Zastosowanie w chatbocie GenAI:
+a. **Skanowanie wejścia (Input/Prompt):** Przed wysłaniem zapytania pracownika do modelu językowego (LLM), chatbot przesyła tekst do DLP API. Jeśli użytkownik wpisał w prompt PII (np. "Nazywam się Jan Kowalski, PESEL..."), DLP API może zredagować te dane (np. zamienić na `[NAME]`, `[ID]`), chroniąc dane przed wyciekiem do silnika AI.
+b. **Skanowanie wyjścia (Output/Response):** Przed wyświetleniem odpowiedzi generowanej przez model użytkownikowi, chatbot ponownie skanuje tekst w DLP API w celu upewnienia się, że model nie wygenerował przypadkowo żadnych danych wrażliwych z bazy treningowej.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Encrypt data at rest... by using Cloud KMS...
+   * Dlaczego nieprawidłowa: Szyfrowanie kluczem KMS chroni bazę danych w spoczynku, ale nie analizuje treści zapytań wpisywanych przez użytkowników. Gdy użytkownik korzysta z chata, dane są odszyfrowane i przetwarzane, co oznacza, że PII nadal trafia do modelu i na ekran.
+C. Prevent PII data exfiltration by using VPC-SC to create a safe scope...
+   * Dlaczego nieprawidłowa: VPC Service Controls zabezpiecza granice sieciowe usług (np. zapobiega kopiowaniu danych między projektami), ale nie filtruje tekstu wpisywanego w oknach czatu przez użytkowników w celu wykrywania i usuwania słów zawierających PII.
+D. Scan both input and output by using data encryption tools from the Google Cloud Marketplace.
+   * Dlaczego nieprawidłowa: Narzędzia szyfrujące (encryption tools) służą do kodowania danych w celu ochrony ich poufności, a nie do inteligentnej inspekcji tekstu, klasyfikacji danych wrażliwych i selektywnego ich usuwania/maskowania w locie, co jest domeną silnika NLP w Cloud DLP.
+
+4. Wskazówki, hinty, tips and tricks:
+* Jeśli celem jest zapobieganie wysyłaniu/przetwarzaniu PII w aplikacjach tekstowych (jak chatbots, formularze) -> Zawsze używaj **Cloud DLP API** w celu inspekcji i redagowania (inspect and redact) tekstu w locie.
+* DLP API posiada predefiniowane detektory (infoTypes) dla setek typów danych wrażliwych z całego świata.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Chatbot + ensure no PII is communicated -> Cloud Data Loss Prevention (Cloud DLP) API.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/dlp/docs/inspecting-text" target="_blank">Inspecting text for sensitive data using Cloud DLP</a>
+<a href="https://cloud.google.com/dlp/docs/redacting-sensitive-data-quickstart" target="_blank">Redacting sensitive data from text in Cloud DLP</a>
+</pre>
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

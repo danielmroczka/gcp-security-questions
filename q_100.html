@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 100</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_099.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_101.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 100 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+You need to implement an encryption at-rest strategy that reduces key management complexity for non-sensitive data and protects sensitive data while providing the flexibility of controlling the key residency and rotation schedule. FIPS 140-2 L1 compliance is required for all data types. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Encrypt non-sensitive data and sensitive data with Cloud External Key Manager.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Encrypt non-sensitive data and sensitive data with Cloud Key Management Service</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Encrypt non-sensitive data with Google default encryption, and encrypt sensitive data with Cloud External Key Manager.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Encrypt non-sensitive data with Google default encryption, and encrypt sensitive data with Cloud Key Management Service.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4" style="display:none;">
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+D. Encrypt non-sensitive data with Google default encryption, and encrypt sensitive data with Cloud Key Management Service.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Wymaganie polega na zbalansowaniu bezpieczeństwa i złożoności zarządzania kluczami dla dwóch rodzajów danych (zwykłych i wrażliwych), przy zachowaniu zgodności z FIPS 140-2 L1:
+- Domyślne szyfrowanie GCP (Google default encryption at-rest) automatycznie szyfruje wszystkie dane w spoczynku bez jakichkolwiek działań administracyjnych ze strony użytkownika (zerowa złożoność). Jest ono w pełni zgodne z normą FIPS 140-2 L1.
+- Dla danych wrażliwych użycie Customer-Managed Encryption Keys (CMEK) za pośrednictwem Cloud KMS pozwala użytkownikowi na pełną elastyczność i kontrolę nad rotacją kluczy (rotation schedule) oraz lokalizacją ich przechowywania (key residency). Cloud KMS również spełnia normę FIPS 140-2 L1.
+Połączenie tych dwóch podejść minimalizuje narzut operacyjny przy jednoczesnym spełnieniu wymagań compliance i kontroli.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+- A. Szyfrowanie wszystkich danych przy użyciu Cloud External Key Manager (EKM): EKM przechowuje klucze poza środowiskiem Google Cloud, co generuje olbrzymią złożoność operacyjną, opóźnienia sieciowe oraz koszty. Stosowanie tego dla danych niewrażliwych narusza wymóg minimalizacji złożoności.
+- B. Szyfrowanie wszystkich danych za pomocą Cloud KMS: Wymagałoby to ręcznego tworzenia, rotowania i zarządzania kluczami dla danych nieistotnych, co niepotrzebnie zwiększa złożoność administracyjną (management complexity).
+- C. Szyfrowanie danych wrażliwych za pomocą Cloud EKM: External Key Manager jest rozwiązaniem nadmiarowym w tym scenariuszu. Cloud KMS (CMEK) w zupełności wystarcza do kontroli rotacji i rezydencji kluczy bez wprowadzania dodatkowej złożoności integracji z zewnętrznym HSM.
+
+4. Wskazówki, hinty, tips and tricks:
+- GCP domyślnie szyfruje wszystkie dane w spoczynku. Jeśli dane nie są poufne i nie wymagają specyficznej rotacji/kontroli klienta, zawsze wybieraj domyślne szyfrowanie (default encryption), aby zminimalizować złożoność.
+- Jeśli wymagana jest kontrola nad rezydencją (key residency) i rotacją (rotation schedule), właściwym wyborem jest Cloud KMS (CMEK).
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+- Zwykłe dane (low complexity) + Wrażliwe dane (rotation/residency control) -> Default Encryption + Cloud KMS (CMEK).
+- Zgodność FIPS 140-2 L1 -> Zarówno Default Encryption, jak i Cloud KMS spełniają ten wymóg (dla L3 wymagany jest Cloud HSM).
+
+6. Dodatkowe źródła i dokumentacja:
+- Google Cloud Encryption at Rest: <a href="https://cloud.google.com/security/encryption-at-rest" target="_blank">https://cloud.google.com/security/encryption-at-rest</a>
+- Cloud KMS compliance (FIPS 140-2): <a href="https://cloud.google.com/kms/docs/fips-140-2" target="_blank">https://cloud.google.com/kms/docs/fips-140-2</a>
+</pre>
+</div>
+<div class="ai-analysis-container" style="display:none; margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3;">
+<h2>Analiza i Podsumowanie Dyskusji (AI)</h2>
+<div class="analysis-section">
+<h3>Analiza i Wyjaśnienie</h3>
+<p><b>Sugerowana odpowiedź: D</b></p>
+<p><b>Głęboka analiza:</b> <p><b>Analiza spornych kwestii (AI):</b> Pytanie to testuje zrozumienie 'Risk-based security'. Nie wszystko musi być chronione najdroższą i najtrudniejszą metodą. Analiza odpowiedzi na forach pokazuje, że Google promuje model, w którym domyślne zabezpieczenia platformy są 'wystarczająco dobre' dla większości danych, a KMS jest rezerwowany dla danych wymagających ścisłego nadzoru klienta.</p></p>
+<h3>Dodatkowe Zasoby (Linki)</h3>
+<ul>
+<li><a href="https://cloud.google.com/kms/docs/fips-140-2" target="_blank">https://cloud.google.com/kms/docs/fips-140-2</a></li>
+
+</ul>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const revealButton = document.querySelectorAll('.reveal-solution');
+    revealButton.forEach(button => {
+        let isVisible = false;
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const answerSection = document.querySelector('.q-answer');
+            const aiSection = document.querySelector('.ai-analysis-container');
+            if (isVisible) {
+                if (answerSection) answerSection.style.display = 'none';
+                if (aiSection) aiSection.style.display = 'none';
+                this.textContent = 'Show Suggested Answer';
+            } else {
+                if (answerSection) answerSection.style.display = 'block';
+                if (aiSection) aiSection.style.display = 'block';
+                this.textContent = 'Hide Suggested Answer';
+            }
+            isVisible = !isVisible;
+        });
+    });
+});
+</script>
+<script src="navigation.js"></script>
+<script src="navigation.js"></script>
+</body>
+</html>

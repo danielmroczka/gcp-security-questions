@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 268</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_267.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_269.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 268 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization has sensitive data stored in BigQuery and Cloud Storage. You need to design a solution that provides granular and flexible control authorization to read data. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Deidentify sensitive fields within the dataset by using data leakage protection within the Sensitive Data Protection services.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Use Cloud External Key Manager (Cloud EKM) to encrypt the data in BigQuery and Cloud Storage.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Grant identity and access management (IAM) roles and permissions to principals.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Enable server-side encryption on the data in BigQuery and Cloud Storage.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Grant identity and access management (IAM) roles and permissions to principals.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ Identity and Access Management (IAM) to fundamentalna, natywna i najbardziej elastyczna usługa w Google Cloud służąca do autoryzacji i precyzyjnego zarządzania dostępem do odczytu danych w usługach takich jak BigQuery oraz Cloud Storage.
+
+Zalety IAM:
+a. **Granularność uprawnień:** IAM pozwala na przydzielanie precyzyjnych ról (np. `roles/bigquery.dataViewer` dla odczytu tabel lub `roles/storage.objectViewer` dla pobierania plików z GCS) określonym tożsamościom (principals: użytkownicy, grupy, konta serwisowe).
+b. **Elastyczność i kontrola:** Możemy ograniczyć zasięg ról do konkretnego projektu, pojedynczego kubełka lub zbioru danych (dataset), a także stosować warunki IAM (IAM Conditions), co zapewnia pełne bezpieczeństwo dostępu.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Deidentify sensitive fields within the dataset by using data leakage protection...
+   * Dlaczego nieprawidłowa: Deidentyfikacja (Cloud DLP) chroni prywatność danych poprzez usuwanie lub maskowanie PII, ale sama w sobie nie jest systemem autoryzacji (authorization system) – nie kontroluje, *kto* ma prawo odpytać bazę lub pobrać pliki.
+B. Use Cloud External Key Manager (Cloud EKM) to encrypt the data...
+   * Dlaczego nieprawidłowa: Cloud EKM szyfruje dane w spoczynku. Szyfrowanie to usługa ochrony danych (confidentiality), ale nie zarządza uprawnieniami dostępu i prawami odczytu dla użytkowników w sposób tak elastyczny i granularny jak system IAM.
+D. Enable server-side encryption on the data in BigQuery and Cloud Storage.
+   * Dlaczego nieprawidłowa: Szyfrowanie po stronie serwera (Server-Side Encryption) jest domyślnie i bezwyjątkowo włączone w GCP dla wszystkich danych. Służy do ochrony przed fizyczną kradzieżą dysków, ale nie filtruje i nie autoryzuje dostępu logicznego dla użytkowników próbujących odczytać dane z poziomu API.
+
+4. Wskazówki, hinty, tips and tricks:
+* Autoryzacja i kontrola dostępu (authorization / access control) w GCP -> Zawsze używaj **Identity and Access Management (IAM)**.
+* Szyfrowanie (encryption) i DLP chronią same dane, ale nie zastępują polityk autoryzacji użytkowników.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Granular and flexible control authorization to read data -> Grant IAM roles and permissions.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/iam/docs/overview" target="_blank">Identity and Access Management (IAM) overview</a>
+<a href="https://cloud.google.com/storage/docs/access-control/iam" target="_blank">IAM roles for Cloud Storage</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

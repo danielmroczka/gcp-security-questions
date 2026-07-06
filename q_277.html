@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 277</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_276.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_278.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 277 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">You work for a large organization that is using Cloud Identity as the identity provider (IdP) on Google Cloud. Your InfoSec team has mandated the enforcement of a strong password with a length between 12 and 16 characters for all users. After configuring this requirement, users are still able to access the Google Cloud console with passwords that are less than 12 characters. You need to fix this problem within the Admin console. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Review each user's password configuration and reset existing passwords.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Review the organization password management setting and select Enforce password policy at the next sign-in.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Review each user's password configuration and select Enforce strong password.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Review the organization password management setting and select Enforce strong password.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">B</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+B. Review the organization password management setting and select Enforce password policy at the next sign-in.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź B jest prawidłowa, ponieważ zmiana ustawień polityki haseł (np. wymuszenie minimalnej długości 12 znaków) w konsoli administracyjnej Google Workspace / Cloud Identity domyślnie dotyczy tylko nowych haseł lub kolejnych zmian haseł wykonywanych przez użytkowników.
+
+Dlaczego ten krok jest wymagany:
+a. Użytkownicy posiadający aktualnie słabsze hasła (np. 8 znaków) mogą nadal logować się do konsoli GCP przy użyciu swoich dotychczasowych, aktywnych haseł, ponieważ system nie zmusza ich automatycznie do zmiany.
+b. Zaznaczenie opcji "Enforce password policy at the next sign-in" (Wymuś politykę haseł przy następnym logowaniu) sprawia, że przy kolejnej próbie wejścia do GCP, użytkownicy ze słabymi hasłami zostaną natychmiast zablokowani i zmuszeni do zmiany hasła na nowe, zgodne z nowym limitem 12-16 znaków.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Review each user's password configuration and reset existing passwords.
+   * Dlaczego nieprawidłowa: Ręczne resetowanie haseł dla wszystkich użytkowników w organizacji generuje ogromny nakład pracy administracyjnej i paraliżuje pracę działu IT. Jest to nieefektywne.
+C. Review each user's password configuration and select Enforce strong password.
+   * Dlaczego nieprawidłowa: Włączanie polityki indywidualnie dla każdego użytkownika z osobna (per-user basis) jest czasochłonne i nie zapobiega logowaniu użytkowników z aktualnymi, słabymi hasłami bez wyzwolenia wymuszenia zmiany.
+D. Review the organization password management setting and select Enforce strong password.
+   * Dlaczego nieprawidłowa: Samo włączenie opcji "Enforce strong password" w ustawieniach ogólnych wymusza reguły tylko w momencie tworzenia lub zmiany hasła przez użytkownika w przyszłości. Nie resetuje automatycznie sesji użytkownikom z już istniejącymi słabymi hasłami.
+
+4. Wskazówki, hinty, tips and tricks:
+* Nowe reguły haseł w Google Cloud Identity nie wpływają automatycznie na aktualne hasła użytkowników.
+* Aby natychmiast wyegzekwować nowe reguły u wszystkich użytkowników, wybierz opcję **Enforce password policy at the next sign-in**.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Policy configured but users still logging in with weak passwords -> Enforce password policy at next sign-in.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://support.google.com/a/answer/33333" target="_blank">Manage password settings in Google Workspace/Cloud Identity</a>
+<a href="https://support.google.com/a/answer/9222687" target="_blank">Enforcing password changes for users</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

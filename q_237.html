@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 237</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_236.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_238.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 237 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+Your organization wants full control of the keys used to encrypt data at rest in their Google Cloud environments. Keys must be generated and stored outside of Google and integrate with many Google Services including BigQuery. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Use customer-supplied encryption keys (CSEK) with keys generated on trusted external systems. Provide the raw CSEK as part of the API call.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Create a KMS key that is stored on a Google managed FIPS 140-2 level 3 Hardware Security Module (HSM). Manage the Identity and Access Management (IAM) permissions settings, and set up the key rotation period.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Use Cloud External Key Management (EKM) that integrates with an external Hardware Security Module (HSM) system from supported vendors.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Create a Cloud Key Management Service (KMS) key with imported key material. Wrap the key for protection during import. Import the key generated on a trusted system in Cloud KMS.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+<br/>
+</span>
+</div>
+</div>
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Use Cloud External Key Management (EKM) that integrates with an external Hardware Security Module (HSM) system from supported vendors.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ Cloud External Key Manager (Cloud EKM) pozwala na pełną kontrolę nad cyklem życia kluczy szyfrujących (generowanie, przechowywanie, rotacja) na zewnętrznych systemach bezpieczeństwa (HSM) poza infrastrukturą Google Cloud, jednocześnie oferując bezszwową integrację z natywnymi usługami chmurowymi (takimi jak BigQuery czy Compute Engine).
+
+Jak to działa:
+a. Klucz główny (KEK) nigdy nie opuszcza fizycznego modułu HSM klienta (który może znajdować się on-premises lub u zaufanego zewnętrznego dostawcy tożsamości kluczy).
+b. Podczas operacji zapisu/odczytu w BigQuery, usługa wysyła zapytanie szyfrujące do Cloud KMS, który z kolei odwołuje się do Cloud EKM w celu wykonania operacji kryptograficznej na zewnętrznym HSM.
+c. Daje to klientowi ostateczną kontrolę – wyłączenie zewnętrznego HSM natychmiast blokuje dostęp do danych w GCP.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Use customer-supplied encryption keys (CSEK) with keys generated on trusted external systems. Provide the raw CSEK as part of the API call.
+   * Dlaczego nieprawidłowa: Klucze CSEK nie są wspierane przez wiele kluczowych usług GCP (w tym nie są bezpośrednio wspierane w zaawansowanych scenariuszach BigQuery w taki sposób jak EKM). Ponadto dostarczanie surowego klucza (raw key) w każdym wywołaniu API jest trudne do zarządzania i stwarza ryzyko wycieku klucza w kodzie aplikacji.
+B. Create a KMS key that is stored on a Google managed FIPS 140-2 level 3 Hardware Security Module (HSM)...
+   * Dlaczego nieprawidłowa: Cloud HSM to usługa w 100% zarządzana przez Google w chmurze GCP. Klucze nie są generowane ani przechowywane "outside of Google" (poza strukturami Google), co było głównym wymaganiem.
+D. Create a Cloud Key Management Service (KMS) key with imported key material...
+   * Dlaczego nieprawidłowa: Importowanie materiału klucza (Imported Key Material) do Cloud KMS powoduje, że kopia materiału klucza zostaje zapisana i jest przechowywana w chmurze Google. W tym momencie klucze nie znajdują się już wyłącznie na zewnątrz Google.
+
+4. Wskazówki, hinty, tips and tricks:
+* Pełna kontrola kluczy poza chmurą Google (Keys stored outside of Google) + integracja z usługami GCP -> **Cloud EKM (External Key Manager)**.
+* Cloud HSM = klucze w chmurze Google na sprzętowych modułach HSM.
+* Cloud EKM = klucze u klienta / zewnętrznego partnera.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Keys generated and stored outside of Google + integrate with GCP -> Cloud External Key Management (EKM).
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/kms/docs/ekm" target="_blank">Cloud External Key Manager (Cloud EKM)</a>
+<a href="https://cloud.google.com/kms/docs/external-key-manager-vendors" target="_blank">Supported Cloud EKM partners</a>
+</pre>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 272</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_271.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_273.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 272 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">You work for a global company. Due to compliance requirements, certain Compute Engine instances that reside within specific projects must be located exclusively in cloud regions within the European Union (EU). You need to ensure that existing non-compliant workloads are remediated and prevent future Compute Engine instances from being launched in restricted regions. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Use a third-party configuration management tool to monitor the location of Compute Engine instances. Automatically delete or migrate non-compliant instances, including existing deployments.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Deploy a Security Command Center source to detect Compute Engine instances created outside the EU. Use a custom remediation function to automatically relocate the instances, run the function once a day.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Use organization policy constraints in Resource Manager to enforce allowed regions for Compute Engine instance creation within specific projects.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Set an organization policy that denies the creation of Compute Engine instances outside the EU. Apply the policy to the appropriate projects. Identify existing non-compliant instances and migrate the instances to compliant EU regions.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+D. Set an organization policy that denies the creation of Compute Engine instances outside the EU. Apply the policy to the appropriate projects. Identify existing non-compliant instances and migrate the instances to compliant EU regions.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź D jest prawidłowa, ponieważ łączy prewencyjne egzekwowanie zasad za pomocą polityk organizacji (Resource Location Restriction) z niezbędnymi krokami operacyjnymi w celu doprowadzenia istniejącej infrastruktury do stanu zgodności (compliance).
+
+Kluczowe kroki:
+a. **Polityka prewencyjna (Org Policy):** Ustawienie ograniczenia `constraints/gcp.resourceLocations` typu `deny` dla wszystkich regionów poza UE (lub typu `allow` wyłącznie dla lokalizacji w Europie) gwarantuje, że od momentu jej wdrożenia żadne nowe maszyny Compute Engine nie powstaną w USA czy Azji.
+b. **Audyt i migracja (Remediation):** Polityki organizacji działają prewencyjnie – nie modyfikują i nie usuwają automatycznie zasobów, które powstały przed wdrożeniem polityki. Aby zapewnić 100% zgodności, należy zidentyfikować istniejące maszyny w niedozwolonych regionach i ręcznie lub skryptowo zmigrować ich dyski i konfigurację do Europy.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Use a third-party configuration management tool to monitor... Automatically delete or migrate...
+   * Dlaczego nieprawidłowa: Automatyczne usuwanie działających maszyn wirtualnych bez weryfikacji może doprowadzić do krytycznej awarii systemów produkcyjnych i utraty danych. Bezpieczniejszym i standardowym podejściem jest prewencyjna blokada w chmurze (Org Policy) i planowana migracja.
+B. Deploy a Security Command Center source to detect... Use a custom remediation function... run once a day.
+   * Dlaczego nieprawidłowa: Jest to podejście reaktywne. Maszyny byłyby tworzone, działałyby przez caly dzień, a funkcja usuwała/przenosiła by je raz na dobę. Narusza to ciągłość zgodności. Najlepszą praktyką jest blokada w momencie próby zapisu API chmury (prewencja u źródła).
+C. Use organization policy constraints in Resource Manager to enforce allowed regions... within specific projects.
+   * Dlaczego nieprawidłowa: Ta opcja konfiguruje blokadę dla nowych maszyn, ale całkowicie ignoruje problem już istniejących wdrożeń (existing deployments), które pozostałyby w niedozwolonych lokalizacjach, nie spełniając wymogów audytu.
+
+4. Wskazówki, hinty, tips and tricks:
+* Aby trwale zablokować tworzenie zasobów poza określonym obszarem geograficznym -> Używaj polityki organizacji **`constraints/gcp.resourceLocations`**.
+* Pamiętaj, że polityki organizacji nie działają wstecz (they are not retroactive) – istniejące zasoby muszą być zmigrowane ręcznie.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Enforce allowed regions + existing deployments compliant -> Set organization policy (deny outside/allow inside) + migrate existing instances.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations" target="_blank">Restricting resource locations in Google Cloud</a>
+<a href="https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints" target="_blank">Organization policy constraints reference</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

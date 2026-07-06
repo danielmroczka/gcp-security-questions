@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 270</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_269.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_271.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 270 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">You work for a healthcare provider that is expanding into the cloud to store and process sensitive patient data. You must ensure the chosen Google Cloud configuration meets these strict regulatory requirements: • Data must reside within specific geographic regions. • Certain administrative actions on patient data require explicit approval from designated compliance officers. • Access to patient data must be auditable. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Select a standard Google Cloud region. Restrict access to patient data based on user location and job function by using Access Context Manager. Enable both Cloud Audit Logging and Access Transparency.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Deploy an Assured Workloads environment in an approved region. Configure Access Approval for sensitive operations on patient data. Enable both Cloud Audit Logs and Access Transparency.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Deploy an Assured Workloads environment in multiple regions for redundancy. Utilize custom IAM roles with granular permissions. Isolate network-level data by using VPC Service Controls.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Select multiple standard Google Cloud regions for high availability. Implement Access Control Lists (ACLs) on individual storage objects containing patient data. Enable Cloud Audit Logs.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">B</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+B. Deploy an Assured Workloads environment in an approved region. Configure Access Approval for sensitive operations on patient data. Enable both Cloud Audit Logs and Access Transparency.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź B jest prawidłowa, ponieważ łączy cztery kluczowe technologie Google Cloud wymagane do spełnienia rygorystycznych wymogów prawnych (takich jak HIPAA czy GDPR) w sektorze medycznym.
+
+Spełnienie wymagań krok po kroku:
+a. **Rezydentność danych (Data Residency):** Assured Workloads (AW) automatycznie wymusza na folderze ograniczenia lokalizacji geograficznej (np. tylko regiony europejskie), gwarantując, że dane medyczne fizycznie nie opuszczą dozwolonych obszarów.
+b. **Zatwierdzanie akcji administracyjnych:** Usługa Access Approval (AA) wymaga, aby każda próba dostępu personelu Google do danych pacjenta (np. podczas rozwiązywania problemów technicznych) została zatwierdzona przez wyznaczonego oficera ds. zgodności (compliance officer) w Twojej firmie.
+c. **Audytowalność dostępu:** Cloud Audit Logs rejestruje wszystkie operacje użytkowników wewnątrz projektu, natomiast Access Transparency (AT) dostarcza logi z działań i powodów dostępu inżynierów samego Google, co zapewnia pełną rozliczalność i przejrzystość audytową.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Select a standard Google Cloud region... restrict access... using Access Context Manager...
+   * Dlaczego nieprawidłowa: Standardowy region bez Assured Workloads nie gwarantuje zgodności z wymogami suwerenności personelu wsparcia. Sam Access Context Manager kontroluje dostęp użytkowników firmowych, ale nie dostarcza mechanizmu zatwierdzania akcji administracyjnych personelu wsparcia technicznego Google (brak Access Approval).
+C. Deploy an Assured Workloads environment in multiple regions... Isolate network-level data by using VPC Service Controls.
+   * Dlaczego nieprawidłowa: Choć AW i VPC SC są bardzo bezpieczne, ta opcja pomija kluczowe wymaganie dotyczące konieczności zatwierdzania akcji administracyjnych (Access Approval) oraz audytowalności dostępu inżynierów wsparcia chmury (Access Transparency).
+D. Select multiple standard Google Cloud regions... Implement Access Control Lists (ACLs) on individual storage objects...
+   * Dlaczego nieprawidłowa: Używanie list ACL na obiektach Cloud Storage jest przestarzałą praktyką (zaleca się Uniform IAM). Ta opcja całkowicie ignoruje wymogi dotyczące zatwierdzania działań administracyjnych oraz rezydentności wsparcia technicznego.
+
+4. Wskazówki, hinty, tips and tricks:
+* Spełnienie surowych wymogów regulacyjnych (rezydentność, zatwierdzanie dostępu Google, logowanie) -> Złote trio: **Assured Workloads** + **Access Approval** + **Access Transparency**.
+* Access Transparency rejestruje działania Google, Access Approval pozwala na ich akceptację/odrzucenie przed wykonaniem.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Data reside in region + administrative actions require approval + auditable -> Assured Workloads + Access Approval + Access Transparency.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/assured-workloads/docs/overview" target="_blank">Assured Workloads overview</a>
+<a href="https://cloud.google.com/access-approval/docs/overview" target="_blank">Access Approval overview</a>
+<a href="https://cloud.google.com/logging/docs/audit/access-transparency-overview" target="_blank">Access Transparency overview</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

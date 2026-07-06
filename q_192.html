@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 192</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_191.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_193.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 192 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+Your organization is rolling out a new continuous integration and delivery (CI/CD) process to deploy infrastructure and applications in Google Cloud. Many teams will use their own instances of the CI/CD workflow. It will run on Google Kubernetes Engine (GKE). The CI/CD pipelines must be designed to securely access Google Cloud APIs.
+What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> 1. Create two service accounts, one for the infrastructure and one for the application deployment. 2. Use workload identities to let the pods run the two pipelines and authenticate with the service accounts. 3. Run the infrastructure and application pipelines in separate namespaces.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> 1. Create a dedicated service account for the CI/CD pipelines. 2. Run the deployment pipelines in a dedicated nodes pool in the GKE cluster. 3. Use the service account that you created as identity for the nodes in the pool to authenticate to the Google Cloud APIs.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> 1. Create individual service accounts for each deployment pipeline. 2. Add an identifier for the pipeline in the service account naming convention. 3. Ensure each pipeline runs on dedicated pods. 4. Use workload identity to map a deployment pipeline pod with a service account.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> 1. Create service accounts for each deployment pipeline. 2. Generate private keys for the service accounts. 3. Securely store the private keys as Kubernetes secrets accessible only by the pods that run the specific deploy pipeline.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4 d-none"  >
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+A. 1. Create two service accounts, one for the infrastructure and one for the application deployment. 2. Use workload identities to let the pods run the two pipelines and authenticate with the service accounts. 3. Run the infrastructure and application pipelines in separate namespaces.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Zadaniem jest zaprojektowanie bezpiecznego uwierzytelniania dla procesów CI/CD wdrażających infrastrukturę oraz aplikacje w Google Cloud, uruchomionych na klastrze Google Kubernetes Engine (GKE).
+Zgodnie z najlepszymi praktykami Google Cloud:
+1. **Zasada najniższych uprawnień oraz separacja obowiązków (Separation of Duties):** Pipeline wdrożeniowy infrastruktury (który tworzy sieci, maszyny itp.) potrzebuje znacznie wyższych uprawnień (np. Editor/Owner lub dedykowane role administracyjne) niż pipeline aplikacyjny (który tylko aktualizuje wdrożenie kontenera). Tworzymy więc dwa oddzielne konta serwisowe (GCP Service Accounts).
+2. **Bezpieczne uwierzytelnianie w GKE:** Do uwierzytelniania podów w GKE do API Google Cloud należy stosować **Workload Identity**. Eliminuje to konieczność generowania i przechowywania statycznych kluczy prywatnych (JSON keys) wewnątrz klastra, co chroni przed ich wyciekiem. Workload Identity wiąże konto serwisowe Kubernetes (KSA) z kontem serwisowym Google Cloud (GSA).
+3. **Izolacja sieciowa i logiczna klastra:** Uruchomienie pipeline'ów w osobnych przestrzeniach nazw (namespaces) w Kubernetes zapewnia silną izolację ról RBAC oraz konfiguracji sekretów i zasobów między procesami wdrożenia infrastruktury i aplikacji.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+- B. Use the service account that you created as identity for the nodes in the pool...: Przypisanie konta serwisowego o wysokich uprawnieniach bezpośrednio do węzłów (Node Service Account) sprawia, że każdy pod uruchomiony w danej puli maszyn dziedziczy te same uprawnienia. Narusza to podstawowe zasady bezpieczeństwa (Least Privilege).
+- C. Create individual service accounts for each deployment pipeline... Use workload identity...: Ta opcja proponuje tworzenie indywidualnych kont dla każdego pojedynczego pipeline'u oraz użycie identyfikatora w nazwie konta, co w dużej skali prowadzi do dużego narzutu administracyjnego. Przede wszystkim jednak opcja ta pomija kluczowy element bezpieczeństwa – izolację na poziomie przestrzeni nazw (namespaces) w GKE, co uniemożliwia pełne rozdzielenie uprawnień wewnątrz klastra Kubernetes.
+- D. Generate private keys for the service accounts. Securely store the private keys as Kubernetes secrets...: Korzystanie ze statycznych kluczy prywatnych kont serwisowych (JSON service account keys) w klastrze GKE jest złą praktyką i niesie ryzyko kompromitacji. Zawsze należy dążyć do eliminacji statycznych kluczy na rzecz tożsamości dynamicznych (Workload Identity).
+
+4. Wskazówki, hinty, tips and tricks:
+- W pytaniach dotyczących bezpiecznego dostępu aplikacji/podów działających w **GKE** do zasobów/API Google Cloud (np. Cloud Storage, BigQuery), prawidłowa odpowiedź niemal zawsze wskazuje na **Workload Identity**.
+- Zawsze unikaj odpowiedzi sugerujących pobieranie kluczy prywatnych kont serwisowych (JSON keys) lub nadawanie wysokich uprawnień do kont węzłów (Node Service Accounts).
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+- "GKE" + "securely access Google Cloud APIs" + "CI/CD pipelines" -> Workload Identity + separate namespaces.
+
+6. Dodatkowe źródła i dokumentacja:
+- GKE Workload Identity: <a href="https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity" target="_blank">https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity</a>
+</pre>
+</div>
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

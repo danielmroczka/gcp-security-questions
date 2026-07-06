@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 254</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_253.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_255.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 254 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization has applications that run in multiple clouds. The applications require access to a Google Cloud resource running in your project. You must use short-lived access credentials to maintain security across the clouds. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Create a managed workload identity. Bind an attested identity to the Compute Engine workload.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Create a service account key. Download the key to each application that requires access to the Google Cloud resource.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Create a workload identity pool with a workload identity provider for each external cloud. Set up a service account and add an IAM binding for impersonation.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Create a VPC firewall rule for ingress traffic with an allowlist of the IP ranges of the external cloud applications.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Create a workload identity pool with a workload identity provider for each external cloud. Set up a service account and add an IAM binding for impersonation.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ Workload Identity Federation (Federacja Tożsamości Obciążeń) jest standardowym i najbardziej bezpiecznym mechanizmem Google Cloud umożliwiającym aplikacjom działającym w innych chmurach (np. AWS, Azure) bezpieczne odpytywanie API GCP przy użyciu tożsamości krótkotrwałych.
+
+Zalety i mechanizm działania:
+a. **Pule i dostawcy (Pools & Providers):** Tworzymy dedykowaną pulę tożsamości oraz dostawców dla poszczególnych chmur zewnętrznych (np. provider AWS korzystający z ról IAM AWS, provider Azure z OIDC).
+b. **Wymiana tożsamości:** Aplikacja w innej chmurze pobiera swój natywny token tożsamości (np. AWS STS token) i wysyła go do Google STS w celu wymiany na krótkotrwały token dostępu GCP.
+c. **Impersonacja (Impersonation):** Konto serwisowe w GCP posiada przypisane powiązanie IAM (`roles/iam.workloadIdentityUser`), które zezwala tożsamościom z zewnętrznej puli chmurowej na podszywanie się pod nie. Zapewnia to pełne bezpieczeństwo bez konieczności generowania i dystrybucji kluczy prywatnych.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Create a managed workload identity. Bind an attested identity to the Compute Engine workload.
+   * Dlaczego nieprawidłowa: "Managed workload identity" w tym kontekście brzmi podobnie do Workload Identity w GKE lub Managed Identities w Active Directory, ale samo sformułowanie nie opisuje poprawnej procedury integracji dla aplikacji działających w zewnętrznych chmurach (multi-cloud). Ponadto Compute Engine dotyczy maszyn w GCP, a nie w innych chmurach.
+B. Create a service account key. Download the key to each application...
+   * Dlaczego nieprawidłowa: Pobieranie i zapisywanie kluczy prywatnych (JSON keys) konta serwisowego na maszynach w innych chmurach jest rażącym naruszeniem zasad bezpieczeństwa. W przypadku skompromitowania maszyny w chmurze zewnętrznej, klucz zostaje ujawniony, dając stały dostęp do zasobów GCP.
+D. Create a VPC firewall rule for ingress traffic with an allowlist...
+   * Dlaczego nieprawidłowa: Reguły zapory sieciowej (firewall rules) filtrują ruch sieciowy, ale nie uwierzytelniają aplikacji i nie wydają tokenów dostępu (credentials) wymaganych do autoryzacji zapytań do usług GCP (np. BigQuery czy GCS).
+
+4. Wskazówki, hinty, tips and tricks:
+* Uwierzytelnianie aplikacji z innych chmur (AWS, Azure, multi-cloud) w GCP bez kluczy -> Zawsze **Workload Identity Federation** (WIF).
+* WIF obsługuje natywnie uwierzytelnianie oparte na kontach AWS IAM oraz Azure Active Directory OIDC.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Applications in multiple clouds + access GCP + short-lived credentials -> Workload Identity Federation (workload identity pool).
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/iam/docs/workload-identity-federation" target="_blank">Workload Identity Federation</a>
+<a href="https://cloud.google.com/iam/docs/workload-identity-federation-aws" target="_blank">Configuring Workload Identity Federation with AWS</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

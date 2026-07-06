@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 203</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_202.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_204.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 203 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+Your organization must comply with the regulation to keep instance logging data within Europe. Your workloads will be hosted in the Netherlands in region europe-west4 in a new project. You must configure Cloud Logging to keep your data in the country.
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Configure the organization policy constraint gcp.resourceLocations to europe-west4.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Configure log sink to export all logs into a Cloud Storage bucket in europe-west4.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Create a new log bucket in europe-west4, and redirect the _Default bucket to the new bucket.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Set the logging storage region to europe-west4 by using the gcloud CLI logging settings update.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4 d-none"  >
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+D. Set the logging storage region to europe-west4 by using the gcloud CLI logging settings update.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź D jest prawidłowa, ponieważ najskuteczniejszym i zalecanym sposobem na wymuszenie rezydentności danych logów (data residency) w konkretnym regionie geograficznym dla domyślnych kubełków logów (`_Required` i `_Default`) jest zmiana globalnych ustawień Cloud Logging dla projektu, folderu lub organizacji.
+
+Mechanizm działania:
+a. Domyślnie Cloud Logging przechowuje logi w regionie `global`.
+b. Użycie polecenia `gcloud logging settings update` pozwala administratorowi zdefiniować domyślną lokalizację przechowywania logów (np. `europe-west4` w Holandii).
+c. Wszystkie nowo tworzone zasobniki logów (`_Required` i `_Default`) zostaną automatycznie utworzone w wskazanym regionie, gwarantując, że dane logowania nie opuszczą terytorium Europy, co spełnia wymogi regulacyjne.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Configure the organization policy constraint gcp.resourceLocations to europe-west4.
+   * Dlaczego nieprawidłowa: Ta polityka organizacji ogranicza lokalizację tworzenia zasobów (np. maszyn VM, dysków), ale nie wpływa automatycznie na wewnętrzne mechanizmy i domyślne lokalizacje przechowywania danych w Cloud Logging, które wymagają dedykowanej konfiguracji.
+B. Configure log sink to export all logs into a Cloud Storage bucket in europe-west4.
+   * Dlaczego nieprawidłowa: Chociaż wyeksportowanie logów do kubła GCS w Europie zapisze tam ich kopię, to domyślne logi wciąż będą zapisywane i przechowywane w domyślnych kubełkach `_Default` i `_Required` w lokalizacji `global`, co narusza wymóg przechowywania wszystkich logów wyłącznie w Europie.
+C. Create a new log bucket in europe-west4, and redirect the _Default bucket to the new bucket.
+   * Dlaczego nieprawidłowa: Choć przekierowanie logów do nowego kubełka jest wykonalne, nie rozwiązuje to problemu kubełka `_Required`, który nadal zbiera logi audytowe (Admin Activity) i jest przechowywany w lokalizacji domyślnej (`global`). Tylko aktualizacja ustawień domyślnych (opcja D) rozwiązuje ten problem kompleksowo.
+
+4. Wskazówki, hinty, tips and tricks:
+* Aby zmienić lokalizację domyślnych kubełków logowania (`_Default` i `_Required`), należy skonfigurować ustawienia domyślne (default settings) dla Cloud Logging za pomocą narzędzi gcloud lub API.
+* Pamiętaj o różnicy między eksportem logów (sink) a konfiguracją domyślnego miejsca zapisu logów.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Zmiana domyślnej lokalizacji przechowywania logów (Cloud Logging data residency) -> `logging settings update`.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/logging/docs/regional-log-buckets" target="_blank">Regionalize your log buckets</a>
+<a href="https://cloud.google.com/sdk/gcloud/reference/logging/settings/update" target="_blank">gcloud logging settings update</a>
+</pre>
+</div>
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

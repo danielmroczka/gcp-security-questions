@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 103</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_102.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_104.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 103 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+You are designing a new governance model for your organization's secrets that are stored in Secret Manager. Currently, secrets for Production and Non-Production applications are stored and accessed using service accounts. Your proposed solution must:<br/>* Provide granular access to secrets<br/>* Give you control over the rotation schedules for the encryption keys that wrap your secrets<br/>* Maintain environment separation<br/>* Provide ease of management<br/>Which approach should you take?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> 1. Use separate Google Cloud projects to store Production and Non-Production secrets. 2. Enforce access control to secrets using project-level identity and Access Management (IAM) bindings. 3. Use customer-managed encryption keys to encrypt secrets.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> 1. Use a single Google Cloud project to store both Production and Non-Production secrets. 2. Enforce access control to secrets using secret-level Identity and Access Management (IAM) bindings. 3. Use Google-managed encryption keys to encrypt secrets.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> 1. Use separate Google Cloud projects to store Production and Non-Production secrets. 2. Enforce access control to secrets using secret-level Identity and Access Management (IAM) bindings. 3. Use Google-managed encryption keys to encrypt secrets.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> 1. Use a single Google Cloud project to store both Production and Non-Production secrets. 2. Enforce access control to secrets using project-level Identity and Access Management (IAM) bindings. 3. Use customer-managed encryption keys to encrypt secrets.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4" style="display:none;">
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+A. 1. Use separate Google Cloud projects to store Production and Non-Production secrets. 2. Enforce access control to secrets using project-level IAM bindings. 3. Use customer-managed encryption keys to encrypt secrets.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Pytanie dotyczy zaprojektowania modelu zarządzania sekretami (governance model) w Secret Manager z czterema konkretnymi wymaganiami: (1) granularny dostęp do sekretów, (2) kontrola nad harmonogramem rotacji kluczy szyfrujących, (3) separacja środowisk (environment separation), (4) łatwość zarządzania (ease of management).
+
+Odpowiedź A spełnia wszystkie cztery wymagania jednocześnie:
+
+Separacja środowisk: Użycie oddzielnych projektów Google Cloud dla sekretów produkcyjnych i nieprodukcyjnych zapewnia najsilniejszą izolację środowisk. Projekty w GCP stanowią naturalną granicę bezpieczeństwa (security boundary). Błąd konfiguracyjny w projekcie nieprodukcyjnym nie wpłynie na sekrety produkcyjne i odwrotnie.
+
+Granularny dostęp i łatwość zarządzania: Zarządzanie uprawnieniami na poziomie projektu (project-level IAM) jest znacznie łatwiejsze w utrzymaniu niż zarządzanie na poziomie poszczególnych sekretów. Gdy mamy setki sekretów, przypisanie uprawnień do projektu "secrets-prod" jest operacją jednorazową, zamiast konfigurowania IAM dla każdego sekretu z osobna. Jednocześnie granularność jest zapewniona przez samą separację projektów — zespół produkcyjny ma dostęp tylko do projektu produkcyjnego.
+
+Kontrola nad rotacją kluczy: Customer-Managed Encryption Keys (CMEK) dają pełną kontrolę nad kluczami szyfrującymi, które opakowują (wrap) sekrety w Secret Manager. CMEK pozwala na definiowanie własnych harmonogramów rotacji kluczy w Cloud KMS, co jest kluczowym wymaganiem pytania. Google-managed keys nie dają takiej kontroli — rotacja odbywa się automatycznie według harmonogramu Google.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+B. Single project + secret-level IAM + Google-managed keys
+   * Dlaczego nieprawidłowa: Ta odpowiedź narusza trzy z czterech wymagań. Po pierwsze, pojedynczy projekt nie zapewnia separacji środowisk — sekrety Prod i Non-Prod współistnieją w jednym projekcie. Po drugie, zarządzanie IAM na poziomie poszczególnych sekretów jest bardzo trudne w utrzymaniu przy dużej liczbie sekretów (naruszenie "ease of management"). Po trzecie, Google-managed encryption keys nie dają kontroli nad harmonogramem rotacji kluczy — rotacja jest zarządzana przez Google.
+
+C. Separate projects + secret-level IAM + Google-managed keys
+   * Dlaczego nieprawidłowa: Choć separacja projektów jest poprawna, ta odpowiedź ma dwa problemy. Zarządzanie IAM na poziomie poszczególnych sekretów (secret-level) w kontekście oddzielnych projektów jest niepotrzebnie skomplikowane i nie spełnia wymagania "ease of management". Ponadto, Google-managed keys nie dają kontroli nad rotacją kluczy szyfrujących, co jest jednym z wymagań pytania.
+
+D. Single project + project-level IAM + CMEK
+   * Dlaczego nieprawidłowa: Użycie jednego projektu z uprawnieniami na poziomie projektu oznacza, że wszyscy użytkownicy z dostępem do projektu mają dostęp zarówno do sekretów produkcyjnych, jak i nieprodukcyjnych. To narusza wymaganie separacji środowisk. Choć CMEK i project-level IAM są poprawne, brak izolacji środowisk dyskwalifikuje tę odpowiedź.
+
+4. Wskazówki, hinty, tips and tricks:
+* "Environment separation" w GCP niemal zawsze oznacza oddzielne projekty — to fundamentalna praktyka bezpieczeństwa w Google Cloud.
+* CMEK = kontrola nad kluczami (rotacja, dostęp, wyłączanie). Google-managed = brak kontroli nad rotacją.
+* "Ease of management" + IAM = project-level IAM jest łatwiejsze niż secret-level IAM przy dużej skali.
+* Na egzaminie zawsze analizuj każde wymaganie pytania osobno i eliminuj odpowiedzi, które naruszają choćby jedno z nich.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* "control over rotation schedules" → CMEK (Customer-Managed Encryption Keys)
+* "environment separation" → oddzielne projekty
+* "ease of management" → project-level IAM (nie secret-level)
+* "granular access" + "environment separation" → oddzielne projekty z project-level IAM
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/secret-manager/docs/best-practices" target="_blank">Secret Manager - Best practices</a>
+<a href="https://cloud.google.com/secret-manager/docs/cmek" target="_blank">Secret Manager - Customer-managed encryption keys (CMEK)</a>
+<a href="https://cloud.google.com/kms/docs/key-rotation" target="_blank">Cloud KMS - Key rotation</a>
+<a href="https://cloud.google.com/secret-manager/docs/access-control" target="_blank">Secret Manager - Access control with IAM</a>
+</pre>
+</div>
+<div class="ai-analysis-container" style="display:none; margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3;">
+<h2>Analiza i Podsumowanie Dyskusji (AI)</h2>
+<div class="analysis-section">
+<h3>Analiza i Wyjaśnienie</h3>
+<p><b>Sugerowana odpowiedź: A</b></p>
+<p><b>Głęboka analiza:</b> <p><b>Analiza spornych kwestii (AI):</b> Eksperci na Reddit podkreślają, że zarządzanie IAM na poziomie pojedynczego sekretu (C) to 'piekło operacyjne'. Jeśli masz 500 sekretów, nie chcesz klikać 500 razy. Lepiej nadać uprawnienia do całego projektu 'Secrets-Prod' wybranym procesom.</p></p>
+<h3>Dodatkowe Zasoby (Linki)</h3>
+<ul>
+<li><a href="https://cloud.google.com/secret-manager/docs/best-practices" target="_blank">https://cloud.google.com/secret-manager/docs/best-practices</a></li>
+
+</ul>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const revealButton = document.querySelectorAll('.reveal-solution');
+    revealButton.forEach(button => {
+        let isVisible = false;
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const answerSection = document.querySelector('.q-answer');
+            const aiSection = document.querySelector('.ai-analysis-container');
+            if (isVisible) {
+                if (answerSection) answerSection.style.display = 'none';
+                if (aiSection) aiSection.style.display = 'none';
+                this.textContent = 'Show Suggested Answer';
+            } else {
+                if (answerSection) answerSection.style.display = 'block';
+                if (aiSection) aiSection.style.display = 'block';
+                this.textContent = 'Hide Suggested Answer';
+            }
+            isVisible = !isVisible;
+        });
+    });
+});
+</script>
+<script src="navigation.js"></script>
+</body>
+</html>

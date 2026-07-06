@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 19</title>
+<link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_018.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_020.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 19 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+You need to follow Google-recommended practices to leverage envelope encryption and encrypt data at the application layer. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Generate a data encryption key (DEK) locally to encrypt the data, and generate a new key encryption key (KEK) in Cloud KMS to encrypt the DEK. Store both the encrypted data and the encrypted DEK.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Generate a data encryption key (DEK) locally to encrypt the data, and generate a new key encryption key (KEK) in Cloud KMS to encrypt the DEK. Store both the encrypted data and the KEK.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Generate a new data encryption key (DEK) in Cloud KMS to encrypt the data, and generate a key encryption key (KEK) locally to encrypt the key. Store both the encrypted data and the encrypted DEK.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Generate a new data encryption key (DEK) in Cloud KMS to encrypt the data, and generate a key encryption key (KEK) locally to encrypt the key. Store both the encrypted data and the KEK.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4 d-none"  >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+**Poprawna odpowiedź: A**
+
+**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+Envelope Encryption (Szyfrowanie kopertowe) polega na szyfrowaniu danych za pomocą lokalnego klucza (Data Encryption Key - DEK), a następnie zaszyfrowaniu tego klucza za pomocą klucza nadrzędnego (Key Encryption Key - KEK) zarządzanego w Cloud KMS:
+- **Wygenerowanie DEK lokalnie, zaszyfrowanie danych kluczem DEK, wygenerowanie KEK w Cloud KMS w celu zaszyfrowania DEK, a następnie zapisanie zaszyfrowanych danych oraz zaszyfrowanego DEK (A):** Ta metoda minimalizuje opóźnienia sieciowe, ponieważ dane są szyfrowane na miejscu (lokalnie) szybkim algorytmem symetrycznym (np. AES-256), a do usługi KMS przesyłany jest tylko mały klucz DEK w celu zaszyfrowania (tzw. "opakowania"). Przechowujemy zaszyfrowany DEK obok danych – do odszyfrowania aplikacja wyśle zaszyfrowany DEK do KMS, otrzyma odszyfrowany DEK i nim odszyfruje dane.
+
+**2. Wyjaśnienie niepoprawnych odpowiedzi:**
+- **B. Store both the encrypted data and the KEK:** KEK to klucz główny (klucz-klucz), który nigdy nie opuszcza bezpiecznego modułu HSM w Cloud KMS. Zapisanie KEK lokalnie obok danych jest niemożliwe i zaprzecza idei bezpieczeństwa KMS.
+- **C. Generate a new DEK in Cloud KMS, generate KEK locally:** DEK (klucz szyfrowania danych) jest generowany lokalnie przez aplikację do szyfrowania wolumenu danych, natomiast KEK (klucz szyfrowania klucza) jest generowany i przechowywany w chmurze (KMS), a nie lokalnie.
+- **D. Generate DEK in KMS, generate KEK locally and store KEK:** Podobnie jak w C, odwraca to role i narusza zasady bezpieczeństwa szyfrowania kopertowego.
+
+**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+- Zapamiętaj prosty schemat szyfrowania kopertowego (Envelope Encryption):
+  1. Wygeneruj **DEK** lokalnie.
+  2. Szyfruj dane lokalnie za pomocą **DEK**.
+  3. Wyślij **DEK** do Cloud KMS, aby zaszyfrować go kluczem **KEK**.
+  4. Przechowuj **zaszyfrowane dane** + **zaszyfrowany DEK** (nigdy jawny DEK i nigdy KEK!).
+
+**4. Reguły wyboru odpowiedzi:**
+- Szyfrowanie kopertowe -> Szyfruj dane lokalnym DEK, szyfruj DEK za pomocą KEK w KMS, przechowuj zaszyfrowany DEK.
+
+**5. Dodatkowe źródła:**
+- Cloud KMS Envelope Encryption: https://cloud.google.com/kms/docs/envelope-encryption
+</pre>
+
+</div>
+
+</div>
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

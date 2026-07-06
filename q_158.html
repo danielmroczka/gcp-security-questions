@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 158</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_157.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_159.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 158 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+You are deploying a web application hosted on Compute Engine. A business requirement mandates that application logs are preserved for 12 years and data is kept within European boundaries. You want to implement a storage solution that minimizes overhead and is cost-effective. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Create a Cloud Storage bucket to store your logs in the EUROPE-WEST1 region. Modify your application code to ship logs directly to your bucket for increased efficiency.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Configure your Compute Engine instances to use the Google Cloud's operations suite Cloud Logging agent to send application logs to a custom log bucket in the EUROPE-WEST1 region with a custom retention of 12 years.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Use a Pub/Sub topic to forward your application logs to a Cloud Storage bucket in the EUROPE-WEST1 region.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Configure a custom retention policy of 12 years on your Google Cloud's operations suite log bucket in the EUROPE-WEST1 region.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">B</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4 d-none"  >
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+B. Configure your Compute Engine instances to use the Google Cloud's operations suite Cloud Logging agent to send application logs to a custom log bucket in the EUROPE-WEST1 region with a custom retention of 12 years.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Wymagania: przechowywanie logów aplikacji przez 12 lat, rezydentność danych w Europie (Europe-west1), minimalizacja narzutu operacyjnego i efektywność kosztowa:
+- Zastosowanie Cloud Logging Agent (Ops Agent) na maszynach wirtualnych pozwala na automatyczne zbieranie i wysyłanie logów systemowych oraz aplikacyjnych do usługi Cloud Logging bez ingerencji w kod źródłowy aplikacji (brak overheadu).
+- Cloud Logging pozwala na tworzenie własnych, dedykowanych kubełków logów (Custom Log Buckets) w określonych regionach (np. `europe-west1`), co spełnia wymóg przechowywania danych w granicach europejskich.
+- Konfiguracja czasu retencji (retention) na 12 lat bezpośrednio na tym kubełku logów w pełni automatyzuje proces przechowywania i usuwania logów po tym okresie z minimalnym kosztem i zerowym narzutem administracyjnym.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+- A. Zapis bezpośrednio do Cloud Storage z kodu aplikacji: Zmiana kodu aplikacji w celu bezpośredniego przesyłania logów do GCS generuje narzut deweloperski, utrudnia zarządzanie błędami transmisji i uniemożliwia łatwe przeszukiwanie logów w czasie rzeczywistym.
+- C. Przekazywanie logów przez Pub/Sub do Cloud Storage: Pub/Sub wprowadza dodatkową warstwę architektoniczną, co zwiększa koszty operacyjne (opłaty za transfer i przetwarzanie wiadomości w Pub/Sub) oraz stopień skomplikowania rozwiązania.
+- D. Konfiguracja retencji bezpośrednio na domyślnym kubełku logów bez agenta: Bez zainstalowania agenta (Ops Agent) na maszynach VM, logi aplikacji nie będą przesyłane do Cloud Logging. Ponadto domyślne kubełki (`_Default`) nie gwarantują lokalizacji geograficznej wymaganej przez politykę rezydentności.
+
+4. Wskazówki, hinty, tips and tricks:
+- W chmurze Google Cloud, aby zbierać logi z maszyn wirtualnych Compute Engine w sposób zautomatyzowany, należy zainstalować **Cloud Logging Agent / Ops Agent**.
+- Custom Log Buckets pozwalają na ustawienie dowolnego regionu składowania logów oraz czasu retencji dostosowanego do wymogów prawnych (compliance).
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+- Zbieranie logów z VM + rezydentność w regionie + retencja X lat -> Cloud Logging Agent + Custom Log Bucket z retencją w wybranym regionie.
+
+6. Dodatkowe źródła i dokumentacja:
+- Regionalize log buckets: <a href="https://cloud.google.com/logging/docs/routing/regional-log-buckets" target="_blank">https://cloud.google.com/logging/docs/routing/regional-log-buckets</a>
+- Ops Agent overview: <a href="https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent" target="_blank">https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent</a>
+</pre>
+</div>
+
+<script src="navigation.js"></script>

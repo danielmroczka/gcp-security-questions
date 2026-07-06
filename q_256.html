@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 256</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_255.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_257.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 256 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization has two VPC Service Controls service perimeters, Perimeter-A and Perimeter-B, in Google Cloud. You want to allow data to be copied from a Cloud Storage bucket in Perimeter-A to another Cloud Storage bucket in Perimeter-B. You must minimize exfiltration risk, only allow required connections, and follow the principle of least privilege. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Configure a perimeter bridge between Perimeter-A and Perimeter-B, and specify the Cloud Storage buckets as the resources involved.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Configure a perimeter bridge between the projects hosting the Cloud Storage buckets in Perimeter-A and Perimeter-B.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Configure an egress rule for the Cloud Storage bucket in Perimeter-A and a corresponding ingress rule in Perimeter-B.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Configure a bidirectional egress/ingress rule for the Cloud Storage buckets in Perimeter-A and Perimeter-B.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Configure an egress rule for the Cloud Storage bucket in Perimeter-A and a corresponding ingress rule in Perimeter-B.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ reguły wejścia i wyjścia (Ingress/Egress Rules) w VPC Service Controls (VPC SC) pozwalają na precyzyjne wdrożenie zasady najmniejszych uprawnień (least privilege) dla komunikacji między perymetrami, ograniczając dostęp tylko do konkretnych kubełków i tożsamości.
+
+Dlaczego to najlepsze podejście:
+a. **Egress Rule w Perymetrze A:** Pozwala na ruch wychodzący z zasobów wewnątrz Perymetru A (np. z projektu źródłowego) wyłącznie do określonego celu w Perymetrze B (np. do docelowego kubełka Cloud Storage).
+b. **Ingress Rule w Perymetrze B:** Zezwala na ruch przychodzący do Perymetru B wyłącznie z autoryzowanego źródła w Perymetrze A (np. z konkretnego konta serwisowego wykonującego kopiowanie).
+c. **Bezpieczeństwo:** Ta metoda nie znosi ogólnych zabezpieczeń perymetru – ruch jest dopuszczony tylko dla jednego, wskazanego zadania kopiowania i nie stwarza ryzyka masowego wycieku danych (exfiltration) z innych projektów w perymetrach.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Configure a perimeter bridge... and specify the Cloud Storage buckets as the resources...
+   * Dlaczego nieprawidłowa: Mosty perymetru (Perimeter Bridges) łączą całe projekty wewnątrz perymentów. Nie pozwalają na definiowanie reguł na poziomie pojedynczych kubełków (buckets) w taki sposób jak reguły Ingress/Egress, co narusza zasadę najmniejszych uprawnień.
+B. Configure a perimeter bridge between the projects hosting the Cloud Storage buckets...
+   * Dlaczego nieprawidłowa: Podobnie jak opcja A, stworzenie mostu perymetru na poziomie projektów łączy je całkowicie dla wszystkich chronionych usług. Pozwoliłoby to na niekontrolowaną komunikację między innymi zasobami w tych projektach, co zwiększa ryzyko eksfiltracji danych.
+D. Configure a bidirectional egress/ingress rule for the Cloud Storage buckets...
+   * Dlaczego nieprawidłowa: Pytanie wymaga skopiowania danych w jednym kierunku: z perymetru A do perymetru B. Konfigurowanie reguł dwukierunkowych (bidirectional) jest nadmiarowe i łamie zasadę least privilege (otwiera niepotrzebny ruch w drugą stronę).
+
+4. Wskazówki, hinty, tips and tricks:
+* Aby połączyć dwa perymetry VPC SC:
+  - Dla szerokiego połączenia projektów -> **Perimeter Bridge**.
+  - Dla precyzyjnego dostępu opartego na tożsamościach i konkretnych zasobach (least privilege) -> **Ingress/Egress Rules**.
+* Zawsze preferuj reguły Ingress/Egress nad mostami perymetru na egzaminie z bezpieczeństwa, gdy wymagana jest kontrola granularna.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Allow copy between two perimeters + least privilege + minimize exfiltration -> Egress rule in source + Ingress rule in destination.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules" target="_blank">Ingress and egress rules for VPC Service Controls</a>
+<a href="https://cloud.google.com/vpc-service-controls/docs/secure-data-exchange" target="_blank">Secure data exchange across perimeters</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

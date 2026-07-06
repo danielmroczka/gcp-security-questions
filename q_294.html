@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 294</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_293.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_295.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 294 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+Your organization has an internet-facing application behind a load balancer. Your regulators require end-to-end encryption of user login credentials. You must implement this requirement. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Generate a symmetric key with Cloud KMS. Encrypt client-side user credentials by using the symmetric key.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Concatenate the credential with a timestamp. Submit the timestamp and hashed value of credentials to the network.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Deploy the TLS certificate at Google Cloud Global HTTPs Load Balancer, and submit the user credentials through HTTPs.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Generate an asymmetric key with Cloud KMS. Encrypt client-side user credentials using the public key.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+<br/>
+</span>
+</div>
+</div>
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Deploy the TLS certificate at Google Cloud Global HTTPs Load Balancer, and submit the user credentials through HTTPs.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ przesłanie poświadczeń użytkownika (credentials) przez bezpieczny protokół HTTPS (zabezpieczony certyfikatem TLS terminowanym na globalnym Load Balancerze HTTPS) jest standardowym, bezpiecznym i powszechnie akceptowanym przez audytorów sposobem na zapewnienie szyfrowania danych logowania w transporcie.
+
+Dlaczego to poprawne podejście:
+a. **Szyfrowanie w transporcie (Transit Encryption):** Protokół TLS szyfruje całą sesję HTTP, w tym nagłówki, ciasteczka sesyjne oraz treść żądania (payload zawierający login i hasło) przed opuszczeniem przeglądarki użytkownika.
+b. **Globalny Load Balancer:** Terminowanie połączeń TLS na poziomie Global HTTPS Load Balancera (GFE) chroni aplikację przed atakami DDoS i pozwala na centralne zarządzanie certyfikatami SSL za pomocą Certificate Managera. Po deszyfrowaniu, ruch do maszyn backendowych w sieci VPC również może być szyfrowany (end-to-end), jeśli skonfigurujemy HTTPS na backendzie.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Generate a symmetric key with Cloud KMS. Encrypt client-side user credentials by using the symmetric key.
+   * Dlaczego nieprawidłowa: Szyfrowanie symetryczne wymaga posiadania tego samego klucza po stronie klienta (przeglądarki) i serwera. Przekazanie klucza symetrycznego do kodu JavaScript w przeglądarce użytkownika oznacza, że klucz ten stałby się publicznie dostępny dla każdego (w tym dla napastników), co całkowicie kompromituje bezpieczeństwo szyfrowania.
+B. Concatenate the credential with a timestamp. Submit the timestamp and hashed value...
+   * Dlaczego nieprawidłowa: Samo haszowanie hasła z solą/timestampem bez szyfrowania kanału komunikacji (TLS) chroni przed niektórymi atakami typu replay, ale nie zapewnia pełnej ochrony w transporcie i nie stanowi standardowego mechanizmu end-to-end encryption wymaganego przez współczesne regulacje bezpieczeństwa.
+D. Generate an asymmetric key with Cloud KMS. Encrypt client-side user credentials using the public key.
+   * Dlaczego nieprawidłowa: Choć szyfrowanie kluczem publicznym (asymetrycznym) w przeglądarce jest kryptograficznie bezpieczne (tylko serwer posiadający klucz prywatny w KMS może odszyfrować dane), to wdrażanie własnego szyfrowania aplikacyjnego w przeglądarce bez TLS jest niezwykle skomplikowane, podatne na błędy implementacji i niepotrzebne, ponieważ standardowy protokół HTTPS (TLS) realizuje to zadanie automatycznie i bezpiecznie na poziomie przeglądarki i serwera web.
+
+4. Wskazówki, hinty, tips and tricks:
+* Bezpieczne przesyłanie poświadczeń w internecie (encryption of credentials in transit) -> Zawsze używaj **HTTPS / TLS** z certyfikatem zainstalowanym na **Load Balancerze**.
+* Unikaj własnych systemów szyfrowania haseł w kodzie JavaScript przeglądarki.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* End-to-end encryption of user credentials / secure transport -> Deploy TLS certificate on HTTPs Load Balancer + submit via HTTPs.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/load-balancing/docs/https" target="_blank">External HTTP(S) Load Balancing overview</a>
+<a href="https://cloud.google.com/load-balancing/docs/ssl-certificates" target="_blank">SSL certificates for Load Balancing</a>
+</pre>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 278</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_277.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_279.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 278 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization is preparing to build business services in Google Cloud for the first time. You must determine where to apply appropriate controls or policies. You must also identify what aspects of your cloud deployment are managed by Google. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Model your deployment on the Google Enterprise foundations blueprint. Follow the blueprint exactly and rely on the blueprint to maintain the posture necessary for your business.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Use the Risk Manager tool in the Risk Protection Program to generate a report on your cloud security posture. Obtain cyber insurance coverage.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Subscribe to the Google Cloud release notes to keep up on product updates and when new services are available. Evaluate new services for appropriate use before enabling their API.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Study the shared responsibilities model. Depending on your business scenario, you might need to consider your responsibilities based on the location of your business offices, your customers, and your data.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+D. Study the shared responsibilities model. Depending on your business scenario, you might need to consider your responsibilities based on the location of your business offices, your customers, and your data.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź D jest prawidłowa, ponieważ model współdzielonej odpowiedzialności (Shared Responsibility Model) jest fundamentem planowania bezpieczeństwa i zgodności (compliance) przy migracji do chmury publicznej.
+
+Dlaczego to podejście jest kluczowe:
+a. **Jasne granice:** Klient musi dokładnie wiedzieć, które elementy zabezpieczeń leżą po jego stronie (np. konfiguracja IAM, szyfrowanie danych CMEK, reguły firewall), a które są zarządzane przez Google (np. bezpieczeństwo fizyczne serwerów, patchowanie hypervisora).
+b. **Wpływ regulacji (Compliance):** Odpowiedzialność klienta zależy od kontekstu biznesowego (np. lokalizacja biur, rezydentność danych klientów z UE podlegających pod GDPR vs. klientów z USA podlegających pod HIPAA), co determinuje konieczność wdrożenia specyficznych polityk w chmurze.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Model your deployment on the Google Enterprise foundations blueprint. Follow the blueprint exactly...
+   * Dlaczego nieprawidłowa: Choć blueprinty Google są świetnym punktem odniesienia, to ślepe kopiowanie konfiguracji bez dostosowania do własnych, specyficznych wymagań biznesowych, regulacyjnych i operacyjnych może doprowadzić do luk w zabezpieczeniach lub zablokowania procesów biznesowych.
+B. Use the Risk Manager tool... Obtain cyber insurance coverage.
+   * Dlaczego nieprawidłowa: Zakup ubezpieczenia cybernetycznego (cyber insurance) jest elementem strategii transferu ryzyka, ale nie zastępuje wdrożenia faktycznych technicznych zabezpieczeń i kontroli operacyjnych w chmurze.
+C. Subscribe to the Google Cloud release notes... Evaluate new services... before enabling their API.
+   * Dlaczego nieprawidłowa: Śledzenie nowości i blokowanie API to dobre praktyki operacyjne, ale nie pomagają w zdefiniowaniu podstawowych granic odpowiedzialności i wdrożeniu pierwszych, kluczowych mechanizmów kontroli bezpieczeństwa dla nowych usług chmurowych.
+
+4. Wskazówki, hinty, tips and tricks:
+* Fundament bezpieczeństwa w chmurze -> Zrozumienie **Shared Responsibility Model** (Modelu Współdzielonej Odpowiedzialności).
+* Google odpowiada za bezpieczeństwo samej chmury (of the cloud), a klient za bezpieczeństwo w chmurze (in the cloud).
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* First time in GCP + apply controls + identify what is managed by Google -> Study the shared responsibilities model.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/security/shared-responsibility-model" target="_blank">Google Cloud Shared Responsibility Model</a>
+<a href="https://cloud.google.com/architecture/framework/security" target="_blank">Google Cloud Architecture Framework: Security</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

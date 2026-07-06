@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 257</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_256.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_258.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 257 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">You are running code in Google Kubernetes Engine (GKE) containers in Google Cloud that require access to objects stored in a Cloud Storage bucket. You need to securely grant the Pods access to the bucket while minimizing management overhead. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Create a service account. Grant bucket access to the Pods by using Workload Identity Federation for GKE.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Create a service account with keys. Store the keys in Secret Manager with a 30-day rotation schedule. Reference the keys in the Pods.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Create a service account with keys. Store the keys as a Kubernetes secret. Reference the keys in the Pods.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Create a service account with keys. Store the keys in Secret Manager. Reference the keys in the Pods.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+A. Create a service account. Grant bucket access to the Pods by using Workload Identity Federation for GKE.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź A jest prawidłowa, ponieważ Workload Identity Federation for GKE (dawniej znane jako GKE Workload Identity) jest zalecaną i najbezpieczniejszą metodą nadawania uprawnień IAM aplikacjom działającym w kontenerach na klastrach GKE.
+
+Mechanizm działania i zalety:
+a. **Mapowanie tożsamości Kubernetes na IAM:** Łączymy konto serwisowe Kubernetes (KSA - używane wewnątrz klastra przez Pod) z kontem serwisowym Google Cloud (GSA).
+b. **Brak kluczy:** Pod pobiera krótkotrwałe tokeny dostępu bezpośrednio z serwera metadanych GKE w locie. Całkowicie eliminuje to potrzebę generowania, zapisywania, rotowania i zabezpieczania fizycznych kluczy prywatnych kont serwisowych (plików JSON) wewnątrz klastra.
+c. **Minimalizacja narzutu (least management overhead):** Zarządzanie uprawnieniami odbywa się w pełni deklaratywnie przez pliki YAML w Kubernetes, a tokeny są odnawiane automatycznie przez platformę GCP.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+B. ...Store the keys in Secret Manager with a 30-day rotation schedule...
+   * Dlaczego nieprawidłowa: Zapisywanie kluczy w Secret Managerze i wdrażanie ich rotacji co 30 dni wymaga napisania i utrzymywania własnych skryptów rotujących klucze i aktualizujących je w Podach. Generuje to duży narzut administracyjny (management overhead) w porównaniu do bezkluczowego Workload Identity.
+C. ...Store the keys as a Kubernetes secret. Reference the keys in the Pods.
+   * Dlaczego nieprawidłowa: Przechowywanie kluczy prywatnych jako Kubernetes Secrets jest mniej bezpieczne (są one jedynie zakodowane w Base64 i mogą zostać odczytane przez każdego z dostępem do namespace) oraz wymaga ręcznego odnawiania kluczy przed ich wygaśnięciem.
+D. ...Store the keys in Secret Manager. Reference the keys...
+   * Dlaczego nieprawidłowa: Podobnie jak opcja B, ta metoda wymaga zarządzania sekretami i integracji z Secret Managerem z poziomu kodu aplikacji w Podach, co zwiększa złożoność kodu i narzut operacyjny w porównaniu z automatycznym i natywnym Workload Identity.
+
+4. Wskazówki, hinty, tips and tricks:
+* Nadawanie uprawnień Podom w GKE do usług GCP (GCS, BigQuery itp.) -> Zawsze wybieraj **Workload Identity Federation for GKE** (Workload Identity).
+* Jest to złoty standard bezpieczeństwa GKE eliminujący pliki kluczy kont serwisowych.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* GKE containers/Pods + access Cloud Storage bucket + minimize management overhead -> Workload Identity Federation for GKE.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity" target="_blank">Using Workload Identity Federation for GKE</a>
+<a href="https://cloud.google.com/blog/products/containers-kubernetes/introducing-gke-workload-identity" target="_blank">Introducing GKE Workload Identity</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

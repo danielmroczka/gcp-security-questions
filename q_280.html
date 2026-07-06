@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 280</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_279.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_281.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 280 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization has an application hosted in Cloud Run. You must control access to the application by using Cloud Identity-Aware Proxy (IAP) with these requirements: • Only users from the AppDev group may have access. • Access must be restricted to internal network IP addresses. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Deploy a VPN gateway and instruct the AppDev group to connect to the company network before accessing the application.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Create an access level that includes conditions for internal IP address ranges and AppDev groups. Apply this access level to the application's IAP policy.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Configure firewall rules to limit access to IAP based on the AppDev group and source IP addresses.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Configure IAP to enforce multi-factor authentication (MFA) for all users and use network intrusion detection systems (NIDS) to block unauthorized access attempts.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">B</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+B. Create an access level that includes conditions for internal IP address ranges and AppDev groups. Apply this access level to the application's IAP policy.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź B jest prawidłowa, ponieważ łączy weryfikację tożsamości użytkownika (IAM) z weryfikacją kontekstu sieciowego (Access Context Manager) w ramach jednej spójnej polityki Identity-Aware Proxy (IAP).
+
+Zasada działania:
+a. **Identity-Aware Proxy (IAP):** Zabezpiecza aplikację w Cloud Run. Aby użytkownik mógł wejść do aplikacji, IAP musi autoryzować jego tożsamość.
+b. **Access Context Manager (ACM) & Access Levels:** Tworzymy poziom dostępu (Access Level) w ACM. Definiujemy w nim warunki: adres IP klienta musi należeć do wewnętrznych zakresów firmowych (IP ranges), a tożsamość musi być członkiem grupy `AppDev`.
+c. **Powiązanie z IAP:** Ten poziom dostępu aplikujemy bezpośrednio do polityki IAP dla Cloud Run. W rezultacie użytkownicy z grupy AppDev będą mieli dostęp wyłącznie wtedy, gdy będą łączyć się z biura lub przez firmowy VPN (pochodząc z dozwolonego IP). Ruch z innych lokalizacji zostanie zablokowany na poziomie IAP.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Deploy a VPN gateway and instruct the AppDev group to connect...
+   * Dlaczego nieprawidłowa: Sam VPN pozwala na dostęp do sieci wewnętrznej GCP, ale bez IAP nie wymusza autoryzacji opartej o tożsamość grupy AppDev dla samej aplikacji w Cloud Run. Ponadto instruowanie użytkowników (human procedure) nie zastępuje prewencyjnego wymuszenia technicznego (technical enforcement) na poziomie IAP.
+C. Configure firewall rules to limit access to IAP based on the AppDev group...
+   * Dlaczego nieprawidłowa: Klasyczne reguły zapory sieciowej (firewall rules) działają w warstwach 3/4 (IP/Porty) i nie posiadają żadnych funkcji pozwalających na identyfikację przynależności użytkowników do grup Cloud Identity/IAM. Zapora sieciowa nie potrafi filtrować ruchu na podstawie grup użytkowników.
+D. Configure IAP to enforce multi-factor authentication (MFA) for all users and use network intrusion detection...
+   * Dlaczego nieprawidłowa: Włączenie MFA zwiększa bezpieczeństwo logowania, ale nie ogranicza dostępu fizycznego wyłącznie do określonych zakresów adresów IP (internal network IPs), co było kluczowym wymaganiem sieciowym zadania.
+
+4. Wskazówki, hinty, tips and tricks:
+* Ograniczenie dostępu do aplikacji za IAP na podstawie adresu IP i tożsamości użytkownika -> Zawsze używaj **Access Context Manager (Access Levels)** i przypisz je do polityki IAP.
+* IAP w pełni współpracuje z Access Context Manager w celu wdrażania zasad Zero Trust.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Cloud Run + IAP + restrict to group and internal IP -> Create access level in Access Context Manager + Apply to IAP.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/iap/docs/concepts-overview" target="_blank">Identity-Aware Proxy (IAP) overview</a>
+<a href="https://cloud.google.com/access-context-manager/docs/overview" target="_blank">Access Context Manager overview</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

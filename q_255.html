@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 255</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_254.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_256.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 255 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization's financial modeling application is already deployed on Google Cloud. The application processes large amounts of sensitive customer financial data. Application code is old and poorly understood by your current software engineers. Recent threat modeling exercises have highlighted the potential risk of sophisticated side-channel attacks against the application while the application is running. You need to further harden the Google Cloud solution to mitigate the risk of these side-channel attacks, ensuring maximum protection for the confidentiality of financial data during processing, while minimizing application problems. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Enforce stricter access controls for Compute Engine instances by using service accounts, least privilege IAM policies, and limit network access.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Implement a runtime library designed to introduce noise and timing variations into the application's execution which will disrupt side-channel attack.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Migrate the application to Confidential VMs to provide hardware-level encryption of memory and protect sensitive data during processing.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Utilize customer-managed encryption keys (CMEK) to ensure complete control over the encryption process.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Migrate the application to Confidential VMs to provide hardware-level encryption of memory and protect sensitive data during processing.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź C jest prawidłowa, ponieważ Poufne Maszyny Wirtualne (Confidential VMs) oferują sprzętowe szyfrowanie pamięci operacyjnej (RAM encryption) w czasie rzeczywistym, co bezpośrednio chroni dane przed zaawansowanymi atakami typu side-channel (takimi jak ataki czasowe czy wyciąganie danych z pamięci fizycznej przez system hosta).
+
+Dlaczego to najlepsze rozwiązanie dla starego kodu:
+a. **Sprzętowe szyfrowanie (AMD SEV):** Klucze szyfrujące pamięć są generowane przez procesor wewnątrz bezpiecznej enklawy i nie są znane oprogramowaniu Google ani systemowi hosta. Chroni to dane w użyciu (in-use).
+b. **Brak modyfikacji kodu:** Confidential VMs działają transparentnie dla systemu operacyjnego i aplikacji. Przeniesienie aplikacji na ten typ maszyn nie wymaga przepisywania starego kodu ani zmian w architekturze oprogramowania, co minimalizuje ryzyko błędów (application problems).
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Enforce stricter access controls for Compute Engine... least privilege IAM...
+   * Dlaczego nieprawidłowa: Kontrola dostępu IAM oraz ograniczenia sieciowe chronią przed nieautoryzowanym wywołaniem API i logowaniem. Nie chronią jednak przed atakami typu side-channel na poziomie procesora fizycznego, jeśli złośliwy proces działa na tym samym hoście fizycznym lub w przypadku naruszenia hypervisora.
+B. Implement a runtime library designed to introduce noise and timing variations...
+   * Dlaczego nieprawidłowa: Wprowadzanie sztucznych opóźnień (noise) do kodu starej aplikacji finansowej wymaga głębokiej modyfikacji kodu i środowiska uruchomieniowego, co niesie ogromne ryzyko zepsucia aplikacji (naruszenie warunku "minimizing application problems") i może drastycznie obniżyć jej wydajność.
+D. Utilize customer-managed encryption keys (CMEK)...
+   * Dlaczego nieprawidłowa: Klucze CMEK chronią dane w spoczynku (at-rest) na dyskach oraz w kubełkach. Nie chronią danych w momencie, gdy są one ładowane w postaci jawnej do pamięci RAM procesora w celu wykonania obliczeń finansowych.
+
+4. Wskazówki, hinty, tips and tricks:
+* Ochrona danych w użyciu (data in use) przed atakami na poziomie sprzętowym/pamięci RAM (side-channel attacks) -> **Confidential VMs**.
+* Confidential VMs nie wymagają żadnych modyfikacji w kodzie aplikacji.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Side-channel attacks / protect data in memory during processing + minimize application problems -> Confidential VMs.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/confidential-computing" target="_blank">Confidential Computing overview</a>
+<a href="https://cloud.google.com/confidential-computing/confidential-vm/docs/about-confidential-vm" target="_blank">Confidential VM technology</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

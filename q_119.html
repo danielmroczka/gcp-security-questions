@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 119</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_118.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_120.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 119 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+You are a member of your company's security team. You have been asked to reduce your Linux bastion host external attack surface by removing all public IP addresses. Site Reliability Engineers (SREs) require access to the bastion host from public locations so they can access the internal VPC while off-site. How should you enable this access?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Implement Cloud VPN for the region where the bastion host lives.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Implement OS Login with 2-step verification for the bastion host.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Implement Identity-Aware Proxy TCP forwarding for the bastion host.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Implement Google Cloud Armor in front of the bastion host.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">C</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4" style="display:none;">
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+C. Implement Identity-Aware Proxy TCP forwarding for the bastion host.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Celem jest wyeliminowanie publicznych adresów IP z hosta bastionu (bastion host) w celu zmniejszenia powierzchni ataku, przy jednoczesnym zachowaniu możliwości zdalnego dostępu SSH dla administratorów SRE z dowolnych lokalizacji w internecie:
+- Cloud Identity-Aware Proxy (IAP) posiada funkcję przekierowania TCP (TCP forwarding). Pozwala ona na tunelowanie połączeń SSH (port 22) lub RDP (port 3389) do maszyn wirtualnych, które posiadają wyłącznie prywatne adresy IP.
+- Użytkownicy uwierzytelniają się za pomocą swoich poświadczeń Google IAM. IAP weryfikuje ich uprawnienia, a następnie tuneluje ruch SSH przez HTTPS bezpośrednio do maszyny, eliminując potrzebę posiadania publicznego adresu IP na bastionie oraz chroniąc port SSH przed skanowaniem i atakami brute-force z internetu.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+- A. Wdrożenie Cloud VPN: Cloud VPN wymaga konfiguracji stałego tunelu IPSec z konkretną lokalizacją sieciową (np. biurem firmy). Nie jest to elastyczne rozwiązanie dla administratorów SRE, którzy łączą się dynamicznie z różnych publicznych lokalizacji (np. z domu, kawiarni).
+- B. Wdrożenie OS Login z weryfikacją dwuetapową: OS Login ułatwia zarządzanie kluczami SSH i zabezpiecza proces logowania (uwierzytelniania), ale nie rozwiązuje problemu routingu sieciowego – bez zewnętrznego IP lub tunelu IAP użytkownik z internetu nie nawiąże połączenia sieciowego z maszyną o prywatnym IP.
+- D. Wdrożenie Google Cloud Armor: Cloud Armor działa na poziomie Load Balancerów (HTTP/HTTPS, TCP/SSL Proxy) chroniąc aplikacje webowe przed atakami DDoS i exploitami. Nie służy do zabezpieczania bezpośredniego dostępu SSH do pojedynczych maszyn bastionowych.
+
+4. Wskazówki, hinty, tips and tricks:
+- Dostęp SSH do maszyn prywatnych (bez publicznego IP) z internetu bez korzystania z tradycyjnego VPN-u -> **IAP TCP Forwarding** (komenda `gcloud compute ssh --tunnel-through-iap`).
+- Jest to jedno z najważniejszych zaleceń bezpieczeństwa GCP w zakresie dostępu administracyjnego.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+- Brak publicznego IP + zdalny dostęp SSH z internetu -> IAP TCP Forwarding.
+
+6. Dodatkowe źródła i dokumentacja:
+- Identity-Aware Proxy TCP forwarding: <a href="https://cloud.google.com/iap/docs/tcp-forwarding-overview" target="_blank">https://cloud.google.com/iap/docs/tcp-forwarding-overview</a>
+</pre>
+</div>
+<div class="ai-analysis-container" style="display:none; margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3;">
+<h2>Analiza i Podsumowanie Dyskusji (AI)</h2>
+<div class="analysis-section">
+<h3>Analiza i Wyjaśnienie</h3>
+<p><b>Sugerowana odpowiedź: C</b></p>
+<p><b>Głęboka analiza:</b> <p><b>Analiza spornych kwestii (AI):</b> Dyskusja na Reddit zwraca uwagę na niebezpieczeństwo: Bucket Lock jest NIEODWRACALNY. Jeśli ustawisz retencję na 10 lat i ją zablokujesz, będziesz płacić za ten bucket przez 10 lat i nawet support Google go nie usunie. Dlatego jest to idealna odpowiedź na 'chronienie ważnych danych' (compliance).</p></p>
+<h3>Dodatkowe Zasoby (Linki)</h3>
+<ul>
+<li><a href="https://cloud.google.com/storage/docs/bucket-lock" target="_blank">https://cloud.google.com/storage/docs/bucket-lock</a></li>
+
+</ul>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const revealButton = document.querySelectorAll('.reveal-solution');
+    revealButton.forEach(button => {
+        let isVisible = false;
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const answerSection = document.querySelector('.q-answer');
+            const aiSection = document.querySelector('.ai-analysis-container');
+            if (isVisible) {
+                if (answerSection) answerSection.style.display = 'none';
+                if (aiSection) aiSection.style.display = 'none';
+                this.textContent = 'Show Suggested Answer';
+            } else {
+                if (answerSection) answerSection.style.display = 'block';
+                if (aiSection) aiSection.style.display = 'block';
+                this.textContent = 'Hide Suggested Answer';
+            }
+            isVisible = !isVisible;
+        });
+    });
+});
+</script>
+<script src="navigation.js"></script>
+</body>
+</html>

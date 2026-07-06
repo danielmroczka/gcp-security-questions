@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 269</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_268.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_270.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 269 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization is using Security Command Center Premium as a central tool to detect and alert on security threats. You also want to alert on suspicious outbound traffic that is targeting domains of known suspicious web services. What should you do?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Create a DNS Server Policy in Cloud DNS and turn on logs. Attach this policy to all Virtual Private Cloud networks with internet connectivity.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Forward all logs to Chronicle Security Information and Event Management. Create an alert for suspicious egress traffic to the internet.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Create a Cloud Intrusion Detection endpoint. Connect this endpoint to all Virtual Private Cloud networks with internet connectivity.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Create an egress firewall policy with Threat Intelligence as the destination. Attach this policy to all Virtual Private Cloud networks with internet connectivity.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+D. Create an egress firewall policy with Threat Intelligence as the destination. Attach this policy to all Virtual Private Cloud networks with internet connectivity.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź D jest prawidłowa, ponieważ usługa Cloud Firewall (w wersji Advanced/Plus) wspiera funkcję Threat Intelligence (Inteligentna analiza zagrożeń), która pozwala na automatyczne blokowanie lub logowanie ruchu do znanych, szkodliwych adresów IP i domen w internecie.
+
+Jak to działa:
+a. **Threat Intelligence w Firewallu:** Google stale aktualizuje listy reputacyjne zawierające adresy IP powiązane ze złośliwym oprogramowaniem, botnetami, serwerami Command & Control (C2) oraz witrynami phishingowymi.
+b. **Polityka Egress:** Tworząc regułę zapory sieciowej dla ruchu wychodzącego (egress) z celem (destination) ustawionym na odpowiednią listę Threat Intelligence (np. "iplist-malicious-ips"), system automatycznie zablokuje lub wyśle alert w przypadku próby nawiązania połączenia przez dowolną maszynę w sieci VPC z tymi adresami. Jest to wysoce skuteczna obrona prewencyjna.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. Create a DNS Server Policy in Cloud DNS and turn on logs...
+   * Dlaczego nieprawidłowa: Włączenie logowania zapytań DNS pozwala na audyt (monitoring) i analizę po fakcie, ale samo w sobie nie blokuje złośliwego ruchu IP i nie generuje automatycznych alertów o zagrożeniach w czasie rzeczywistym w SCC w taki sposób jak zapora sieciowa.
+B. Forward all logs to Chronicle Security Information and Event Management...
+   * Dlaczego nieprawidłowa: Choć Chronicle SIEM doskonale nadaje się do korelacji logów w skali całej firmy, to wdrożenie i konfiguracja SIEM do detekcji ruchu wykracza poza prosty i natywny mechanizm bezpośredniego filtrowania na poziomie zapory chmurowej i generuje znaczne opóźnienia oraz koszty.
+C. Create a Cloud Intrusion Detection endpoint. Connect this endpoint to all VPC...
+   * Dlaczego nieprawidłowa: Cloud IDS (Intrusion Detection System) służy do pasywnego wykrywania zagrożeń (identyfikacji anomalii) i generuje alerty w SCC, ale nie filtruje i nie blokuje (inline mitigation) aktywnie ruchu sieciowego, co było celem wdrożenia prewencyjnego zabezpieczenia zapory.
+
+4. Wskazówki, hinty, tips and tricks:
+* Blokowanie/filtrowanie ruchu wychodzącego do znanych złośliwych domen/IP na poziomie sieci w GCP -> Używaj **Cloud Firewall** z włączoną funkcją **Threat Intelligence**.
+* Listy Threat Intelligence są w pełni zarządzane i aktualizowane przez Google.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Alert/block egress traffic targeting known suspicious web services -> Egress firewall policy with Threat Intelligence.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/firewall/docs/threat-intelligence" target="_blank">Threat Intelligence for Cloud Firewall</a>
+<a href="https://cloud.google.com/firewall/docs/firewall-policies" target="_blank">Hierarchical firewall policies overview</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

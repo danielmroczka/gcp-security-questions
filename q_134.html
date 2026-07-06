@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 134</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_133.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_135.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 134 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+You need to set up a Cloud interconnect connection between your company's on-premises data center and VPC host network. You want to make sure that on-premises applications can only access Google APIs over the Cloud Interconnect and not through the public internet. You are required to only use APIs that are supported by VPC Service Controls to mitigate against exfiltration risk to non-supported APIs. How should you configure the network?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Enable Private Google Access on the regional subnets and global dynamic routing mode.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Set up a Private Service Connect endpoint IP address with the API bundle of "all-apis", which is advertised as a route over the Cloud interconnect connection.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Use private.googleapis.com to access Google APIs using a set of IP addresses only routable from within Google Cloud, which are advertised as routes over the connection.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Use restricted googleapis.com to access Google APIs using a set of IP addresses only routable from within Google Cloud, which are advertised as routes over the Cloud Interconnect connection.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4 d-none"  >
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+D. Use restricted.googleapis.com to access Google APIs using a set of IP addresses only routable from within Google Cloud, which are advertised as routes over the Cloud Interconnect connection.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Wymaganiem jest zabezpieczenie dostępu z sieci lokalnej (on-premises) do API Google przez Cloud Interconnect. Ruch nie może iść przez publiczny internet, a dostęp musi być ograniczony wyłącznie do usług wspieranych przez VPC Service Controls w celu ochrony przed wyciekiem danych:
+- Rozwiązanie polega na skierowaniu zapytań DNS do API Google na domenę `restricted.googleapis.com` (IP: 199.36.153.4/30). Zakres ten jest trasowany wyłącznie wewnętrznie przez połączenie Cloud Interconnect.
+- Domena `restricted.googleapis.com` zezwala na komunikację wyłącznie z usługami Google, które są zintegrowane i wspierane przez VPC Service Controls. Zapytania do nieobsługiwanych usług są automatycznie blokowane, co uniemożliwia wyciek danych (exfiltration) np. do prywatnych kont pocztowych czy niezatwierdzonych usług dyskowych.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+- A. Włączenie Private Google Access: Ta funkcja umożliwia maszynom wirtualnym wewnątrz sieci VPC dostęp do API Google bez publicznych adresów IP, ale nie ma wpływu na konfigurację połączenia dla stacji w sieci lokalnej (on-premises).
+- B. Użycie Private Service Connect z pakietem "all-apis": PSC z pakietem "all-apis" umożliwia dostęp do wszystkich API Google, w tym tych, które nie są chronione i wspierane przez VPC Service Controls, co narusza wymóg ochrony przed eksfiltracją.
+- C. Użycie `private.googleapis.com`: Ta domena (IP: 199.36.153.8/30) daje dostęp do wszystkich usług Google (w tym Gmail, YouTube), również tych niewspieranych przez VPC Service Controls, co stwarza ryzyko wycieku danych.
+
+4. Wskazówki, hinty, tips and tricks:
+- W scenariuszach egzaminacyjnych z udziałem **VPC Service Controls** oraz połączeń hybrydowych (Interconnect / VPN) poprawną domeną do routingu API jest zawsze **restricted.googleapis.com**.
+- Zapamiętaj: `restricted.googleapis.com` = tylko usługi wspierane przez VPC Service Controls. `private.googleapis.com` = wszystkie usługi Google Cloud i Workspace.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+- Zabezpieczenie przed eksfiltracją + VPC Service Controls + połączenie hybrydowe -> restricted.googleapis.com.
+
+6. Dodatkowe źródła i dokumentacja:
+- Configure private connectivity for on-premises systems: <a href="https://cloud.google.com/vpc-service-controls/docs/private-connectivity" target="_blank">https://cloud.google.com/vpc-service-controls/docs/private-connectivity</a>
+</pre>
+</div>
+
+<script src="navigation.js"></script>

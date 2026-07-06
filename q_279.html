@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .question-body { font-size: 1.05rem; }
+    .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+</style>
+<title>PCS 279</title>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_278.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_280.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 279 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">Your organization operates a hybrid cloud environment and has recently deployed a private Artifact Registry repository in Google Cloud. On-premises developers cannot resolve the Artifact Registry hostname and therefore cannot push or pull artifacts. You've verified the following: • Connectivity to Google Cloud is established by Cloud VPN or Cloud Interconnect. • No custom DNS configurations exist on-premises. • There is no route to the internet from the on-premises network. You need to identify the cause and enable the developers to push and pull artifacts. What is likely causing the issue and what should you do to fix the issue?</p>
+<div class="question-choices-container">
+<ul><li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> On-premises DNS servers lack the necessary records to resolve private Google API domains. Create DNS records for restricted.googleapis.com or private.googleapis.com pointing to Google's published IP ranges.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Developers must be granted the artifactregistry.writer IAM role. Grant the relevant developer group this role.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Private Google Access is not enabled for the subnet hosting the Artifact Registry. Enable Private Google Access for the appropriate subnet.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Artifact Registry requires external HTTP/HTTPS access. Create a new firewall rule allowing ingress traffic on ports 80 and 443 from the developer's IP ranges.</li>
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<div class="card-text question-answer bg-light white-text" >
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+A. On-premises DNS servers lack the necessary records to resolve private Google API domains. Create DNS records for restricted.googleapis.com or private.googleapis.com pointing to Google's published IP ranges.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź A jest prawidłowa, ponieważ bez odpowiedniej konfiguracji DNS w lokalnej serwerowni (on-premises), systemy deweloperów próbują rozwiązywać nazwy domenowe usług Google (takich jak Artifact Registry - `*.pkg.dev` lub `*.googleapis.com`) na ich publiczne, internetowe adresy IP.
+
+Dlaczego to powoduje błąd i jak to naprawić:
+a. Ponieważ sieć on-premises nie posiada trasy do internetu (no route to the internet), pakiety skierowane na publiczne IP są odrzucane.
+b. Aby ruch do Artifact Registry przechodził przez prywatne połączenie VPN/Interconnect, należy skonfigurować lokalny serwer DNS tak, by zapytania do domen Google były kierowane na specjalne, prywatne zakresy IP Google: `private.googleapis.com` (`199.36.153.8/30`) lub `restricted.googleapis.com` (`199.36.153.4/30`).
+c. Umożliwia to lokalnym maszynom na poprawny routing i komunikację z API Google przez sieć prywatną.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+B. Developers must be granted the artifactregistry.writer IAM role...
+   * Dlaczego nieprawidłowa: Jest to problem sieciowy (brak możliwości rozwiązania nazwy hosta / DNS resolution error), a nie problem autoryzacji IAM. Jeśli DNS nie działa, żądanie w ogóle nie dociera do Google Cloud, więc uprawnienia IAM nie mają wpływu na ten etap.
+C. Private Google Access is not enabled for the subnet hosting the Artifact Registry.
+   * Dlaczego nieprawidłowa: Private Google Access (PGA) jest funkcją włączaną na podsieciach wewnątrz sieci VPC w chmurze GCP. Nie konfiguruje ona i nie rozwiązuje problemów z DNS w fizycznej, lokalnej sieci on-premises deweloperów.
+D. Artifact Registry requires external HTTP/HTTPS access. Create a new firewall rule...
+   * Dlaczego nieprawidłowa: Otwieranie portów na zaporze sieciowej GCP nie rozwiąże problemu braku routingu do internetu i błędnego DNS on-premises. Ponadto ruch z VPN/Interconnect jest ruchem wewnętrznym, a nie zewnętrznym internetowym HTTP/S.
+
+4. Wskazówki, hinty, tips and tricks:
+* Brak dostępu z on-premises (przez VPN/Interconnect) do usług Google przy braku wyjścia na internet -> Zawsze w pierwszej kolejności skonfiguruj **DNS dla `private.googleapis.com` lub `restricted.googleapis.com`** w lokalnym DNS.
+* Usługa Artifact Registry korzysta z domeny `*.pkg.dev`, która również musi być mapowana na prywatne IP Google.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* On-premises developers cannot resolve Artifact Registry hostname + Cloud VPN/Interconnect -> Create DNS records for restricted/private.googleapis.com.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/vpc/docs/configure-private-google-access-hybrid" target="_blank">Configuring Private Google Access for hybrid networks</a>
+<a href="https://cloud.google.com/artifact-registry/docs/transition/setup-dns" target="_blank">Artifact Registry DNS setup for private access</a>
+</pre>
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 241</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_240.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_242.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 241 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+You are developing a new application that uses exclusively Compute Engine VMs. Once a day, this application will execute five different batch jobs. Each of the batch jobs requires a dedicated set of permissions on Google Cloud resources outside of your application. You need to design a secure access concept for the batch jobs that adheres to the least-privilege principle. What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> 1. Create a general service account "g-sa" to orchestrate the batch jobs. 2. Create one service account per batch job 'b-sa-[1-5]'. Grant only the permissions required to run the individual batch jobs to the service accounts and generate service account keys for each of these service accounts. 3. Store the service account keys in Secret Manager. Grant g-sa access to Secret Manager and run the batch jobs with the permissions of b-sa-[1-5].</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> 1. Create a general service account "g-sa" to execute the batch jobs. 2. Grant the permissions required to execute the batch jobs to g-sa. 3. Execute the batch jobs with the permissions granted to g-sa.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> 1. Create a workload identity pool and configure workload identity pool providers for each batch job. 2. Assign the workload identity user role to each of the identities configured in the providers. 3. Create one service account per batch job "b-sa-[1-5]", and grant only the permissions required to run the individual batch jobs to the service accounts. 4. Generate credential configuration files for each of the providers. Use these files to execute the batch jobs with the permissions of b-sa-[1-5].</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> 1. Create a general service account "g-sa" to orchestrate the batch jobs. 2. Create one service account per batch job "b-sa-[1-5]", and grant only the permissions required to run the individual batch jobs to the service accounts. 3. Grant the Service Account Token Creator role to g-sa. Use g-sa to obtain short-lived access tokens for b-sa-[1-5] and to execute the batch jobs with the permissions of b-sa-[1-5].</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+<br/>
+</span>
+</div>
+</div>
+
+<div class="q-card q-answer mb-4 d-none" >
+
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+D. 1. Create a general service account "g-sa" to orchestrate the batch jobs. 2. Create one service account per batch job "b-sa-[1-5]", and grant only the permissions required to run the individual batch jobs to the service accounts. 3. Grant the Service Account Token Creator role to g-sa. Use g-sa to obtain short-lived access tokens for b-sa-[1-5] and to execute the batch jobs with the permissions of b-sa-[1-5].
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Odpowiedź D jest prawidłowa, ponieważ realizuje zasadę najmniejszych uprawnień (least privilege) za pomocą mechanizmu podszywania się pod konta serwisowe (Service Account Impersonation) z użyciem tokenów krótkotrwałych (short-lived tokens), całkowicie eliminując potrzebę zarządzania niebezpiecznymi kluczami długoterminowymi.
+
+Szczegóły techniczne:
+a. **Izolacja uprawnień:** Każde z pięciu zadań wsadowych (batch jobs) ma przypisane własne konto serwisowe (`b-sa-1` do `b-sa-5`) z precyzyjnie dobranymi rolami IAM. Dzięki temu błąd lub przejęcie jednego zadania nie zagraża zasobom powiązanym z pozostałymi zadaniami.
+b. **Bezpieczna orchestracja:** Maszyna wirtualna, na której działa aplikacja, używa ogólnego konta serwisowego `g-sa`. Konto to nie ma bezpośrednich uprawnień do zasobów zewnętrznych, a jedynie uprawnienie `roles/iam.serviceAccountTokenCreator` (Kreator tokenów konta serwisowego) dla pięciu kont zadaniowych.
+c. **Brak kluczy:** Gdy zachodzi potrzeba uruchomienia zadania, aplikacja (jako `g-sa`) wysyła żądanie do API Google o wygenerowanie tymczasowego tokenu dostępu OAuth 2.0 dla odpowiedniego konta `b-sa-X`. Token ten wygasa automatycznie (domyślnie po godzinie) i nie musi być nigdzie zapisywany na dysku.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+A. ...generate service account keys for each... Store the service account keys in Secret Manager...
+   * Dlaczego nieprawidłowa: Generowanie zewnętrznych kluczy kont serwisowych (Service Account Keys / pliki JSON) i zapisywanie ich (nawet w Secret Managerze) niesie za sobą ryzyko wycieku w przypadku złej konfiguracji dostępu. Impersonacja za pomocą krótkotrwałych tokenów (opcja D) jest o wiele bezpieczniejsza, ponieważ nie tworzy żadnych trwałych kluczy kryptograficznych na dyskach.
+B. ...Create a general service account "g-sa"... Grant the permissions required... to g-sa.
+   * Dlaczego nieprawidłowa: Nadanie wszystkich uprawnień dla wszystkich pięciu zadań jednemu wspólnemu kontu `g-sa` łamie zasadę najmniejszych uprawnień. Jeśli aplikacja zostanie skompromitowana, napastnik uzyska dostęp do zasobów wszystkich pięciu zadań jednocześnie.
+C. ...Create a workload identity pool... Generate credential configuration files...
+   * Dlaczego nieprawidłowa: Workload Identity Federation (WIF) służy do nadawania tożsamości obciążeniom działającym *poza* Google Cloud (np. na AWS, Azure czy on-premises). W tym scenariuszu aplikacja działa wyłącznie na maszynach Compute Engine (VMs wewnątrz GCP), więc stosowanie WIF jest nadmiernie skomplikowane i niepotrzebne.
+
+4. Wskazówki, hinty, tips and tricks:
+* Impersonacja konta serwisowego (Service Account Impersonation) w GCP opiera się na roli **`roles/iam.serviceAccountTokenCreator`** (Service Account Token Creator).
+* Pozwala to jednemu podmiotowi (np. maszynie z kontem `g-sa`) na generowanie tymczasowych tokenów dla innych kont serwisowych bez posiadania ich kluczy prywatnych.
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+* Dedicated permissions for batch jobs + least privilege + Compute Engine -> Orchestrate with general SA + specific SAs + Service Account Token Creator role.
+
+6. Dodatkowe źródła i dokumentacja:
+<a href="https://cloud.google.com/iam/docs/service-account-impersonation" target="_blank">Service account impersonation overview</a>
+<a href="https://cloud.google.com/iam/docs/create-short-lived-credentials-direct" target="_blank">Creating short-lived credentials for a service account</a>
+</pre>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

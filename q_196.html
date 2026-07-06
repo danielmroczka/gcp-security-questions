@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 196</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_195.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_197.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 196 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+Your organization previously stored files in Cloud Storage by using Google Managed Encryption Keys (GMEK), but has recently updated the internal policy to require Customer Managed Encryption Keys (CMEK). You need to re-encrypt the files quickly and efficiently with minimal cost.
+What should you do?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Reupload the files to the same Cloud Storage bucket specifying a key file by using gsutil.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> Encrypt the files locally, and then use gsutil to upload the files to a new bucket.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> Copy the files to a new bucket with CMEK enabled in a secondary region.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> Change the encryption type on the bucket to CMEK, and rewrite the objects.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">D</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4 d-none"  >
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+D. Change the encryption type on the bucket to CMEK, and rewrite the objects.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Organizacja wymaga zmiany metody szyfrowania danych w Cloud Storage z domyślnego klucza zarządzanego przez Google (GMEK) na klucze zarządzane przez klienta (CMEK). Proces ten musi zostać wykonany szybko, efektywnie i przy minimalnych kosztach.
+Prawidłowa procedura re-szyfrowania w Cloud Storage składa się z dwóch etapów:
+1. **Zmiana domyślnego klucza na buckecie:** W ustawieniach bucketu konfiguruje się domyślne szyfrowanie przy użyciu wybranego klucza Cloud KMS (CMEK). Od tego momentu każdy nowo zapisany obiekt będzie szyfrowany tym kluczem.
+2. **Re-szyfrowanie istniejących obiektów (Rewrite):** Obiekty, które już znajdowały się w buckecie przed zmianą ustawień, nadal są zaszyfrowane starym kluczem (GMEK). Aby zmienić ich szyfrowanie "w miejscu" na nowy klucz, stosuje się operację **Rewrite** (w CLI `gsutil rewrite`).
+Operacja ta jest wykonywana w całości wewnątrz infrastruktury Google Cloud. Dane nie są pobierane na zewnątrz, co minimalizuje czas wykonania oraz eliminuje koszty transferu sieciowego (egress fees), czyniąc tę metodę najbardziej efektywną kosztowo.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+- A. Reupload the files to the same Cloud Storage bucket specifying a key file by using gsutil: Pobieranie wszystkich plików na lokalną maszynę i ich ponowne wysyłanie (re-upload) wiąże się z ogromnym czasem pracy, narzutem sieciowym oraz potencjalnymi kosztami transferu danych, jeśli maszyna lokalna znajduje się poza siecią GCP.
+- B. Encrypt the files locally, and then use gsutil to upload...: Szyfrowanie lokalne przed wysyłką oznacza przejście na model CSEK (Customer-Supplied Encryption Keys), co jest niezgodne z wymaganiem wdrożenia CMEK (klucze w Cloud KMS). Podobnie jak opcja A, generuje to niepotrzebne koszty transferu i narzut operacyjny.
+- C. Copy the files to a new bucket with CMEK enabled in a secondary region: Kopiowanie danych do innego regionu geograficznego generuje wysokie opłaty za transfer danych między regionami (cross-region egress), co stoi w sprzeczności z wymaganiem minimalizacji kosztów.
+
+4. Wskazówki, hinty, tips and tricks:
+- Zmiana szyfrowania istniejących plików w Cloud Storage w miejscu (in-place re-encryption) zawsze wiąże się z użyciem polecenia **rewrite** (`gsutil rewrite`).
+- Zmiana domyślnego klucza szyfrowania bucketu wpływa tylko na nowo wgrywane pliki. Istniejące obiekty wymagają jawnego przepisania (rewrite).
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+- "re-encrypt files quickly" + "Cloud Storage" + "require CMEK" + "minimal cost" -> Change encryption on bucket to CMEK -> rewrite objects.
+
+6. Dodatkowe źródła i dokumentacja:
+- Re-encrypting objects with CMEK: <a href="https://cloud.google.com/storage/docs/using-customer-managed-encryption-keys#rewrite" target="_blank">https://cloud.google.com/storage/docs/using-customer-managed-encryption-keys#rewrite</a>
+</pre>
+</div>
+
+</div>
+
+<script src="navigation.js"></script></body>
+
+
+</html>

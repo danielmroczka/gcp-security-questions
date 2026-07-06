@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/slick.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-main.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/rsmenu-transitions.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/magnific-popup.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/fonts/fonts2/flaticon.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/style.css?ver=1" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/color/default.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.examtopics.com/assets/css/forum.css" rel="stylesheet" type="text/css"/>
+<style>
+    body { background: #f6f8fa; }
+    .q-page { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    .q-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 18px; }
+    .q-card h2 { font-size: 1.25rem; margin-bottom: 12px; }
+    .q-answer pre {
+      white-space: pre-wrap;
+      background: #0b1020;
+      color: #e6edf3;
+      padding: 14px;
+      border-radius: 10px;
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+    .discussion-header-container { line-height: 1.5; }
+    .question-body { font-size: 1.05rem; }
+
+    .discussion-clean { display: flex; flex-direction: column; gap: 14px; }
+    .c-card { background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 10px; padding: 12px 14px; }
+    .c-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+    .c-user { font-weight: 700; }
+    .c-date { color: #666; font-size: 0.9rem; }
+    .c-badge { background: #fff3cd; border: 1px solid #ffe69c; padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+    .c-upvotes { margin-left: auto; color: #0b5ed7; font-weight: 600; }
+    .c-text { margin: 0 0 10px; line-height: 1.55; }
+    .c-text:last-child { margin-bottom: 0; }
+    
+    .q-page { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+    .q-card { width: 100% !important; max-width: 100% !important; box-sizing: border-box; }
+    .q-answer { width: 100% !important; max-width: 100% !important; }
+    .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
+    .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+</style>
+<title>PCS 112</title>
+<link href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico" rel="icon" type="image/x-icon"/>
+</head>
+<body class="home2">
+<div class="q-page">
+<nav class="q-nav d-flex justify-content-between align-items-center my-3">
+<a class="btn btn-outline-primary" href="q_111.html">← Poprzednie</a>
+<a class="btn btn-outline-primary" href="index.html">Spis Pytań</a>
+<a class="btn btn-outline-primary" href="q_113.html">Następne →</a>
+</nav>
+<div class="q-card mb-4">
+<h2>Question 112 / 361</h2>
+<div class="question-body mt-3 pt-3 border-top">
+<p class="card-text">
+Your company has been creating users manually in Cloud Identity to provide access to Google Cloud resources. Due to continued growth of the environment, you want to authorize the Google Cloud Directory Sync (GCDS) instance and integrate it with your on-premises LDAP server to onboard hundreds of users. You are required to:<br/>* Replicate user and group lifecycle changes from the on-premises LDAP server in Cloud Identity.<br/>* Disable any manually created users in Cloud Identity.<br/>You have already configured the LDAP search attributes to include the users and security groups in scope for Google Cloud. What should you do next to complete this solution?
+</p>
+<div class="question-choices-container">
+<ul>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> 1. Configure the option to suspend domain users not found in LDAP. 2. Set up a recurring GCDS task.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="B">B.</span> 1. Configure the option to delete domain users not found in LDAP. 2. Run GCDS after user and group lifecycle changes.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="C">C.</span> 1. Configure the LDAP search attributes to exclude manually created Cloud Identity users not found in LDAP. 2. Set up a recurring GCDS task.</li>
+<li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="D">D.</span> 1. Configure the LDAP search attributes to exclude manually created Cloud Identity users not found in LDAP. 2. Run GCDS after user and group lifecycle changes.</li>
+
+</ul>
+</div>
+<a class="btn btn-primary reveal-solution" href="#">Show Suggested Answer</a>
+<a class="btn btn-primary hide-solution d-none" href="#">Hide Answer</a>
+<div class="card-text question-answer bg-light white-text">
+<span class="correct-answer-box">
+<strong>Suggested Answer:</strong>
+<span class="correct-answer">A</span>
+<br/>
+</span>
+</div>
+</div>
+</div>
+<div class="q-card q-answer mb-4" style="display:none;">
+<h2>Wyjaśnienie</h2>
+<pre>
+1. Prawidłowa odpowiedź lub odpowiedzi:
+A. 1. Configure the option to suspend domain users not found in LDAP. 2. Set up a recurring GCDS task.
+
+2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
+Wymagania zakładają zintegrowanie lokalnego LDAP z Cloud Identity przy użyciu GCDS, automatyczne replikowanie zmian oraz dezaktywowanie użytkowników, którzy zostali utworzeni ręcznie (czyli nie istnieją w LDAP):
+- Wybranie opcji "suspend domain users not found in LDAP" (zawieszenie użytkowników) powoduje zablokowanie kont w Cloud Identity, które zostały utworzone ręcznie i nie posiadają swojego odpowiednika w lokalnym serwerze LDAP. Zawieszenie jest bezpieczniejsze niż trwałe usunięcie (delete), ponieważ chroni przed przypadkową utratą danych w przypadku błędów konfiguracyjnych synchronizacji.
+- Konfiguracja cyklicznego zadania (recurring GCDS task) jest niezbędna, aby zmiany w strukturze pracowników i ich uprawnieniach były automatycznie i stale synchronizowane bez konieczności ręcznego uruchamiania narzędzia przez administratora.
+
+3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
+- B. Opcja usuwania (delete) i ręczne uruchamianie: Trwałe usunięcie kont jest zbyt drastyczne (powoduje utratę danych użytkownika). Ręczne uruchamianie GCDS nie zapewnia ciągłości replikacji zmian w dynamicznym środowisku.
+- C i D. Wykluczenie ręcznie utworzonych użytkowników z atrybutów wyszukiwania LDAP: Spowodowałoby to, że GCDS ignorowałby te konta i pozostawił je w pełni aktywne w Cloud Identity, co bezpośrednio łamie wymóg ich zablokowania ("Disable any manually created users").
+
+4. Wskazówki, hinty, tips and tricks:
+- GCDS zawsze synchronizuje tożsamości z lokalnego katalogu (LDAP/AD) do Google Cloud (jednokierunkowo).
+- Na egzaminie opcja "Suspend" jest zawsze zalecana nad "Delete" jako bezpieczna metoda deprovisioningu.
+- Automatyzacja synchronizacji cyklu życia tożsamości zawsze wymaga harmonogramu (recurring task).
+
+5. Reguły wyboru odpowiedzi (Słowa kluczowe):
+- AD/LDAP jako jedyne źródło prawdy + obsługa kont spoza katalogu -> Suspend users not found in LDAP.
+- Automatyczne utrzymanie spójności tożsamości -> Recurring GCDS task.
+
+6. Dodatkowe źródła i dokumentacja:
+- GCDS user management settings: <a href="https://support.google.com/a/answer/6124299" target="_blank">https://support.google.com/a/answer/6124299</a>
+</pre>
+</div>
+<div class="ai-analysis-container" style="display:none; margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3;">
+<h2>Analiza i Podsumowanie Dyskusji (AI)</h2>
+<div class="analysis-section">
+<h3>Analiza i Wyjaśnienie</h3>
+<p><b>Sugerowana odpowiedź: A</b></p>
+<p><b>Głęboka analiza:</b> <p><b>Analiza spornych kwestii (AI):</b> Na forach administratorzy IT podkreślają: 'Nigdy nie wybieraj opcji Delete w GCDS na początku integracji'. Opcja A (Suspend) pozwala zachować zgodność z polityką bezpieczeństwa (nikt niepowołany nie wejdzie), dając jednocześnie czas na wyjaśnienie ewentualnych pomyłek bez niszczenia plików użytkownika na Google Drive.</p></p>
+<h3>Dodatkowe Zasoby (Linki)</h3>
+<ul>
+<li><a href="https://support.google.com/a/answer/612003" target="_blank">https://support.google.com/a/answer/612003</a></li>
+
+</ul>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const revealButton = document.querySelectorAll('.reveal-solution');
+    revealButton.forEach(button => {
+        let isVisible = false;
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const answerSection = document.querySelector('.q-answer');
+            const aiSection = document.querySelector('.ai-analysis-container');
+            if (isVisible) {
+                if (answerSection) answerSection.style.display = 'none';
+                if (aiSection) aiSection.style.display = 'none';
+                this.textContent = 'Show Suggested Answer';
+            } else {
+                if (answerSection) answerSection.style.display = 'block';
+                if (aiSection) aiSection.style.display = 'block';
+                this.textContent = 'Hide Suggested Answer';
+            }
+            isVisible = !isVisible;
+        });
+    });
+});
+</script>
+<script src="navigation.js"></script>
+</body>
+</html>
