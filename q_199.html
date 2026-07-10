@@ -95,7 +95,7 @@ A. Data Access audit logs
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Identity-Aware Proxy (IAP) jest kluczowym elementem architektury Zero Trust w GCP, kontrolującym dostęp użytkowników do aplikacji. Aby wykrywać potencjalne włamania (intrusions) za pomocą systemu SIEM, należy analizować logi, które rejestrują szczegóły dotyczące każdej próby dostępu użytkownika do chronionych zasobów (kto się logował, kiedy, z jakiego IP, czy żądanie zostało autoryzowane).
-W Google Cloud logi IAP są zapisywane jako **Data Access audit logs** (logi dostępu do danych). Rejestrują one szczegółowe interakcje z API i zasobami chronionymi przez IAP (zarówno próby udane, jak i zablokowane z powodu braku uprawnień). Ingestowanie tych logów do SIEM pozwala na wykrywanie anomalii (np. ataki brute-force, spray attack czy podejrzane próby logowania).
+W Google Cloud logi IAP są zapisywane jako <strong>Data Access audit logs</strong> (logi dostępu do danych). Rejestrują one szczegółowe interakcje z API i zasobami chronionymi przez IAP (zarówno próby udane, jak i zablokowane z powodu braku uprawnień). Ingestowanie tych logów do SIEM pozwala na wykrywanie anomalii (np. ataki brute-force, spray attack czy podejrzane próby logowania).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - B. Policy Denied audit logs: Taki typ logów audytowych w standardowej strukturze Cloud Audit Logs nie istnieje jako oddzielna kategoria dla IAP. Informacje o odmowie dostępu ze względu na politykę IAP są częścią logów Data Access.
@@ -104,7 +104,7 @@ W Google Cloud logi IAP są zapisywane jako **Data Access audit logs** (logi dos
 
 4. Wskazówki, hinty, tips and tricks:
 - Logi audytowe w GCP dzielą się na: Admin Activity (zmiany konfiguracji - zawsze włączone) oraz Data Access (odczyt/zapis danych i żądania użytkowników - domyślnie wyłączone ze względu na wolumen danych).
-- Monitorowanie prób autoryzacji i dostępu użytkowników do aplikacji przez IAP wymaga włączenia i analizy logów **Data Access**.
+- Monitorowanie prób autoryzacji i dostępu użytkowników do aplikacji przez IAP wymaga włączenia i analizy logów <strong>Data Access</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - "IAP" + "ingest logs into SIEM" + "alerted to possible intrusions" -> Data Access audit logs.

@@ -90,25 +90,25 @@ You are the security admin of your company. You have 3,000 objects in your Cloud
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: D**
+<strong>Poprawna odpowiedź: D</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymaganiem jest zarządzanie dostępem do 3000 obiektów w kubłach Cloud Storage w sposób scentralizowany i zbiorowy, zapobieganie sytuacji, w której uploader automatycznie ma pełną kontrolę (np. nadpisuje polityki dostępu), oraz możliwość pełnego audytowania dostępu za pomocą Cloud Audit Logs:
-- **Włączenie Uniform bucket-level access (UBLA) na kubełku i zarządzanie dostępem przez IAM (D):** UBLA wyłącza listy kontroli dostępu (ACL) na poziomie poszczególnych obiektów. Po jego włączeniu dostęp jest kontrolowany wyłącznie przez zasady IAM przypisane na poziomie całego kubełka (bucket). Zapobiega to sytuacji, w której użytkownik wgrywający plik konfiguruje niestandardowe uprawnienia (ACL) na obiekcie. Ponadto, wyłączenie ACL upraszcza zarządzanie bezpieczeństwem i pozwala na niezawodne raportowanie audytowe.
+- <strong>Włączenie Uniform bucket-level access (UBLA) na kubełku i zarządzanie dostępem przez IAM (D):</strong> UBLA wyłącza listy kontroli dostępu (ACL) na poziomie poszczególnych obiektów. Po jego włączeniu dostęp jest kontrolowany wyłącznie przez zasady IAM przypisane na poziomie całego kubełka (bucket). Zapobiega to sytuacji, w której użytkownik wgrywający plik konfiguruje niestandardowe uprawnienia (ACL) na obiekcie. Ponadto, wyłączenie ACL upraszcza zarządzanie bezpieczeństwem i pozwala na niezawodne raportowanie audytowe.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Set up an ACL with OWNER permission to a scope of allUsers:** Dostęp typu `allUsers` oznacza, że obiekty stają się publicznie dostępne w internecie dla każdego, co jest poważnym błędem bezpieczeństwa.
-- **B. Set up an ACL with READER permission to a scope of allUsers:** Podobnie jak w opcji A, czyni to dane publicznymi i narusza bezpieczeństwo danych.
-- **C. Domyślne ACL i zarządzanie przez IAM:** Pozostawienie włączonych ACL (nawet z domyślnymi ustawieniami) sprawia, że uprawnienia na obiektach nadal mogą być modyfikowane niezależnie od IAM przez użytkowników posiadających uprawnienia zapisu, co uniemożliwia scentralizowaną i jednolitą kontrolę dostępu.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Set up an ACL with OWNER permission to a scope of allUsers:</strong> Dostęp typu `allUsers` oznacza, że obiekty stają się publicznie dostępne w internecie dla każdego, co jest poważnym błędem bezpieczeństwa.
+- <strong>B. Set up an ACL with READER permission to a scope of allUsers:</strong> Podobnie jak w opcji A, czyni to dane publicznymi i narusza bezpieczeństwo danych.
+- <strong>C. Domyślne ACL i zarządzanie przez IAM:</strong> Pozostawienie włączonych ACL (nawet z domyślnymi ustawieniami) sprawia, że uprawnienia na obiektach nadal mogą być modyfikowane niezależnie od IAM przez użytkowników posiadających uprawnienia zapisu, co uniemożliwia scentralizowaną i jednolitą kontrolę dostępu.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- **Uniform bucket-level access (UBLA):** Wyłącza ACL-e. Dostęp jest zarządzany wyłącznie przez IAM. Jest to domyślne i zalecane ustawienie bezpieczeństwa w Google Cloud.
-- Zapamiętaj: Jeśli pytanie mówi o rezygnacji z zarządzania dostępem do pojedynczych plików na rzecz spójnego, scentralizowanego zarządzania -> kluczem jest **Uniform bucket-level access**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- <strong>Uniform bucket-level access (UBLA):</strong> Wyłącza ACL-e. Dostęp jest zarządzany wyłącznie przez IAM. Jest to domyślne i zalecane ustawienie bezpieczeństwa w Google Cloud.
+- Zapamiętaj: Jeśli pytanie mówi o rezygnacji z zarządzania dostępem do pojedynczych plików na rzecz spójnego, scentralizowanego zarządzania -> kluczem jest <strong>Uniform bucket-level access</strong>.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Wyłączenie indywidualnych uprawnień per obiekt / ujednolicenie uprawnień w GCS -> Uniform bucket-level access.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Uniform bucket-level access: https://cloud.google.com/storage/docs/uniform-bucket-level-access
 </pre>
 

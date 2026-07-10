@@ -65,9 +65,9 @@ C. Create a workload identity pool with a workload identity provider for each ex
 Odpowiedź C jest prawidłowa, ponieważ Workload Identity Federation (Federacja Tożsamości Obciążeń) jest standardowym i najbardziej bezpiecznym mechanizmem Google Cloud umożliwiającym aplikacjom działającym w innych chmurach (np. AWS, Azure) bezpieczne odpytywanie API GCP przy użyciu tożsamości krótkotrwałych.
 
 Zalety i mechanizm działania:
-a. **Pule i dostawcy (Pools & Providers):** Tworzymy dedykowaną pulę tożsamości oraz dostawców dla poszczególnych chmur zewnętrznych (np. provider AWS korzystający z ról IAM AWS, provider Azure z OIDC).
-b. **Wymiana tożsamości:** Aplikacja w innej chmurze pobiera swój natywny token tożsamości (np. AWS STS token) i wysyła go do Google STS w celu wymiany na krótkotrwały token dostępu GCP.
-c. **Impersonacja (Impersonation):** Konto serwisowe w GCP posiada przypisane powiązanie IAM (`roles/iam.workloadIdentityUser`), które zezwala tożsamościom z zewnętrznej puli chmurowej na podszywanie się pod nie. Zapewnia to pełne bezpieczeństwo bez konieczności generowania i dystrybucji kluczy prywatnych.
+a. <strong>Pule i dostawcy (Pools & Providers):</strong> Tworzymy dedykowaną pulę tożsamości oraz dostawców dla poszczególnych chmur zewnętrznych (np. provider AWS korzystający z ról IAM AWS, provider Azure z OIDC).
+b. <strong>Wymiana tożsamości:</strong> Aplikacja w innej chmurze pobiera swój natywny token tożsamości (np. AWS STS token) i wysyła go do Google STS w celu wymiany na krótkotrwały token dostępu GCP.
+c. <strong>Impersonacja (Impersonation):</strong> Konto serwisowe w GCP posiada przypisane powiązanie IAM (`roles/iam.workloadIdentityUser`), które zezwala tożsamościom z zewnętrznej puli chmurowej na podszywanie się pod nie. Zapewnia to pełne bezpieczeństwo bez konieczności generowania i dystrybucji kluczy prywatnych.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create a managed workload identity. Bind an attested identity to the Compute Engine workload.
@@ -78,7 +78,7 @@ D. Create a VPC firewall rule for ingress traffic with an allowlist...
    * Dlaczego nieprawidłowa: Reguły zapory sieciowej (firewall rules) filtrują ruch sieciowy, ale nie uwierzytelniają aplikacji i nie wydają tokenów dostępu (credentials) wymaganych do autoryzacji zapytań do usług GCP (np. BigQuery czy GCS).
 
 4. Wskazówki, hinty, tips and tricks:
-* Uwierzytelnianie aplikacji z innych chmur (AWS, Azure, multi-cloud) w GCP bez kluczy -> Zawsze **Workload Identity Federation** (WIF).
+* Uwierzytelnianie aplikacji z innych chmur (AWS, Azure, multi-cloud) w GCP bez kluczy -> Zawsze <strong>Workload Identity Federation</strong> (WIF).
 * WIF obsługuje natywnie uwierzytelnianie oparte na kontach AWS IAM oraz Azure Active Directory OIDC.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

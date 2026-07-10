@@ -97,9 +97,9 @@ C. Configure Binary Authorization on Cloud Run to enforce image signatures. Crea
 Odpowiedź C jest prawidłowa, ponieważ integracja Binary Authorization z usługą Cloud Run stanowi jedyny zautomatyzowany i prewencyjny mechanizm (admission controller) w GCP, który gwarantuje, że do produkcji zostaną wdrożone wyłącznie te kontenery, które przeszły pomyślnie skanowanie podatności i zostały podpisane przez zaufany proces (atestator).
 
 Mechanizm działania:
-a. **Skanowanie w potoku:** Podczas budowania obrazu w Cloud Build, uruchamiany jest skaner podatności Artifact Analysis.
-b. **Generowanie atestacji (podpisu):** Jeśli skaner potwierdzi, że obraz nie zawiera krytycznych podatności (np. CVSS > Medium), system generuje podpis kryptograficzny (attestation) i kojarzy go z obrazem kontenera.
-c. **Weryfikacja przy wdrożeniu (Binary Authorization):** Cloud Run ma włączoną usługę Binary Authorization. Przy każdej próbie wdrożenia nowej rewizji, Binary Authorization weryfikuje podpis. Jeśli obraz nie posiada podpisu od autoryzowanego skanera, wdrożenie zostaje natychmiast zablokowane. Zapobiega to wdrożeniu podatnych obrazów w sposób w 100% zautomatyzowany.
+a. <strong>Skanowanie w potoku:</strong> Podczas budowania obrazu w Cloud Build, uruchamiany jest skaner podatności Artifact Analysis.
+b. <strong>Generowanie atestacji (podpisu):</strong> Jeśli skaner potwierdzi, że obraz nie zawiera krytycznych podatności (np. CVSS > Medium), system generuje podpis kryptograficzny (attestation) i kojarzy go z obrazem kontenera.
+c. <strong>Weryfikacja przy wdrożeniu (Binary Authorization):</strong> Cloud Run ma włączoną usługę Binary Authorization. Przy każdej próbie wdrożenia nowej rewizji, Binary Authorization weryfikuje podpis. Jeśli obraz nie posiada podpisu od autoryzowanego skanera, wdrożenie zostaje natychmiast zablokowane. Zapobiega to wdrożeniu podatnych obrazów w sposób w 100% zautomatyzowany.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Implement vulnerability scanning as part of the Cloud Build process... manually rebuild...
@@ -110,7 +110,7 @@ D. Utilize a vulnerability scanner during the Cloud Build stage and set Artifact
    * Dlaczego nieprawidłowa: Uprawnienia IAM w Artifact Registry (np. rola read/write) nie mają wbudowanej funkcji dynamicznego blokowania pobierania pojedynczych obrazów w zależności od wyniku ich skanowania podatności. Uprawnienia IAM są statyczne i dotyczą całego repozytorium.
 
 4. Wskazówki, hinty, tips and tricks:
-* Wymuszenie wdrożeń wyłącznie zaufanych i przetestowanych (bez podatności) obrazów kontenerów na GKE lub Cloud Run -> Zawsze używaj **Binary Authorization**.
+* Wymuszenie wdrożeń wyłącznie zaufanych i przetestowanych (bez podatności) obrazów kontenerów na GKE lub Cloud Run -> Zawsze używaj <strong>Binary Authorization</strong>.
 * Atestacja (attestation) to cyfrowy podpis potwierdzający spełnienie kryteriów bezpieczeństwa przez obraz.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

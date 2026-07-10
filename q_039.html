@@ -90,26 +90,26 @@ A customer has 300 engineers. The company wants to grant different levels of acc
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: BC**
+<strong>Poprawna odpowiedź: BC</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Aby efektywnie zarządzać dostępem dla 300 inżynierów w środowiskach produkcyjnych i deweloperskich, należy wdrożyć ustrukturyzowane zarządzanie tożsamością i zasobami:
-- **Utworzenie osobnego folderu dla środowiska dev i prod (B):** Pozwala to na logiczne i bezpieczne rozdzielenie projektów produkcyjnych od testowych w hierarchii zasobów oraz na stosowanie różnych polityk organizacji.
-- **Utworzenie grup Google Groups i przypisanie im uprawnień na poziomie folderu (C):** Zamiast nadawać uprawnienia 300 inżynierom indywidualnie (co jest koszmarem administracyjnym), uprawnienia przypisuje się do grup (np. "prod-admins", "dev-developers") na poziomie folderów. Zarządzanie dostępem polega wtedy wyłącznie na dodawaniu/usuwaniu osób z grup lokalnie, a uprawnienia w chmurze są aktualizowane automatycznie.
+- <strong>Utworzenie osobnego folderu dla środowiska dev i prod (B):</strong> Pozwala to na logiczne i bezpieczne rozdzielenie projektów produkcyjnych od testowych w hierarchii zasobów oraz na stosowanie różnych polityk organizacji.
+- <strong>Utworzenie grup Google Groups i przypisanie im uprawnień na poziomie folderu (C):</strong> Zamiast nadawać uprawnienia 300 inżynierom indywidualnie (co jest koszmarem administracyjnym), uprawnienia przypisuje się do grup (np. "prod-admins", "dev-developers") na poziomie folderów. Zarządzanie dostępem polega wtedy wyłącznie na dodawaniu/usuwaniu osób z grup lokalnie, a uprawnienia w chmurze są aktualizowane automatycznie.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Jeden projekt z wieloma VPC:** Mieszanie środowisk dev i prod w jednym projekcie uniemożliwia skuteczne rozdzielenie uprawnień IAM i stwarza ogromne ryzyko przypadkowego usunięcia produkcji przez dewelopera.
-- **D. Polityka organizacji (Organization Policy):** Służy do nakładania ograniczeń na konfigurację zasobów (np. blokowanie publicznych IP), ale nie służy do zarządzania uprawnieniami dostępu dla konkretnych użytkowników czy grup (nie zastępuje IAM).
-- **E. Przypisywanie praw IAM indywidualnie w każdym projekcie:** Jest to antywzorzec (anti-pattern) administracyjny, bardzo trudny do utrzymania, audytowania i podatny na błędy ludzkie przy skali 300 osób.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Jeden projekt z wieloma VPC:</strong> Mieszanie środowisk dev i prod w jednym projekcie uniemożliwia skuteczne rozdzielenie uprawnień IAM i stwarza ogromne ryzyko przypadkowego usunięcia produkcji przez dewelopera.
+- <strong>D. Polityka organizacji (Organization Policy):</strong> Służy do nakładania ograniczeń na konfigurację zasobów (np. blokowanie publicznych IP), ale nie służy do zarządzania uprawnieniami dostępu dla konkretnych użytkowników czy grup (nie zastępuje IAM).
+- <strong>E. Przypisywanie praw IAM indywidualnie w każdym projekcie:</strong> Jest to antywzorzec (anti-pattern) administracyjny, bardzo trudny do utrzymania, audytowania i podatny na błędy ludzkie przy skali 300 osób.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Najlepszą praktyką zarządzania dużą liczbą użytkowników w GCP jest: **Zasoby w Folderach -> Użytkownicy w Grupach Google -> Role przypisane do Grup na poziomie Folderów**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Najlepszą praktyką zarządzania dużą liczbą użytkowników w GCP jest: <strong>Zasoby w Folderach -> Użytkownicy w Grupach Google -> Role przypisane do Grup na poziomie Folderów</strong>.
 - Nigdy nie przypisuj ról IAM bezpośrednio do pojedynczych kont użytkowników na poziomie projektów w skali enterprise.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Skalowalne zarządzanie dostępem -> Foldery + Google Groups.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Best practices for enterprise organizations: https://cloud.google.com/docs/enterprise/best-practices-for-enterprise-organizations
 </pre>
 

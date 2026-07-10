@@ -96,8 +96,8 @@ D. Use a hierarchical structure of folders. Implement template-based organizatio
 Odpowiedź D jest prawidłowa, ponieważ zastosowanie hierarchii folderów (Folders Hierarchy) w połączeniu z dziedziczeniem polityk organizacji jest standardowym i najbardziej efektywnym sposobem na zarządzanie bezpieczeństwem w skali przedsiębiorstwa (enterprise governance).
 
 Jak to realizuje wymagania:
-a. **Spójność u podstaw (Consistency):** Definiując podstawowe reguły bezpieczeństwa (np. zakaz publicznego GCS, ograniczenie domen do firmowych) na najwyższych poziomach hierarchii (np. folder główny lub folder regionalny), gwarantujemy, że wszystkie podrzędne projekty automatycznie odziedziczą te zabezpieczenia (cascading policies).
-b. **Autonomia zespołów regionalnych:** Zespoły regionalne mogą zarządzać swoimi lokalnymi projektami i dostosowywać polityki na poziomie swoich podfolderów (np. dodając specyficzne wyjątki), ale nie mogą złamać krytycznych blokad narzuconych z góry, co zapobiega rozrostowi uprawnień (permission sprawl).
+a. <strong>Spójność u podstaw (Consistency):</strong> Definiując podstawowe reguły bezpieczeństwa (np. zakaz publicznego GCS, ograniczenie domen do firmowych) na najwyższych poziomach hierarchii (np. folder główny lub folder regionalny), gwarantujemy, że wszystkie podrzędne projekty automatycznie odziedziczą te zabezpieczenia (cascading policies).
+b. <strong>Autonomia zespołów regionalnych:</strong> Zespoły regionalne mogą zarządzać swoimi lokalnymi projektami i dostosowywać polityki na poziomie swoich podfolderów (np. dodając specyficzne wyjątki), ale nie mogą złamać krytycznych blokad narzuconych z góry, co zapobiega rozrostowi uprawnień (permission sprawl).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create detailed organization-wide policies... Instruct teams to apply the policies carefully...
@@ -108,7 +108,7 @@ C. Define a small set of essential organization policies. Supplement these polic
    * Dlaczego nieprawidłowa: Pozostawienie polityk jako "opcjonalnych szablonów" (optional templates) do wyboru przez zespoły sprawi, że większość zespołów ich nie wdroży w celu ułatwienia sobie pracy. Nie gwarantuje to spójnego egzekwowania standardów bezpieczeństwa w całej firmie.
 
 4. Wskazówki, hinty, tips and tricks:
-* Skuteczne zarządzanie politykami organizacji w skali (at scale) w GCP -> Używaj **hierarchii folderów (folder structure)** i pozwól politykom spływać kaskadowo (cascade down).
+* Skuteczne zarządzanie politykami organizacji w skali (at scale) w GCP -> Używaj <strong>hierarchii folderów (folder structure)</strong> i pozwól politykom spływać kaskadowo (cascade down).
 * Wyłącz dziedziczenie lub stosuj reguły łączenia (rules merging) tylko dla dozwolonych, kontrolowanych wyjątków.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

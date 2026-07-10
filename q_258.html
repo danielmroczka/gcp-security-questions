@@ -64,9 +64,9 @@ C. Create an access level titled "Corporate Access." Add a condition with the IP
 Odpowiedź C jest prawidłowa, ponieważ pozwala na zdefiniowanie poziomu dostępu (Access Level) w Access Context Managerze na podstawie atrybutu sieciowego (IP Subnetworks), co precyzyjnie dopuszcza ruch wyłącznie z zaufanych adresów IP (zarówno z fizycznej sieci biurowej, jak i z puli przydzielanej przez korporacyjny VPN).
 
 Szczegóły konfiguracji:
-a. **Dopuszczenie sieci on-premises:** Zakresy `10.100.0.0/16` oraz `192.168.0.0/16` odpowiadają lokalnej sieci firmowej.
-b. **Dopuszczenie ruchu VPN:** Ponieważ pracownicy zdalni łączą się przez VPN firmy, ich ruch sieciowy dociera do zasobów GCP z adresów przypisanych z puli VPN, czyli `172.16.0.0/20`. Dodanie tego zakresu do poziomu dostępu umożliwia im bezpieczną pracę z domu.
-c. **Powiązanie z perymetrem:** Poziom dostępu (Access Level) zostaje przypisany do perymetru chroniącego projekt, co gwarantuje, że zapytania z innych adresów IP w internecie będą blokowane.
+a. <strong>Dopuszczenie sieci on-premises:</strong> Zakresy `10.100.0.0/16` oraz `192.168.0.0/16` odpowiadają lokalnej sieci firmowej.
+b. <strong>Dopuszczenie ruchu VPN:</strong> Ponieważ pracownicy zdalni łączą się przez VPN firmy, ich ruch sieciowy dociera do zasobów GCP z adresów przypisanych z puli VPN, czyli `172.16.0.0/20`. Dodanie tego zakresu do poziomu dostępu umożliwia im bezpieczną pracę z domu.
+c. <strong>Powiązanie z perymetrem:</strong> Poziom dostępu (Access Level) zostaje przypisany do perymetru chroniącego projekt, co gwarantuje, że zapytania z innych adresów IP w internecie będą blokowane.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. ...Utilize the Device Policy attribute to require corporate-managed devices...

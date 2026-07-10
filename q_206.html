@@ -98,8 +98,8 @@ E. Create column-level policy tags to control access to columns at query runtime
 Odpowiedzi C i E są prawidłowe, ponieważ stanowią natywne i zalecane mechanizmy Google Cloud do wdrażania zaawansowanej kontroli dostępu na poziomie wierszy i kolumn w BigQuery dla wspólnych tabel.
 
 Szczegóły rozwiązań:
-a. **Polityki dostępu na poziomie wiersza (Row-level access policies) (C):** Pozwalają na filtrowanie wierszy zwracanych użytkownikom na podstawie ich tożsamości. Przykładowo, filtr `country = 'PL'` sprawi, że użytkownik z Polski zobaczy tylko te wiersze. Zastosowanie filtru domyślnego dla nieautoryzowanych zapytań (lub jawne zdefiniowanie polityki z filtrem dającym wynik logiczny `FALSE` dla niepasujących warunków) gwarantuje, że nieuprawnieni użytkownicy nie zobaczą żadnych danych.
-b. **Tagi polityki na poziomie kolumny (Column-level policy tags) (E):** Pozwalają na przypisywanie taksonomii bezpieczeństwa (Data Catalog) do poszczególnych kolumn w tabeli BigQuery. Użytkownik, który nie posiada roli `Fine-Grained Reader` dla danego tagu, otrzyma błąd przy próbie wykonania zapytania odwołującego się do tej kolumny. Chroni to dane wrażliwe (np. numery PESEL czy kart kredytowych) bez konieczności tworzenia oddzielnych tabel.
+a. <strong>Polityki dostępu na poziomie wiersza (Row-level access policies) (C):</strong> Pozwalają na filtrowanie wierszy zwracanych użytkownikom na podstawie ich tożsamości. Przykładowo, filtr `country = 'PL'` sprawi, że użytkownik z Polski zobaczy tylko te wiersze. Zastosowanie filtru domyślnego dla nieautoryzowanych zapytań (lub jawne zdefiniowanie polityki z filtrem dającym wynik logiczny `FALSE` dla niepasujących warunków) gwarantuje, że nieuprawnieni użytkownicy nie zobaczą żadnych danych.
+b. <strong>Tagi polityki na poziomie kolumny (Column-level policy tags) (E):</strong> Pozwalają na przypisywanie taksonomii bezpieczeństwa (Data Catalog) do poszczególnych kolumn w tabeli BigQuery. Użytkownik, który nie posiada roli `Fine-Grained Reader` dla danego tagu, otrzyma błąd przy próbie wykonania zapytania odwołującego się do tej kolumny. Chroni to dane wrażliwe (np. numery PESEL czy kart kredytowych) bez konieczności tworzenia oddzielnych tabel.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create row-level access policies... filter expression set to TRUE.
@@ -111,8 +111,8 @@ D. Configure dynamic data masking rules to control access to columns at query ru
 
 4. Wskazówki, hinty, tips and tricks:
 * Bezpieczeństwo w BigQuery:
-  - Poziom wierszy -> **Row-level security / Row-level access policies**.
-  - Poziom kolumn -> **Column-level security / Policy tags (Data Catalog)**.
+  - Poziom wierszy -> <strong>Row-level security / Row-level access policies</strong>.
+  - Poziom kolumn -> <strong>Column-level security / Policy tags (Data Catalog)</strong>.
 * Kiedy stosujesz row-level security na tabeli, domyślny dostęp do wierszy dla wszystkich innych użytkowników (którzy nie są objęci żadną regułą) zostaje całkowicie zablokowany.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

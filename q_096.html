@@ -90,25 +90,25 @@ You are the project owner for a regulated workload that runs in a project you ow
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Dla celów audytu zgodności należy przeprowadzić analizę dostępu i wygenerować dowody na to, kto i jakie uprawnienia posiada w projektach GCP (access reviews):
-- **Policy Analyzer (B):** Jest to narzędzie w GCP, które pozwala na zapytania i analizowanie polityk IAM w celu ustalenia, które tożsamości (użytkownicy, grupy, konta usług) mają dostęp do określonych zasobów i za pomocą jakich ról/uprawnień. Umożliwia ono analizę ścieżek dostępu (np. poprzez członkostwo w grupach lub dziedziczenie polityk) i wyeksportowanie tych danych, co stanowi idealny dowód audytowy na przegląd uprawnień (access reviews).
+- <strong>Policy Analyzer (B):</strong> Jest to narzędzie w GCP, które pozwala na zapytania i analizowanie polityk IAM w celu ustalenia, które tożsamości (użytkownicy, grupy, konta usług) mają dostęp do określonych zasobów i za pomocą jakich ról/uprawnień. Umożliwia ono analizę ścieżek dostępu (np. poprzez członkostwo w grupach lub dziedziczenie polityk) i wyeksportowanie tych danych, co stanowi idealny dowód audytowy na przegląd uprawnień (access reviews).
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Policy Troubleshooter:** Służy do diagnozowania pojedynczych przypadków odmowy dostępu (np. dlaczego dany użytkownik nie może wykonać konkretnej operacji API w danej chwili). Nie pozwala na masową analizę i generowanie raportów audytowych dla całego projektu.
-- **C. IAM Recommender:** Automatycznie analizuje faktyczne użycie uprawnień i sugeruje odebranie nadmiarowych ról w celu wdrożenia zasady najmniejszych uprawnień. Nie służy do generowania pełnego zestawienia przypisanych praw na potrzeby audytu.
-- **D. Policy Simulator:** Pozwala na przetestowanie zmian w politykach IAM przed ich wdrożeniem w celu sprawdzenia, jaki wpływ będą miały na dostęp użytkowników. Nie generuje dowodów na obecny stan dostępu do celów audytowych.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Policy Troubleshooter:</strong> Służy do diagnozowania pojedynczych przypadków odmowy dostępu (np. dlaczego dany użytkownik nie może wykonać konkretnej operacji API w danej chwili). Nie pozwala na masową analizę i generowanie raportów audytowych dla całego projektu.
+- <strong>C. IAM Recommender:</strong> Automatycznie analizuje faktyczne użycie uprawnień i sugeruje odebranie nadmiarowych ról w celu wdrożenia zasady najmniejszych uprawnień. Nie służy do generowania pełnego zestawienia przypisanych praw na potrzeby audytu.
+- <strong>D. Policy Simulator:</strong> Pozwala na przetestowanie zmian w politykach IAM przed ich wdrożeniem w celu sprawdzenia, jaki wpływ będą miały na dostęp użytkowników. Nie generuje dowodów na obecny stan dostępu do celów audytowych.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- **Policy Analyzer:** Odpowiada na pytanie: "Kto ma dostęp do czego i jak?". Służy do analizowania dużych zestawów uprawnień i generowania raportów dla audytorów.
-- **Policy Troubleshooter:** Odpowiada na pytanie: "Dlaczego ten użytkownik nie ma dostępu?". Służy do rozwiązywania problemów z uprawnieniami na bieżąco.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- <strong>Policy Analyzer:</strong> Odpowiada na pytanie: "Kto ma dostęp do czego i jak?". Służy do analizowania dużych zestawów uprawnień i generowania raportów dla audytorów.
+- <strong>Policy Troubleshooter:</strong> Odpowiada na pytanie: "Dlaczego ten użytkownik nie ma dostępu?". Służy do rozwiązywania problemów z uprawnieniami na bieżąco.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Raporty i analizy uprawnień dla audytu (Access reviews / compliance evidence) -> Policy Analyzer.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Analyzing IAM policies with Policy Analyzer: https://cloud.google.com/iam/docs/policy-analyzer-overview
 </pre>
 

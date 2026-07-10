@@ -96,8 +96,8 @@ C. Ensure that the developers have explicitly configured the proxy address on th
 Odpowiedź C jest prawidłowa, ponieważ Secure Web Proxy (SWP) w Google Cloud jest zaporą sieciową działającą w trybie jawnym (explicit proxy), co wymaga aktywnej konfiguracji po stronie systemu operacyjnego lub aplikacji na maszynach klienckich w celu kierowania ruchu.
 
 Szczegóły techniczne:
-a. **Explicit Proxy (Jawne Proxy):** Secure Web Proxy nie przechwytuje automatycznie i przezroczyście całego ruchu wychodzącego z sieci VPC. Zamiast tego nasłuchuje na określonym adresie IP i porcie wewnątrz sieci VPC.
-b. **Konfiguracja klienta:** Maszyny deweloperskie (Linux) muszą wiedzieć, że mają wysyłać zapytania HTTP/S do proxy. W tym celu na maszynie należy zdefiniować zmienne środowiskowe, np. `export http_proxy="http://[PROXY_IP]:[PORT]"` oraz `export https_proxy="http://[PROXY_IP]:[PORT]"`. Bez tej jawnej konfiguracji, zapytania z instancji deweloperskich będą próbowały iść bezpośrednio przez standardową bramę internetową VPC (co doprowadzi do błędu, jeśli nie ma do niej trasy lub publicznego IP).
+a. <strong>Explicit Proxy (Jawne Proxy):</strong> Secure Web Proxy nie przechwytuje automatycznie i przezroczyście całego ruchu wychodzącego z sieci VPC. Zamiast tego nasłuchuje na określonym adresie IP i porcie wewnątrz sieci VPC.
+b. <strong>Konfiguracja klienta:</strong> Maszyny deweloperskie (Linux) muszą wiedzieć, że mają wysyłać zapytania HTTP/S do proxy. W tym celu na maszynie należy zdefiniować zmienne środowiskowe, np. `export http_proxy="http://[PROXY_IP]:[PORT]"` oraz `export https_proxy="http://[PROXY_IP]:[PORT]"`. Bez tej jawnej konfiguracji, zapytania z instancji deweloperskich będą próbowały iść bezpośrednio przez standardową bramę internetową VPC (co doprowadzi do błędu, jeśli nie ma do niej trasy lub publicznego IP).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Configure a Cloud NAT gateway to enable internet access from the developer instance subnet.
@@ -108,7 +108,7 @@ D. Configure a firewall rule to allow HTTP/S from the developer instance.
    * Dlaczego nieprawidłowa: Skoro konfiguracja testowa działała pomyślnie na instancji testowej, oznacza to, że reguły zapory sieciowej VPC pozwalające na komunikację z SWP są już poprawnie skonfigurowane. Problemem nie jest blokada zapory, lecz brak skierowania ruchu przez system operacyjny deweloperów do punktu końcowego proxy.
 
 4. Wskazówki, hinty, tips and tricks:
-* Secure Web Proxy (SWP) w GCP to **explicit proxy**. Klienci w VPC muszą mieć skonfigurowany adres i port proxy w zmiennych środowiskowych (np. http_proxy).
+* Secure Web Proxy (SWP) w GCP to <strong>explicit proxy</strong>. Klienci w VPC muszą mieć skonfigurowany adres i port proxy w zmiennych środowiskowych (np. http_proxy).
 * W testach na egzaminie: jeśli proxy działa dla testowej maszyny, a nie działa dla innych maszyn w tej samej sieci -> Zwróć uwagę na konfigurację klienta (explicit configuration of proxy address).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

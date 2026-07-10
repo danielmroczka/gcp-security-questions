@@ -90,25 +90,25 @@ Your team wants to centrally manage GCP IAM permissions from their on-premises A
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymaganie polega na centralnym zarządzaniu uprawnieniami IAM w GCP na podstawie członkostwa w grupach lokalnego Active Directory (AD). 
-- **Skonfigurowanie Cloud Directory Sync (GCDS) do synchronizacji grup oraz przypisywanie uprawnień IAM bezpośrednio do zsynchronizowanych grup (A):** GCDS pobiera tożsamości użytkowników oraz struktury grup z AD i synchronizuje je do Google Cloud Identity/Workspace. Po zsynchronizowaniu grup w GCP, administrator może przypisać im odpowiednie role IAM. Zmiany w lokalnym AD (np. dodanie/usunięcie użytkownika z grupy) zostaną automatycznie odzwierciedlone w GCP.
+- <strong>Skonfigurowanie Cloud Directory Sync (GCDS) do synchronizacji grup oraz przypisywanie uprawnień IAM bezpośrednio do zsynchronizowanych grup (A):</strong> GCDS pobiera tożsamości użytkowników oraz struktury grup z AD i synchronizuje je do Google Cloud Identity/Workspace. Po zsynchronizowaniu grup w GCP, administrator może przypisać im odpowiednie role IAM. Zmiany w lokalnym AD (np. dodanie/usunięcie użytkownika z grupy) zostaną automatycznie odzwierciedlone w GCP.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Skonfigurowanie SAML 2.0 SSO:** Logowanie jednokrotne (SSO) służy do uwierzytelniania użytkowników (potwierdzenia tożsamości), ale samo w sobie nie synchronizuje członkostwa w grupach ani nie pozwala na przypisywanie ról IAM na podstawie grup AD w konsoli GCP.
-- **C. Cloud IAM API:** Chociaż technicznie możliwe jest napisanie własnego skryptu integracyjnego z użyciem API, Google zaleca użycie gotowego, stabilnego i wspieranego narzędzia GCDS.
-- **D. Admin SDK:** Służy do automatyzacji zadań administracyjnych w Google Workspace/Cloud Identity, ale nie jest dedykowanym narzędziem do bezpośredniej i ciągłej synchronizacji z Active Directory w taki sposób jak GCDS.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Skonfigurowanie SAML 2.0 SSO:</strong> Logowanie jednokrotne (SSO) służy do uwierzytelniania użytkowników (potwierdzenia tożsamości), ale samo w sobie nie synchronizuje członkostwa w grupach ani nie pozwala na przypisywanie ról IAM na podstawie grup AD w konsoli GCP.
+- <strong>C. Cloud IAM API:</strong> Chociaż technicznie możliwe jest napisanie własnego skryptu integracyjnego z użyciem API, Google zaleca użycie gotowego, stabilnego i wspieranego narzędzia GCDS.
+- <strong>D. Admin SDK:</strong> Służy do automatyzacji zadań administracyjnych w Google Workspace/Cloud Identity, ale nie jest dedykowanym narzędziem do bezpośredniej i ciągłej synchronizacji z Active Directory w taki sposób jak GCDS.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Synchronizacja użytkowników/grup z Active Directory / LDAP do GCP -> Zawsze wybieraj **Cloud Directory Sync (GCDS)**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Synchronizacja użytkowników/grup z Active Directory / LDAP do GCP -> Zawsze wybieraj <strong>Cloud Directory Sync (GCDS)</strong>.
 - SSO (SAML) = Uwierzytelnianie (Authentication), GCDS = Aprowizacja/Synchronizacja tożsamości (Provisioning). Są to dwa komplementarne, ale różne procesy.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Zarządzanie grupami AD w GCP -> GCDS.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Dokumentacja Google: https://cloud.google.com/directory-sync/docs
 </pre>
 

@@ -104,7 +104,7 @@ Wymagane jest archiwizowanie logów aplikacji w kubełku Cloud Storage. Analityc
 - C. Wyzwalacz Cloud Storage reagujący na PII: Wyzwalacze Cloud Storage (GCS Triggers) reagują na zdarzenia obiektowe (np. utworzenie obiektu, usunięcie), ale nie potrafią badać zawartości plików pod kątem PII bez integracji z zewnętrznym silnikiem skanującym (DLP).
 
 4. Wskazówki, hinty, tips and tricks:
-- W projektowaniu przepływów danych (Data Pipeline Security): **nigdy nie wrzucaj potencjalnie wrażliwych danych bezpośrednio do strefy publicznej/współdzielonej** z zamiarem ich późniejszego usunięcia. Zawsze filtruj dane w strefie prywatnej przed ich udostępnieniem.
+- W projektowaniu przepływów danych (Data Pipeline Security): <strong>nigdy nie wrzucaj potencjalnie wrażliwych danych bezpośrednio do strefy publicznej/współdzielonej</strong> z zamiarem ich późniejszego usunięcia. Zawsze filtruj dane w strefie prywatnej przed ich udostępnieniem.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Blokowanie dostępu analityków do PII przed weryfikacją -> Zapis do bezpiecznego bucketu -> Skan DLP przez Cloud Function -> Przeniesienie czystych plików do shared bucketu.

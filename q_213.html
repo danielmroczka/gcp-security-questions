@@ -97,9 +97,9 @@ D. Configure workload identity federation to use GitHub as an identity pool prov
 Odpowiedź D jest prawidłowa, ponieważ Workload Identity Federation (Federacja Tożsamości Obciążeń) jest najbezpieczniejszą metodą uwierzytelniania zewnętrznych potoków CI/CD (np. GitHub Actions) w Google Cloud.
 
 Dlaczego to najbezpieczniejsze rozwiązanie:
-a. **Brak kluczy długoterminowych:** Eliminuje potrzebę generowania plików kluczy JSON dla kont serwisowych GCP. Przechowywanie takich kluczy w zewnętrznych systemach (np. jako GitHub Secrets) niesie ogromne ryzyko ich wycieku lub kompromitacji.
-b. **Klucze krótkoterminowe (Short-lived tokens):** GitHub Actions uwierzytelnia się u swojego dostawcy OIDC, uzyskując token tożsamości. Następnie GCP Security Token Service (STS) weryfikuje ten token i wymienia go na tymczasowy (ważny np. przez godzinę) token dostępu OAuth 2.0 konta serwisowego GCP.
-c. **Precyzyjne mapowanie:** Możemy ograniczyć dostęp tylko do konkretnego repozytorium GitHub, a nawet konkretnej gałęzi (branch), za pomocą warunków atrybutów (attribute conditions).
+a. <strong>Brak kluczy długoterminowych:</strong> Eliminuje potrzebę generowania plików kluczy JSON dla kont serwisowych GCP. Przechowywanie takich kluczy w zewnętrznych systemach (np. jako GitHub Secrets) niesie ogromne ryzyko ich wycieku lub kompromitacji.
+b. <strong>Klucze krótkoterminowe (Short-lived tokens):</strong> GitHub Actions uwierzytelnia się u swojego dostawcy OIDC, uzyskując token tożsamości. Następnie GCP Security Token Service (STS) weryfikuje ten token i wymienia go na tymczasowy (ważny np. przez godzinę) token dostępu OAuth 2.0 konta serwisowego GCP.
+c. <strong>Precyzyjne mapowanie:</strong> Możemy ograniczyć dostęp tylko do konkretnego repozytorium GitHub, a nawet konkretnej gałęzi (branch), za pomocą warunków atrybutów (attribute conditions).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create a service account key, and add it to the GitHub pipeline configuration file.
@@ -110,7 +110,7 @@ C. Configure a Google Kubernetes Engine cluster that uses Workload Identity to s
    * Dlaczego nieprawidłowa: Workload Identity w GKE służy do nadawania tożsamości podom (pods) uruchomionym wewnątrz klastra Kubernetes w GCP. Nie rozwiązuje to problemu uwierzytelniania zewnętrznego systemu CI/CD (GitHub Actions), który działa poza GCP.
 
 4. Wskazówki, hinty, tips and tricks:
-* Uwierzytelnianie systemów CI/CD działających poza GCP (GitHub Actions, GitLab, Terraform Cloud) w Google Cloud -> Zawsze wybieraj **Workload Identity Federation**.
+* Uwierzytelnianie systemów CI/CD działających poza GCP (GitHub Actions, GitLab, Terraform Cloud) w Google Cloud -> Zawsze wybieraj <strong>Workload Identity Federation</strong>.
 * Unikaj generowania kluczy kont serwisowych (Service Account Keys) – Google uznaje je za ryzyko bezpieczeństwa (compromised credentials).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

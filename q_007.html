@@ -91,26 +91,26 @@ A company is running workloads in a dedicated server room. They must only be acc
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: AC**
+<strong>Poprawna odpowiedź: AC</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagane jest ustanowienie bezpiecznego, prywatnego połączenia między dedykowaną serwerownią firmy (on-premises) a siecią VPC w Google Cloud Platform. Google oferuje dwa natywne rozwiązania hybrydowe:
-- **Cloud VPN (A):** Umożliwia bezpieczne połączenie sieci lokalnej z VPC za pomocą tuneli IPSec przez publiczny internet. Jest to rozwiązanie szybkie do wdrożenia i tańsze.
-- **Cloud Interconnect (C):** Zapewnia bezpośrednie, fizyczne połączenie o wysokiej przepustowości i niskich opóźnieniach (Dedicated lub Partner Interconnect) z pominięciem publicznego internetu.
+- <strong>Cloud VPN (A):</strong> Umożliwia bezpieczne połączenie sieci lokalnej z VPC za pomocą tuneli IPSec przez publiczny internet. Jest to rozwiązanie szybkie do wdrożenia i tańsze.
+- <strong>Cloud Interconnect (C):</strong> Zapewnia bezpośrednie, fizyczne połączenie o wysokiej przepustowości i niskich opóźnieniach (Dedicated lub Partner Interconnect) z pominięciem publicznego internetu.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Shared VPC:** Służy do współdzielenia sieci VPC pomiędzy wieloma projektami w ramach jednej organizacji w GCP, ale nie łączy GCP z siecią on-premises.
-- **D. VPC Peering:** Służy do bezpośredniego łączenia dwóch niezależnych sieci VPC w GCP, a nie do łączenia z fizyczną serwerownią lokalną.
-- **E. Private Access:** Private Google Access pozwala maszynom z prywatnymi IP na dostęp do API Google, ale nie tworzy połączenia routowalnego między serwerownią a VPC.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Shared VPC:</strong> Służy do współdzielenia sieci VPC pomiędzy wieloma projektami w ramach jednej organizacji w GCP, ale nie łączy GCP z siecią on-premises.
+- <strong>D. VPC Peering:</strong> Służy do bezpośredniego łączenia dwóch niezależnych sieci VPC w GCP, a nie do łączenia z fizyczną serwerownią lokalną.
+- <strong>E. Private Access:</strong> Private Google Access pozwala maszynom z prywatnymi IP na dostęp do API Google, ale nie tworzy połączenia routowalnego między serwerownią a VPC.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Gdy pytanie dotyczy łączenia on-premises z GCP w bezpieczny, prywatny sposób, jedynymi poprawnymi odpowiedziami są **Cloud VPN** lub **Cloud Interconnect**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Gdy pytanie dotyczy łączenia on-premises z GCP w bezpieczny, prywatny sposób, jedynymi poprawnymi odpowiedziami są <strong>Cloud VPN</strong> lub <strong>Cloud Interconnect</strong>.
 - VPN jest szyfrowany (IPsec), natomiast Interconnect nie szyfruje ruchu domyślnie (wymaga dodatkowo MACsec lub VPN over Interconnect), ale zapewnia prywatną ścieżkę fizyczną.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Łączenie chmury z on-premises -> VPN (tani/szybki/szyfrowany) lub Interconnect (droższy/dedykowany/wysoka wydajność).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Google Cloud Hybrid Connectivity: https://cloud.google.com/hybrid-connectivity
 </pre>
 

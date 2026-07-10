@@ -95,7 +95,7 @@ C. Project
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Wymagane jest nałożenie restrykcji lokalizacji zasobów (Resource Location Restriction) przy zachowaniu bardzo drobnoziarnistej/granularnej kontroli (very granular control). Struktura folderów zawiera projekty powiązane z różnymi lokalizacjami rezydencji danych:
 - Ponieważ projekty są przypisane do konkretnych lokalizacji geograficznych, a jeden folder może grupować projekty o różnych wymaganiach prawno-geograficznych, nałożenie ograniczenia na poziomie folderu (D) lub całej organizacji (A) uniemożliwiłoby taką separację ze względu na dziedziczenie polityk.
-- Aby zapewnić najbardziej granularną kontrolę, polityka `Resource Location Restriction` (ograniczenie `constraints/gcp.resourceLocations`) musi zostać nałożona na poziomie **Projektu** (Project). Dzięki temu każdy projekt ma ściśle zdefiniowaną i niezależną listę dozwolonych regionów dla nowo tworzonych zasobów.
+- Aby zapewnić najbardziej granularną kontrolę, polityka `Resource Location Restriction` (ograniczenie `constraints/gcp.resourceLocations`) musi zostać nałożona na poziomie <strong>Projektu</strong> (Project). Dzięki temu każdy projekt ma ściśle zdefiniowaną i niezależną listę dozwolonych regionów dla nowo tworzonych zasobów.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A i D. Poziom Organizacji lub Folderu: Te poziomy są zbyt ogólne. Nałożenie tam restrykcji zablokowałoby możliwość elastycznego przypisywania różnych lokalizacji dla poszczególnych projektów w tej samej strukturze.

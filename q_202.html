@@ -96,8 +96,8 @@ B. Create a hierarchical firewall policy configured at the organization to allow
 Odpowiedź B jest prawidłowa, ponieważ pozwala na wdrożenie nadrzędnych reguł bezpieczeństwa (guardrails) na poziomie całej organizacji, które automatycznie blokują lub ograniczają dostęp sieciowy dla wszystkich podrzędnych sieci VPC. 
 
 Kluczowe cechy tego podejścia:
-a. **Polityki hierarchiczne zapory sieciowej (Hierarchical Firewall Policies):** Pozwalają one na tworzenie i egzekwowanie reguł zapory sieciowej na poziomie Organizacji lub Folderów. Reguły te są oceniane przed jakimikolwiek regułami zapory sieciowej zdefiniowanymi w konkretnych sieciach VPC przez lokalne zespoły projektowe.
-b. **Ograniczenie do wewnętrznych adresów IP:** Tworząc regułę, która zezwala na dostęp do portów MySQL (domyślnie 3306) tylko z zaufanych, wewnętrznych zakresów IP (np. RFC 1918), a w przeciwnym razie blokuje ruch z zewnątrz, skutecznie neutralizujemy zagrożenie wystawienia MySQL na świat, niezależnie od tego, co lokalni administratorzy (posiadający rolę Owner) ustawią w swoich projektach. Zapobiega to powstawaniu alertów `OPEN_MYSQL_PORT`.
+a. <strong>Polityki hierarchiczne zapory sieciowej (Hierarchical Firewall Policies):</strong> Pozwalają one na tworzenie i egzekwowanie reguł zapory sieciowej na poziomie Organizacji lub Folderów. Reguły te są oceniane przed jakimikolwiek regułami zapory sieciowej zdefiniowanymi w konkretnych sieciach VPC przez lokalne zespoły projektowe.
+b. <strong>Ograniczenie do wewnętrznych adresów IP:</strong> Tworząc regułę, która zezwala na dostęp do portów MySQL (domyślnie 3306) tylko z zaufanych, wewnętrznych zakresów IP (np. RFC 1918), a w przeciwnym razie blokuje ruch z zewnątrz, skutecznie neutralizujemy zagrożenie wystawienia MySQL na świat, niezależnie od tego, co lokalni administratorzy (posiadający rolę Owner) ustawią w swoich projektach. Zapobiega to powstawaniu alertów `OPEN_MYSQL_PORT`.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create a hierarchical firewall policy configured at the organization to deny all connections from 0.0.0.0/0.
@@ -108,7 +108,7 @@ D. Create a firewall rule for each virtual private cloud (VPC) to deny traffic f
    * Dlaczego nieprawidłowa: Wymagałoby to ręcznego lub skryptowego tworzenia reguł w tysiącach projektów, co jest podatne na błędy. Ponadto właściciele projektów (Owners) posiadają pełne uprawnienia i mogliby te reguły usunąć lub zmodyfikować.
 
 4. Wskazówki, hinty, tips and tricks:
-* Aby zapobiec miskonfiguracjom robionym przez administratorów projektów (np. Ownerów), zawsze stosuje się mechanizmy nadrzędne, których nie mogą modyfikować. W kwestiach sieciowych są to **Hierarchical Firewall Policies**.
+* Aby zapobiec miskonfiguracjom robionym przez administratorów projektów (np. Ownerów), zawsze stosuje się mechanizmy nadrzędne, których nie mogą modyfikować. W kwestiach sieciowych są to <strong>Hierarchical Firewall Policies</strong>.
 * Właściciel projektu (Owner) nie ma uprawnień do modyfikowania reguł zapory sieciowej przypisanych na poziomie organizacji lub folderu.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

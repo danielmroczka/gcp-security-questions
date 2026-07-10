@@ -96,9 +96,9 @@ C. Create a Binary Authorization attestor that retrieves the Cloud Build build I
 Odpowiedź C jest prawidłowa, ponieważ weryfikacja identyfikatora kompilacji (build ID) z Cloud Build przez Atestatora Binary Authorization pozwala na precyzyjne potwierdzenie pochodzenia obrazu (provenance) – czyli udowodnienie, że dany kontener został zbudowany przez autoryzowany potok CI/CD chmury, a nie wgrany z zewnątrz.
 
 Mechanizm działania:
-a. **Integracja Cloud Build i Artifact Analysis:** Podczas procesu budowania obrazu, Cloud Build generuje metadane dotyczące pochodzenia (provenance metadata), w tym unikalny identyfikator buildu (build ID).
-b. **Podpisywanie (Atestacja):** Atestator Binary Authorization podpisuje te metadane kluczem kryptograficznym KMS.
-c. **Admission Control (Binary Authorization):** Podczas próby wdrożenia obrazu na Cloud Run lub GKE, usługa weryfikuje podpis atestatora i sprawdza, czy build ID w atestacji zgadza się z metadanymi obrazu. Jeśli obraz pochodzi z nieautoryzowanego źródła (np. został zbudowany lokalnie u dewelopera i wypchnięty do rejestru), wdrożenie zostanie zablokowane.
+a. <strong>Integracja Cloud Build i Artifact Analysis:</strong> Podczas procesu budowania obrazu, Cloud Build generuje metadane dotyczące pochodzenia (provenance metadata), w tym unikalny identyfikator buildu (build ID).
+b. <strong>Podpisywanie (Atestacja):</strong> Atestator Binary Authorization podpisuje te metadane kluczem kryptograficznym KMS.
+c. <strong>Admission Control (Binary Authorization):</strong> Podczas próby wdrożenia obrazu na Cloud Run lub GKE, usługa weryfikuje podpis atestatora i sprawdza, czy build ID w atestacji zgadza się z metadanymi obrazu. Jeśli obraz pochodzi z nieautoryzowanego źródła (np. został zbudowany lokalnie u dewelopera i wypchnięty do rejestru), wdrożenie zostanie zablokowane.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create a Binary Authorization attestor that uses a scanner to assess source code management repositories...
@@ -109,7 +109,7 @@ D. Utilize a custom Security Health Analytics module to create a policy...
    * Dlaczego nieprawidłowa: Security Health Analytics (SHA) w Security Command Center służy do wykrywania miskonfiguracji zasobów chmurowych (np. publiczne IP). Nie uczestniczy w procesie wdrażania kontenerów i nie potrafi generować ani weryfikować podpisów kryptograficznych obrazów kontenerowych dla Binary Authorization.
 
 4. Wskazówki, hinty, tips and tricks:
-* Pochodzenie obrazu (image provenance) w GCP CI/CD -> Wykorzystanie **Cloud Build** w połączeniu z **Binary Authorization** w celu weryfikacji podpisanych metadanych kompilacji (build ID/provenance).
+* Pochodzenie obrazu (image provenance) w GCP CI/CD -> Wykorzystanie <strong>Cloud Build</strong> w połączeniu z <strong>Binary Authorization</strong> w celu weryfikacji podpisanych metadanych kompilacji (build ID/provenance).
 * Zapewnia to, że deweloperzy nie mogą wdrożyć do produkcji kontenera zbudowanego na własnym laptopie.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

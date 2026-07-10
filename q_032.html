@@ -89,24 +89,24 @@ You are creating an internal App Engine application that needs to access a user'
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: D**
+<strong>Poprawna odpowiedź: D</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Aplikacja w App Engine musi mieć dostęp do zasobów Google Drive (które leżą w domenie Google Workspace/G Suite) w imieniu użytkownika, ale bez ciągłego żądania od niego interaktywnych poświadczeń:
-- **Utworzenie konta usługowego (Service Account) z włączoną delegacją uprawnień na poziomie całej domeny (Domain-Wide Delegation) (D):** Pozwala to kontu usługowemu na czasowe podszywanie się (impersonation) pod dowolnego użytkownika w domenie Workspace. Aplikacja uwierzytelnia się za pomocą konta usługowego i żąda tokenu dostępu w imieniu konkretnego użytkownika, uzyskując dostęp do jego plików na Dysku Google bez konieczności ponownego logowania przez użytkownika.
+- <strong>Utworzenie konta usługowego (Service Account) z włączoną delegacją uprawnień na poziomie całej domeny (Domain-Wide Delegation) (D):</strong> Pozwala to kontu usługowemu na czasowe podszywanie się (impersonation) pod dowolnego użytkownika w domenie Workspace. Aplikacja uwierzytelnia się za pomocą konta usługowego i żąda tokenu dostępu w imieniu konkretnego użytkownika, uzyskując dostęp do jego plików na Dysku Google bez konieczności ponownego logowania przez użytkownika.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A, B. Przypisanie roli Service Account User użytkownikom:** Rola `iam.serviceAccountUser` pozwala użytkownikom na uruchamianie zasobów (np. maszyn VM) z uprawnieniami tego konta. Nie daje to aplikacji możliwości uzyskania dostępu do danych w Google Drive należących do tych użytkowników.
-- **C. Użycie dedykowanego konta administratora G Suite:** Przechowywanie haseł administratora w konfiguracji aplikacji jest krytycznym błędem bezpieczeństwa, a ponadto aplikacja działałaby z pełnymi prawami administratora całej domeny, co narusza zasadę najmniejszych uprawnień.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A, B. Przypisanie roli Service Account User użytkownikom:</strong> Rola `iam.serviceAccountUser` pozwala użytkownikom na uruchamianie zasobów (np. maszyn VM) z uprawnieniami tego konta. Nie daje to aplikacji możliwości uzyskania dostępu do danych w Google Drive należących do tych użytkowników.
+- <strong>C. Użycie dedykowanego konta administratora G Suite:</strong> Przechowywanie haseł administratora w konfiguracji aplikacji jest krytycznym błędem bezpieczeństwa, a ponadto aplikacja działałaby z pełnymi prawami administratora całej domeny, co narusza zasadę najmniejszych uprawnień.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Słowo-klucz: **access Google Drive on the user's behalf** (dostęp do dysku w imieniu użytkownika) bez interakcji. Rozwiązaniem w środowiskach Workspace jest zawsze **Domain-Wide Delegation** dla konta usługowego.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Słowo-klucz: <strong>access Google Drive on the user's behalf</strong> (dostęp do dysku w imieniu użytkownika) bez interakcji. Rozwiązaniem w środowiskach Workspace jest zawsze <strong>Domain-Wide Delegation</strong> dla konta usługowego.
 - Zawsze konfiguruj minimalny zakres OAuth (scopes) przy delegacji domeny (np. tylko odczyt Drive).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Aplikacja GCP modyfikuje zasoby Workspace (Drive, Gmail) użytkowników bez ich interakcji -> Domain-Wide Delegation (DWD).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Delegating domain-wide authority to a service account: https://developers.google.com/identity/protocols/oauth2/service-account#delegatingauthority
 </pre>
 

@@ -112,9 +112,9 @@ D. Create a jump host instance with public IP. Manage the instances by connectin
    * Dlaczego nieprawidłowa: Maszyna typu jump host (Bastion) musi być stale uruchomiona, co generuje koszty obliczeniowe (Compute Engine). Ponadto serwer Bastion staje się pojedynczym punktem awarii oraz celem ataków, wymagającym ciągłego patchowania i monitorowania.
 
 4. Wskazówki, hinty, tips and tricks:
-* Bezpieczny, tani dostęp SSH/RDP do maszyn prywatnych w GCP -> Zawsze **IAP TCP Forwarding** (IAP-secured tunnel).
-* Zakres adresów IP dla reguły firewall IAP to **`35.235.240.0/20`**.
-* Rola IAM wymagana do tunelowania to **`roles/iap.tunnelResourceAccessor`** (IAP-secured Tunnel User).
+* Bezpieczny, tani dostęp SSH/RDP do maszyn prywatnych w GCP -> Zawsze <strong>IAP TCP Forwarding</strong> (IAP-secured tunnel).
+* Zakres adresów IP dla reguły firewall IAP to <strong>`35.235.240.0/20`</strong>.
+* Rola IAM wymagana do tunelowania to <strong>`roles/iap.tunnelResourceAccessor`</strong> (IAP-secured Tunnel User).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Manage private VMs via SSH / optimize cost and security -> IAP IP range (35.235.240.0/20) + IAP-secured Tunnel User.

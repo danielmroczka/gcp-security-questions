@@ -90,25 +90,25 @@ A company allows every employee to use Google Cloud Platform. Each department ha
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagane jest automatyczne przydzielanie uprawnień do odczytu (read-only) wszystkim członkom danego działu do nowo tworzonych przez nich projektów, przy jednoczesnym zablokowaniu dostępu dla innych działów:
-- **Utworzenie folderu dla każdego działu pod Organizacją i przypisanie roli Project Viewer (Przeglądający projekt) odpowiedniej grupie Google Group powiązanej z danym działem na poziomie tego folderu (A):** Dzięki hierarchii zasobów w GCP, uprawnienia nadane na poziomie folderu są automatycznie dziedziczone przez wszystkie projekty w nim utworzone. Gdy członek działu utworzy nowy projekt wewnątrz przypisanego folderu, cała jego grupa działowa natychmiast otrzyma do niego dostęp jako Project Viewer, a projekty innych folderów pozostaną dla nich niewidoczne.
+- <strong>Utworzenie folderu dla każdego działu pod Organizacją i przypisanie roli Project Viewer (Przeglądający projekt) odpowiedniej grupie Google Group powiązanej z danym działem na poziomie tego folderu (A):</strong> Dzięki hierarchii zasobów w GCP, uprawnienia nadane na poziomie folderu są automatycznie dziedziczone przez wszystkie projekty w nim utworzone. Gdy członek działu utworzy nowy projekt wewnątrz przypisanego folderu, cała jego grupa działowa natychmiast otrzyma do niego dostęp jako Project Viewer, a projekty innych folderów pozostaną dla nich niewidoczne.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Rola Project Browser na poziomie folderu:** Rola `roles/browser` pozwala jedynie na przeglądanie struktury projektów (ich nazw i identyfikatorów) w hierarchii, ale nie daje uprawnień do odczytu zasobów wewnątrz projektu (np. wyświetlenia maszyn VM, baz danych), co jest wymagane.
-- **C. Przypisanie roli Project Viewer na poziomie Projektu:** Zmuszałoby to użytkowników do ręcznego nadawania uprawnień przy każdym nowo utworzonym projekcie, co wyklucza automatyzację i jest podatne na błędy ludzkie.
-- **D. Rola Project Browser na poziomie Projektu:** Podobnie jak w C i B, nie zapewnia automatyzacji dziedziczenia i nie daje praw do odczytu zasobów wewnątrz projektu.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Rola Project Browser na poziomie folderu:</strong> Rola `roles/browser` pozwala jedynie na przeglądanie struktury projektów (ich nazw i identyfikatorów) w hierarchii, ale nie daje uprawnień do odczytu zasobów wewnątrz projektu (np. wyświetlenia maszyn VM, baz danych), co jest wymagane.
+- <strong>C. Przypisanie roli Project Viewer na poziomie Projektu:</strong> Zmuszałoby to użytkowników do ręcznego nadawania uprawnień przy każdym nowo utworzonym projekcie, co wyklucza automatyzację i jest podatne na błędy ludzkie.
+- <strong>D. Rola Project Browser na poziomie Projektu:</strong> Podobnie jak w C i B, nie zapewnia automatyzacji dziedziczenia i nie daje praw do odczytu zasobów wewnątrz projektu.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Do automatycznego i spójnego przydzielania uprawnień dla nowo tworzonych projektów zawsze wykorzystuje się dziedziczenie IAM na poziomie **Folderu**.
-- Rola **Project Viewer** pozwala na odczyt zasobów, rola **Project Browser** to minimalna rola pozwalająca jedynie widzieć projekt na liście (nie daje wglądu w zasoby).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Do automatycznego i spójnego przydzielania uprawnień dla nowo tworzonych projektów zawsze wykorzystuje się dziedziczenie IAM na poziomie <strong>Folderu</strong>.
+- Rola <strong>Project Viewer</strong> pozwala na odczyt zasobów, rola <strong>Project Browser</strong> to minimalna rola pozwalająca jedynie widzieć projekt na liście (nie daje wglądu w zasoby).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Automatyczne uprawnienia dla nowych projektów grupy -> Rola Project Viewer nadana na poziomie Folderu.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - IAM Inheritance: https://cloud.google.com/iam/docs/resource-hierarchy-access-control
 </pre>
 

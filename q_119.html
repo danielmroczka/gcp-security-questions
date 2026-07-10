@@ -103,7 +103,7 @@ Celem jest wyeliminowanie publicznych adresów IP z hosta bastionu (bastion host
 - D. Wdrożenie Google Cloud Armor: Cloud Armor działa na poziomie Load Balancerów (HTTP/HTTPS, TCP/SSL Proxy) chroniąc aplikacje webowe przed atakami DDoS i exploitami. Nie służy do zabezpieczania bezpośredniego dostępu SSH do pojedynczych maszyn bastionowych.
 
 4. Wskazówki, hinty, tips and tricks:
-- Dostęp SSH do maszyn prywatnych (bez publicznego IP) z internetu bez korzystania z tradycyjnego VPN-u -> **IAP TCP Forwarding** (komenda `gcloud compute ssh --tunnel-through-iap`).
+- Dostęp SSH do maszyn prywatnych (bez publicznego IP) z internetu bez korzystania z tradycyjnego VPN-u -> <strong>IAP TCP Forwarding</strong> (komenda `gcloud compute ssh --tunnel-through-iap`).
 - Jest to jedno z najważniejszych zaleceń bezpieczeństwa GCP w zakresie dostępu administracyjnego.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

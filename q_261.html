@@ -65,9 +65,9 @@ B. Create a folder-level deny-all rule for outbound traffic within a hierarchica
 Odpowiedź B jest prawidłowa, ponieważ łączy centralne zarządzanie bezpieczeństwem sieciowym na poziomie folderu z granularną kontrolą FQDN (Fully Qualified Domain Name) na poziomie poszczególnych sieci VPC, co pozwala na bezpieczną i wysoce kontrolowaną komunikację wychodzącą.
 
 Mechanizm działania:
-a. **Folder-level deny-all (Blokada centralna):** Polityka hierarchiczna przypisana na poziomie folderu z regułą blokującą cały ruch wychodzący (deny egress) gwarantuje, że domyślnie żadna maszyna/usługa w żadnym podrzędnym projekcie nie połączy się z internetem.
-b. **FQDN allowlist (Granularne wyjątki):** Definiujemy osobne polityki zapory sieciowej z regułami zezwalającymi na ruch wychodzący wyłącznie do zatwierdzonych domen (np. `*.api.company.com`). Powiązanie tych polityk z konkretnymi sieciami VPC pozwala na precyzyjne odblokowanie dostępu tylko tam, gdzie to konieczne.
-c. **Cloud NAT:** Umożliwia maszynom wewnątrz prywatnych sieci VPC na bezpieczną komunikację wychodzącą bez posiadania publicznych adresów IP.
+a. <strong>Folder-level deny-all (Blokada centralna):</strong> Polityka hierarchiczna przypisana na poziomie folderu z regułą blokującą cały ruch wychodzący (deny egress) gwarantuje, że domyślnie żadna maszyna/usługa w żadnym podrzędnym projekcie nie połączy się z internetem.
+b. <strong>FQDN allowlist (Granularne wyjątki):</strong> Definiujemy osobne polityki zapory sieciowej z regułami zezwalającymi na ruch wychodzący wyłącznie do zatwierdzonych domen (np. `*.api.company.com`). Powiązanie tych polityk z konkretnymi sieciami VPC pozwala na precyzyjne odblokowanie dostępu tylko tam, gdzie to konieczne.
+c. <strong>Cloud NAT:</strong> Umożliwia maszynom wewnątrz prywatnych sieci VPC na bezpieczną komunikację wychodzącą bez posiadania publicznych adresów IP.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Implement a global-level allowlist rule... Apply this policy across all VPCs...
@@ -78,7 +78,7 @@ D. Configure Cloud NAT with IP-based filtering to permit outbound traffic only t
    * Dlaczego nieprawidłowa: Standardowy Cloud NAT nie posiada wbudowanych funkcji głębokiej inspekcji pakietów do filtrowania ruchu na podstawie nazw domenowych (FQDN). Wymaga to użycia Secure Web Proxy lub zaawansowanych reguł zapory sieciowej. Ponadto, samo IP-based filtering jest nieskuteczne dla nowoczesnych usług chmurowych, których adresy IP zmieniają się dynamicznie (np. CDN).
 
 4. Wskazówki, hinty, tips and tricks:
-* Aby zablokować ruch wychodzący dla wielu projektów i pozwolić tylko na wybrane FQDN dla konkretnych sieci -> Połącz **Hierarchical Firewall Policy (deny egress)** z **FQDN rules / Cloud NAT** na poziomie wybranych VPC.
+* Aby zablokować ruch wychodzący dla wielu projektów i pozwolić tylko na wybrane FQDN dla konkretnych sieci -> Połącz <strong>Hierarchical Firewall Policy (deny egress)</strong> z <strong>FQDN rules / Cloud NAT</strong> na poziomie wybranych VPC.
 * Filtrowanie po nazwach FQDN chroni przed ominięciem reguł przez dynamicznie zmieniające się adresy IP.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

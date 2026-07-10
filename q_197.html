@@ -97,10 +97,10 @@ B. Set the organization policy constraint constraints/run.allowedBinaryAuthoriza
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Wymaganiem jest zabezpieczenie wdrożeń na usłudze Cloud Run tak, aby uruchamiane były wyłącznie zaufane obrazy kontenerów, a zasady te były wymuszone w skali całej organizacji.
-W Google Cloud usługą, która działa jako brama (gatekeeper) kontrolująca i weryfikująca obrazy kontenerów przed wdrożeniem pod kątem atestów i podpisów, jest **Binary Authorization**.
+W Google Cloud usługą, która działa jako brama (gatekeeper) kontrolująca i weryfikująca obrazy kontenerów przed wdrożeniem pod kątem atestów i podpisów, jest <strong>Binary Authorization</strong>.
 Prawidłowe kroki to:
-- **A (Włączenie na usłudze):** Aby dana usługa Cloud Run weryfikowała obrazy przy każdym deployu, należy włączyć Binary Authorization bezpośrednio w konfiguracji usługi Cloud Run (ustawienie sprawdzania polityki).
-- **B (Polityka organizacji):** Aby zapobiec omijaniu tych zasad przez deweloperów i zapewnić spójną politykę bezpieczeństwa w firmie, należy zastosować politykę organizacji (Organization Policy) z ograniczeniem `constraints/run.allowedBinaryAuthorizationPolicies`. Określa ona listę dozwolonych polityk Binary Authorization, które mogą być powiązane z usługami Cloud Run w organizacji.
+- <strong>A (Włączenie na usłudze):</strong> Aby dana usługa Cloud Run weryfikowała obrazy przy każdym deployu, należy włączyć Binary Authorization bezpośrednio w konfiguracji usługi Cloud Run (ustawienie sprawdzania polityki).
+- <strong>B (Polityka organizacji):</strong> Aby zapobiec omijaniu tych zasad przez deweloperów i zapewnić spójną politykę bezpieczeństwa w firmie, należy zastosować politykę organizacji (Organization Policy) z ograniczeniem `constraints/run.allowedBinaryAuthorizationPolicies`. Określa ona listę dozwolonych polityk Binary Authorization, które mogą być powiązane z usługami Cloud Run w organizacji.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - C. Enable Binary Authorization on the existing Kubernetes cluster: Choć Binary Authorization integruje się z GKE, w tym scenariuszu aplikacja działa na usłudze Cloud Run (platforma serverless), a nie na klastrze GKE. Włączenie polityki na klastrze GKE nie zabezpieczy wdrożeń na Cloud Run.
@@ -108,7 +108,7 @@ Prawidłowe kroki to:
 - E. Set the organization policy constraint constraints/compute.trustedImageProjects...: To ograniczenie polityki organizacji służy do ograniczania źródła obrazów maszyn wirtualnych dla usługi Compute Engine (VM instances). Nie dotyczy ono obrazów kontenerów wdrażanych na Cloud Run.
 
 4. Wskazówki, hinty, tips and tricks:
-- Gdy celem jest wdrażanie wyłącznie zaufanych kontenerów (trusted container images) na Cloud Run lub GKE, rozwiązaniem jest **Binary Authorization**.
+- Gdy celem jest wdrażanie wyłącznie zaufanych kontenerów (trusted container images) na Cloud Run lub GKE, rozwiązaniem jest <strong>Binary Authorization</strong>.
 - Zwracaj uwagę na to, gdzie uruchamiana jest aplikacja – dla Cloud Run odpowiednie są reguły z prefiksem `run.`, a nie `compute.` czy GKE.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

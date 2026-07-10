@@ -96,8 +96,8 @@ B. Route all on-premises traffic to Google Cloud through an IPsec VPN tunnel to 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Hosty lokalne (on-premises) muszą komunikować się z API i usługami Google Cloud (np. BigQuery, Cloud Storage) w sposób całkowicie prywatny (bez ruchu przez publiczny internet), przy jednoczesnym zachowaniu niskich kosztów i wysokiej wydajności operacyjnej.
 Rozwiązanie to implementuje się za pomocą:
-1. **Private Google Access for on-premises hosts:** Usługa ta pozwala maszynom z sieci lokalnej (używającym prywatnych adresów IP RFC 1918) na kierowanie zapytań bezpośrednio do API Google Cloud za pośrednictwem specjalnych zakresów adresów IP: `private.googleapis.com` (199.36.153.8/30) lub `restricted.googleapis.com` (199.36.153.4/30).
-2. **IPsec VPN Tunnel:** Zestawienie tunelu Cloud VPN przez internet jest znacznie tańsze i szybsze w konfiguracji niż dedykowane łącza fizyczne (Cloud Interconnect), co doskonale spełnia wymóg minimalizacji kosztów ("minimize costs") przy zachowaniu pełnej prywatności i szyfrowania przesyłanych danych.
+1. <strong>Private Google Access for on-premises hosts:</strong> Usługa ta pozwala maszynom z sieci lokalnej (używającym prywatnych adresów IP RFC 1918) na kierowanie zapytań bezpośrednio do API Google Cloud za pośrednictwem specjalnych zakresów adresów IP: `private.googleapis.com` (199.36.153.8/30) lub `restricted.googleapis.com` (199.36.153.4/30).
+2. <strong>IPsec VPN Tunnel:</strong> Zestawienie tunelu Cloud VPN przez internet jest znacznie tańsze i szybsze w konfiguracji niż dedykowane łącza fizyczne (Cloud Interconnect), co doskonale spełnia wymóg minimalizacji kosztów ("minimize costs") przy zachowaniu pełnej prywatności i szyfrowania przesyłanych danych.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A. Set up VPC peering between the hosts on-premises and the VPC through the internet: VPC Network Peering to technologia służąca wyłącznie do łączenia dwóch sieci VPC wewnątrz infrastruktury Google Cloud. Nie ma możliwości zestawienia VPC peeringu bezpośrednio z siecią lokalną on-premises.
@@ -105,8 +105,8 @@ Rozwiązanie to implementuje się za pomocą:
 - D. Route all on-premises traffic to Google Cloud through a dedicated or Partner Interconnect...: Cloud Interconnect (Dedicated lub Partner) zapewnia najwyższą jakość i stabilność połączenia hybrydowego, lecz wiąże się z bardzo wysokimi kosztami instalacji, portów oraz opłatami miesięcznymi. VPN (opcja B) jest znacznie tańszy i w pełni wystarczający, dlatego to on lepiej realizuje wymóg "minimize costs".
 
 4. Wskazówki, hinty, tips and tricks:
-- Dostęp hostów lokalnych (on-premise) do API Google bez wychodzenia do internetu = **Private Google Access for on-premises hosts** (wymaga odpowiedniej konfiguracji DNS).
-- Wybierając między VPN a Interconnect: jeśli priorytetem jest niska cena i wydajność operacyjna, wybieraj **Cloud VPN**. Jeśli priorytetem jest wysoka przepustowość (np. 10 Gbps+) i SLA, wybieraj **Interconnect**.
+- Dostęp hostów lokalnych (on-premise) do API Google bez wychodzenia do internetu = <strong>Private Google Access for on-premises hosts</strong> (wymaga odpowiedniej konfiguracji DNS).
+- Wybierając między VPN a Interconnect: jeśli priorytetem jest niska cena i wydajność operacyjna, wybieraj <strong>Cloud VPN</strong>. Jeśli priorytetem jest wysoka przepustowość (np. 10 Gbps+) i SLA, wybieraj <strong>Interconnect</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - "on-premises hosts" + "access Google Cloud APIs" + "private connectivity" + "minimize costs" -> IPsec VPN + Private Google Access.

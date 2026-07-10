@@ -89,25 +89,25 @@ Your team sets up a Shared VPC Network where project co-vpc-prod is the host pro
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 W architekturze Shared VPC, projekt hosta (host project) udostępnia sieć i podsieci projektom usługowym (service projects). Chcemy zezwolić inżynierom (Group A) na podpinanie maszyn tylko do jednej konkretnej podsieci (10.1.1.0/24):
-- **Przydzielenie roli Compute Network User (Rola użytkownika sieci) na poziomie tej konkretnej podsieci (B):** GCP umożliwia precyzyjne przypisywanie ról IAM do poszczególnych podsieci. Nadanie roli `roles/compute.networkUser` bezpośrednio na zasobie podsieci 10.1.1.0/24 pozwala Grupie A na używanie tej podsieci do tworzenia interfejsów sieciowych maszyn VM, jednocześnie blokując im dostęp do wszystkich pozostałych podsieci w sieci hosta.
+- <strong>Przydzielenie roli Compute Network User (Rola użytkownika sieci) na poziomie tej konkretnej podsieci (B):</strong> GCP umożliwia precyzyjne przypisywanie ról IAM do poszczególnych podsieci. Nadanie roli `roles/compute.networkUser` bezpośrednio na zasobie podsieci 10.1.1.0/24 pozwala Grupie A na używanie tej podsieci do tworzenia interfejsów sieciowych maszyn VM, jednocześnie blokując im dostęp do wszystkich pozostałych podsieci w sieci hosta.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Compute Network User na poziomie projektu hosta:** Nadanie tej roli na poziomie całego projektu hosta dałoby Grupie A uprawnienia do podpinania maszyn do *wszystkich* podsieci w tym projekcie, co narusza zasadę minimalnych uprawnień.
-- **C. Compute Shared VPC Admin na poziomie projektu hosta:** Rola Shared VPC Admin pozwala na pełną administrację i konfigurację współdzielonego VPC (włączanie hosta, dodawanie projektów). Jest to rola o zbyt wysokich uprawnieniach dla zwykłych inżynierów tworzących maszyny VM.
-- **D. Compute Shared VPC Admin na poziomie projektu usługowego:** Ta rola jest nadawana na poziomie organizacji lub projektu hosta administratorom sieci, przypisanie jej na poziomie projektu usługowego nie rozwiązuje problemu uprawnień do konkretnej podsieci.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Compute Network User na poziomie projektu hosta:</strong> Nadanie tej roli na poziomie całego projektu hosta dałoby Grupie A uprawnienia do podpinania maszyn do *wszystkich* podsieci w tym projekcie, co narusza zasadę minimalnych uprawnień.
+- <strong>C. Compute Shared VPC Admin na poziomie projektu hosta:</strong> Rola Shared VPC Admin pozwala na pełną administrację i konfigurację współdzielonego VPC (włączanie hosta, dodawanie projektów). Jest to rola o zbyt wysokich uprawnieniach dla zwykłych inżynierów tworzących maszyny VM.
+- <strong>D. Compute Shared VPC Admin na poziomie projektu usługowego:</strong> Ta rola jest nadawana na poziomie organizacji lub projektu hosta administratorom sieci, przypisanie jej na poziomie projektu usługowego nie rozwiązuje problemu uprawnień do konkretnej podsieci.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Przypisywanie roli **Compute Network User** bezpośrednio do **zasobu podsieci (subnet level)** to standardowy wzorzec zabezpieczania sieci hybrydowych w GCP.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Przypisywanie roli <strong>Compute Network User</strong> bezpośrednio do <strong>zasobu podsieci (subnet level)</strong> to standardowy wzorzec zabezpieczania sieci hybrydowych w GCP.
 - Unikaj nadawania uprawnień sieciowych na poziomie projektu, jeśli wymagana jest precyzyjna kontrola nad podsieciami.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Dostęp tylko do wybranej podsieci w Shared VPC -> Compute Network User na poziomie podsieci (Subnet level).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Shared VPC IAM roles: https://cloud.google.com/vpc/docs/shared-vpc#iam-roles-shared-vpc
 </pre>
 

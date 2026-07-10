@@ -104,7 +104,7 @@ Wymaganiem jest skierowanie ruchu z sieci lokalnej (on-premises) do API Google p
 - C. Użycie `private.googleapis.com`: Ta domena umożliwia dostęp do wszystkich usług Google (w tym YouTube, Gmail), co narusza wymóg ograniczania dostępu wyłącznie do usług chronionych przez VPC Service Controls i zwiększa ryzyko eksfiltracji.
 
 4. Wskazówki, hinty, tips and tricks:
-- W scenariuszach z udziałem **VPC Service Controls** oraz połączeń hybrydowych (Interconnect / VPN) poprawnym adresem IP i domeną API jest zawsze **restricted.googleapis.com** (zakres IP: **199.36.153.4/30**).
+- W scenariuszach z udziałem <strong>VPC Service Controls</strong> oraz połączeń hybrydowych (Interconnect / VPN) poprawnym adresem IP i domeną API jest zawsze <strong>restricted.googleapis.com</strong> (zakres IP: <strong>199.36.153.4/30</strong>).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Zabezpieczenie przed eksfiltracją + VPC Service Controls + połączenie hybrydowe -> restricted.googleapis.com.

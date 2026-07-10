@@ -89,25 +89,25 @@ Your company runs a website that will store PII on Google Cloud Platform. To com
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymaganie polega na przechowywaniu danych osobowych (PII) przez określony czas, a następnie ich pełnym i automatycznym usunięciu po tym okresie (retencja danych/usuwanie po upływie TTL) bez ryzyka usunięcia nowszych danych:
-- **Przechowywanie danych w Cloud Storage i skonfigurowanie cyklu życia obiektu (Object Lifecycle Management) na poziomie kubła (C):** Cloud Storage umożliwia zdefiniowanie reguł cyklu życia (np. akcja `Delete` dla obiektów o wieku powyżej określonej liczby dni). Google automatycznie i bezpłatnie dba o to, by obiekty, które przekroczyły wiek (Age), były bezpowrotnie usuwane, podczas gdy nowo utworzone obiekty pozostają bezpieczne. Jest to rozwiązanie w pełni zautomatyzowane, niezawodne i najbardziej opłacalne kosztowo.
+- <strong>Przechowywanie danych w Cloud Storage i skonfigurowanie cyklu życia obiektu (Object Lifecycle Management) na poziomie kubła (C):</strong> Cloud Storage umożliwia zdefiniowanie reguł cyklu życia (np. akcja `Delete` dla obiektów o wieku powyżej określonej liczby dni). Google automatycznie i bezpłatnie dba o to, by obiekty, które przekroczyły wiek (Age), były bezpowrotnie usuwane, podczas gdy nowo utworzone obiekty pozostają bezpieczne. Jest to rozwiązanie w pełni zautomatyzowane, niezawodne i najbardziej opłacalne kosztowo.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Pojedynczy Persistent Disk i usunięcie dysku:** Usunięcie całego dysku spowodowałoby skasowanie *wszystkich* danych jednocześnie, w tym tych, które jeszcze nie przekroczyły limitu czasu przechowywania (narusza to warunek nieusuwania nowszych danych).
-- **B. Pojedyncza tabela BigQuery z wygaśnięciem:** BigQuery pozwala na ustawianie wygaśnięcia tabel (Table Expiration), ale usunięcie tabeli powoduje skasowanie wszystkich wierszy jednocześnie. Podobnie jak w A, skasowałoby to nowo dodane dane. Wygaśnięcie partycji mogłoby pomóc, ale Cloud Storage jest domyślnym i bardziej dopasowanym obiektowym systemem retencji plików.
-- **D. BigTable z wygaśnięciem rodzin kolumn (TTL):** BigTable obsługuje TTL (Time to Live) na poziomie komórek, ale jest to bardzo droga, wysoce wydajna baza danych NoSQL, nieprzeznaczona do taniej, długoterminowej retencji plików z danymi osobowymi.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Pojedynczy Persistent Disk i usunięcie dysku:</strong> Usunięcie całego dysku spowodowałoby skasowanie *wszystkich* danych jednocześnie, w tym tych, które jeszcze nie przekroczyły limitu czasu przechowywania (narusza to warunek nieusuwania nowszych danych).
+- <strong>B. Pojedyncza tabela BigQuery z wygaśnięciem:</strong> BigQuery pozwala na ustawianie wygaśnięcia tabel (Table Expiration), ale usunięcie tabeli powoduje skasowanie wszystkich wierszy jednocześnie. Podobnie jak w A, skasowałoby to nowo dodane dane. Wygaśnięcie partycji mogłoby pomóc, ale Cloud Storage jest domyślnym i bardziej dopasowanym obiektowym systemem retencji plików.
+- <strong>D. BigTable z wygaśnięciem rodzin kolumn (TTL):</strong> BigTable obsługuje TTL (Time to Live) na poziomie komórek, ale jest to bardzo droga, wysoce wydajna baza danych NoSQL, nieprzeznaczona do taniej, długoterminowej retencji plików z danymi osobowymi.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Jeśli mowa o automatycznej retencji i usuwaniu całych plików/obiektów z danymi osobowymi, najtańszym i najprostszym mechanizmem w GCP jest **Object Lifecycle Management w Cloud Storage**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Jeśli mowa o automatycznej retencji i usuwaniu całych plików/obiektów z danymi osobowymi, najtańszym i najprostszym mechanizmem w GCP jest <strong>Object Lifecycle Management w Cloud Storage</strong>.
 - Zapamiętaj: Reguły cyklu życia obiektów w GCS działają na poziomie poszczególnych obiektów, więc każdy plik jest usuwany indywidualnie na podstawie swojej daty utworzenia.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Retencja plików/obiektów i usuwanie po czasie -> Cloud Storage Lifecycle Management.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Object Lifecycle Management: https://cloud.google.com/storage/docs/lifecycle
 </pre>
 

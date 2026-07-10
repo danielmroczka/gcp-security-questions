@@ -90,27 +90,27 @@ Which service provides visibility into Google's own internal audit logs for acti
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Klienci korporacyjni przetwarzający wrażliwe dane w chmurze wymagają pełnej widoczności działań personelu dostawcy chmury (Google).
-- **Access Transparency (Przejrzystość Dostępu) (B):** Jest to unikalna usługa Google Cloud, która generuje logi w czasie zbliżonym do rzeczywistego, gdy inżynierowie lub pracownicy wsparcia technicznego Google uzyskują dostęp do danych klienta (np. w celu rozwiązania zgłoszenia serwisowego lub błędu systemu). Logi te zawierają informacje o powodzie dostępu, lokalizacji pracownika Google oraz podjętych przez niego działaniach, zapewniając pełną przejrzystość i zgodność z regulacjami.
+- <strong>Access Transparency (Przejrzystość Dostępu) (B):</strong> Jest to unikalna usługa Google Cloud, która generuje logi w czasie zbliżonym do rzeczywistego, gdy inżynierowie lub pracownicy wsparcia technicznego Google uzyskują dostęp do danych klienta (np. w celu rozwiązania zgłoszenia serwisowego lub błędu systemu). Logi te zawierają informacje o powodzie dostępu, lokalizacji pracownika Google oraz podjętych przez niego działaniach, zapewniając pełną przejrzystość i zgodność z regulacjami.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Cloud Audit Logs:** Rejestrują operacje wykonywane przez samego klienta (jego użytkowników i konta usługowe) na zasobach GCP, nie rejestrują domyślnie wewnętrznych działań administracyjnych personelu Google na danych klienta.
-- **C. Access Approval (Zatwierdzanie Dostępu):** Działa o krok dalej niż Access Transparency – zamiast tylko logować dostęp, Access Approval pozwala klientowi na aktywne zatwierdzenie lub odrzucenie wniosku pracownika Google o dostęp do danych przed jego udzieleniem.
-- **D. Security Command Center:** To platforma zarządzania podatnościami i zagrożeniami bezpieczeństwa w zasobach klienta, nie zajmuje się audytowaniem personelu Google.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Cloud Audit Logs:</strong> Rejestrują operacje wykonywane przez samego klienta (jego użytkowników i konta usługowe) na zasobach GCP, nie rejestrują domyślnie wewnętrznych działań administracyjnych personelu Google na danych klienta.
+- <strong>C. Access Approval (Zatwierdzanie Dostępu):</strong> Działa o krok dalej niż Access Transparency – zamiast tylko logować dostęp, Access Approval pozwala klientowi na aktywne zatwierdzenie lub odrzucenie wniosku pracownika Google o dostęp do danych przed jego udzieleniem.
+- <strong>D. Security Command Center:</strong> To platforma zarządzania podatnościami i zagrożeniami bezpieczeństwa w zasobach klienta, nie zajmuje się audytowaniem personelu Google.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
 - Odróżniaj dwie kluczowe usługi zgodnościowe w GCP:
-  - **Access Transparency:** Widoczność i logowanie działań inżynierów Google na Twoich danych (audyt po fakcie).
-  - **Access Approval:** Aktywna akceptacja/blokada dostępu inżynierów Google przed wykonaniem operacji (kontrola prewencyjna).
+  - <strong>Access Transparency:</strong> Widoczność i logowanie działań inżynierów Google na Twoich danych (audyt po fakcie).
+  - <strong>Access Approval:</strong> Aktywna akceptacja/blokada dostępu inżynierów Google przed wykonaniem operacji (kontrola prewencyjna).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Widoczność działań pracowników Google -> Access Transparency.
 - Wymóg wyrażenia zgody na dostęp inżyniera Google -> Access Approval.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Access Transparency overview: https://cloud.google.com/access-transparency/docs/overview
 </pre>
 

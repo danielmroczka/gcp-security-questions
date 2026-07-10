@@ -97,8 +97,8 @@ D. 1. Identify buckets with record data. 2. Apply a retention policy and set it 
 Odpowiedź D jest prawidłowa, ponieważ blokada kubełka (Bucket Lock) w Cloud Storage jest jedynym mechanizmem gwarantującym trwałość i nieusuwalność zdefiniowanej polityki retencji danych (Retention Policy), co bezpośrednio spełnia wymagania regulacji prawnych.
 
 Szczegóły mechanizmu:
-a. **Polityka retencji (Retention Policy):** Definiuje czas (np. 7 lat), przez który żaden obiekt w kubełku nie może zostać zmodyfikowany ani usunięty.
-b. **Bucket Lock (Blokada):** Po aktywowaniu i zablokowaniu polityki za pomocą Bucket Lock, staje się ona niezmienna (immutable). Oznacza to, że nikt – w tym administrator projektu, właściciel konta, a nawet samo Google – nie może usunąć blokady ani skrócić czasu retencji. Jedynym sposobem na usunięcie kubełka byłoby poczekanie, aż wszystkie zawarte w nim obiekty osiągną wiek 7 lat i zostaną usunięte po wygaśnięciu retencji.
+a. <strong>Polityka retencji (Retention Policy):</strong> Definiuje czas (np. 7 lat), przez który żaden obiekt w kubełku nie może zostać zmodyfikowany ani usunięty.
+b. <strong>Bucket Lock (Blokada):</strong> Po aktywowaniu i zablokowaniu polityki za pomocą Bucket Lock, staje się ona niezmienna (immutable). Oznacza to, że nikt – w tym administrator projektu, właściciel konta, a nawet samo Google – nie może usunąć blokady ani skrócić czasu retencji. Jedynym sposobem na usunięcie kubełka byłoby poczekanie, aż wszystkie zawarte w nim obiekty osiągną wiek 7 lat i zostaną usunięte po wygaśnięciu retencji.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. ...Monitor the bucket by using log-based alerts to ensure that no modifications...
@@ -109,7 +109,7 @@ C. ...Enable the bucket policy only to ensure that data is retained. 3. Enable b
    * Dlaczego nieprawidłowa: "Bucket policy only" (obecnie Uniform Bucket-Level Access) służy do wymuszenia zarządzania uprawnieniami za pomocą IAM zamiast list ACL. Samo włączenie tej opcji nie definiuje czasu retencji danych (np. 7 lat) i nie zastępuje zdefiniowania Retention Policy.
 
 4. Wskazówki, hinty, tips and tricks:
-* Trwałe i nieodwracalne zachowanie danych (WORM - Write Once Read Many / Compliance) w Cloud Storage -> Zdefiniowanie **Retention Policy** + **Bucket Lock**.
+* Trwałe i nieodwracalne zachowanie danych (WORM - Write Once Read Many / Compliance) w Cloud Storage -> Zdefiniowanie <strong>Retention Policy</strong> + <strong>Bucket Lock</strong>.
 * Pamiętaj: zablokowany Bucket Lock jest operacją nieodwracalną!
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

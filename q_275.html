@@ -65,9 +65,9 @@ C. Create two workforce identity pools for the partner IdPs.
 Odpowiedź C jest prawidłowa, ponieważ Workforce Identity Federation (Federacja Tożsamości Pracowników) jest najnowocześniejszym i zalecanym przez Google sposobem na nadawanie dostępu do konsoli i API Google Cloud dla użytkowników zewnętrznych (np. inżynierów wsparcia partnerów) przy użyciu ich własnych, istniejących systemów tożsamości (SAML/OIDC), bez konieczności tworzenia dla nich kont w chmurze klienta.
 
 Zalety tego rozwiązania:
-a. **Brak synchronizacji tożsamości:** Nie musimy tworzyć kont gości ani synchronizować tożsamości do naszego Cloud Identity (brak narzutu na administrację).
-b. **Logowanie federacyjne:** Inżynierowie partnera logują się swoimi firmowymi kontami (np. z Azure AD partnera).
-c. **Zarządzanie cyklem życia:** Jeśli pracownik partnera odejdzie z pracy, jego konto zostanie zablokowane w jego lokalnym systemie IdP, co automatycznie odetnie mu dostęp do Twojego GCP, zapewniając wysokie bezpieczeństwo.
+a. <strong>Brak synchronizacji tożsamości:</strong> Nie musimy tworzyć kont gości ani synchronizować tożsamości do naszego Cloud Identity (brak narzutu na administrację).
+b. <strong>Logowanie federacyjne:</strong> Inżynierowie partnera logują się swoimi firmowymi kontami (np. z Azure AD partnera).
+c. <strong>Zarządzanie cyklem życia:</strong> Jeśli pracownik partnera odejdzie z pracy, jego konto zostanie zablokowane w jego lokalnym systemie IdP, co automatycznie odetnie mu dostęp do Twojego GCP, zapewniając wysokie bezpieczeństwo.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create two single sign-on (SSO) profiles... by using SSO for Cloud Identity.
@@ -78,7 +78,7 @@ D. Sync user identities from their existing IdPs to Cloud Identity by using Goog
    * Dlaczego nieprawidłowa: GCDS wymaga bezpośredniego połączenia LDAP (np. Active Directory) i służy do synchronizacji wewnątrz jednej firmy. Synchronizacja tożsamości z zewnętrznych systemów AD partnerów handlowych do Twojej domeny jest technicznie trudna, narusza granice bezpieczeństwa i wymaga tworzenia kont w Twoim systemie Cloud Identity.
 
 4. Wskazówki, hinty, tips and tricks:
-* Dostęp do GCP dla zewnętrznych pracowników (partnerzy/kontrahenci) przy użyciu ich własnych IdP -> Zawsze wybieraj **Workforce Identity Federation**.
+* Dostęp do GCP dla zewnętrznych pracowników (partnerzy/kontrahenci) przy użyciu ich własnych IdP -> Zawsze wybieraj <strong>Workforce Identity Federation</strong>.
 * Workforce Identity Federation eliminuje potrzebę tworzenia i licencjonowania kont w Twoim Cloud Identity.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

@@ -90,25 +90,25 @@ A customer wants to run a batch processing system on VMs and store the output fi
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Podobnie jak w poprzednim pytaniu, system przetwarzania wsadowego (batch processing) na maszynach wirtualnych musi zapisywać wyniki do Cloud Storage, ale maszyny te nie mogą mieć dostępu do publicznego internetu:
-- **Private Google Access (C):** Włączenie Private Google Access na podsieci, w której znajdują się maszyny wirtualne, pozwala im na komunikowanie się z API Cloud Storage za pomocą ich prywatnych adresów IP. Ruch ten nie opuszcza sieci Google i nie wymaga przypisywania publicznych adresów IP ani tras internetowych do maszyn.
+- <strong>Private Google Access (C):</strong> Włączenie Private Google Access na podsieci, w której znajdują się maszyny wirtualne, pozwala im na komunikowanie się z API Cloud Storage za pomocą ich prywatnych adresów IP. Ruch ten nie opuszcza sieci Google i nie wymaga przypisywania publicznych adresów IP ani tras internetowych do maszyn.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Reguła zapory sieciowej blokująca ruch do internetu:** Chociaż blokuje ruch, to zablokowanie całego ruchu wychodzącego do internetu uniemożliwiłoby również maszynom nawiązanie połączenia z Cloud Storage, ponieważ domyślne punkty końcowe Cloud Storage rozwiązują się na publiczne adresy IP. Bez włączonego PGA lub PSC, zablokowanie internetu zablokuje też dostęp do GCS.
-- **B. Brama NAT:** Cloud NAT daje maszynom dostęp do publicznego internetu (ruch wychodzący), co wprost narusza politykę bezpieczeństwa ("no VMs may reach the public internet").
-- **D. Montowanie Cloud Storage jako lokalnego systemu plików (np. za pomocą gcsfuse):** Aby gcsfuse działał, maszyna nadal musi mieć dostęp do API Cloud Storage. Samo zamontowanie nie rozwiązuje problemu braku łączności sieciowej z API GCS bez włączonego PGA.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Reguła zapory sieciowej blokująca ruch do internetu:</strong> Chociaż blokuje ruch, to zablokowanie całego ruchu wychodzącego do internetu uniemożliwiłoby również maszynom nawiązanie połączenia z Cloud Storage, ponieważ domyślne punkty końcowe Cloud Storage rozwiązują się na publiczne adresy IP. Bez włączonego PGA lub PSC, zablokowanie internetu zablokuje też dostęp do GCS.
+- <strong>B. Brama NAT:</strong> Cloud NAT daje maszynom dostęp do publicznego internetu (ruch wychodzący), co wprost narusza politykę bezpieczeństwa ("no VMs may reach the public internet").
+- <strong>D. Montowanie Cloud Storage jako lokalnego systemu plików (np. za pomocą gcsfuse):</strong> Aby gcsfuse działał, maszyna nadal musi mieć dostęp do API Cloud Storage. Samo zamontowanie nie rozwiązuje problemu braku łączności sieciowej z API GCS bez włączonego PGA.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
 - Private Google Access to kluczowa funkcja sieciowa w GCP, która często pojawia się na egzaminie bezpieczeństwa. Zapamiętaj: PGA włącza się na poziomie podsieci (subnet level).
 - PGA działa tylko dla maszyn mających *wyłącznie* prywatne IP (internal IP only).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Maszyny bez dostępu do internetu -> Dostęp do Cloud Storage -> Private Google Access.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Configuring Private Google Access: https://cloud.google.com/vpc/docs/configure-private-google-access
 </pre>
 

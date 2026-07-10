@@ -65,8 +65,8 @@ B. Implement a Cloud DLP solution to scan and identify sensitive information, an
 Odpowiedź B jest prawidłowa, ponieważ kompleksowe zapobieganie eksfiltracji danych (data exfiltration mitigation) w chmurze wymaga podejścia wielowarstwowego, łączącego ochronę na poziomie danych (data layer) z ochroną na poziomie sieci i usług (network/service layer).
 
 Zastosowane technologie:
-a. **Warstwa danych (Cloud DLP):** Cloud Data Loss Prevention pozwala na automatyczne skanowanie plików i baz danych, wykrywanie informacji wrażliwych (PII, np. PESEL, numery kart, paszporty) oraz ich deidentyfikację (redagowanie, maskowanie). Dzięki temu nawet jeśli dane opuszczą bezpieczne środowisko, nie zawierają one jawnych informacji wrażliwych.
-b. **Warstwa sieci/usług (VPC Service Controls):** VPC SC tworzy twardy perymetr bezpieczeństwa wokół usług zarządzanych (np. Cloud Storage, BigQuery). Uniemożliwia to skopiowanie danych z chronionych zasobów firmy do prywatnych kubłów Cloud Storage należących do nieautoryzowanych osób w innych organizacjach GCP, skutecznie blokując próby eksfiltracji sieciowej.
+a. <strong>Warstwa danych (Cloud DLP):</strong> Cloud Data Loss Prevention pozwala na automatyczne skanowanie plików i baz danych, wykrywanie informacji wrażliwych (PII, np. PESEL, numery kart, paszporty) oraz ich deidentyfikację (redagowanie, maskowanie). Dzięki temu nawet jeśli dane opuszczą bezpieczne środowisko, nie zawierają one jawnych informacji wrażliwych.
+b. <strong>Warstwa sieci/usług (VPC Service Controls):</strong> VPC SC tworzy twardy perymetr bezpieczeństwa wokół usług zarządzanych (np. Cloud Storage, BigQuery). Uniemożliwia to skopiowanie danych z chronionych zasobów firmy do prywatnych kubłów Cloud Storage należących do nieautoryzowanych osób w innych organizacjach GCP, skutecznie blokując próby eksfiltracji sieciowej.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Encrypt all sensitive data in transit and at rest... TLS and HTTPS protocols.
@@ -77,8 +77,8 @@ D. Rely on employee expertise to prevent accidental data exfiltration incidents.
    * Dlaczego nieprawidłowa: Poleganie wyłącznie na wiedzy pracowników (czynnik ludzki) bez wdrożenia technicznych zabezpieczeń (technical controls) jest niezgodne z podstawowymi zasadami bezpieczeństwa IT i nie chroni przed celowym działaniem na szkodę firmy ani przed błędami.
 
 4. Wskazówki, hinty, tips and tricks:
-* Ochrona przed eksfiltracją danych (data exfiltration) w GCP -> Zawsze szukaj **VPC Service Controls (VPC SC)**.
-* Klasyfikacja i maskowanie danych wrażliwych (PII) -> Zawsze **Cloud DLP** (Data Loss Prevention).
+* Ochrona przed eksfiltracją danych (data exfiltration) w GCP -> Zawsze szukaj <strong>VPC Service Controls (VPC SC)</strong>.
+* Klasyfikacja i maskowanie danych wrażliwych (PII) -> Zawsze <strong>Cloud DLP</strong> (Data Loss Prevention).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Mitigate the risk of data exfiltration + PII -> Cloud DLP + VPC Service Controls.

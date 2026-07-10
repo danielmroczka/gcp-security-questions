@@ -96,9 +96,9 @@ D. Principals have broad IAM roles allowing the creation and management of Compu
 Odpowiedź D jest prawidłowa, ponieważ przyznawanie użytkownikom szerokich uprawnień do tworzenia i konfigurowania maszyn wirtualnych (IaaS) bez narzuconego, bezpiecznego procesu utwardzania (hardening) oraz szablonów bezpieczeństwa stwarza największe, bezpośrednie zagrożenie dla zgodności regulacyjnej i bezpieczeństwa całej infrastruktury.
 
 Dlaczego to największe ryzyko:
-a. **Brak kontroli nad systemem operacyjnym:** Deweloperzy mogą uruchamiać niezałatane (unpatched) systemy operacyjne podatne na znane exploity.
-b. **Błędne konfiguracje sieciowe:** Szerokie uprawnienia pozwalają na otwieranie portów na cały świat (0.0.0.0/0) lub przypisywanie publicznych IP maszynom produkcyjnym.
-c. **Ucieczka z kontenera / uprawnienia roota:** Brak hardeningu pozwala na uruchamianie usług z uprawnieniami roota, co ułatwia kompromitację środowiska. Łamie to kluczowe wymagania standardów takich jak PCI DSS czy CIS.
+a. <strong>Brak kontroli nad systemem operacyjnym:</strong> Deweloperzy mogą uruchamiać niezałatane (unpatched) systemy operacyjne podatne na znane exploity.
+b. <strong>Błędne konfiguracje sieciowe:</strong> Szerokie uprawnienia pozwalają na otwieranie portów na cały świat (0.0.0.0/0) lub przypisywanie publicznych IP maszynom produkcyjnym.
+c. <strong>Ucieczka z kontenera / uprawnienia roota:</strong> Brak hardeningu pozwala na uruchamianie usług z uprawnieniami roota, co ułatwia kompromitację środowiska. Łamie to kluczowe wymagania standardów takich jak PCI DSS czy CIS.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. The security team mandates the use of customer-managed encryption keys (CMEK) for all data classified as sensitive.

@@ -99,8 +99,8 @@ E. Deploy patches with VM Manager by using OS patch management.
 Odpowiedzi A i E są prawidłowe, ponieważ VM Manager (część pakietu OS Configuration Management) jest oficjalną, natywną usługą Google Cloud zaprojektowaną do automatyzacji aktualizacji systemów operacyjnych i zarządzania poprawkami (patch management) na maszynach wirtualnych Compute Engine w skali wielu projektów.
 
 Komponenty rozwiązania:
-a. **Automatyzacja wdrażania poprawek (E):** Usługa OS Patch Management w VM Manager pozwala na definiowanie zadań wdrażania poprawek (patch jobs) na grupach maszyn wirtualnych. Zadania te można zaplanować, określić okna serwisowe (maintenance windows) oraz zasady restartu maszyn.
-b. **Wizualizacja stanu poprawek (A):** VM Manager oferuje centralny pulpit nawigacyjny w konsoli GCP, który zbiera i wyświetla stan zgodności z poprawkami (compliance data) dla wszystkich maszyn wirtualnych w wielu projektach, ułatwiając audyt bezpieczeństwa.
+a. <strong>Automatyzacja wdrażania poprawek (E):</strong> Usługa OS Patch Management w VM Manager pozwala na definiowanie zadań wdrażania poprawek (patch jobs) na grupach maszyn wirtualnych. Zadania te można zaplanować, określić okna serwisowe (maintenance windows) oraz zasady restartu maszyn.
+b. <strong>Wizualizacja stanu poprawek (A):</strong> VM Manager oferuje centralny pulpit nawigacyjny w konsoli GCP, który zbiera i wyświetla stan zgodności z poprawkami (compliance data) dla wszystkich maszyn wirtualnych w wielu projektach, ułatwiając audyt bezpieczeństwa.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. View patch management data in Artifact Registry.
@@ -111,7 +111,7 @@ D. Deploy patches with Security Command Center by using Rapid Vulnerability Dete
    * Dlaczego nieprawidłowa: Rapid Vulnerability Detection w SCC służy do wykrywania podatności sieciowych (np. słabe hasła, znane exploity portów). SCC nie posiada funkcji aktywnego instalowania poprawek (patching) wewnątrz systemów operacyjnych maszyn VM.
 
 4. Wskazówki, hinty, tips and tricks:
-* Narzędziem do patchowania systemów operacyjnych (OS patching) maszyn Compute Engine w GCP jest **VM Manager** (OS patch management).
+* Narzędziem do patchowania systemów operacyjnych (OS patching) maszyn Compute Engine w GCP jest <strong>VM Manager</strong> (OS patch management).
 * VM Manager wymaga włączenia odpowiedniego agenta (OS Config agent) na instancjach VM.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

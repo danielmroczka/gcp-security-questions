@@ -89,25 +89,25 @@ An organization is migrating from their current on-premises productivity softwar
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 G Suite (obecnie Google Workspace) jest produktem typu SaaS (Software as a Service). Zgodnie ze wspólnym modelem odpowiedzialności w chmurze (Shared Responsibility Model):
-- **Dla usług typu SaaS, bezpieczeństwo sieciowe jest w całości po stronie Google (C):** Google w pełni zarządza infrastrukturą sieciową, routingiem i zapaporami chroniącymi usługi Workspace. Klient nie ma wglądu ani możliwości konfiguracji reguł firewall czy sieci VPC pod Workspace. Odpowiedzialnością klienta w Workspace jest zarządzanie tożsamością, urządzeniami oraz politykami dostępu do danych (np. Context-Aware Access).
+- <strong>Dla usług typu SaaS, bezpieczeństwo sieciowe jest w całości po stronie Google (C):</strong> Google w pełni zarządza infrastrukturą sieciową, routingiem i zapaporami chroniącymi usługi Workspace. Klient nie ma wglądu ani możliwości konfiguracji reguł firewall czy sieci VPC pod Workspace. Odpowiedzialnością klienta w Workspace jest zarządzanie tożsamością, urządzeniami oraz politykami dostępu do danych (np. Context-Aware Access).
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Firewall rules:** Reguły zapory sieciowej VPC służą do ochrony zasobów typu IaaS (maszyny wirtualne) i nie mają żadnego zastosowania ani wpływu na ruch sieciowy wewnątrz usług SaaS takich jak Google Workspace.
-- **B. Cloud Armor:** Jest to usługa WAF dla aplikacji uruchamianych przez klienta na własnych Load Balancerach w GCP, nie służy do ochrony ruchu dla usług SaaS od Google.
-- **D. Skonfigurowanie sieci VPC:** Podobnie jak w punkcie A, sieci VPC należą do warstwy IaaS klienta i nie służą do zabezpieczania wewnętrznego przesyłu danych w Workspace.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Firewall rules:</strong> Reguły zapory sieciowej VPC służą do ochrony zasobów typu IaaS (maszyny wirtualne) i nie mają żadnego zastosowania ani wpływu na ruch sieciowy wewnątrz usług SaaS takich jak Google Workspace.
+- <strong>B. Cloud Armor:</strong> Jest to usługa WAF dla aplikacji uruchamianych przez klienta na własnych Load Balancerach w GCP, nie służy do ochrony ruchu dla usług SaaS od Google.
+- <strong>D. Skonfigurowanie sieci VPC:</strong> Podobnie jak w punkcie A, sieci VPC należą do warstwy IaaS klienta i nie służą do zabezpieczania wewnętrznego przesyłu danych w Workspace.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Egzamin sprawdza zrozumienie **Shared Responsibility Model** dla różnych typów chmur (IaaS vs PaaS vs SaaS).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Egzamin sprawdza zrozumienie <strong>Shared Responsibility Model</strong> dla różnych typów chmur (IaaS vs PaaS vs SaaS).
 - Pamiętaj: W SaaS (Workspace, Gmail, Drive) warstwa sieciowa jest całkowicie zarządzana i zabezpieczana przez dostawcę chmury (Google).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Bezpieczeństwo sieciowe w usługach SaaS (G Suite/Workspace) -> Odpowiedzialność Google.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Google Cloud Shared Responsibility Model: https://cloud.google.com/security/shared-responsibility-model
 </pre>
 

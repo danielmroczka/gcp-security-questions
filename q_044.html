@@ -89,25 +89,25 @@ Your company is using GSuite and has developed an application meant for internal
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Celem jest uniemożliwienie zewnętrznemu atakującemu dostępu do wewnętrznej aplikacji App Engine, nawet w przypadku przejęcia/skompromitowania hasła pracownika:
-- **Wymuszenie dwuskładnikowego uwierzytelniania (2-Factor Authentication / 2SV) w G Suite dla wszystkich użytkowników (A):** W modelu tożsamości opartym na kontach Google (G Suite/Workspace), autoryzacja do aplikacji App Engine przechodzi przez ekrany logowania Google. Wdrożenie 2FA (MFA) sprawia, że samo skradzione hasło jest bezużyteczne dla napastnika – do zalogowania wymagany jest drugi składnik (np. klucz bezpieczeństwa U2F, aplikacja uwierzytelniająca lub kod SMS).
+- <strong>Wymuszenie dwuskładnikowego uwierzytelniania (2-Factor Authentication / 2SV) w G Suite dla wszystkich użytkowników (A):</strong> W modelu tożsamości opartym na kontach Google (G Suite/Workspace), autoryzacja do aplikacji App Engine przechodzi przez ekrany logowania Google. Wdrożenie 2FA (MFA) sprawia, że samo skradzione hasło jest bezużyteczne dla napastnika – do zalogowania wymagany jest drugi składnik (np. klucz bezpieczeństwa U2F, aplikacja uwierzytelniająca lub kod SMS).
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Skonfigurowanie Cloud IAP:** IAP jest świetnym narzędziem do kontroli dostępu, ale IAP opiera się na uwierzytelnieniu konta Google. Jeśli hasło użytkownika wyciekło, a na koncie nie ma włączonego MFA, atakujący zaloguje się do konta Google i bez przeszkód ominie bramkę IAP.
-- **C. G Suite Password Sync (GSPS):** GSPS synchronizuje hasła z Active Directory do Google Workspace, ale nie dodaje żadnego dodatkowego składnika uwierzytelniania chroniącego przed skompromitowanym hasłem.
-- **D. Skonfigurowanie Cloud VPN:** VPN chroni na poziomie sieciowym, ale nie uniemożliwi zalogowania się z przejętymi poświadczeniami bezpośrednio przez przeglądarkę z dowolnego urządzenia podłączonego do internetu (App Engine ma publiczne punkty końcowe).
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Skonfigurowanie Cloud IAP:</strong> IAP jest świetnym narzędziem do kontroli dostępu, ale IAP opiera się na uwierzytelnieniu konta Google. Jeśli hasło użytkownika wyciekło, a na koncie nie ma włączonego MFA, atakujący zaloguje się do konta Google i bez przeszkód ominie bramkę IAP.
+- <strong>C. G Suite Password Sync (GSPS):</strong> GSPS synchronizuje hasła z Active Directory do Google Workspace, ale nie dodaje żadnego dodatkowego składnika uwierzytelniania chroniącego przed skompromitowanym hasłem.
+- <strong>D. Skonfigurowanie Cloud VPN:</strong> VPN chroni na poziomie sieciowym, ale nie uniemożliwi zalogowania się z przejętymi poświadczeniami bezpośrednio przez przeglądarkę z dowolnego urządzenia podłączonego do internetu (App Engine ma publiczne punkty końcowe).
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Pułapka: Wielu inżynierów wybiera IAP (B), ponieważ jest to usługa bezpieczeństwa sieciowego w GCP. IAP kontroluje *kto* ma dostęp, ale to **MFA (Multi-Factor Authentication)** zapewnia ochronę tożsamości w przypadku przejęcia hasła.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Pułapka: Wielu inżynierów wybiera IAP (B), ponieważ jest to usługa bezpieczeństwa sieciowego w GCP. IAP kontroluje *kto* ma dostęp, ale to <strong>MFA (Multi-Factor Authentication)</strong> zapewnia ochronę tożsamości w przypadku przejęcia hasła.
 - Pytanie wyraźnie zaznacza: "even when an employee's password has been compromised" -> Odpowiedzią musi być mechanizm zabezpieczający sam proces logowania (MFA/2FA).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Ochrona przed skradzionym hasłem -> Dwuetapowa weryfikacja / 2-Factor Authentication.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Google Workspace 2-Step Verification: https://support.google.com/a/answer/175197
 </pre>
 

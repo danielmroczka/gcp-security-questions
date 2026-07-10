@@ -95,7 +95,7 @@ B. Enable the constraints/storage.publicAccessPrevention constraint at the organ
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Należy wdrożyć politykę bezpieczeństwa, która proaktywnie uniemożliwi użytkownikom upublicznianie obiektów w kubełkach Cloud Storage na poziomie całej organizacji, przy minimalnym narzucie operacyjnym:
-- Najbardziej efektywnym rozwiązaniem jest włączenie polityki organizacji (Organization Policy) z ograniczeniem **`storage.publicAccessPrevention`** na poziomie węzła organizacji.
+- Najbardziej efektywnym rozwiązaniem jest włączenie polityki organizacji (Organization Policy) z ograniczeniem <strong>`storage.publicAccessPrevention`</strong> na poziomie węzła organizacji.
 - Włączenie tej polityki powoduje automatyczne i natychmiastowe zablokowanie możliwości konfiguracji publicznego dostępu (np. przypisywania roli Storage Object Viewer dla tożsamości `allUsers` lub `allAuthenticatedUsers`) do jakichkolwiek kubełków w aktualnych i nowo tworzonych projektach. Działa to w pełni proaktywnie i nie wymaga pisania kodu ani stałego monitorowania.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
@@ -104,7 +104,7 @@ Należy wdrożyć politykę bezpieczeństwa, która proaktywnie uniemożliwi uż
 - D. VPC Service Controls: Perymetr VPC SC chroni przed wyciekiem danych do zewnętrznych projektów, ale konfiguracja perymetru dla każdego nowego projektu z kubełkiem generuje ogromny narzut operacyjny i administracyjny, co narusza wymóg minimalizacji overheadu.
 
 4. Wskazówki, hinty, tips and tricks:
-- W chmurze Google Cloud standardowym sposobem na zablokowanie możliwości upubliczniania kubełków w skali firmy jest wdrożenie polityki organizacji **Public Access Prevention (PAP)**.
+- W chmurze Google Cloud standardowym sposobem na zablokowanie możliwości upubliczniania kubełków w skali firmy jest wdrożenie polityki organizacji <strong>Public Access Prevention (PAP)</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Proaktywna blokada publicznego dostępu do Storage na poziomie organizacji -> Enforce constraints/storage.publicAccessPrevention.

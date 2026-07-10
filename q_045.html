@@ -89,27 +89,27 @@ A large financial institution is moving its Big Data analytics to Google Cloud P
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
-Instytucja finansowa chce mieć **maksymalną kontrolę nad procesem szyfrowania danych w BigQuery** (szyfrowanie danych w spoczynku):
-- **Customer-Managed Encryption Keys (CMEK) (C):** BigQuery natywnie integruje się z Cloud Key Management Service (KMS), umożliwiając korzystanie z kluczy zarządzanych przez klienta (CMEK). Klient może samodzielnie zarządzać rotacją, wyłączaniem i niszczeniem klucza KEK. Ponieważ klucz leży w KMS, klient kontroluje uprawnienia dostępu do niego za pomocą IAM, zachowując pełną kontrolę nad dostępem do tabel BigQuery.
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
+Instytucja finansowa chce mieć <strong>maksymalną kontrolę nad procesem szyfrowania danych w BigQuery</strong> (szyfrowanie danych w spoczynku):
+- <strong>Customer-Managed Encryption Keys (CMEK) (C):</strong> BigQuery natywnie integruje się z Cloud Key Management Service (KMS), umożliwiając korzystanie z kluczy zarządzanych przez klienta (CMEK). Klient może samodzielnie zarządzać rotacją, wyłączaniem i niszczeniem klucza KEK. Ponieważ klucz leży w KMS, klient kontroluje uprawnienia dostępu do niego za pomocą IAM, zachowując pełną kontrolę nad dostępem do tabel BigQuery.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Cloud Storage jako zewnętrzne źródło danych:** BigQuery może odpytywać dane w GCS (Federated Queries), ale to nie rozwiązuje problemu natywnego szyfrowania danych przechowywanych wewnątrz samego BigQuery i nie daje lepszej kontroli nad kluczami.
-- **B. Użycie Cloud HSM:** Cloud HSM to sprzętowy moduł bezpieczeństwa, który przechowuje klucze w KMS. Jest to fizyczna lokalizacja klucza, a nie technika integracji z BigQuery. Klient nadal potrzebuje wdrożyć mechanizm CMEK, by BigQuery korzystało z kluczy w HSM.
-- **D. Customer-Supplied Encryption Keys (CSEK):** BigQuery **nie wspiera** kluczy dostarczanych przez użytkownika (CSEK). CSEK są wspierane wyłącznie przez Compute Engine i Cloud Storage.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Cloud Storage jako zewnętrzne źródło danych:</strong> BigQuery może odpytywać dane w GCS (Federated Queries), ale to nie rozwiązuje problemu natywnego szyfrowania danych przechowywanych wewnątrz samego BigQuery i nie daje lepszej kontroli nad kluczami.
+- <strong>B. Użycie Cloud HSM:</strong> Cloud HSM to sprzętowy moduł bezpieczeństwa, który przechowuje klucze w KMS. Jest to fizyczna lokalizacja klucza, a nie technika integracji z BigQuery. Klient nadal potrzebuje wdrożyć mechanizm CMEK, by BigQuery korzystało z kluczy w HSM.
+- <strong>D. Customer-Supplied Encryption Keys (CSEK):</strong> BigQuery <strong>nie wspiera</strong> kluczy dostarczanych przez użytkownika (CSEK). CSEK są wspierane wyłącznie przez Compute Engine i Cloud Storage.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
 - Zapamiętaj bardzo ważną różnicę w obsłudze kluczy:
-  - **Cloud Storage i Compute Engine:** Wspierają zarówno **CMEK**, jak i **CSEK**.
-  - **BigQuery (oraz większość innych usług GCP):** Wspierają wyłącznie **CMEK**. CSEK jest tu niedostępny.
-- Dlatego w BigQuery maksymalną formą kontroli szyfrowania jest **CMEK**.
+  - <strong>Cloud Storage i Compute Engine:</strong> Wspierają zarówno <strong>CMEK</strong>, jak i <strong>CSEK</strong>.
+  - <strong>BigQuery (oraz większość innych usług GCP):</strong> Wspierają wyłącznie <strong>CMEK</strong>. CSEK jest tu niedostępny.
+- Dlatego w BigQuery maksymalną formą kontroli szyfrowania jest <strong>CMEK</strong>.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Szyfrowanie w BigQuery pod kontrolą klienta -> CMEK.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Protect BigQuery data with CMEK: https://cloud.google.com/bigquery/docs/customer-managed-keys
 </pre>
 

@@ -103,7 +103,7 @@ Wymaganiem jest zbadanie danych pakietów IP (IP packet data) pod kątem złośl
 - D. Logi dostępowe Google Cloud Armor: Dotyczą wyłącznie ruchu HTTP(S) przychodzącego do zewnętrznych load balancerów chronionych przez Cloud Armor. Nie pozwalają na analizę pakietów IP dla ruchu wewnętrznego lub maszyn wirtualnych wewnątrz sieci VPC.
 
 4. Wskazówki, hinty, tips and tricks:
-- Wszelkie zapytania o analizę **zawartości pakietu (packet payload / invalid or malicious content)** w sieci VPC kierują do **Packet Mirroring**.
+- Wszelkie zapytania o analizę <strong>zawartości pakietu (packet payload / invalid or malicious content)</strong> w sieci VPC kierują do <strong>Packet Mirroring</strong>.
 - VPC Flow Logs = tylko metadane (no payload). Packet Mirroring = pełne pakiety (headers + payload).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

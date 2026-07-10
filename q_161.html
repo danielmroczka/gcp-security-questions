@@ -94,7 +94,7 @@ B. Customer-managed encryption keys
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Wymaganiem jest zarządzanie kluczami szyfrującymi przez klienta w ramach zgodności z RODO (GDPR) dla zróżnicowanego stosu technologicznego obejmującego: Compute Engine, GKE, Cloud Storage, BigQuery oraz Pub/Sub:
-- Customer-Managed Encryption Keys (CMEK) to jedyne rozwiązanie w GCP, które oferuje natywne wsparcie dla zarządzania kluczami przez klienta (poprzez Cloud KMS) dla **wszystkich** wymienionych w pytaniu usług chmurowych (w tym BigQuery i Pub/Sub). Pozwala to na spójne i centralne zarządzanie uprawnieniami, rotacją oraz audytem użycia kluczy w całej architekturze systemu.
+- Customer-Managed Encryption Keys (CMEK) to jedyne rozwiązanie w GCP, które oferuje natywne wsparcie dla zarządzania kluczami przez klienta (poprzez Cloud KMS) dla <strong>wszystkich</strong> wymienionych w pytaniu usług chmurowych (w tym BigQuery i Pub/Sub). Pozwala to na spójne i centralne zarządzanie uprawnieniami, rotacją oraz audytem użycia kluczy w całej architekturze systemu.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A. Cloud External Key Manager (EKM): EKM przechowuje klucze poza chmurą. Jest to rozwiązanie znacznie bardziej skomplikowane i kosztowne, zazwyczaj rezerwowane dla specyficznych wymogów suwerenności kluczy, a nie standardowej zgodności z RODO.
@@ -102,7 +102,7 @@ Wymaganiem jest zarządzanie kluczami szyfrującymi przez klienta w ramach zgodn
 - D. Google default encryption: Nie pozwala klientowi na samodzielne zarządzanie kluczami (rotacja, wstrzymanie dostępu), co jest niezgodne z wymaganiem "you need to manage the encryption key".
 
 4. Wskazówki, hinty, tips and tricks:
-- Na egzaminie zwracaj uwagę na listę usług w pytaniu. Jeśli pojawia się **BigQuery** lub **Pub/Sub**, zapomnij o CSEK (Customer-Supplied). Jedynym szeroko wspieranym rozwiązaniem do samodzielnego zarządzania szyfrowaniem jest **CMEK** (Customer-Managed).
+- Na egzaminie zwracaj uwagę na listę usług w pytaniu. Jeśli pojawia się <strong>BigQuery</strong> lub <strong>Pub/Sub</strong>, zapomnij o CSEK (Customer-Supplied). Jedynym szeroko wspieranym rozwiązaniem do samodzielnego zarządzania szyfrowaniem jest <strong>CMEK</strong> (Customer-Managed).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Szyfrowanie pod kontrolą klienta dla wielu usług (w tym BigQuery, Pub/Sub, GKE) -> CMEK (Customer-managed encryption keys).

@@ -65,8 +65,8 @@ C. Implement data pseudonymization techniques to replace the PII fields with non
 Odpowiedź C jest prawidłowa, ponieważ pseudonimizacja danych (data pseudonymization) pozwala na pełną ochronę prywatności klientów (PII) przed zespołem analitycznym, jednocześnie umożliwiając im wykonywanie zaawansowanych analiz statystycznych i korelacji na pełnym zbiorze danych (1 PB).
 
 Dlaczego to najlepsza metoda:
-a. **Zachowanie użyteczności danych:** Zastąpienie wrażliwych identyfikatorów (np. nazwisk, PESELi) unikalnymi pseudonimami (np. wygenerowanymi tokenami) pozwala analitykom na śledzenie zachowań unikalnych użytkowników w czasie i łączenie rekordów (np. ten sam klient wykonał operacje A i B), ponieważ pseudonimy są spójne.
-b. **Bezpieczeństwo (PII Protection):** Zespół analityczny nie ma możliwości bezpośredniego zidentyfikowania osób fizycznych, ponieważ nie posiada klucza dekodującego (tabeli mapowania), który pozostaje bezpiecznie w zespole źródłowym. Jest to zalecana praktyka w ramach GDPR.
+a. <strong>Zachowanie użyteczności danych:</strong> Zastąpienie wrażliwych identyfikatorów (np. nazwisk, PESELi) unikalnymi pseudonimami (np. wygenerowanymi tokenami) pozwala analitykom na śledzenie zachowań unikalnych użytkowników w czasie i łączenie rekordów (np. ten sam klient wykonał operacje A i B), ponieważ pseudonimy są spójne.
+b. <strong>Bezpieczeństwo (PII Protection):</strong> Zespół analityczny nie ma możliwości bezpośredniego zidentyfikowania osób fizycznych, ponieważ nie posiada klucza dekodującego (tabeli mapowania), który pozostaje bezpiecznie w zespole źródłowym. Jest to zalecana praktyka w ramach GDPR.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Utilize BigQuery's row-level access policies to mask PII columns based on the other team's user identities.
@@ -77,7 +77,7 @@ D. Create a filtered copy of the dataset and replace the sensitive data with has
    * Dlaczego nieprawidłowa: Tworzenie fizycznej kopii zbioru o rozmiarze 1 PB w innym projekcie podwaja koszty przechowywania danych w BigQuery (kolejny 1 PB danych) oraz wymaga ciągłej synchronizacji zmian w tle, co jest nieefektywne w porównaniu z udostępnieniem jednego pseudonimizowanego zbioru/widoku (opcja C).
 
 4. Wskazówki, hinty, tips and tricks:
-* Aby bezpiecznie udostępnić duże zbiory danych analitycznych bez ujawniania PII -> Stosuj **pseudonimizację (pseudonymization)** lub **dynamiczne maskowanie danych (dynamic data masking)**.
+* Aby bezpiecznie udostępnić duże zbiory danych analitycznych bez ujawniania PII -> Stosuj <strong>pseudonimizację (pseudonymization)</strong> lub <strong>dynamiczne maskowanie danych (dynamic data masking)</strong>.
 * Pamiętaj o różnicach technicznych w BigQuery:
   - Row-level security = ukrywanie wierszy (np. tylko klienci z Polski).
   - Column-level security / Data Masking = ukrywanie/maskowanie kolumn (np. zamiana cyfr PESEL na 'X').

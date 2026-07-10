@@ -96,8 +96,8 @@ B. Create a scoped policy on the folder with a service perimeter to restrict Big
 Odpowiedź B jest prawidłowa, ponieważ scoped access policies (polityki o ograniczonym zasięgu) w ramach VPC Service Controls (VPC SC) pozwalają na bezpieczną delegację uprawnień administracyjnych perymetru do wybranego poziomu w hierarchii zasobów (np. folderu).
 
 Mechanizm działania:
-a. **Scoped Policy (Polityka z zakresem):** Tradycyjne polityki dostępu w Access Context Managerze są globalne dla całej organizacji. Stworzenie polityki o ograniczonym zasięgu (scoped policy) pozwala na powiązanie jej wyłącznie z określonym folderem (data analytics folder).
-b. **Delegacja uprawnień (Least Privilege):** Nadanie zespołowi analitycznemu roli `Access Context Manager Editor` (Edytor Access Context Managera) bezpośrednio na tej scoped policy pozwala im na samodzielne tworzenie, modyfikowanie i usuwanie perymetrów oraz poziomów dostępu w obrębie ich folderu.
+a. <strong>Scoped Policy (Polityka z zakresem):</strong> Tradycyjne polityki dostępu w Access Context Managerze są globalne dla całej organizacji. Stworzenie polityki o ograniczonym zasięgu (scoped policy) pozwala na powiązanie jej wyłącznie z określonym folderem (data analytics folder).
+b. <strong>Delegacja uprawnień (Least Privilege):</strong> Nadanie zespołowi analitycznemu roli `Access Context Manager Editor` (Edytor Access Context Managera) bezpośrednio na tej scoped policy pozwala im na samodzielne tworzenie, modyfikowanie i usuwanie perymetrów oraz poziomów dostępu w obrębie ich folderu.
 c. Zespół analityczny nie otrzymuje żadnych uprawnień administracyjnych do zasobów poza ich folderem (np. w projektach produkcyjnych innych działów), co gwarantuje pełne bezpieczeństwo i izolację administracyjną.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
@@ -109,7 +109,7 @@ D. Enforce the Restrict Resource Service Usage organization policy constraint...
    * Dlaczego nieprawidłowa: Ograniczenie polityki organizacji `gcp.restrictServiceUsage` całkowicie blokuje możliwość włączania i używania danej usługi (np. deweloperzy nie mogliby w ogóle uruchomić BigQuery). Pytanie wymaga kontrolowania bezpiecznego dostępu do BigQuery (za pomocą perymetru sieciowego VPC SC), a nie jego całkowitego zablokowania w folderze.
 
 4. Wskazówki, hinty, tips and tricks:
-* Delegacja zarządzania VPC Service Controls do określonego Folderu lub Projektu -> Używaj **Scoped Access Policies** w Access Context Managerze.
+* Delegacja zarządzania VPC Service Controls do określonego Folderu lub Projektu -> Używaj <strong>Scoped Access Policies</strong> w Access Context Managerze.
 * Zapobiega to nadawaniu uprawnień administracyjnych w skali całej organizacji.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

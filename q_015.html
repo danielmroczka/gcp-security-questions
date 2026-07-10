@@ -89,25 +89,25 @@ An application running on a Compute Engine instance needs to read data from a Cl
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Aplikacja na maszynie VM Compute Engine musi mieć dostęp do prywatnego kubła Cloud Storage (GCS) z zachowaniem zasady minimalnych uprawnień (least privilege) i bez narażania kluczy na wyciek:
-- **Użycie konta usługowego (Service Account) z uprawnieniami tylko do odczytu i pobieranie poświadczeń z serwera metadanych instancji (C):** Jest to standardowa, zalecana praktyka Google Cloud. Do maszyny VM przypisuje się konto usługowe. Aplikacja nie potrzebuje żadnych zapisanych plików kluczy (.json) na dysku – biblioteki klienckie Google automatycznie pobierają tymczasowe tokeny dostępu z lokalnego serwera metadanych instancji (`http://metadata.google.internal`). Zapobiega to wyciekowi kluczy i ogranicza uprawnienia.
+- <strong>Użycie konta usługowego (Service Account) z uprawnieniami tylko do odczytu i pobieranie poświadczeń z serwera metadanych instancji (C):</strong> Jest to standardowa, zalecana praktyka Google Cloud. Do maszyny VM przypisuje się konto usługowe. Aplikacja nie potrzebuje żadnych zapisanych plików kluczy (.json) na dysku – biblioteki klienckie Google automatycznie pobierają tymczasowe tokeny dostępu z lokalnego serwera metadanych instancji (`http://metadata.google.internal`). Zapobiega to wyciekowi kluczy i ogranicza uprawnienia.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Cloud Storage ACL oparty na IP:** ACL w Cloud Storage nie obsługują filtrowania na podstawie adresów IP maszyn wirtualnych. Udostępnianie bez uwierzytelniania ("without credentials") narusza zasady bezpieczeństwa.
-- **B. Zapisywanie kluczy konta usługowego w konfiguracji aplikacji:** Przechowywanie kluczy prywatnych konta usługowego (plików JSON) na dysku maszyny wirtualnej lub w kodzie aplikacji jest poważnym naruszeniem bezpieczeństwa (ryzyko wycieku w przypadku skompromitowania maszyny lub kodu).
-- **D. Szyfrowanie KMS:** Szyfrowanie danych kluczem KMS chroni dane w spoczynku, ale samo w sobie nie zastępuje autoryzacji dostępu do samego kubła Cloud Storage. Maszyna nadal musi uwierzytelnić się, by pobrać obiekt.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Cloud Storage ACL oparty na IP:</strong> ACL w Cloud Storage nie obsługują filtrowania na podstawie adresów IP maszyn wirtualnych. Udostępnianie bez uwierzytelniania ("without credentials") narusza zasady bezpieczeństwa.
+- <strong>B. Zapisywanie kluczy konta usługowego w konfiguracji aplikacji:</strong> Przechowywanie kluczy prywatnych konta usługowego (plików JSON) na dysku maszyny wirtualnej lub w kodzie aplikacji jest poważnym naruszeniem bezpieczeństwa (ryzyko wycieku w przypadku skompromitowania maszyny lub kodu).
+- <strong>D. Szyfrowanie KMS:</strong> Szyfrowanie danych kluczem KMS chroni dane w spoczynku, ale samo w sobie nie zastępuje autoryzacji dostępu do samego kubła Cloud Storage. Maszyna nadal musi uwierzytelnić się, by pobrać obiekt.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- **NIGDY** nie zapisuj kluczy kont usługowych (Service Account Keys / pliki JSON) na instancjach VM, jeśli aplikacja działa wewnątrz GCP. Serwer metadanych (Metadata Server) dostarcza tokeny automatycznie i bezpiecznie.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- <strong>NIGDY</strong> nie zapisuj kluczy kont usługowych (Service Account Keys / pliki JSON) na instancjach VM, jeśli aplikacja działa wewnątrz GCP. Serwer metadanych (Metadata Server) dostarcza tokeny automatycznie i bezpiecznie.
 - Zasada Least Privilege w GCP w odniesieniu do maszyn VM = Przypisanie Service Account do VM + rola Storage Object Viewer.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Autoryzacja maszyny VM w GCP do innych usług -> Zawsze używaj konta usługowego przypisanego do VM i pobieraj token z Metadata Server.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - GCP Service Accounts overview: https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances
 </pre>
 

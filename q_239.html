@@ -97,9 +97,9 @@ C. 1. Attach external IP addresses to the VMs in scope. 2. Define and apply a hi
 Odpowiedź C jest prawidłowa, ponieważ polityka hierarchiczna zapory sieciowej (Hierarchical Firewall Policy) pozwala na centralne narzucenie i egzekwowanie reguł sieciowych na poziomie Folderu dla wielu projektów i sieci VPC, co minimalizuje wysiłek wdrożeniowy i administracyjny.
 
 Dlaczego to rozwiązanie działa:
-a. **Folder-level enforcement:** Aplikując politykę na poziomie folderu, automatycznie obejmujemy nią wszystkie projekty i sieci VPC wewnątrz tego folderu. Nie musimy konfigurować reguł oddzielnie w każdej sieci.
-b. **Reguły polityki:** Definiujemy regułę blokującą cały ruch wychodzący (deny egress) oraz regułę zezwalającą na wyjście (allow egress) wyłącznie do docelowego zakresu `10.58.5.0/24` dla sieci `dev-vpc`.
-c. **Przypisanie zewnętrznych IP:** Umożliwia maszynom bezpośrednią komunikację zewnętrzną (jeśli jest wymagana) pod warunkiem przejścia przez filtry zapory sieciowej.
+a. <strong>Folder-level enforcement:</strong> Aplikując politykę na poziomie folderu, automatycznie obejmujemy nią wszystkie projekty i sieci VPC wewnątrz tego folderu. Nie musimy konfigurować reguł oddzielnie w każdej sieci.
+b. <strong>Reguły polityki:</strong> Definiujemy regułę blokującą cały ruch wychodzący (deny egress) oraz regułę zezwalającą na wyjście (allow egress) wyłącznie do docelowego zakresu `10.58.5.0/24` dla sieci `dev-vpc`.
+c. <strong>Przypisanie zewnętrznych IP:</strong> Umożliwia maszynom bezpośrednią komunikację zewnętrzną (jeśli jest wymagana) pod warunkiem przejścia przez filtry zapory sieciowej.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. ...Deploy a network appliance in "new-vpc" to filter access requests...
@@ -110,7 +110,7 @@ D. ...Configure a VPC Firewall rule in "dev-vpc" that allows egress connectivity
    * Dlaczego nieprawidłowa: Konfiguracja reguł na poziomie pojedynczej sieci VPC (VPC Firewall) nie działa na poziomie Folderu. Jeśli w folderze pojawią się nowe sieci VPC lub projekty, reguły te nie zostaną na nich automatycznie zastosowane, co zwiększa narzut na utrzymanie.
 
 4. Wskazówki, hinty, tips and tricks:
-* Narzucanie reguł sieciowych dla całego Folderu (folder level) -> **Hierarchical Firewall Policy**.
+* Narzucanie reguł sieciowych dla całego Folderu (folder level) -> <strong>Hierarchical Firewall Policy</strong>.
 * Polityki hierarchiczne ułatwiają centralne zarządzanie bezpieczeństwem sieciowym w środowiskach wieloprojektowych.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

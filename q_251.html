@@ -62,23 +62,23 @@ D. Enable Workload Identity Federation. Create a workload identity pool and spec
 Odpowiedź D jest prawidłowa, ponieważ Workload Identity Federation (WIF) jest oficjalnym i najbezpieczniejszym mechanizmem Google Cloud do nadawania tożsamości aplikacjom i obciążeniom działającym poza GCP (on-premises) bez konieczności generowania i zarządzania kluczami długoterminowymi (pliki JSON kont serwisowych).
 
 Zasada działania WIF:
-a. **Brak kluczy:** Aplikacje on-premises uwierzytelniają się w swoim lokalnym IdP (np. Active Directory, Okta, Kubernetes), uzyskując token OIDC lub SAML.
-b. **Wymiana tokenów:** Aplikacja przesyła ten zewnętrzny token do Google Security Token Service (STS). STS weryfikuje token u skonfigurowanego dostawcy w puli (Workload Identity Pool Provider).
-c. **Mapowanie atrybutów:** STS mapuje roszczenia (claims) z zewnętrznego tokena na atrybuty Google Cloud.
-d. **Impersonacja konta serwisowego:** Na podstawie mapowania, STS wydaje tymczasowy, krótkotrwały token dostępu OAuth 2.0 dla przypisanego konta serwisowego GCP (`Workload Identity User`). Aplikacja wykonuje operacje w GCP za pomocą tego bezpiecznego, tymczasowego tokena.
+a. <strong>Brak kluczy:</strong> Aplikacje on-premises uwierzytelniają się w swoim lokalnym IdP (np. Active Directory, Okta, Kubernetes), uzyskując token OIDC lub SAML.
+b. <strong>Wymiana tokenów:</strong> Aplikacja przesyła ten zewnętrzny token do Google Security Token Service (STS). STS weryfikuje token u skonfigurowanego dostawcy w puli (Workload Identity Pool Provider).
+c. <strong>Mapowanie atrybutów:</strong> STS mapuje roszczenia (claims) z zewnętrznego tokena na atrybuty Google Cloud.
+d. <strong>Impersonacja konta serwisowego:</strong> Na podstawie mapowania, STS wydaje tymczasowy, krótkotrwały token dostępu OAuth 2.0 dla przypisanego konta serwisowego GCP (`Workload Identity User`). Aplikacja wykonuje operacje w GCP za pomocą tego bezpiecznego, tymczasowego tokena.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Enable Secure Web Proxy... Create a proxy subnet... Create a Secure Web Proxy policy...
    * Dlaczego nieprawidłowa: Secure Web Proxy (SWP) to usługa służąca do filtrowania i zabezpieczania wychodzącego ruchu internetowego (egress HTTP/S) z zasobów chmurowych GCP. Nie służy do uwierzytelniania i autoryzacji aplikacji lokalnych (on-premises) próbujących uzyskać dostęp do usług w chmurze GCP bez kluczy.
 B. Enable Workforce Identity Federation... Create a workforce identity pool...
-   * Dlaczego nieprawidłowa: Workforce Identity Federation służy do uwierzytelniania ludzi (pracowników, kontrahentów) w celu uzyskania dostępu do konsoli GCP lub CLI za pomocą zewnętrznego IdP. Pytanie dotyczy dostępu dla maszyn / aplikacji (on-premises applications), do czego służy wyłącznie **Workload** Identity Federation (WIF).
+   * Dlaczego nieprawidłowa: Workforce Identity Federation służy do uwierzytelniania ludzi (pracowników, kontrahentów) w celu uzyskania dostępu do konsoli GCP lub CLI za pomocą zewnętrznego IdP. Pytanie dotyczy dostępu dla maszyn / aplikacji (on-premises applications), do czego służy wyłącznie <strong>Workload</strong> Identity Federation (WIF).
 C. Enable Identity-Aware Proxy (IAP). Configure IAP by specifying the groups...
    * Dlaczego nieprawidłowa: IAP służy do zabezpieczania dostępu użytkowników do aplikacji webowych lub SSH/RDP działających w GCP. Nie rozwiązuje problemu autoryzacji i bezpiecznego wywoływania API Google Cloud (np. Cloud Storage, BigQuery) przez lokalne aplikacje automatyczne bez wpisanych na stałe kluczy.
 
 4. Wskazówki, hinty, tips and tricks:
 * Uwierzytelnianie bez kluczy (keyless authentication) dla zewnętrznych zasobów:
-  - Użytkownicy (ludzie) -> **Workforce Identity Federation**.
-  - Aplikacje / Serwery (maszyny) -> **Workload Identity Federation**.
+  - Użytkownicy (ludzie) -> <strong>Workforce Identity Federation</strong>.
+  - Aplikacje / Serwery (maszyny) -> <strong>Workload Identity Federation</strong>.
 * WIF eliminuje potrzebę generowania i przechowywania niebezpiecznych plików kluczy JSON.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

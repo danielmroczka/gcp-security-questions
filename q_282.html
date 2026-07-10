@@ -96,8 +96,8 @@ D. Edit the _Default sink, and select the new log bucket as the sink destination
 Odpowiedź D jest prawidłowa, ponieważ edycja domyślnego odbiornika logów (`_Default` sink) jest najbardziej bezpośrednim, zautomatyzowanym i efektywnym (najmniejszy narzut operacyjny) sposobem na przekierowanie strumienia logów do nowo utworzonego kubełka.
 
 Dlaczego to najlepsze podejście:
-a. **Domyślna konfiguracja:** Odbiornik `_Default` jest automatycznie tworzony w każdym projekcie GCP i zawiera predefiniowane filtry przechwytujące większość typowych logów systemowych (poza logami audytowymi zbieranymi przez `_Required`).
-b. **Brak duplikacji:** Zamiast tworzyć nowe filtry i wyłączać stare, zmieniamy jedynie pole `destination` w istniejącym sinku `_Default` na wskazanie nowego log bucketa. Zapobiega to powstawaniu zduplikowanych reguł i gwarantuje, że proces logowania nie ulegnie przerwaniu ani nie wygeneruje dodatkowych kosztów za podwójny transfer logów.
+a. <strong>Domyślna konfiguracja:</strong> Odbiornik `_Default` jest automatycznie tworzony w każdym projekcie GCP i zawiera predefiniowane filtry przechwytujące większość typowych logów systemowych (poza logami audytowymi zbieranymi przez `_Required`).
+b. <strong>Brak duplikacji:</strong> Zamiast tworzyć nowe filtry i wyłączać stare, zmieniamy jedynie pole `destination` w istniejącym sinku `_Default` na wskazanie nowego log bucketa. Zapobiega to powstawaniu zduplikowanych reguł i gwarantuje, że proces logowania nie ulegnie przerwaniu ani nie wygeneruje dodatkowych kosztów za podwójny transfer logów.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create exclusion filters for the _Default sink... Create a user-defined sink...

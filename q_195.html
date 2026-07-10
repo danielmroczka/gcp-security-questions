@@ -95,7 +95,7 @@ D. Use Policy Analyzer to query the permissions compute.firewalls.create or comp
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Celem audytu bezpieczeństwa jest identyfikacja wszystkich tożsamości (principals), które mają uprawnienia do ZMIANY (change) reguł zapory sieciowej (firewall rules) w projekcie produkcyjnym.
-W Google Cloud do audytowania i sprawdzania, kto ma dostęp do jakich zasobów i za pomocą jakich uprawnień, służy narzędzie **IAM Policy Analyzer**. Pomaga ono przeanalizować całą hierarchię dziedziczenia uprawnień (organizacja, foldery, projekty) oraz rozwinąć członkostwo w grupach dyskusyjnych Google Groups.
+W Google Cloud do audytowania i sprawdzania, kto ma dostęp do jakich zasobów i za pomocą jakich uprawnień, służy narzędzie <strong>IAM Policy Analyzer</strong>. Pomaga ono przeanalizować całą hierarchię dziedziczenia uprawnień (organizacja, foldery, projekty) oraz rozwinąć członkostwo w grupach dyskusyjnych Google Groups.
 Aby precyzyjnie wykryć osoby mogące dokonywać zmian, musimy zapytać o uprawnienia modyfikacyjne (write/change):
 - `compute.firewalls.create` (tworzenie nowych reguł)
 - `compute.firewalls.update` (modyfikacja istniejących reguł)
@@ -108,7 +108,7 @@ Odpowiedź D jest najbardziej kompleksowa, ponieważ pyta o wszystkie trzy opera
 - C. Reference the Security Health Analytics...: Moduł Security Health Analytics w Security Command Center służy do wykrywania błędów w konfiguracji zasobów (np. "otwarty port 22 na cały świat"). Nie służy jednak do badania praw dostępu IAM dla poszczególnych tożsamości.
 
 4. Wskazówki, hinty, tips and tricks:
-- Zawsze, gdy celem jest znalezienie **"kto ma dostęp/kto może wykonać akcję" (who has access / who can change)**, szukaj narzędzia **Policy Analyzer**.
+- Zawsze, gdy celem jest znalezienie <strong>"kto ma dostęp/kto może wykonać akcję" (who has access / who can change)</strong>, szukaj narzędzia <strong>Policy Analyzer</strong>.
 - Zwracaj uwagę na zakres uprawnień w opcjach (odróżniaj uprawnienia modyfikacyjne `.create / .update / .delete` od uprawnień do odczytu `.get / .list`).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

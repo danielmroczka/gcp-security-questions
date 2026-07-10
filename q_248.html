@@ -97,8 +97,8 @@ D. Check Event Threat Detection in Security Command Center for any related alert
 Odpowiedź D jest prawidłowa, ponieważ łączy zautomatyzowane wykrywanie zagrożeń za pomocą silnika Event Threat Detection (ETD) z głęboką analizą śledczą (forensics) w logach audytowych (Cloud Audit Logs).
 
 Dlaczego to najlepsze podejście śledcze:
-a. **Event Threat Detection (ETD):** Jest to usługa Security Command Center Premium, która stale monitoruje strumień logów (w tym logi audytowe Cloud Audit Logs) w czasie rzeczywistym i stosuje zaawansowane algorytmy detekcji zagrożeń. Potrafi automatycznie wykryć anomalie takie jak "Service Account Leaked Credentials" lub podejrzane logowania z nietypowych IP na konta serwisowe i wygenerować precyzyjny alert.
-b. **Cross-referencing z Cloud Audit Logs:** Znalezienie alertu w SCC daje punkt wyjścia (np. dokładny czas, ID konta serwisowego, IP napastnika). Następnie analityk bezpieczeństwa odpytuje Cloud Audit Logs (Admin Activity i Data Access), aby prześledzić wszystkie operacje wykonane przez to konto serwisowe (np. jakie zasoby zostały odczytane lub zmodyfikowane), co pozwala na pełną ocenę incydentu i skuteczną reakcję.
+a. <strong>Event Threat Detection (ETD):</strong> Jest to usługa Security Command Center Premium, która stale monitoruje strumień logów (w tym logi audytowe Cloud Audit Logs) w czasie rzeczywistym i stosuje zaawansowane algorytmy detekcji zagrożeń. Potrafi automatycznie wykryć anomalie takie jak "Service Account Leaked Credentials" lub podejrzane logowania z nietypowych IP na konta serwisowe i wygenerować precyzyjny alert.
+b. <strong>Cross-referencing z Cloud Audit Logs:</strong> Znalezienie alertu w SCC daje punkt wyjścia (np. dokładny czas, ID konta serwisowego, IP napastnika). Następnie analityk bezpieczeństwa odpytuje Cloud Audit Logs (Admin Activity i Data Access), aby prześledzić wszystkie operacje wykonane przez to konto serwisowe (np. jakie zasoby zostały odczytane lub zmodyfikowane), co pozwala na pełną ocenę incydentu i skuteczną reakcję.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Enable Cloud Audit Logs for the resources... Review the logs for further...
@@ -109,7 +109,7 @@ C. Run a vulnerability scan to identify potentially exploitable weaknesses...
    * Dlaczego nieprawidłowa: Skanowanie podatności (vulnerability scan) szuka dziur w oprogramowaniu i konfiguracji systemu. Nie pomaga w badaniu aktywnego incydentu polegającego na użyciu skradzionych poświadczeń (impersonation) konta serwisowego, które zostało już dokonane.
 
 4. Wskazówki, hinty, tips and tricks:
-* Wykrywanie i analiza anomalii w logach systemowych i logowaniach kont serwisowych w GCP -> **Event Threat Detection** w **Security Command Center**.
+* Wykrywanie i analiza anomalii w logach systemowych i logowaniach kont serwisowych w GCP -> <strong>Event Threat Detection</strong> w <strong>Security Command Center</strong>.
 * Pamiętaj, że logi audytowe (Cloud Audit Logs) są podstawowym źródłem prawdy podczas badania incydentów (forensic investigation).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

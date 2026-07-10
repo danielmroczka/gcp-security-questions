@@ -96,8 +96,8 @@ A. Configure the central identity provider as a workforce identity pool provider
 Odpowiedź A jest prawidłowa, ponieważ Workforce Identity Federation (Federacja Tożsamości Pracowników) jest oficjalną usługą GCP zaprojektowaną do uwierzytelniania pracowników i kontrahentów w konsoli Google Cloud przy użyciu zewnętrznego IdP bez konieczności synchronizowania ich kont do Google Cloud Identity.
 
 Szczegóły techniczne i zalety:
-a. **Brak synchronizacji (Keyless/Accountless):** Użytkownicy logują się przy użyciu swoich poświadczeń u zewnętrznego dostawcy (np. Okta, Azure AD). GCP nie tworzy dla nich kont w lokalnym katalogu Cloud Identity.
-b. **Mapowanie atrybutów za pomocą CEL:** Podczas logowania zewnętrzny IdP przesyła token zawierający atrybuty użytkownika (np. rola w firmie, dział). Używając języka Common Expression Language (CEL), możemy zmapować te atrybuty na właściwości GCP (np. zmapować grupę "GCP-Admins" z IdP na grupę w puli tożsamości GCP), a następnie przypisać odpowiednie role IAM bezpośrednio tym grupom atrybutów.
+a. <strong>Brak synchronizacji (Keyless/Accountless):</strong> Użytkownicy logują się przy użyciu swoich poświadczeń u zewnętrznego dostawcy (np. Okta, Azure AD). GCP nie tworzy dla nich kont w lokalnym katalogu Cloud Identity.
+b. <strong>Mapowanie atrybutów za pomocą CEL:</strong> Podczas logowania zewnętrzny IdP przesyła token zawierający atrybuty użytkownika (np. rola w firmie, dział). Używając języka Common Expression Language (CEL), możemy zmapować te atrybuty na właściwości GCP (np. zmapować grupę "GCP-Admins" z IdP na grupę w puli tożsamości GCP), a następnie przypisać odpowiednie role IAM bezpośrednio tym grupom atrybutów.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. Configure a periodic synchronization of relevant users and groups... Activate SSO by using SAML.
@@ -108,8 +108,8 @@ D. Activate external identities on the Identity-Aware Proxy. Use SAML to configu
    * Dlaczego nieprawidłowa: IAP (Identity-Aware Proxy) z zewnętrznymi tożsamościami służy do zabezpieczania dostępu do aplikacji webowych klienta. Nie służy do uwierzytelniania i autoryzacji dostępu administracyjnego do standardowej konsoli Google Cloud Console.
 
 4. Wskazówki, hinty, tips and tricks:
-* Dostęp dla pracowników/kontrahentów do konsoli GCP bez synchronizacji kont (no identity synchronization) -> Zawsze **Workforce Identity Federation**.
-* Mapowanie atrybutów tożsamości z zewnętrznego IdP realizuje się za pomocą **Common Expression Language (CEL)**.
+* Dostęp dla pracowników/kontrahentów do konsoli GCP bez synchronizacji kont (no identity synchronization) -> Zawsze <strong>Workforce Identity Federation</strong>.
+* Mapowanie atrybutów tożsamości z zewnętrznego IdP realizuje się za pomocą <strong>Common Expression Language (CEL)</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Grant access to GCP console without syncing identities -> Workforce Identity Federation (workforce identity pool).

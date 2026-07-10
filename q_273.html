@@ -65,9 +65,9 @@ C. Encrypt the code, training data, and exported trained models with customer-ma
 Odpowiedź C jest prawidłowa, ponieważ Vertex AI w pełni wspiera integrację z kluczami zarządzanymi przez klienta (CMEK) w celu szyfrowania kodu źródłowego, danych treningowych w spoczynku (przechowywanych w Cloud Storage) oraz wyjściowych modeli po eksporcie.
 
 Analiza techniczna:
-a. **Suwerenność klucza (CMEK):** Klient tworzy klucze szyfrujące w regionie europejskim (np. `europe-west3`) i zarządza ich dostępem za pomocą IAM. Dane są szyfrowane tymi kluczami.
-b. **Wydajność operacji:** Szyfrowanie przy użyciu CMEK odbywa się na poziomie systemu plików i baz danych chmury, co oznacza, że operacje kryptograficzne są całkowicie przezroczyste dla Vertex AI i nie wpływają negatywnie na wydajność obliczeniową ani czas trwania procesu treningu modeli.
-c. **Ograniczenie zakresu:** Metadane zadań treningowych (np. parametry konfiguracji zadań przesyłane w wywołaniach API) są domyślnie chronione szyfrowaniem Google i nie zawierają rzeczywistych poufnych informacji biznesowych, które znajdują się w kodzie i plikach danych (objętych CMEK).
+a. <strong>Suwerenność klucza (CMEK):</strong> Klient tworzy klucze szyfrujące w regionie europejskim (np. `europe-west3`) i zarządza ich dostępem za pomocą IAM. Dane są szyfrowane tymi kluczami.
+b. <strong>Wydajność operacji:</strong> Szyfrowanie przy użyciu CMEK odbywa się na poziomie systemu plików i baz danych chmury, co oznacza, że operacje kryptograficzne są całkowicie przezroczyste dla Vertex AI i nie wpływają negatywnie na wydajność obliczeniową ani czas trwania procesu treningu modeli.
+c. <strong>Ograniczenie zakresu:</strong> Metadane zadań treningowych (np. parametry konfiguracji zadań przesyłane w wywołaniach API) są domyślnie chronione szyfrowaniem Google i nie zawierają rzeczywistych poufnych informacji biznesowych, które znajdują się w kodzie i plikach danych (objętych CMEK).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Encrypt the code, training data, and metadata with Google default encryption. Use CMEK for...

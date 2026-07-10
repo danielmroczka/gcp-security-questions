@@ -89,25 +89,25 @@ A large e-retailer is moving to Google Cloud Platform with its ecommerce website
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Dla serwisu e-commerce kluczowe jest zabezpieczenie przesyłu danych płatniczych (kart kredytowych) za pomocą protokołu HTTPS (SSL/TLS) między przeglądarką klienta a chmurą GCP:
-- **Skonfigurowanie certyfikatu SSL na warstwowym Load Balancerze L7 (HTTP(S) Load Balancer) i wymuszenie szyfrowania (A):** HTTPS Load Balancer (Load Balancer warstwy 7) umożliwia zainstalowanie certyfikatu SSL (zarządzanego przez Google lub własnego). Odpowiada za proces deszyfrowania (SSL termination) na brzegu sieci Google, odciążając serwery aplikacyjne backendu. L7 Load Balancer pozwala również na inteligentne kierowanie ruchem HTTP/HTTPS, wstrzykiwanie nagłówków bezpieczeństwa i integrację z zapaporą Cloud Armor WAF, co jest kluczowe dla witryn e-commerce.
+- <strong>Skonfigurowanie certyfikatu SSL na warstwowym Load Balancerze L7 (HTTP(S) Load Balancer) i wymuszenie szyfrowania (A):</strong> HTTPS Load Balancer (Load Balancer warstwy 7) umożliwia zainstalowanie certyfikatu SSL (zarządzanego przez Google lub własnego). Odpowiada za proces deszyfrowania (SSL termination) na brzegu sieci Google, odciążając serwery aplikacyjne backendu. L7 Load Balancer pozwala również na inteligentne kierowanie ruchem HTTP/HTTPS, wstrzykiwanie nagłówków bezpieczeństwa i integrację z zapaporą Cloud Armor WAF, co jest kluczowe dla witryn e-commerce.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Certyfikat SSL na Network TCP Load Balancerze:** Network Load Balancer (NLB) działa w warstwie 4 (L4) i nie terminuje sesji SSL/TLS – przekazuje surowe pakiety TCP bezpośrednio do maszyn backendowych. Wymagałoby to instalacji i zarządzania certyfikatami SSL na każdej maszynie wirtualnej z osobna, co utrudnia administrację i nie realizuje centralnej terminacji na LB.
-- **C. Konfiguracja firewall na ruch przychodzący portu 443 i blokowanie reszty:** Samo otwarcie portu 443 na zapaporze sieciowej nie konfiguruje szyfrowania ani nie instaluje certyfikatu SSL niezbędnego do bezpiecznej komunikacji HTTPS.
-- **D. Konfiguracja firewall na ruch wychodzący portu 443:** Dotyczy filtrowania ruchu opuszczającego sieć VPC i nie ma wpływu na proces szyfrowania połączeń przychodzących od klientów zewnętrznych.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Certyfikat SSL na Network TCP Load Balancerze:</strong> Network Load Balancer (NLB) działa w warstwie 4 (L4) i nie terminuje sesji SSL/TLS – przekazuje surowe pakiety TCP bezpośrednio do maszyn backendowych. Wymagałoby to instalacji i zarządzania certyfikatami SSL na każdej maszynie wirtualnej z osobna, co utrudnia administrację i nie realizuje centralnej terminacji na LB.
+- <strong>C. Konfiguracja firewall na ruch przychodzący portu 443 i blokowanie reszty:</strong> Samo otwarcie portu 443 na zapaporze sieciowej nie konfiguruje szyfrowania ani nie instaluje certyfikatu SSL niezbędnego do bezpiecznej komunikacji HTTPS.
+- <strong>D. Konfiguracja firewall na ruch wychodzący portu 443:</strong> Dotyczy filtrowania ruchu opuszczającego sieć VPC i nie ma wpływu na proces szyfrowania połączeń przychodzących od klientów zewnętrznych.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Witryny webowe i e-commerce (ruch HTTP/HTTPS) wymagające terminacji certyfikatów SSL na poziomie chmury zawsze powinny korzystać z **HTTP(S) Load Balancer (L7)**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Witryny webowe i e-commerce (ruch HTTP/HTTPS) wymagające terminacji certyfikatów SSL na poziomie chmury zawsze powinny korzystać z <strong>HTTP(S) Load Balancer (L7)</strong>.
 - L7 Load Balancer obsługuje tzw. Google-managed SSL certificates (darmowe, automatycznie odnawiane certyfikaty).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Terminacja SSL dla ruchu webowego (HTTPS) -> L7 HTTP(S) Load Balancer.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Google Cloud HTTP(S) Load Balancing overview: https://cloud.google.com/load-balancing/docs/https
 </pre>
 

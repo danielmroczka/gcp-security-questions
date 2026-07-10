@@ -103,7 +103,7 @@ Celem jest wdrożenie bezpiecznej metody uwierzytelniania dla klastra CI/CD uruc
 - D. Włączenie polityki `constraints/iam.allowServiceAccountCredentialLifetimeExtension`: Ta polityka pozwala na wydłużenie czasu życia tokenów dostępowych konta serwisowego, co w przypadku kompromitacji maszyny zwiększa ryzyko, dając napastnikowi więcej czasu na działanie na skradzionym tokenie.
 
 4. Wskazówki, hinty, tips and tricks:
-- Zapamiętaj: **Nigdy nie pobieraj i nie twórz kluczy kont serwisowych (JSON keys)**, jeśli nie jest to absolutnie konieczne (np. dla systemów zewnętrznych poza GCP). Wewnątrz GCP korzystaj z tożsamości przypisanych bezpośrednio do maszyn/usług.
+- Zapamiętaj: <strong>Nigdy nie pobieraj i nie twórz kluczy kont serwisowych (JSON keys)</strong>, jeśli nie jest to absolutnie konieczne (np. dla systemów zewnętrznych poza GCP). Wewnątrz GCP korzystaj z tożsamości przypisanych bezpośrednio do maszyn/usług.
 - Blokowanie tworzenia kluczy kont serwisowych za pomocą polityki organizacyjnej to jedna z najczęściej zalecanych reguł bezpieczeństwa w GCP.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

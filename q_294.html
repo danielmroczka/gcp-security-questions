@@ -96,8 +96,8 @@ C. Deploy the TLS certificate at Google Cloud Global HTTPs Load Balancer, and su
 Odpowiedź C jest prawidłowa, ponieważ przesłanie poświadczeń użytkownika (credentials) przez bezpieczny protokół HTTPS (zabezpieczony certyfikatem TLS terminowanym na globalnym Load Balancerze HTTPS) jest standardowym, bezpiecznym i powszechnie akceptowanym przez audytorów sposobem na zapewnienie szyfrowania danych logowania w transporcie.
 
 Dlaczego to poprawne podejście:
-a. **Szyfrowanie w transporcie (Transit Encryption):** Protokół TLS szyfruje całą sesję HTTP, w tym nagłówki, ciasteczka sesyjne oraz treść żądania (payload zawierający login i hasło) przed opuszczeniem przeglądarki użytkownika.
-b. **Globalny Load Balancer:** Terminowanie połączeń TLS na poziomie Global HTTPS Load Balancera (GFE) chroni aplikację przed atakami DDoS i pozwala na centralne zarządzanie certyfikatami SSL za pomocą Certificate Managera. Po deszyfrowaniu, ruch do maszyn backendowych w sieci VPC również może być szyfrowany (end-to-end), jeśli skonfigurujemy HTTPS na backendzie.
+a. <strong>Szyfrowanie w transporcie (Transit Encryption):</strong> Protokół TLS szyfruje całą sesję HTTP, w tym nagłówki, ciasteczka sesyjne oraz treść żądania (payload zawierający login i hasło) przed opuszczeniem przeglądarki użytkownika.
+b. <strong>Globalny Load Balancer:</strong> Terminowanie połączeń TLS na poziomie Global HTTPS Load Balancera (GFE) chroni aplikację przed atakami DDoS i pozwala na centralne zarządzanie certyfikatami SSL za pomocą Certificate Managera. Po deszyfrowaniu, ruch do maszyn backendowych w sieci VPC również może być szyfrowany (end-to-end), jeśli skonfigurujemy HTTPS na backendzie.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Generate a symmetric key with Cloud KMS. Encrypt client-side user credentials by using the symmetric key.
@@ -108,7 +108,7 @@ D. Generate an asymmetric key with Cloud KMS. Encrypt client-side user credentia
    * Dlaczego nieprawidłowa: Choć szyfrowanie kluczem publicznym (asymetrycznym) w przeglądarce jest kryptograficznie bezpieczne (tylko serwer posiadający klucz prywatny w KMS może odszyfrować dane), to wdrażanie własnego szyfrowania aplikacyjnego w przeglądarce bez TLS jest niezwykle skomplikowane, podatne na błędy implementacji i niepotrzebne, ponieważ standardowy protokół HTTPS (TLS) realizuje to zadanie automatycznie i bezpiecznie na poziomie przeglądarki i serwera web.
 
 4. Wskazówki, hinty, tips and tricks:
-* Bezpieczne przesyłanie poświadczeń w internecie (encryption of credentials in transit) -> Zawsze używaj **HTTPS / TLS** z certyfikatem zainstalowanym na **Load Balancerze**.
+* Bezpieczne przesyłanie poświadczeń w internecie (encryption of credentials in transit) -> Zawsze używaj <strong>HTTPS / TLS</strong> z certyfikatem zainstalowanym na <strong>Load Balancerze</strong>.
 * Unikaj własnych systemów szyfrowania haseł w kodzie JavaScript przeglądarki.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

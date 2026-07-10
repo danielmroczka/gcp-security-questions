@@ -90,24 +90,24 @@ You are part of a security team that wants to ensure that a Cloud Storage bucket
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagane jest zapewnienie, że kubełek Cloud Storage w Projekcie A może być odczytywany tylko przez Projekt B, a dane z tego kubełka nie mogą zostać skopiowane ani przesłane poza dozwolony perymetr sieciowy, nawet przez uwierzytelnionego użytkownika (zapobieganie eksfiltracji danych):
-- **Włączenie VPC Service Controls, utworzenie perymetru sieciowego obejmującego Projekt A i Projekt B oraz dodanie usługi Cloud Storage (A):** VPC Service Controls (VPC SC) tworzy logiczny perymetr bezpieczeństwa wokół zasobów zarządzanych przez Google (takich jak Cloud Storage). Uniemożliwia to przesyłanie danych pomiędzy usługami wewnątrz perymetru a usługami na zewnątrz niego (np. polecenie `gsutil cp gs://bucket-in-perimeter gs://external-bucket` zostanie zablokowane, nawet jeśli użytkownik ma pełne uprawnienia IAM w obu miejscach). Pozwala to na ścisłą kontrolę przepływu danych i ochronę przed eksfiltracją.
+- <strong>Włączenie VPC Service Controls, utworzenie perymetru sieciowego obejmującego Projekt A i Projekt B oraz dodanie usługi Cloud Storage (A):</strong> VPC Service Controls (VPC SC) tworzy logiczny perymetr bezpieczeństwa wokół zasobów zarządzanych przez Google (takich jak Cloud Storage). Uniemożliwia to przesyłanie danych pomiędzy usługami wewnątrz perymetru a usługami na zewnątrz niego (np. polecenie `gsutil cp gs://bucket-in-perimeter gs://external-bucket` zostanie zablokowane, nawet jeśli użytkownik ma pełne uprawnienia IAM w obu miejscach). Pozwala to na ścisłą kontrolę przepływu danych i ochronę przed eksfiltracją.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Polityka Domain Restricted Sharing oraz Bucket Policy Only:** Domain Restricted Sharing ogranicza dodawanie tożsamości spoza określonej organizacji Google Workspace do polityk IAM, ale nie zapobiega eksfiltracji danych przez uprawnionych użytkowników do zewnętrznych bucketów.
-- **C i D. Private Access oraz VPC Peering:** Te mechanizmy działają na poziomie sieci VPC (warstwy L3/L4), natomiast Cloud Storage jest usługą publicznego API Google i ruch do niej nie jest domyślnie filtrowany przez standardowy VPC Peering czy Private Access pod kątem kierunku kopiowania danych między zasobami API.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Polityka Domain Restricted Sharing oraz Bucket Policy Only:</strong> Domain Restricted Sharing ogranicza dodawanie tożsamości spoza określonej organizacji Google Workspace do polityk IAM, ale nie zapobiega eksfiltracji danych przez uprawnionych użytkowników do zewnętrznych bucketów.
+- <strong>C i D. Private Access oraz VPC Peering:</strong> Te mechanizmy działają na poziomie sieci VPC (warstwy L3/L4), natomiast Cloud Storage jest usługą publicznego API Google i ruch do niej nie jest domyślnie filtrowany przez standardowy VPC Peering czy Private Access pod kątem kierunku kopiowania danych między zasobami API.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Zapobieganie kopiowaniu danych na zewnątrz / ochrona przed eksfiltracją danych z usług API Google (Cloud Storage, BigQuery) -> **VPC Service Controls (VPC SC)**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Zapobieganie kopiowaniu danych na zewnątrz / ochrona przed eksfiltracją danych z usług API Google (Cloud Storage, BigQuery) -> <strong>VPC Service Controls (VPC SC)</strong>.
 - IAM kontroluje autoryzację tożsamości ("kto"), natomiast VPC Service Controls kontroluje sieć i kierunek przepływu danych ("skąd i dokąd"), zapobiegając eksfiltracji przez zaufanych użytkowników.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Zapobieganie kopiowaniu/dostępowi do Cloud Storage poza dozwolone projekty / eksfiltracja danych -> VPC Service Controls.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - VPC Service Controls overview: https://cloud.google.com/vpc-service-controls/docs/overview
 </pre>
 

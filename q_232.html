@@ -97,8 +97,8 @@ A. 1. Grant logging.viewer role to the security team at the organization resourc
 Odpowiedź A jest prawidłowa, ponieważ poprawnie wykorzystuje hierarchię zasobów GCP i mechanizm dziedziczenia uprawnień IAM w celu zapewnienia zasady najmniejszych uprawnień (least privilege).
 
 Dlaczego ten podział jest poprawny:
-a. **Dostęp dla zespołu bezpieczeństwa:** Nadanie roli `logging.viewer` (przeglądający logi) na poziomie organizacji sprawia, że uprawnienia te są dziedziczone w dół na wszystkie foldery (zarówno dev, jak i prod) oraz wszystkie zawarte w nich projekty. Zespół bezpieczeństwa widzi pełen zestaw logów.
-b. **Dostęp dla deweloperów:** Deweloperzy potrzebują dostępu wyłącznie do środowisk rozwojowych. Nadając im rolę `logging.viewer` na poziomie folderu "Dev" (który grupuje wszystkie projekty deweloperskie), ograniczamy ich widoczność do tego obszaru. Nie mając żadnych uprawnień przypisanych na poziomie folderu "Prod" lub organizacji, nie mogą przeglądać logów produkcyjnych.
+a. <strong>Dostęp dla zespołu bezpieczeństwa:</strong> Nadanie roli `logging.viewer` (przeglądający logi) na poziomie organizacji sprawia, że uprawnienia te są dziedziczone w dół na wszystkie foldery (zarówno dev, jak i prod) oraz wszystkie zawarte w nich projekty. Zespół bezpieczeństwa widzi pełen zestaw logów.
+b. <strong>Dostęp dla deweloperów:</strong> Deweloperzy potrzebują dostępu wyłącznie do środowisk rozwojowych. Nadając im rolę `logging.viewer` na poziomie folderu "Dev" (który grupuje wszystkie projekty deweloperskie), ograniczamy ich widoczność do tego obszaru. Nie mając żadnych uprawnień przypisanych na poziomie folderu "Prod" lub organizacji, nie mogą przeglądać logów produkcyjnych.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. ...Grant logging.admin role to the developer team at the organization level.
@@ -110,7 +110,7 @@ D. ...Grant logging.admin to both teams at the organization level.
 
 4. Wskazówki, hinty, tips and tricks:
 * Pamiętaj o hierarchii zasobów GCP: uprawnienia nadane wyżej (Organizacja) automatycznie spływają w dół. Aby ograniczyć dostęp, nadawaj role jak najniżej w strukturze (np. na poziomie konkretnego folderu lub projektu).
-* Do samego czytania logów służy rola **`roles/logging.viewer`** (Logging Viewer). Rola `roles/logging.admin` jest nadmiarowa do tego celu.
+* Do samego czytania logów służy rola <strong>`roles/logging.viewer`</strong> (Logging Viewer). Rola `roles/logging.admin` jest nadmiarowa do tego celu.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Widoczność logów w dev, brak na prod -> Dostęp dla dev przypisany na poziomie folderu dev (folder resource level).

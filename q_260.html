@@ -64,9 +64,9 @@ C. Create regional Cloud Storage buckets with Object [Lifecycle Management to tr
 Odpowiedź C jest prawidłowa, ponieważ użycie regionalnych kubełków Cloud Storage (Regional Buckets) w wyznaczonych lokalizacjach geograficznych bezpośrednio spełnia wymagania dotyczące rezydentności danych (Data Residency). Dane w regionalnym kubełku fizycznie rezydują w wybranym centrum danych (np. europe-west1) i nie są replikowane poza ten obszar.
 
 Dlaczego to najlepsze podejście:
-a. **Spełnienie polityk rezydentności:** Wybór konkretnego regionu w Europie (np. regional bucket) gwarantuje zgodność z wewnętrznymi i prawnymi zasadami suwerenności danych.
-b. **Zarządzanie cyklem życia (Object Lifecycle Management):** Pozwala na automatyczne usuwanie lub przenoszenie starych danych lokalizacyjnych do tańszych klas przechowywania (optymalizacja kosztów i minimalizacja ekspozycji danych).
-c. **Ochrona danych wrażliwych:** Połączenie regionalności z szyfrowaniem kluczami zarządzanymi przez klienta (CMEK) zapewnia, że dane są chronione na najwyższym poziomie i w pełni kontrolowane przez firmę.
+a. <strong>Spełnienie polityk rezydentności:</strong> Wybór konkretnego regionu w Europie (np. regional bucket) gwarantuje zgodność z wewnętrznymi i prawnymi zasadami suwerenności danych.
+b. <strong>Zarządzanie cyklem życia (Object Lifecycle Management):</strong> Pozwala na automatyczne usuwanie lub przenoszenie starych danych lokalizacyjnych do tańszych klas przechowywania (optymalizacja kosztów i minimalizacja ekspozycji danych).
+c. <strong>Ochrona danych wrażliwych:</strong> Połączenie regionalności z szyfrowaniem kluczami zarządzanymi przez klienta (CMEK) zapewnia, że dane są chronione na najwyższym poziomie i w pełni kontrolowane przez firmę.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Enable location restrictions on Compute Engine instances... Apply labels...
@@ -75,7 +75,7 @@ B. Use the Cloud Data Loss Prevention (Cloud DLP) API... Create Cloud Storage bu
    * Dlaczego nieprawidłowa: Stworzenie kubła o globalnej dostępności (multi-region lub global) powoduje, że dane są automatycznie replikowane do różnych regionów na świecie (np. poza Europę). Narusza to podstawowe wymaganie dotyczące lokalnych polityk rezydentności danych, nawet jeśli Cloud DLP zidentyfikuje wrażliwe dane.
 
 4. Wskazówki, hinty, tips and tricks:
-* Wymagania dotyczące suwerenności i rezydentności danych (Data Residency) w Cloud Storage -> Zawsze używaj **Regional Buckets** w zdefiniowanych, zgodnych regionach (compliant regions).
+* Wymagania dotyczące suwerenności i rezydentności danych (Data Residency) w Cloud Storage -> Zawsze używaj <strong>Regional Buckets</strong> w zdefiniowanych, zgodnych regionach (compliant regions).
 * Unikaj kubełków wieloregionowych (multi-region) lub globalnych, jeśli prawo nakazuje przechowywanie danych wyłącznie w określonym państwie/kontynencie.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

@@ -65,8 +65,8 @@ C. Grant identity and access management (IAM) roles and permissions to principal
 Odpowiedź C jest prawidłowa, ponieważ Identity and Access Management (IAM) to fundamentalna, natywna i najbardziej elastyczna usługa w Google Cloud służąca do autoryzacji i precyzyjnego zarządzania dostępem do odczytu danych w usługach takich jak BigQuery oraz Cloud Storage.
 
 Zalety IAM:
-a. **Granularność uprawnień:** IAM pozwala na przydzielanie precyzyjnych ról (np. `roles/bigquery.dataViewer` dla odczytu tabel lub `roles/storage.objectViewer` dla pobierania plików z GCS) określonym tożsamościom (principals: użytkownicy, grupy, konta serwisowe).
-b. **Elastyczność i kontrola:** Możemy ograniczyć zasięg ról do konkretnego projektu, pojedynczego kubełka lub zbioru danych (dataset), a także stosować warunki IAM (IAM Conditions), co zapewnia pełne bezpieczeństwo dostępu.
+a. <strong>Granularność uprawnień:</strong> IAM pozwala na przydzielanie precyzyjnych ról (np. `roles/bigquery.dataViewer` dla odczytu tabel lub `roles/storage.objectViewer` dla pobierania plików z GCS) określonym tożsamościom (principals: użytkownicy, grupy, konta serwisowe).
+b. <strong>Elastyczność i kontrola:</strong> Możemy ograniczyć zasięg ról do konkretnego projektu, pojedynczego kubełka lub zbioru danych (dataset), a także stosować warunki IAM (IAM Conditions), co zapewnia pełne bezpieczeństwo dostępu.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Deidentify sensitive fields within the dataset by using data leakage protection...
@@ -77,7 +77,7 @@ D. Enable server-side encryption on the data in BigQuery and Cloud Storage.
    * Dlaczego nieprawidłowa: Szyfrowanie po stronie serwera (Server-Side Encryption) jest domyślnie i bezwyjątkowo włączone w GCP dla wszystkich danych. Służy do ochrony przed fizyczną kradzieżą dysków, ale nie filtruje i nie autoryzuje dostępu logicznego dla użytkowników próbujących odczytać dane z poziomu API.
 
 4. Wskazówki, hinty, tips and tricks:
-* Autoryzacja i kontrola dostępu (authorization / access control) w GCP -> Zawsze używaj **Identity and Access Management (IAM)**.
+* Autoryzacja i kontrola dostępu (authorization / access control) w GCP -> Zawsze używaj <strong>Identity and Access Management (IAM)</strong>.
 * Szyfrowanie (encryption) i DLP chronią same dane, ale nie zastępują polityk autoryzacji użytkowników.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

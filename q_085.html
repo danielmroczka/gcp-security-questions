@@ -90,24 +90,24 @@ You are the Security Admin in your company. You want to synchronize all security
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Celem jest synchronizacja grup bezpieczeństwa z lokalnego katalogu LDAP do Cloud Identity, filtrując je tak, aby synchronizować tylko te, które posiadają adres e-mail:
-- **Skonfigurowanie Google Cloud Directory Sync (GCDS) z regułami wyszukiwania LDAP (LDAP search rules) filtrującymi po atrybucie adresu e-mail użytkownika i ustawienie synchronizacji jednokierunkowej (A):** GCDS to narzędzie służące do synchronizacji tożsamości z lokalnego AD/LDAP do Cloud Identity. Narzędzie to zawsze wykonuje synchronizację jednokierunkową (ze środowiska lokalnego do Google Cloud). Za pomocą reguł wyszukiwania LDAP (LDAP search rules) możemy precyzyjnie określić, które grupy mają być synchronizowane (np. sprawdzając obecność atrybutu e-mail).
+- <strong>Skonfigurowanie Google Cloud Directory Sync (GCDS) z regułami wyszukiwania LDAP (LDAP search rules) filtrującymi po atrybucie adresu e-mail użytkownika i ustawienie synchronizacji jednokierunkowej (A):</strong> GCDS to narzędzie służące do synchronizacji tożsamości z lokalnego AD/LDAP do Cloud Identity. Narzędzie to zawsze wykonuje synchronizację jednokierunkową (ze środowiska lokalnego do Google Cloud). Za pomocą reguł wyszukiwania LDAP (LDAP search rules) możemy precyzyjnie określić, które grupy mają być synchronizowane (np. sprawdzając obecność atrybutu e-mail).
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Synchronizacja dwukierunkowa:** GCDS **nie wspiera** i nie wykonuje synchronizacji dwukierunkowej. Synchronizacja z chmury z powrotem do LDAP nie jest możliwa za pomocą GCDS.
-- **C i D. Zewnętrzne narzędzia i automatyczne przypisywanie ról IAM:** Tworzenie grup w Google domain nie nadaje im automatycznie konkretnych, jawnych ról IAM na poziomie zasobów GCP bez ręcznej konfiguracji ról w IAM. Ponadto GCDS jest natywnym i zalecanym narzędziem, więc używanie niesprecyzowanych zewnętrznych narzędzi do zarządzania tożsamościami ("management tool") jest gorszym rozwiązaniem.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Synchronizacja dwukierunkowa:</strong> GCDS <strong>nie wspiera</strong> i nie wykonuje synchronizacji dwukierunkowej. Synchronizacja z chmury z powrotem do LDAP nie jest możliwa za pomocą GCDS.
+- <strong>C i D. Zewnętrzne narzędzia i automatyczne przypisywanie ról IAM:</strong> Tworzenie grup w Google domain nie nadaje im automatycznie konkretnych, jawnych ról IAM na poziomie zasobów GCP bez ręcznej konfiguracji ról w IAM. Ponadto GCDS jest natywnym i zalecanym narzędziem, więc używanie niesprecyzowanych zewnętrznych narzędzi do zarządzania tożsamościami ("management tool") jest gorszym rozwiązaniem.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Narzędzie **Google Cloud Directory Sync (GCDS)** jest zawsze **jednokierunkowe** (one-way sync) – od LDAP/AD do Google Cloud.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Narzędzie <strong>Google Cloud Directory Sync (GCDS)</strong> jest zawsze <strong>jednokierunkowe</strong> (one-way sync) – od LDAP/AD do Google Cloud.
 - Egzamin GCP często sprawdza znajomość GCDS jako natywnego łącznika tożsamości.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Synchronizacja grup AD/LDAP do GCP -> GCDS + jednokierunkowa synchronizacja.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - How GCDS works: https://support.google.com/a/answer/6120989
 </pre>
 

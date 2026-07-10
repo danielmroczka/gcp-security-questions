@@ -89,25 +89,25 @@ While migrating your organization's infrastructure to GCP, a large number of use
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Organizacja migruje użytkowników do GCP i chce zachować istniejący lokalny serwer Active Directory / LDAP jako jedyne źródło prawdy (Single Source of Truth) oraz zachować te same hasła SSO:
-- **Użycie Google Cloud Directory Sync (GCDS) do synchronizacji tożsamości z Active Directory/LDAP (B):** GCDS jest darmowym, zalecanym i bezpiecznym narzędziem Google, które instaluje się lokalnie. Łączy się ono z AD/LDAP przez bezpieczne połączenie, odczytuje użytkowników oraz grupy i automatycznie synchronizuje ich konta do Google Cloud Identity/Workspace. GCDS nie synchronizuje haseł bezpośrednio, co pozwala organizacji na wdrożenie SAML SSO (logowania jednokrotnego), dzięki czemu użytkownicy logują się swoimi firmowymi hasłami.
+- <strong>Użycie Google Cloud Directory Sync (GCDS) do synchronizacji tożsamości z Active Directory/LDAP (B):</strong> GCDS jest darmowym, zalecanym i bezpiecznym narzędziem Google, które instaluje się lokalnie. Łączy się ono z AD/LDAP przez bezpieczne połączenie, odczytuje użytkowników oraz grupy i automatycznie synchronizuje ich konta do Google Cloud Identity/Workspace. GCDS nie synchronizuje haseł bezpośrednio, co pozwala organizacji na wdrożenie SAML SSO (logowania jednokrotnego), dzięki czemu użytkownicy logują się swoimi firmowymi hasłami.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Ręczna synchronizacja:** Przy dużej liczbie użytkowników ("large number of users") ręczne dodawanie i usuwanie kont jest nieefektywne, powolne i podatne na błędy ludzkie (np. nieusunięcie konta zwolnionego pracownika).
-- **C. Logowanie bezpośrednio za pomocą Kerberos:** GCP Console nie wspiera bezpośredniego uwierzytelniania protokołem Kerberos z lokalnej domeny bez integracji z dostawcą tożsamości SAML/OIDC.
-- **D. Logowanie za pomocą OpenID (OIDC) IdP bez synchronizacji kont:** Nawet przy wdrożonym SSO, użytkownicy wciąż muszą posiadać zsynchronizowane konta tożsamości (szkielety kont) w Cloud Identity, by móc przypisywać im role IAM. OIDC samo z siebie nie tworzy kont w GCP bez wcześniejszej synchronizacji.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Ręczna synchronizacja:</strong> Przy dużej liczbie użytkowników ("large number of users") ręczne dodawanie i usuwanie kont jest nieefektywne, powolne i podatne na błędy ludzkie (np. nieusunięcie konta zwolnionego pracownika).
+- <strong>C. Logowanie bezpośrednio za pomocą Kerberos:</strong> GCP Console nie wspiera bezpośredniego uwierzytelniania protokołem Kerberos z lokalnej domeny bez integracji z dostawcą tożsamości SAML/OIDC.
+- <strong>D. Logowanie za pomocą OpenID (OIDC) IdP bez synchronizacji kont:</strong> Nawet przy wdrożonym SSO, użytkownicy wciąż muszą posiadać zsynchronizowane konta tożsamości (szkielety kont) w Cloud Identity, by móc przypisywać im role IAM. OIDC samo z siebie nie tworzy kont w GCP bez wcześniejszej synchronizacji.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- AD/LDAP jako źródło prawdy -> **Google Cloud Directory Sync (GCDS)** do synchronizacji kont.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- AD/LDAP jako źródło prawdy -> <strong>Google Cloud Directory Sync (GCDS)</strong> do synchronizacji kont.
 - Zapamiętaj: GCDS działa w jedną stronę (ze środowiska lokalnego do chmury Google). Nigdy nie modyfikuje lokalnego Active Directory.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Synchronizacja kont AD/LDAP do GCP -> GCDS.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Google Cloud Directory Sync: https://cloud.google.com/directory-sync/docs
 </pre>
 

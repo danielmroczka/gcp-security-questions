@@ -90,25 +90,25 @@ A customer needs to prevent attackers from hijacking their domain/IP and redirec
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Atak polegający na przejęciu domeny/IP i przekierowaniu użytkowników na fałszywą stronę (man-in-the-middle / DNS spoofing/poisoning) polega na sfałszowaniu odpowiedzi serwerów DNS.
-- **DNS Security Extensions - DNSSEC (C):** Jest to zestaw rozszerzeń bezpieczeństwa DNS, które cyfrowo podpisują rekordy DNS. Klient (np. przeglądarka) może zweryfikować podpis i upewnić się, że odpowiedź DNS nie została zmodyfikowana w locie przez napastnika. Chroni to przed zatruciem pamięci podręcznej DNS (DNS cache poisoning) i przejęciem ruchu.
+- <strong>DNS Security Extensions - DNSSEC (C):</strong> Jest to zestaw rozszerzeń bezpieczeństwa DNS, które cyfrowo podpisują rekordy DNS. Klient (np. przeglądarka) może zweryfikować podpis i upewnić się, że odpowiedź DNS nie została zmodyfikowana w locie przez napastnika. Chroni to przed zatruciem pamięci podręcznej DNS (DNS cache poisoning) i przejęciem ruchu.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. VPC Flow Logs:** Służą do rejestrowania metadanych o ruchu IP w sieci VPC (do celów audytu i debugowania), ale nie zapobiegają atakom na protokół DNS.
-- **B. Cloud Armor:** Jest to WAF i ochrona DDoS dla warstwy aplikacyjnej, nie chroni serwerów DNS przed spoofingiem adresów IP przed dotarciem ruchu do chmury.
-- **D. Cloud IAP:** Kontroluje dostęp do aplikacji na podstawie tożsamości użytkownika, ale nie zabezpiecza warstwy routingu DNS.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. VPC Flow Logs:</strong> Służą do rejestrowania metadanych o ruchu IP w sieci VPC (do celów audytu i debugowania), ale nie zapobiegają atakom na protokół DNS.
+- <strong>B. Cloud Armor:</strong> Jest to WAF i ochrona DDoS dla warstwy aplikacyjnej, nie chroni serwerów DNS przed spoofingiem adresów IP przed dotarciem ruchu do chmury.
+- <strong>D. Cloud IAP:</strong> Kontroluje dostęp do aplikacji na podstawie tożsamości użytkownika, ale nie zabezpiecza warstwy routingu DNS.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Słowo-klucz: **hijacking domain/IP** lub **man-in-the-middle DNS**. Jedynym mechanizmem kryptograficznego zabezpieczenia zapytań DNS jest **DNSSEC**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Słowo-klucz: <strong>hijacking domain/IP</strong> lub <strong>man-in-the-middle DNS</strong>. Jedynym mechanizmem kryptograficznego zabezpieczenia zapytań DNS jest <strong>DNSSEC</strong>.
 - Cloud DNS w GCP w pełni wspiera DNSSEC i można go włączyć jednym kliknięciem.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Ochrona przed fałszowaniem rekordów DNS -> DNSSEC.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Cloud DNS DNSSEC Overview: https://cloud.google.com/dns/docs/dnssec
 </pre>
 

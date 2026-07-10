@@ -95,7 +95,7 @@ A. Implement an Access Policy in BeyondCorp Enterprise to verify the device cert
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Celem jest zapewnienie, że pracownicy mogą uzyskać dostęp do konsoli Google Cloud wyłącznie z urządzeń wydanych przez firmę (corporate-issued devices) zaopatrzonych w ważny certyfikat korporacyjny (enterprise certificate). Jest to klasyczne podejście typu Zero Trust.
-W Google Cloud do realizacji reguł dostępu opartych na kontekście urządzenia (Context-Aware Access) służy **BeyondCorp Enterprise** (wykorzystujący pod maską usługę Access Context Manager).
+W Google Cloud do realizacji reguł dostępu opartych na kontekście urządzenia (Context-Aware Access) służy <strong>BeyondCorp Enterprise</strong> (wykorzystujący pod maską usługę Access Context Manager).
 Aby wdrożyć to zabezpieczenie:
 1. Tworzy się politykę dostępu (Access Policy) w Access Context Managerze, która zawiera warunki (Access Levels) weryfikujące obecność i ważność certyfikatu X.509 na urządzeniu klienta (przy użyciu Endpoint Verification).
 2. Następnie tworzy się powiązanie dostępu (Access Binding), które przypisuje tę politykę dostępu bezpośrednio do konsoli Google Cloud dla danej grupy użytkowników.
@@ -106,7 +106,7 @@ Aby wdrożyć to zabezpieczenie:
 - D. Implement an Identity and Access Management (IAM) conditional policy to verify the device certificate: Warunki IAM (IAM Conditions) pozwalają ograniczyć dostęp na podstawie adresu IP źródłowego, czasu lub zasobu, ale nie posiadają natywnej funkcji sprawdzania i walidacji certyfikatów sprzętowych na urządzeniach klienckich. Do głębokiej weryfikacji stanu urządzenia (device posture/certyfikaty) niezbędny jest BeyondCorp Enterprise / Access Context Manager.
 
 4. Wskazówki, hinty, tips and tricks:
-- Zabezpieczenie dostępu do konsoli Google Cloud lub aplikacji webowych na podstawie stanu stacji roboczej (np. system operacyjny, obecność certyfikatu firmowego, zaszyfrowany dysk) zawsze realizuje się za pomocą **BeyondCorp Enterprise** / **Context-Aware Access** / **Access Context Manager**.
+- Zabezpieczenie dostępu do konsoli Google Cloud lub aplikacji webowych na podstawie stanu stacji roboczej (np. system operacyjny, obecność certyfikatu firmowego, zaszyfrowany dysk) zawsze realizuje się za pomocą <strong>BeyondCorp Enterprise</strong> / <strong>Context-Aware Access</strong> / <strong>Access Context Manager</strong>.
 - Pamiętaj, że BeyondCorp współpracuje z rozszerzeniem Endpoint Verification w przeglądarkach użytkowników.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

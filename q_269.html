@@ -65,8 +65,8 @@ D. Create an egress firewall policy with Threat Intelligence as the destination.
 Odpowiedź D jest prawidłowa, ponieważ usługa Cloud Firewall (w wersji Advanced/Plus) wspiera funkcję Threat Intelligence (Inteligentna analiza zagrożeń), która pozwala na automatyczne blokowanie lub logowanie ruchu do znanych, szkodliwych adresów IP i domen w internecie.
 
 Jak to działa:
-a. **Threat Intelligence w Firewallu:** Google stale aktualizuje listy reputacyjne zawierające adresy IP powiązane ze złośliwym oprogramowaniem, botnetami, serwerami Command & Control (C2) oraz witrynami phishingowymi.
-b. **Polityka Egress:** Tworząc regułę zapory sieciowej dla ruchu wychodzącego (egress) z celem (destination) ustawionym na odpowiednią listę Threat Intelligence (np. "iplist-malicious-ips"), system automatycznie zablokuje lub wyśle alert w przypadku próby nawiązania połączenia przez dowolną maszynę w sieci VPC z tymi adresami. Jest to wysoce skuteczna obrona prewencyjna.
+a. <strong>Threat Intelligence w Firewallu:</strong> Google stale aktualizuje listy reputacyjne zawierające adresy IP powiązane ze złośliwym oprogramowaniem, botnetami, serwerami Command & Control (C2) oraz witrynami phishingowymi.
+b. <strong>Polityka Egress:</strong> Tworząc regułę zapory sieciowej dla ruchu wychodzącego (egress) z celem (destination) ustawionym na odpowiednią listę Threat Intelligence (np. "iplist-malicious-ips"), system automatycznie zablokuje lub wyśle alert w przypadku próby nawiązania połączenia przez dowolną maszynę w sieci VPC z tymi adresami. Jest to wysoce skuteczna obrona prewencyjna.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create a DNS Server Policy in Cloud DNS and turn on logs...
@@ -77,7 +77,7 @@ C. Create a Cloud Intrusion Detection endpoint. Connect this endpoint to all VPC
    * Dlaczego nieprawidłowa: Cloud IDS (Intrusion Detection System) służy do pasywnego wykrywania zagrożeń (identyfikacji anomalii) i generuje alerty w SCC, ale nie filtruje i nie blokuje (inline mitigation) aktywnie ruchu sieciowego, co było celem wdrożenia prewencyjnego zabezpieczenia zapory.
 
 4. Wskazówki, hinty, tips and tricks:
-* Blokowanie/filtrowanie ruchu wychodzącego do znanych złośliwych domen/IP na poziomie sieci w GCP -> Używaj **Cloud Firewall** z włączoną funkcją **Threat Intelligence**.
+* Blokowanie/filtrowanie ruchu wychodzącego do znanych złośliwych domen/IP na poziomie sieci w GCP -> Używaj <strong>Cloud Firewall</strong> z włączoną funkcją <strong>Threat Intelligence</strong>.
 * Listy Threat Intelligence są w pełni zarządzane i aktualizowane przez Google.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

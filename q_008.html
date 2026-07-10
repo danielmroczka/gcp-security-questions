@@ -90,25 +90,25 @@ A customer implements Cloud Identity-Aware Proxy for their ERP system hosted on 
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Cloud Identity-Aware Proxy (IAP) kontroluje dostęp do aplikacji internetowych hostowanych w GCP. Aby upewnić się, że aplikacja (ERP) akceptuje ruch *wyłącznie* pochodzący z IAP (co zapobiega ominięciu IAP przez ruch wewnętrzny lub inne maszyny w tej samej sieci VPC):
-- **ERP system must validate the JWT assertion in the HTTP requests (A):** IAP dołącza do każdego uwierzytelnionego zapytania nagłówek HTTP `x-goog-iap-jwt-assertion` zawierający kryptograficznie podpisany token JWT. Aplikacja musi zdekodować i zweryfikować ten podpis przy użyciu publicznych kluczy Google. Dzięki temu aplikacja ma pewność, że żądanie przeszło przez bramkę IAP i tożsamość użytkownika została zweryfikowana.
+- <strong>ERP system must validate the JWT assertion in the HTTP requests (A):</strong> IAP dołącza do każdego uwierzytelnionego zapytania nagłówek HTTP `x-goog-iap-jwt-assertion` zawierający kryptograficznie podpisany token JWT. Aplikacja musi zdekodować i zweryfikować ten podpis przy użyciu publicznych kluczy Google. Dzięki temu aplikacja ma pewność, że żądanie przeszło przez bramkę IAP i tożsamość użytkownika została zweryfikowana.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Validate identity headers:** IAP dołącza nagłówki takie jak `x-goog-authenticated-user-email`, ale same nagłówki tekstowe mogą zostać łatwo sfałszowane przez napastnika wewnątrz sieci VPC. Tylko weryfikacja podpisu cyfrowego JWT (opcja A) daje pewność autentyczności.
-- **C. Validate x-forwarded-for headers:** Ten nagłówek zawiera adresy IP proxy, przez które przeszedł ruch. Może być łatwo modyfikowany i nie zapewnia kryptograficznego potwierdzenia tożsamości.
-- **D. Validate user's unique identifier headers:** Podobnie jak w punkcie B, sam identyfikator tekstowy bez weryfikacji JWT nie jest bezpieczny.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Validate identity headers:</strong> IAP dołącza nagłówki takie jak `x-goog-authenticated-user-email`, ale same nagłówki tekstowe mogą zostać łatwo sfałszowane przez napastnika wewnątrz sieci VPC. Tylko weryfikacja podpisu cyfrowego JWT (opcja A) daje pewność autentyczności.
+- <strong>C. Validate x-forwarded-for headers:</strong> Ten nagłówek zawiera adresy IP proxy, przez które przeszedł ruch. Może być łatwo modyfikowany i nie zapewnia kryptograficznego potwierdzenia tożsamości.
+- <strong>D. Validate user's unique identifier headers:</strong> Podobnie jak w punkcie B, sam identyfikator tekstowy bez weryfikacji JWT nie jest bezpieczny.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Wdrażanie zasad **Zero Trust** przy użyciu IAP wymaga, aby aplikacja docelowa zawsze weryfikowała **JWT assertion** (nagłówek `x-goog-iap-jwt-assertion`). Bez tego zabezpieczenia, każdy kto ma dostęp sieciowy do maszyny, może podrobić tożsamość.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Wdrażanie zasad <strong>Zero Trust</strong> przy użyciu IAP wymaga, aby aplikacja docelowa zawsze weryfikowała <strong>JWT assertion</strong> (nagłówek `x-goog-iap-jwt-assertion`). Bez tego zabezpieczenia, każdy kto ma dostęp sieciowy do maszyny, może podrobić tożsamość.
 - Zapamiętaj: Nagłówki tożsamości są łatwe do sfałszowania, token JWT podpisany przez Google jest niemożliwy do podrobienia.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Zabezpieczenie aplikacji za IAP -> Weryfikacja tokena JWT (JWT assertion).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Dokumentacja Cloud IAP JWT: https://cloud.google.com/iap/docs/identity-headers
 </pre>
 

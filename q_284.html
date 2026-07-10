@@ -96,8 +96,8 @@ C. Use Sensitive Data Protection to scan the environment variables multiple time
 Odpowiedź C jest prawidłowa, ponieważ Sensitive Data Protection (dawniej Cloud Data Loss Prevention - Cloud DLP) jest natywną usługą GCP stworzoną do automatycznego wykrywania danych wrażliwych (w tym kluczy API, haseł, sekretów i tokenów kryptograficznych) w nieustrukturyzowanych metadanych i plikach.
 
 Dlaczego to najlepsza metoda:
-a. **Inspekcja metadanych:** Skaner Sensitive Data Protection potrafi odczytywać konfigurację zasobów (w tym zmienne środowiskowe Cloud Functions) i analizować je pod kątem występowania wzorców sekretów (np. infoType `OAUTH_CLIENT_SECRET` lub wzorce kluczy prywatnych).
-b. **Automatyzacja i powiadomienia:** Konfigurując regularne zadania skanowania i integrując je z Security Command Center (SCC), organizacja uzyskuje ciągły i zautomatyzowany monitoring (compliance control), który wykryje naruszenie zasad bezpieczeństwa bez udziału człowieka.
+a. <strong>Inspekcja metadanych:</strong> Skaner Sensitive Data Protection potrafi odczytywać konfigurację zasobów (w tym zmienne środowiskowe Cloud Functions) i analizować je pod kątem występowania wzorców sekretów (np. infoType `OAUTH_CLIENT_SECRET` lub wzorce kluczy prywatnych).
+b. <strong>Automatyzacja i powiadomienia:</strong> Konfigurując regularne zadania skanowania i integrując je z Security Command Center (SCC), organizacja uzyskuje ciągły i zautomatyzowany monitoring (compliance control), który wykryje naruszenie zasad bezpieczeństwa bez udziału człowieka.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Implement regular peer reviews to assess the environment variables...
@@ -108,7 +108,7 @@ D. Integrate dynamic application security testing into the CI/CD pipeline...
    * Dlaczego nieprawidłowa: Testy DAST (Dynamic Application Security Testing) analizują działającą aplikację z zewnątrz (np. symulując ataki HTTP). Nie mają one wglądu w wewnętrzne zmienne środowiskowe zdefiniowane w konfiguracji chmurowej Cloud Functions w konsoli GCP.
 
 4. Wskazówki, hinty, tips and tricks:
-* Wykrywanie kluczy, haseł i sekretów w plikach lub konfiguracjach zasobów (environment variables) w GCP -> Zawsze używaj **Sensitive Data Protection (Cloud DLP)**.
+* Wykrywanie kluczy, haseł i sekretów w plikach lub konfiguracjach zasobów (environment variables) w GCP -> Zawsze używaj <strong>Sensitive Data Protection (Cloud DLP)</strong>.
 * Zintegrowanie skanowania DLP z SCC pozwala na centralną wizualizację alertów bezpieczeństwa.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

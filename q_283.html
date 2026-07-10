@@ -96,9 +96,9 @@ B. Scan and alert vulnerabilities and misconfigurations by using Secure Health A
 Odpowiedź B jest prawidłowa, ponieważ Security Health Analytics (SHA) w ramach Security Command Center (SCC) Premium to natywne i w pełni zautomatyzowane narzędzie GCP przeznaczone do ciągłego skanowania zasobów chmurowych pod kątem miskonfiguracji (misconfigurations) i naruszeń zgodności z normami bezpieczeństwa (np. CIS Benchmarks).
 
 Zalety tego rozwiązania:
-a. **Automatyczne skanowanie:** SHA działa bez przerwy, monitorując stan konfiguracji zapór sieciowych, uprawnień IAM, szyfrowania kubełków, maszyn VM itp. we wszystkich projektach w organizacji.
-b. **Wbudowany Dashboard:** Wykryte błędy są automatycznie wyświetlane na centralnym pulpicie nawigacyjnym SCC (dashboard), umożliwiając zespołom bezpieczeństwa łatwe śledzenie, filtrowanie i zarządzanie procesem naprawczym (remediation).
-c. **Szerokie pokrycie:** Posiada setki gotowych detektorów (detectors) zgodnych z najlepszymi praktykami branżowymi.
+a. <strong>Automatyczne skanowanie:</strong> SHA działa bez przerwy, monitorując stan konfiguracji zapór sieciowych, uprawnień IAM, szyfrowania kubełków, maszyn VM itp. we wszystkich projektach w organizacji.
+b. <strong>Wbudowany Dashboard:</strong> Wykryte błędy są automatycznie wyświetlane na centralnym pulpicie nawigacyjnym SCC (dashboard), umożliwiając zespołom bezpieczeństwa łatwe śledzenie, filtrowanie i zarządzanie procesem naprawczym (remediation).
+c. <strong>Szerokie pokrycie:</strong> Posiada setki gotowych detektorów (detectors) zgodnych z najlepszymi praktykami branżowymi.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create a filter set in Cloud Asset Inventory to identify...
@@ -109,8 +109,8 @@ D. Alert and track emerging attacks detected in your environment by using Event 
    * Dlaczego nieprawidłowa: Event Threat Detection (ETD) w SCC Premium służy do wykrywania aktywnych ataków i zagrożeń w toku (np. brute-force, eksfiltracja danych, zainfekowane maszyny) na podstawie analizy logów. Nie służy do skanowania konfiguracji zasobów w poszukiwaniu pasywnych miskonfiguracji i podatności przed atakiem (co jest domeną SHA).
 
 4. Wskazówki, hinty, tips and tricks:
-* Zapobieganie błędom konfiguracji (misconfigurations) i compliance -> **Security Health Analytics (SHA)** w SCC.
-* Wykrywanie aktywnych zagrożeń i ataków (attacks/threats) -> **Event Threat Detection (ETD)** w SCC.
+* Zapobieganie błędom konfiguracji (misconfigurations) i compliance -> <strong>Security Health Analytics (SHA)</strong> w SCC.
+* Wykrywanie aktywnych zagrożeń i ataków (attacks/threats) -> <strong>Event Threat Detection (ETD)</strong> w SCC.
 * Security Command Center to centralny panel bezpieczeństwa w GCP.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

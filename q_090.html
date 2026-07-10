@@ -90,24 +90,24 @@ You are the security admin of your company. Your development team creates multip
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagane jest utworzenie perymetru bezpieczeństwa dla wielu projektów GCP w celu zapobiegania eksfiltracji danych przez złośliwych użytkowników wewnątrz firmy, przy jednoczesnym zachowaniu swobodnej komunikacji sieciowej między tymi projektami:
-- **Zdefiniowanie poziomów dostępu (Access Levels) w Access Context Manager oraz użycie Shared VPC do komunikacji (B):** Współdzielony VPC (Shared VPC) pozwala na bezpieczną, bezpośrednią łączność sieciową na poziomie prywatnym (L3) między wieloma projektami podpiętymi pod jeden wspólny host project, bez konieczności wychodzenia do internetu. Dodatkowo, za pomocą Access Context Manager można określić warunki dostępu (Access Levels) na podstawie tożsamości, adresu IP czy stanu urządzenia, co pozwala kontrolować dostęp do zasobów i zapobiega eksfiltracji danych.
+- <strong>Zdefiniowanie poziomów dostępu (Access Levels) w Access Context Manager oraz użycie Shared VPC do komunikacji (B):</strong> Współdzielony VPC (Shared VPC) pozwala na bezpieczną, bezpośrednią łączność sieciową na poziomie prywatnym (L3) między wieloma projektami podpiętymi pod jeden wspólny host project, bez konieczności wychodzenia do internetu. Dodatkowo, za pomocą Access Context Manager można określić warunki dostępu (Access Levels) na podstawie tożsamości, adresu IP czy stanu urządzenia, co pozwala kontrolować dostęp do zasobów i zapobiega eksfiltracji danych.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Shared VPC z samymi regułami zapory:** Reguły zapory (firewall) kontrolują ruch sieciowy L3/L4, ale nie zapobiegają eksfiltracji danych na poziomie API (np. skopiowanie danych z BigQuery wewnątrz projektu do zewnętrznego bucketu GCS). Do ochrony przed eksfiltracją na poziomie API wymagane są usługi takie jak VPC Service Controls.
-- **C i D. Automatyczne dodawanie projektów do perymetru VPC Service Controls za pomocą Cloud Functions i Terraform:** VPC Service Controls służy do zapobiegania eksfiltracji danych, jednak te opcje wprowadzają niepotrzebną złożoność i ryzyko operacyjne (opóźnienia w działaniu Cloud Functions, błędy w automatycznym uruchamianiu Terraform). Opcja B opisuje właściwe połączenie technologii Shared VPC z kontrolą tożsamości i kontekstu dostępu (Access Context Manager).
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Shared VPC z samymi regułami zapory:</strong> Reguły zapory (firewall) kontrolują ruch sieciowy L3/L4, ale nie zapobiegają eksfiltracji danych na poziomie API (np. skopiowanie danych z BigQuery wewnątrz projektu do zewnętrznego bucketu GCS). Do ochrony przed eksfiltracją na poziomie API wymagane są usługi takie jak VPC Service Controls.
+- <strong>C i D. Automatyczne dodawanie projektów do perymetru VPC Service Controls za pomocą Cloud Functions i Terraform:</strong> VPC Service Controls służy do zapobiegania eksfiltracji danych, jednak te opcje wprowadzają niepotrzebną złożoność i ryzyko operacyjne (opóźnienia w działaniu Cloud Functions, błędy w automatycznym uruchamianiu Terraform). Opcja B opisuje właściwe połączenie technologii Shared VPC z kontrolą tożsamości i kontekstu dostępu (Access Context Manager).
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Zapobieganie eksfiltracji danych przy jednoczesnym dopuszczeniu bezpiecznej komunikacji między projektami wewnątrz organizacji -> **Access Context Manager / VPC Service Controls** + **Shared VPC**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Zapobieganie eksfiltracji danych przy jednoczesnym dopuszczeniu bezpiecznej komunikacji między projektami wewnątrz organizacji -> <strong>Access Context Manager / VPC Service Controls</strong> + <strong>Shared VPC</strong>.
 - Reguły zapory sieciowej (firewall rules) nie chronią przed eksfiltracją danych przez API Google (np. pobranie danych z Cloud Storage za pomocą autoryzowanego tokena na prywatne urządzenie).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Ochrona przed eksfiltracją + łączność między projektami -> Access Context Manager + Shared VPC.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Access Context Manager overview: https://cloud.google.com/access-context-manager/docs/overview
 </pre>
 

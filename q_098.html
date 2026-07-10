@@ -91,26 +91,26 @@ You have been tasked with implementing external web application protection again
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagane jest wdrożenie ochrony publicznej aplikacji internetowej przed typowymi atakami aplikacyjnymi (OWASP Top 10) oraz przetestowanie/zweryfikowanie tych reguł przed ich ostatecznym wymuszeniem w celu uniknięcia blokowania prawidłowego ruchu (false positives):
-- **Użycie prekonfigurowanych reguł Cloud Armor w trybie podglądu (preview mode) (A):** Cloud Armor posiada zestaw gotowych reguł WAF (np. ochrona przed SQL injection, XSS, LFI). Uruchomienie tych reguł w trybie `preview` sprawia, że Cloud Armor analizuje ruch i zapisuje w logach informację o tym, czy ruch zostałby zablokowany, ale nie przerywa połączenia (nie blokuje użytkownika). Pozwala to administratorom na bezpieczną ocenę wpływu reguł na działanie aplikacji przed ich ostatecznym włączeniem (enforce).
+- <strong>Użycie prekonfigurowanych reguł Cloud Armor w trybie podglądu (preview mode) (A):</strong> Cloud Armor posiada zestaw gotowych reguł WAF (np. ochrona przed SQL injection, XSS, LFI). Uruchomienie tych reguł w trybie `preview` sprawia, że Cloud Armor analizuje ruch i zapisuje w logach informację o tym, czy ruch zostałby zablokowany, ale nie przerywa połączenia (nie blokuje użytkownika). Pozwala to administratorom na bezpieczną ocenę wpływu reguł na działanie aplikacji przed ich ostatecznym włączeniem (enforce).
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Reguły firewall VPC w trybie monitorowania:** Reguły zapory sieciowej VPC działają na warstwach L3/L4 i nie posiadają prekonfigurowanych reguł WAF do wykrywania ataków aplikacyjnych takich jak SQLi czy XSS. Ponadto w standardowym VPC nie ma wbudowanego trybu "monitor mode" dla reguł firewall.
-- **C. Ochrona Google Front End (GFE):** GFE chroni infrastrukturę Google przed atakami wolumetrycznymi DDoS, ale nie analizuje specyfiki kodu aplikacji ani nie chroni przed atakami na warstwie aplikacji (SQLi/XSS) bez skonfigurowanych polityk Cloud Armor.
-- **D. Reguły firewall Cloud Load Balancing:** Load Balancer nie posiada własnych, niezależnych reguł firewall przeznaczonych do ochrony aplikacyjnej WAF; funkcję tę realizuje zintegrowany z nim Cloud Armor.
-- **E. VPC Service Controls w trybie dry-run:** VPC SC służy do zapobiegania eksfiltracji danych z usług API Google (np. Cloud Storage), a nie do ochrony publicznych aplikacji webowych przed atakami typu SQLi czy XSS.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Reguły firewall VPC w trybie monitorowania:</strong> Reguły zapory sieciowej VPC działają na warstwach L3/L4 i nie posiadają prekonfigurowanych reguł WAF do wykrywania ataków aplikacyjnych takich jak SQLi czy XSS. Ponadto w standardowym VPC nie ma wbudowanego trybu "monitor mode" dla reguł firewall.
+- <strong>C. Ochrona Google Front End (GFE):</strong> GFE chroni infrastrukturę Google przed atakami wolumetrycznymi DDoS, ale nie analizuje specyfiki kodu aplikacji ani nie chroni przed atakami na warstwie aplikacji (SQLi/XSS) bez skonfigurowanych polityk Cloud Armor.
+- <strong>D. Reguły firewall Cloud Load Balancing:</strong> Load Balancer nie posiada własnych, niezależnych reguł firewall przeznaczonych do ochrony aplikacyjnej WAF; funkcję tę realizuje zintegrowany z nim Cloud Armor.
+- <strong>E. VPC Service Controls w trybie dry-run:</strong> VPC SC służy do zapobiegania eksfiltracji danych z usług API Google (np. Cloud Storage), a nie do ochrony publicznych aplikacji webowych przed atakami typu SQLi czy XSS.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- **Cloud Armor Preview Mode:** Kluczowa funkcja umożliwiająca testowanie polityk bezpieczeństwa (WAF) bez wpływu na ruch produkcyjny. Każde dopasowanie reguły w trybie preview jest logowane w Cloud Logging z tagiem `preview`.
-- Ochrona przed typowymi atakami webowymi (OWASP Top 10 / SQLi / XSS) -> **Cloud Armor preconfigured WAF rules**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- <strong>Cloud Armor Preview Mode:</strong> Kluczowa funkcja umożliwiająca testowanie polityk bezpieczeństwa (WAF) bez wpływu na ruch produkcyjny. Każde dopasowanie reguły w trybie preview jest logowane w Cloud Logging z tagiem `preview`.
+- Ochrona przed typowymi atakami webowymi (OWASP Top 10 / SQLi / XSS) -> <strong>Cloud Armor preconfigured WAF rules</strong>.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Walidacja zmian reguł WAF bez ich blokowania -> Cloud Armor preconfigured rules in preview mode.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Cloud Armor rule preview mode: https://cloud.google.com/armor/docs/rule-preview
 </pre>
 

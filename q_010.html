@@ -90,26 +90,26 @@ Your team needs to obtain a unified log view of all development cloud projects i
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymaganiem jest zebranie logów z wielu projektów rozwojowych (development) znajdujących się pod wspólnym folderem w organizacji (`folders/NONPROD`) i przesłanie ich do systemu SIEM za pośrednictwem Pub/Sub:
-- **Eksport logów na poziomie folderu do tematu Cloud Pub/Sub w dedykowanym projekcie SIEM, z włączoną opcją includeChildren (A):** Log sink (odbiornik logów) utworzony na poziomie folderu z właściwością `includeChildren=True` automatycznie zbiera logi ze wszystkich projektów i podfolderów znajdujących się pod tym folderem. Przesłanie ich do jednego tematu Pub/Sub w dedykowanym projekcie pozwala systemowi SIEM na łatwą subskrypcję i pobieranie danych z jednego miejsca.
+- <strong>Eksport logów na poziomie folderu do tematu Cloud Pub/Sub w dedykowanym projekcie SIEM, z włączoną opcją includeChildren (A):</strong> Log sink (odbiornik logów) utworzony na poziomie folderu z właściwością `includeChildren=True` automatycznie zbiera logi ze wszystkich projektów i podfolderów znajdujących się pod tym folderem. Przesłanie ich do jednego tematu Pub/Sub w dedykowanym projekcie pozwala systemowi SIEM na łatwą subskrypcję i pobieranie danych z jednego miejsca.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Cloud Storage sink z poziomem billingAccounts:** Konto rozliczeniowe (billing account) nie grupuje zasobów w sposób logiczny dla celów bezpieczeństwa, a Cloud Storage (GCS) jest rozwiązaniem wsadowym (batch), nie nadającym się do przesyłania logów w czasie rzeczywistym do SIEM.
-- **C. Eksport logów w każdym projekcie osobno:** Wymagałoby to ręcznej konfiguracji sinków w setkach projektów, co jest nieefektywne, trudne do zarządzania i audytu.
-- **D. Publicznie współdzielony bucket Cloud Storage:** Udostępnianie publiczne logów bezpieczeństwa narusza podstawowe zasady poufności i stwarza ogromne zagrożenie wycieku danych wrażliwych.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Cloud Storage sink z poziomem billingAccounts:</strong> Konto rozliczeniowe (billing account) nie grupuje zasobów w sposób logiczny dla celów bezpieczeństwa, a Cloud Storage (GCS) jest rozwiązaniem wsadowym (batch), nie nadającym się do przesyłania logów w czasie rzeczywistym do SIEM.
+- <strong>C. Eksport logów w każdym projekcie osobno:</strong> Wymagałoby to ręcznej konfiguracji sinków w setkach projektów, co jest nieefektywne, trudne do zarządzania i audytu.
+- <strong>D. Publicznie współdzielony bucket Cloud Storage:</strong> Udostępnianie publiczne logów bezpieczeństwa narusza podstawowe zasady poufności i stwarza ogromne zagrożenie wycieku danych wrażliwych.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Zbiorczy eksport logów w GCP realizuje się na poziomie **Folderu** lub **Organizacji** z parametrem **`includeChildren=True`** (tzw. Aggregated Sinks).
-- Integracja z systemami SIEM w czasie rzeczywistym prawie zawsze opiera się na **Cloud Pub/Sub**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Zbiorczy eksport logów w GCP realizuje się na poziomie <strong>Folderu</strong> lub <strong>Organizacji</strong> z parametrem <strong>`includeChildren=True`</strong> (tzw. Aggregated Sinks).
+- Integracja z systemami SIEM w czasie rzeczywistym prawie zawsze opiera się na <strong>Cloud Pub/Sub</strong>.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Wiele projektów w jednym folderze -> Aggregated Sink na poziomie Folderu.
 - Integracja z SIEM -> Pub/Sub.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Collate and routing organization logs: https://cloud.google.com/logging/docs/routing/monitored-resources
 </pre>
 

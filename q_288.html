@@ -96,9 +96,9 @@ D. Use a customer identity and access management tool (CIAM) like Identity Platf
 Odpowiedź D jest prawidłowa, ponieważ Identity Platform to w pełni zarządzana przez Google usługa klasy CIAM (Customer Identity and Access Management), zaprojektowana specjalnie do obsługi, uwierzytelniania i autoryzacji zewnętrznych użytkowników aplikacji (zarówno klientów publicznych, jak i partnerów biznesowych).
 
 Dlaczego to najlepsze rozwiązanie:
-a. **Dla użytkowników korporacyjnych:** Obsługuje federację tożsamości (SAML/OIDC), co pozwala pracownikom korporacyjnym logować się przy użyciu ich firmowego konta i domeny.
-b. **Dla użytkowników publicznych:** Obsługuje logowanie za pomocą e-mail/hasło, SMS oraz integrację z popularnymi dostawcami społecznościowymi (Google, Facebook, GitHub itp.).
-c. **Centralne zarządzanie:** Wszystkie tożsamości są zarządzane w jednym miejscu, a usługa automatycznie skaluje się do milionów użytkowników bez narzutu administracyjnego na lokalne systemy Cloud Identity.
+a. <strong>Dla użytkowników korporacyjnych:</strong> Obsługuje federację tożsamości (SAML/OIDC), co pozwala pracownikom korporacyjnym logować się przy użyciu ich firmowego konta i domeny.
+b. <strong>Dla użytkowników publicznych:</strong> Obsługuje logowanie za pomocą e-mail/hasło, SMS oraz integrację z popularnymi dostawcami społecznościowymi (Google, Facebook, GitHub itp.).
+c. <strong>Centralne zarządzanie:</strong> Wszystkie tożsamości są zarządzane w jednym miejscu, a usługa automatycznie skaluje się do milionów użytkowników bez narzutu administracyjnego na lokalne systemy Cloud Identity.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Add the corporate and public end-user domains to domain restricted sharing...
@@ -109,7 +109,7 @@ C. Do nothing. Google Workspace identities will allow you to filter personal acc
    * Dlaczego nieprawidłowa: Brak działań nie rozwiąże problemu logowania użytkowników publicznych. Google Workspace (Cloud Identity) zarządza tożsamościami pracowników Twojej firmy, a nie zewnętrznymi klientami publicznymi aplikacji SaaS, którzy nie posiadają i nie powinni posiadać kont w Twojej domenie firmowej.
 
 4. Wskazówki, hinty, tips and tricks:
-* Logowanie i uwierzytelnianie użytkowników końcowych aplikacji (end-users / SaaS customers / public users) -> Zawsze używaj narzędzi **CIAM (Customer Identity & Access Management)**, czyli **Identity Platform** (lub Firebase Authentication).
+* Logowanie i uwierzytelnianie użytkowników końcowych aplikacji (end-users / SaaS customers / public users) -> Zawsze używaj narzędzi <strong>CIAM (Customer Identity & Access Management)</strong>, czyli <strong>Identity Platform</strong> (lub Firebase Authentication).
 * Workforce Identity Federation służy do dostępu administracyjnego pracowników do GCP, a nie klientów do aplikacji.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

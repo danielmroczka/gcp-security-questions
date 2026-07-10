@@ -94,7 +94,7 @@ B. Enable VPC Service Controls, create a perimeter around Projects A and B, and 
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Wymagania bezpieczeństwa to: 1) Kubełek w Projekcie A może być czytany tylko z Projektu B, 2) Kubełek nie może być dostępny spoza sieci prywatnej (internet), 3) Dane z kubełka nie mogą zostać skopiowane do zewnętrznego kubełka (ochrona przed eksfiltracją):
-- Usługa **VPC Service Controls** pozwala na zdefiniowanie perymetru bezpieczeństwa wokół zasobów Google Cloud. Umieszczając Projekt A (właściciel danych) oraz Projekt B (konsument) w jednym perymetrze i dodając API Cloud Storage (`storage.googleapis.com`) do usług chronionych:
+- Usługa <strong>VPC Service Controls</strong> pozwala na zdefiniowanie perymetru bezpieczeństwa wokół zasobów Google Cloud. Umieszczając Projekt A (właściciel danych) oraz Projekt B (konsument) w jednym perymetrze i dodając API Cloud Storage (`storage.googleapis.com`) do usług chronionych:
   - Blokujemy wszelki dostęp do kubełków w Projekcie A z internetu (spełnia wymóg 2).
   - Pozwalamy zasobom z Projektu B na bezproblemowy odczyt danych z Projektu A, ponieważ oba projekty są wewnątrz tej samej zaufanej granicy perymetru (spełnia wymóg 1).
   - Uniemożliwiamy kopiowanie danych (data exfiltration) z projektów w perymetrze do jakichkolwiek kubełków na zewnątrz perymetru (np. na prywatne konto napastnika), co spełnia wymóg 3.
@@ -104,7 +104,7 @@ Wymagania bezpieczeństwa to: 1) Kubełek w Projekcie A może być czytany tylko
 - C i D. Prywatny dostęp (Private Access) lub VPC Peering z firewallami: Reguły zapory sieciowej (Firewall Rules) i routing VPC działają na poziomie warstwy L3/L4 dla ruchu między maszynami VM. Nie potrafią one filtrować żądań API do usług typu PaaS (jak Cloud Storage), które mają publiczne punkty końcowe API i nie zapobiegają eksfiltracji danych.
 
 4. Wskazówki, hinty, tips and tricks:
-- Jeśli w wymaganiach pojawia się zapobieganie kopiowaniu danych z kubełków GCP do zewnętrznych lokalizacji chmurowych (ochrona przed **data exfiltration**), jedynym poprawnym rozwiązaniem architektonicznym w GCP jest **VPC Service Controls**.
+- Jeśli w wymaganiach pojawia się zapobieganie kopiowaniu danych z kubełków GCP do zewnętrznych lokalizacji chmurowych (ochrona przed <strong>data exfiltration</strong>), jedynym poprawnym rozwiązaniem architektonicznym w GCP jest <strong>VPC Service Controls</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Zakaz kopiowania danych do zewnętrznych bucketów / ochrona przed wyciekiem (exfiltration) + odizolowanie API sieciowo -> VPC Service Controls.

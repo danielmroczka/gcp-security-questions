@@ -94,7 +94,7 @@ D. Ensure the OS Config agent is installed on all VMs and extract the patch stat
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Dla celów audytu zgodności należy szybko i cyklicznie (co 6 miesięcy) generować listę maszyn wirtualnych, które mają dostępne, ale niezainstalowane krytyczne poprawki bezpieczeństwa:
-- Usługa **VM Manager** (wykorzystująca agenta **OS Config** zainstalowanego na maszynach) zbiera informacje o stanie pakietów systemowych na maszynach wirtualnych.
+- Usługa <strong>VM Manager</strong> (wykorzystująca agenta <strong>OS Config</strong> zainstalowanego na maszynach) zbiera informacje o stanie pakietów systemowych na maszynach wirtualnych.
 - Pulpit nawigacyjny stanu poprawek (Patch Status Dashboard) lub funkcja OS Inventory w konsoli Google Cloud pozwala na natychmiastowy wgląd w stan zgodności maszyn (wyświetla listę VM, które wymagają zainstalowania łatek). Wyciągnięcie raportu zajmuje kilka sekund, co w pełni spełnia wymaganie szybkości wykonania zadania.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
@@ -103,7 +103,7 @@ Dla celów audytu zgodności należy szybko i cyklicznie (co 6 miesięcy) genero
 - C. Analiza logów agenta Cloud Logging: Agent logów przesyła surowe zdarzenia systemowe, ale nie generuje zagregowanych raportów o stanie brakujących poprawek bezpieczeństwa w menedżerze pakietów OS.
 
 4. Wskazówki, hinty, tips and tricks:
-- Wszelkie raporty o stanie aktualizacji maszyn, brakujących łatek bezpieczeństwa (missing patches) oraz utylizacji wersji systemów operacyjnych VM w GCP wymagają użycia agenta **OS Config** (VM Manager).
+- Wszelkie raporty o stanie aktualizacji maszyn, brakujących łatek bezpieczeństwa (missing patches) oraz utylizacji wersji systemów operacyjnych VM w GCP wymagają użycia agenta <strong>OS Config</strong> (VM Manager).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Lista VM z brakującymi łatkami bezpieczeństwa -> Agent OS Config / VM Manager.

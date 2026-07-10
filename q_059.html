@@ -89,25 +89,25 @@ A patch for a vulnerability has been released, and a DevOps team needs to update
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 W architekturze kontenerowej (np. w klastrach GKE), kontenery są projektowane jako zasoby efemeryczne i niezmienne (immutable). Kiedy wydany zostaje patch (poprawka bezpieczeństwa) dla aplikacji lub systemu wewnątrz kontenera:
-- **Należy zaktualizować kod aplikacji lub nałożyć poprawkę w pliku Dockerfile, zbudować nowy obraz kontenera, wypchnąć go do rejestru i wdrożyć (redeploy) w klastrze GKE (C):** Jest to jedyny prawidłowy i bezpieczny sposób aktualizacji kontenerów. Wdrożenie nowego obrazu powoduje, że Kubernetes zastępuje stare kontenery nowymi podami (np. za pomocą strategii Rolling Update) bez przerw w działaniu aplikacji.
+- <strong>Należy zaktualizować kod aplikacji lub nałożyć poprawkę w pliku Dockerfile, zbudować nowy obraz kontenera, wypchnąć go do rejestru i wdrożyć (redeploy) w klastrze GKE (C):</strong> Jest to jedyny prawidłowy i bezpieczny sposób aktualizacji kontenerów. Wdrożenie nowego obrazu powoduje, że Kubernetes zastępuje stare kontenery nowymi podami (np. za pomocą strategii Rolling Update) bez przerw w działaniu aplikacji.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Puppet lub Chef do instalacji poprawek w działającym kontenerze:** Narzędzia do zarządzania konfiguracją systemów tradycyjnych (Puppet/Chef) nie powinny być używane do modyfikowania działających kontenerów. Kontenery nie powinny być modyfikowane w locie (tzw. konfiguracja dryfująca - configuration drift).
-- **B. Auto upgrade węzłów klastra:** Automatyczna aktualizacja węzłów (Node Auto-Upgrade) w GKE aktualizuje system operacyjny samych maszyn wirtualnych (węzłów klastra), ale nie modyfikuje i nie aktualizuje obrazów kontenerów aplikacji wdrożonych przez użytkownika.
-- **D. Automatyczna aktualizacja po wydaniu obrazu bazowego:** Kubernetes nie posiada mechanizmu automatycznego pobierania i wdrażania nowej wersji kontenera tylko dlatego, że w rejestrze pojawił się nowy obraz bazowy, bez jawnej zmiany tagu obrazu w manifeście Deploymentu przez system CI/CD.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Puppet lub Chef do instalacji poprawek w działającym kontenerze:</strong> Narzędzia do zarządzania konfiguracją systemów tradycyjnych (Puppet/Chef) nie powinny być używane do modyfikowania działających kontenerów. Kontenery nie powinny być modyfikowane w locie (tzw. konfiguracja dryfująca - configuration drift).
+- <strong>B. Auto upgrade węzłów klastra:</strong> Automatyczna aktualizacja węzłów (Node Auto-Upgrade) w GKE aktualizuje system operacyjny samych maszyn wirtualnych (węzłów klastra), ale nie modyfikuje i nie aktualizuje obrazów kontenerów aplikacji wdrożonych przez użytkownika.
+- <strong>D. Automatyczna aktualizacja po wydaniu obrazu bazowego:</strong> Kubernetes nie posiada mechanizmu automatycznego pobierania i wdrażania nowej wersji kontenera tylko dlatego, że w rejestrze pojawił się nowy obraz bazowy, bez jawnej zmiany tagu obrazu w manifeście Deploymentu przez system CI/CD.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Zapamiętaj: W świecie kontenerów **nigdy nie instalujemy aktualizacji wewnątrz uruchomionego kontenera (no live updates)**. Zamiast tego budujemy nowy obraz (rebuild image) i wdrażamy go na nowo (redeploy).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Zapamiętaj: W świecie kontenerów <strong>nigdy nie instalujemy aktualizacji wewnątrz uruchomionego kontenera (no live updates)</strong>. Zamiast tego budujemy nowy obraz (rebuild image) i wdrażamy go na nowo (redeploy).
 - Utrzymuje to pełną powtarzalność i spójność środowisk.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Aktualizacja kontenera -> Build new image + Deploy.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - GKE Application deployment best practices: https://cloud.google.com/kubernetes-engine/docs/best-practices/security-hardening
 </pre>
 

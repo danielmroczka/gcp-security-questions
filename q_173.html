@@ -95,7 +95,7 @@ B. Customer-managed encryption keys with Cloud HSM
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Wymagania dla zarządzania kluczami szyfrującymi to: 1) rotacja klucza głównego co najmniej raz na 45 dni, 2) sprzętowa ochrona FIPS 140-2 Level 3, 3) redundancja wieloregionowa w USA:
-- Wymóg **FIPS 140-2 Level 3** (poziom bezpieczeństwa sprzętowego modułu HSM) kategorycznie wyklucza oprogramowanie Cloud KMS, które spełnia jedynie normy FIPS 140-2 Level 2. Klucze fizycznie muszą być generowane i przechowywane w usłudze **Cloud HSM**.
+- Wymóg <strong>FIPS 140-2 Level 3</strong> (poziom bezpieczeństwa sprzętowego modułu HSM) kategorycznie wyklucza oprogramowanie Cloud KMS, które spełnia jedynie normy FIPS 140-2 Level 2. Klucze fizycznie muszą być generowane i przechowywane w usłudze <strong>Cloud HSM</strong>.
 - Użycie CMEK (Customer-Managed Encryption Keys) zintegrowanych z Cloud HSM pozwala klientowi na pełne zarządzanie cyklem życia kluczy, w tym na skonfigurowanie automatycznej rotacji kluczy co 45 dni.
 - Cloud HSM pozwala na tworzenie kluczy w lokalizacjach wieloregionowych (multi-region, np. `us` lub `nam4`), co zapewnia wymaganą redundancję geograficzną w obrębie Stanów Zjednoczonych.
 
@@ -105,7 +105,7 @@ Wymagania dla zarządzania kluczami szyfrującymi to: 1) rotacja klucza główne
 - D. Google-managed encryption keys (Klucze zarządzane przez Google): Klucze te są rotowane automatycznie przez systemy Google według sztywnego harmonogramu (zazwyczaj co 90 lub 365 dni), co uniemożliwia wymuszenie niestandardowego cyklu rotacji co 45 dni przez klienta.
 
 4. Wskazówki, hinty, tips and tricks:
-- W pytaniach egzaminacyjnych GCP, zwrot **"FIPS 140-2 Level 3"** jednoznacznie wskazuje na konieczność użycia usługi **Cloud HSM**. Standardowy Cloud KMS to Level 2.
+- W pytaniach egzaminacyjnych GCP, zwrot <strong>"FIPS 140-2 Level 3"</strong> jednoznacznie wskazuje na konieczność użycia usługi <strong>Cloud HSM</strong>. Standardowy Cloud KMS to Level 2.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - FIPS 140-2 Level 3 + własny harmonogram rotacji -> Customer-managed encryption keys (CMEK) z Cloud HSM.

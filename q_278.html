@@ -65,8 +65,8 @@ D. Study the shared responsibilities model. Depending on your business scenario,
 Odpowiedź D jest prawidłowa, ponieważ model współdzielonej odpowiedzialności (Shared Responsibility Model) jest fundamentem planowania bezpieczeństwa i zgodności (compliance) przy migracji do chmury publicznej.
 
 Dlaczego to podejście jest kluczowe:
-a. **Jasne granice:** Klient musi dokładnie wiedzieć, które elementy zabezpieczeń leżą po jego stronie (np. konfiguracja IAM, szyfrowanie danych CMEK, reguły firewall), a które są zarządzane przez Google (np. bezpieczeństwo fizyczne serwerów, patchowanie hypervisora).
-b. **Wpływ regulacji (Compliance):** Odpowiedzialność klienta zależy od kontekstu biznesowego (np. lokalizacja biur, rezydentność danych klientów z UE podlegających pod GDPR vs. klientów z USA podlegających pod HIPAA), co determinuje konieczność wdrożenia specyficznych polityk w chmurze.
+a. <strong>Jasne granice:</strong> Klient musi dokładnie wiedzieć, które elementy zabezpieczeń leżą po jego stronie (np. konfiguracja IAM, szyfrowanie danych CMEK, reguły firewall), a które są zarządzane przez Google (np. bezpieczeństwo fizyczne serwerów, patchowanie hypervisora).
+b. <strong>Wpływ regulacji (Compliance):</strong> Odpowiedzialność klienta zależy od kontekstu biznesowego (np. lokalizacja biur, rezydentność danych klientów z UE podlegających pod GDPR vs. klientów z USA podlegających pod HIPAA), co determinuje konieczność wdrożenia specyficznych polityk w chmurze.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Model your deployment on the Google Enterprise foundations blueprint. Follow the blueprint exactly...
@@ -77,7 +77,7 @@ C. Subscribe to the Google Cloud release notes... Evaluate new services... befor
    * Dlaczego nieprawidłowa: Śledzenie nowości i blokowanie API to dobre praktyki operacyjne, ale nie pomagają w zdefiniowaniu podstawowych granic odpowiedzialności i wdrożeniu pierwszych, kluczowych mechanizmów kontroli bezpieczeństwa dla nowych usług chmurowych.
 
 4. Wskazówki, hinty, tips and tricks:
-* Fundament bezpieczeństwa w chmurze -> Zrozumienie **Shared Responsibility Model** (Modelu Współdzielonej Odpowiedzialności).
+* Fundament bezpieczeństwa w chmurze -> Zrozumienie <strong>Shared Responsibility Model</strong> (Modelu Współdzielonej Odpowiedzialności).
 * Google odpowiada za bezpieczeństwo samej chmury (of the cloud), a klient za bezpieczeństwo w chmurze (in the cloud).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

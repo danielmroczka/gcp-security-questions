@@ -96,8 +96,8 @@ B. Scan and redact PII from the records by using the Cloud Data Loss Prevention 
 Odpowiedź B jest prawidłowa, ponieważ łączy ochronę danych osobowych (redagowanie PII) z zachowaniem użyteczności danych testowych przy użyciu szyfrowania zachowującego format (Format-Preserving Encryption - FPE) dla numeru karty kredytowej (PAN).
 
 Dlaczego to najlepsza metoda:
-a. **Zachowanie formatu (FPE):** Aplikacja testuje funkcję sprawdzania formatu numeru karty (np. algorytm Luhna, długość 16 cyfr). Zwykłe zaszyfrowanie kluczem KMS zamieniłoby numer karty na losowy ciąg znaków alfanumerycznych, co uniemożliwiłoby testowanie formatu. FPE szyfruje numer tak, że wynikowy ciąg nadal wygląda jak poprawny numer karty (np. 16 cyfr), co pozwala na przeprowadzenie testów.
-b. **Usuwanie danych wrażliwych (Redaction):** Pozostałe dane osobowe (np. imiona, adresy, e-maile), które nie są potrzebne do testowania tej funkcji, są całkowicie usuwane (redagowane) przez Cloud DLP, co eliminuje ryzyko wycieku PII.
+a. <strong>Zachowanie formatu (FPE):</strong> Aplikacja testuje funkcję sprawdzania formatu numeru karty (np. algorytm Luhna, długość 16 cyfr). Zwykłe zaszyfrowanie kluczem KMS zamieniłoby numer karty na losowy ciąg znaków alfanumerycznych, co uniemożliwiłoby testowanie formatu. FPE szyfruje numer tak, że wynikowy ciąg nadal wygląda jak poprawny numer karty (np. 16 cyfr), co pozwala na przeprowadzenie testów.
+b. <strong>Usuwanie danych wrażliwych (Redaction):</strong> Pozostałe dane osobowe (np. imiona, adresy, e-maile), które nie są potrzebne do testowania tej funkcji, są całkowicie usuwane (redagowane) przez Cloud DLP, co eliminuje ryzyko wycieku PII.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Run the new application by using Confidential Computing...
@@ -108,7 +108,7 @@ D. Build a tool to replace the card PAN and PII fields with randomly generated v
    * Dlaczego nieprawidłowa: Pisanie własnego narzędzia do maskowania i generowania poprawnych numerów kart (zgodnych z algorytmami kart płatniczych) wymaga dużego nakładu pracy programistycznej. Google udostępnia gotowe, certyfikowane narzędzie w postaci Cloud DLP (Sensitive Data Protection), które wykonuje te transformacje automatycznie i bezpiecznie.
 
 4. Wskazówki, hinty, tips and tricks:
-* Jeśli testowana funkcja wymaga zachowania struktury/formatu danych (np. format numeru PESEL, karty kredytowej PAN) -> Zawsze używaj **Format-Preserving Encryption (FPE)** w Cloud DLP.
+* Jeśli testowana funkcja wymaga zachowania struktury/formatu danych (np. format numeru PESEL, karty kredytowej PAN) -> Zawsze używaj <strong>Format-Preserving Encryption (FPE)</strong> w Cloud DLP.
 * Inne zbędne dane wrażliwe należy zredagować (redact).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

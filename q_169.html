@@ -94,7 +94,7 @@ D. Set up a Shared VPC where the security team manages the firewall rules, and s
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Wymagane jest zapewnienie separacji obowiązków (separation of duties): zespół bezpieczeństwa musi kontrolować zasoby sieciowe (np. reguły firewalla), natomiast deweloperzy powinni mieć możliwość wdrażania swoich maszyn wirtualnych bez dostępu do konfiguracji sieci:
-- **Shared VPC** (Współdzielone VPC) to podstawowy mechanizm GCP realizujący ten postulat.
+- <strong>Shared VPC</strong> (Współdzielone VPC) to podstawowy mechanizm GCP realizujący ten postulat.
 - Zespół bezpieczeństwa i sieci zarządza centralnym Projektem Hosta (Host Project), gdzie skonfigurowane są sieci VPC, podsieci, trasy oraz reguły zapory sieciowej.
 - Deweloperzy otrzymują dostęp do projektów usługowych (Service Projects), które są podpięte pod projekt hosta. Deweloperzy mogą tworzyć maszyny VM w dozwolonych podsieciach hosta, ale nie mają żadnych uprawnień sieciowych w projekcie hosta, co uniemożliwia im modyfikowanie reguł zapory i zapewnia ścisłą separację obowiązków.
 
@@ -104,7 +104,7 @@ Wymagane jest zapewnienie separacji obowiązków (separation of duties): zespó�
 - C. Pojedynczy projekt z podziałem ról IAM: Dzielenie ról wewnątrz jednego projektu jest trudne do zarządzania w skali przedsiębiorstwa. Rola Compute Admin pozwala deweloperom na szerokie interakcje w projekcie i nie zapewnia fizycznej ani logicznej izolacji środowisk deweloperskich.
 
 4. Wskazówki, hinty, tips and tricks:
-- Separacja obowiązków sieciowych w GCP (Security zarządza siecią/firewallem, App/Devs wdrażają aplikacje) to definicja i główne zastosowanie architektury **Shared VPC**.
+- Separacja obowiązków sieciowych w GCP (Security zarządza siecią/firewallem, App/Devs wdrażają aplikacje) to definicja i główne zastosowanie architektury <strong>Shared VPC</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Separacja obowiązków sieciowych + centralne zarządzanie firewallem -> Shared VPC.

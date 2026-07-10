@@ -91,25 +91,25 @@ How can you work with Infrastructure Operations Engineers to best ensure that Wi
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 W środowisku chmurowym opartym na elastycznym i automatycznym skalowaniu (autoscaling w Managed Instance Groups), instancje VM mogą być tworzone i niszczone w każdej chwili. Tradycyjne metody patchowania (np. instalowanie poprawek na działających maszynach) nie gwarantują spójności:
-- **Budowanie nowych obrazów bazowych po wydaniu poprawek i użycie potoku CI/CD do przebudowania maszyn VM oraz ich stopniowego (rolling) wdrażania (A):** Jest to zasada tzw. **Infrastruktury Niezmiennej (Immutable Infrastructure)**. Zamiast patchować działające systemy, tworzy się nowy złoty obraz (golden image) z zainstalowanymi poprawkami, a potok CI/CD automatycznie zastępuje stare maszyny nowymi w sposób przyrostowy (rolling update). Gwarantuje to, że każda nowo uruchomiona w autoscalingu maszyna będzie od razu w pełni zaktualizowana i spójna z innymi.
+- <strong>Budowanie nowych obrazów bazowych po wydaniu poprawek i użycie potoku CI/CD do przebudowania maszyn VM oraz ich stopniowego (rolling) wdrażania (A):</strong> Jest to zasada tzw. <strong>Infrastruktury Niezmiennej (Immutable Infrastructure)</strong>. Zamiast patchować działające systemy, tworzy się nowy złoty obraz (golden image) z zainstalowanymi poprawkami, a potok CI/CD automatycznie zastępuje stare maszyny nowymi w sposób przyrostowy (rolling update). Gwarantuje to, że każda nowo uruchomiona w autoscalingu maszyna będzie od razu w pełni zaktualizowana i spójna z innymi.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Rejestracja maszyn w domenie i GPO:** Metoda tradycyjna (Group Policy Object). W dynamicznym środowisku chmurowym instalowanie poprawek w locie przez GPO na nowo uruchomionych instancjach trwa zbyt długo, obciąża sieć i może prowadzić do niespójności konfiguracji maszyn obsługujących ruch.
-- **C. Deployment Manager do tworzenia nowych grup:** Deployment Manager służy do wdrażania infrastruktury (IaC), ale nie zarządza automatycznie procesem budowania obrazów OS i cyklicznym patchowaniem aplikacji w działających autoskalowanych grupach maszyn.
-- **D. Startup Script pobierający poprawki z internetu:** Pobieranie poprawek przy każdym uruchomieniu maszyny drastycznie wydłuża czas startu maszyny (boot time), co uniemożliwia szybkie skalowanie (autoscaling) w odpowiedzi na skoki ruchu, a dodatkowo stwarza ryzyko awarii w przypadku braku łączności z serwerami aktualizacji.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Rejestracja maszyn w domenie i GPO:</strong> Metoda tradycyjna (Group Policy Object). W dynamicznym środowisku chmurowym instalowanie poprawek w locie przez GPO na nowo uruchomionych instancjach trwa zbyt długo, obciąża sieć i może prowadzić do niespójności konfiguracji maszyn obsługujących ruch.
+- <strong>C. Deployment Manager do tworzenia nowych grup:</strong> Deployment Manager służy do wdrażania infrastruktury (IaC), ale nie zarządza automatycznie procesem budowania obrazów OS i cyklicznym patchowaniem aplikacji w działających autoskalowanych grupach maszyn.
+- <strong>D. Startup Script pobierający poprawki z internetu:</strong> Pobieranie poprawek przy każdym uruchomieniu maszyny drastycznie wydłuża czas startu maszyny (boot time), co uniemożliwia szybkie skalowanie (autoscaling) w odpowiedzi na skoki ruchu, a dodatkowo stwarza ryzyko awarii w przypadku braku łączności z serwerami aktualizacji.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- W chmurze dla systemów w grupach skalowalnych (MIG) stosuje się podejście **Immutable Infrastructure (Infrastruktura Niezmienna)**. Aktualizacje wykonuje się poprzez wymianę maszyn na nowe ze "złotego obrazu", a nie przez aktualizację "na żywo" (live patching).
-- Słowo-klucz: **elastic nature of cloud computing** (elastyczny charakter / autoscaling).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- W chmurze dla systemów w grupach skalowalnych (MIG) stosuje się podejście <strong>Immutable Infrastructure (Infrastruktura Niezmienna)</strong>. Aktualizacje wykonuje się poprzez wymianę maszyn na nowe ze "złotego obrazu", a nie przez aktualizację "na żywo" (live patching).
+- Słowo-klucz: <strong>elastic nature of cloud computing</strong> (elastyczny charakter / autoscaling).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Patchowanie maszyn w grupach autoskalowania -> Rebuild obrazów + Rolling update w CI/CD.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Recreate VMs in a managed instance group: https://cloud.google.com/compute/docs/instance-groups/recreating-instances-in-migs
 </pre>
 

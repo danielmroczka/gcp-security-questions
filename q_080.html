@@ -90,25 +90,25 @@ An engineering team is launching a web application that will be public on the in
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymaganiem jest zabezpieczenie publicznej aplikacji internetowej, która jest wdrożona w wielu regionach GCP i kierowana przez Load Balancer, przed bezpośrednią ekspozycją na internet oraz zablokowanie ruchu z określonej listy złośliwych adresów IP:
-- **Cloud Armor (A)** to usługa bezpieczeństwa brzegu sieci (Edge Security) w Google Cloud, która integruje się bezpośrednio z zewnętrznym load balancerem HTTP(S) (Global HTTP(S) Load Balancer). Pozwala na definiowanie reguł zapory sieciowej aplikacyjnej (WAF) oraz reguł kontroli dostępu na warstwie L3/L4/L7, w tym blokowanie/zezwolenie na ruch na podstawie list adresów IP (zarówno ręcznie zdefiniowanych, jak i gotowych list reputacyjnych). Chroni to backendy przed bezpośrednim dostępem i blokuje ataki DDoS oraz złośliwych nadawców.
+- <strong>Cloud Armor (A)</strong> to usługa bezpieczeństwa brzegu sieci (Edge Security) w Google Cloud, która integruje się bezpośrednio z zewnętrznym load balancerem HTTP(S) (Global HTTP(S) Load Balancer). Pozwala na definiowanie reguł zapory sieciowej aplikacyjnej (WAF) oraz reguł kontroli dostępu na warstwie L3/L4/L7, w tym blokowanie/zezwolenie na ruch na podstawie list adresów IP (zarówno ręcznie zdefiniowanych, jak i gotowych list reputacyjnych). Chroni to backendy przed bezpośrednim dostępem i blokuje ataki DDoS oraz złośliwych nadawców.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Network Load Balancing:** Jest to regionalny load balancer warstwy 4 (passthrough), który nie posiada wbudowanych funkcji zaawansowanej ochrony aplikacyjnej (WAF) ani natywnej integracji z Cloud Armor w celu blokowania określonych list IP na brzegu sieci.
-- **C. SSL Proxy Load Balancing:** Używany do ruchu nie-HTTP (np. SSL/TLS), ale nie integruje się bezpośrednio z regułami Cloud Armor WAF w ten sam sposób co HTTP(S) Load Balancer i nie jest optymalny do blokowania złośliwych IP dla aplikacji webowej.
-- **D. NAT Gateway:** Służy do umożliwienia instancjom z adresami prywatnymi nawiązywania połączeń wychodzących do internetu. Nie służy do obsługi ruchu przychodzącego z internetu ani filtrowania złośliwych IP dla publicznej aplikacji webowej.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Network Load Balancing:</strong> Jest to regionalny load balancer warstwy 4 (passthrough), który nie posiada wbudowanych funkcji zaawansowanej ochrony aplikacyjnej (WAF) ani natywnej integracji z Cloud Armor w celu blokowania określonych list IP na brzegu sieci.
+- <strong>C. SSL Proxy Load Balancing:</strong> Używany do ruchu nie-HTTP (np. SSL/TLS), ale nie integruje się bezpośrednio z regułami Cloud Armor WAF w ten sam sposób co HTTP(S) Load Balancer i nie jest optymalny do blokowania złośliwych IP dla aplikacji webowej.
+- <strong>D. NAT Gateway:</strong> Służy do umożliwienia instancjom z adresami prywatnymi nawiązywania połączeń wychodzących do internetu. Nie służy do obsługi ruchu przychodzącego z internetu ani filtrowania złośliwych IP dla publicznej aplikacji webowej.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Jeśli aplikacja jest wystawiona publicznie i potrzebujesz filtrować ruch przychodzący na podstawie adresów IP lub chronić przed atakami OWASP Top 10, właściwym wyborem jest zawsze **Cloud Armor** połączony z zewnętrznym HTTP(S) Load Balancerem.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Jeśli aplikacja jest wystawiona publicznie i potrzebujesz filtrować ruch przychodzący na podstawie adresów IP lub chronić przed atakami OWASP Top 10, właściwym wyborem jest zawsze <strong>Cloud Armor</strong> połączony z zewnętrznym HTTP(S) Load Balancerem.
 - Zapamiętaj, że Cloud Armor działa na brzegu sieci Google (Google Edge), zanim ruch w ogóle dotrze do Twoich serwerów.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Blokowanie złośliwych IP / WAF / ochrona przed DDoS dla publicznej aplikacji -> Cloud Armor.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Google Cloud Armor documentation: https://cloud.google.com/armor/docs
 </pre>
 

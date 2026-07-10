@@ -90,27 +90,27 @@ You are part of a security team investigating a compromised service account key.
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Trwa dochodzenie dotyczące skompromitowanego klucza konta usługi (service account key). Należy sprawdzić, jakie nowe zasoby zostały utworzone przez to konto usługi:
-- **Zapytanie do dzienników aktywności administratora (Admin Activity audit logs) (B):** Logi te rejestrują wszystkie operacje zapisu, tworzenia, modyfikacji oraz usuwania zasobów w GCP (wywołania API typu metadata write). Są one włączone domyślnie dla wszystkich projektów i usług GCP i nie można ich wyłączyć. Ponieważ utworzenie nowego zasobu (np. maszyny wirtualnej, bazy danych czy bucketu) jest operacją modyfikującą stan infrastruktury, informacje o tym znajdą się w Admin Activity logs.
+- <strong>Zapytanie do dzienników aktywności administratora (Admin Activity audit logs) (B):</strong> Logi te rejestrują wszystkie operacje zapisu, tworzenia, modyfikacji oraz usuwania zasobów w GCP (wywołania API typu metadata write). Są one włączone domyślnie dla wszystkich projektów i usług GCP i nie można ich wyłączyć. Ponieważ utworzenie nowego zasobu (np. maszyny wirtualnej, bazy danych czy bucketu) jest operacją modyfikującą stan infrastruktury, informacje o tym znajdą się w Admin Activity logs.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Data Access logs:** Te logi rejestrują operacje odczytu i zapisu samych danych wewnątrz zasobów (np. odczyt obiektu z GCS, wykonanie SELECT w BigQuery). Te logi nie służą do audytu operacji administracyjnych (takich jak tworzenie zasobów) i są domyślnie wyłączone ze względu na koszty.
-- **C. Access Transparency logs:** Rejestrują działania podejmowane przez pracowników wsparcia technicznego Google Cloud (GCP Support) na Twoich danych. Nie rejestrują działań Twoich kont usług.
-- **D. Stackdriver Monitoring Workspace:** Służy do monitorowania wydajności, zbierania metryk (np. użycie CPU, pamięci) oraz alertowania. Nie zawiera szczegółowych dzienników audytowych API dotyczących tworzenia zasobów.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Data Access logs:</strong> Te logi rejestrują operacje odczytu i zapisu samych danych wewnątrz zasobów (np. odczyt obiektu z GCS, wykonanie SELECT w BigQuery). Te logi nie służą do audytu operacji administracyjnych (takich jak tworzenie zasobów) i są domyślnie wyłączone ze względu na koszty.
+- <strong>C. Access Transparency logs:</strong> Rejestrują działania podejmowane przez pracowników wsparcia technicznego Google Cloud (GCP Support) na Twoich danych. Nie rejestrują działań Twoich kont usług.
+- <strong>D. Stackdriver Monitoring Workspace:</strong> Służy do monitorowania wydajności, zbierania metryk (np. użycie CPU, pamięci) oraz alertowania. Nie zawiera szczegółowych dzienników audytowych API dotyczących tworzenia zasobów.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- **Admin Activity Logs:** Rejestrują "kto stworzył/zmienił/usunął zasób" (operacje zapisu na metadanych). Są darmowe i włączone domyślnie.
-- **Data Access Logs:** Rejestrują "kto czytał/modyfikował dane wewnątrz zasobów". Są płatne i domyślnie wyłączone.
-- Przy dochodzeniach dotyczących włamań i tworzenia nieautoryzowanych zasobów (np. koparek kryptowalut), pierwszym krokiem jest analiza **Admin Activity logs**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- <strong>Admin Activity Logs:</strong> Rejestrują "kto stworzył/zmienił/usunął zasób" (operacje zapisu na metadanych). Są darmowe i włączone domyślnie.
+- <strong>Data Access Logs:</strong> Rejestrują "kto czytał/modyfikował dane wewnątrz zasobów". Są płatne i domyślnie wyłączone.
+- Przy dochodzeniach dotyczących włamań i tworzenia nieautoryzowanych zasobów (np. koparek kryptowalut), pierwszym krokiem jest analiza <strong>Admin Activity logs</strong>.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Tworzenie/modyfikacja zasobów przez API -> Admin Activity logs.
 - Odczyt/zapis danych użytkownika -> Data Access logs.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Cloud Audit Logs overview: https://cloud.google.com/logging/docs/audit
 </pre>
 

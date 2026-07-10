@@ -65,9 +65,9 @@ D. Create one Virtual Private Cloud (VPC) network per environment. Create one ad
 Odpowiedź D jest prawidłowa, ponieważ wykorzystuje architekturę sieci tranzytowej (hub-and-spoke) oraz fundamentalną cechę braku przechodniości (non-transitivity) połączeń VPC Network Peering w Google Cloud w celu zapewnienia izolacji środowisk.
 
 Szczegóły architektury:
-a. **Izolacja środowisk:** Tworzymy osobną sieć VPC dla produkcji (`prod-vpc`) oraz dla deweloperów (`dev-vpc`). Maszyny w tych sieciach nie mają żadnego bezpośredniego routingu między sobą.
-b. **Wspólny punkt wejścia (Transit VPC):** Tworzymy trzecią sieć VPC (`transit-vpc`), do której podłączamy łącze VPN/Interconnect z on-premises. Sieć ta jest jedyną bramą wejściową do chmury.
-c. **VPC Peering bez przechodniości:** Łączymy `transit-vpc` za pomocą peerowania z `prod-vpc` oraz osobno z `dev-vpc`. Zgodnie z zasadami sieciowymi GCP, połączenia peeringowe nie są przechodnie (non-transitive). Ruch z sieci lokalnej może trafić do Dev lub Prod, ale ruch z sieci Dev nie może przejść przez sieć tranzytową do sieci Prod. Gwarantuje to 100% separację środowisk dev i prod przy zachowaniu jednego punktu wejścia.
+a. <strong>Izolacja środowisk:</strong> Tworzymy osobną sieć VPC dla produkcji (`prod-vpc`) oraz dla deweloperów (`dev-vpc`). Maszyny w tych sieciach nie mają żadnego bezpośredniego routingu między sobą.
+b. <strong>Wspólny punkt wejścia (Transit VPC):</strong> Tworzymy trzecią sieć VPC (`transit-vpc`), do której podłączamy łącze VPN/Interconnect z on-premises. Sieć ta jest jedyną bramą wejściową do chmury.
+c. <strong>VPC Peering bez przechodniości:</strong> Łączymy `transit-vpc` za pomocą peerowania z `prod-vpc` oraz osobno z `dev-vpc`. Zgodnie z zasadami sieciowymi GCP, połączenia peeringowe nie są przechodnie (non-transitive). Ruch z sieci lokalnej może trafić do Dev lub Prod, ale ruch z sieci Dev nie może przejść przez sieć tranzytową do sieci Prod. Gwarantuje to 100% separację środowisk dev i prod przy zachowaniu jednego punktu wejścia.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create one VPC... Peer the VPCs with each other and create firewall rules...
@@ -78,7 +78,7 @@ C. Create one VPC... Create a VPC Service Controls perimeter per environment...
    * Dlaczego nieprawidłowa: VPC Service Controls chroni interfejsy API usług zarządzanych Google (np. BigQuery, Storage). Nie izoluje ruchu sieciowego IP na poziomie maszyn wirtualnych i tras sieciowych wewnątrz sieci VPC.
 
 4. Wskazówki, hinty, tips and tricks:
-* Peering w GCP **nie jest przechodni** (VPC Peering is non-transitive). Jeśli sieć A jest połączona z B, a B z C, to sieć A NIE MOŻE komunikować się z C.
+* Peering w GCP <strong>nie jest przechodni</strong> (VPC Peering is non-transitive). Jeśli sieć A jest połączona z B, a B z C, to sieć A NIE MOŻE komunikować się z C.
 * Wykorzystaj ten mechanizm (Hub-and-Spoke z tranzytowym hubem) do izolacji środowisk przy zachowaniu jednego punktu wejścia z on-premises.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

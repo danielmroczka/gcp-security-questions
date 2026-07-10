@@ -99,8 +99,8 @@ C. Limit Google personnel access based on predefined attributes such as their ci
 Odpowiedzi A i C są prawidłowe, ponieważ bezpośrednio adresują dwa filary suwerenności danych wymagane przez GDPR w chmurze publicznej: suwerenność danych (rezydentność fizyczną) oraz suwerenność operacyjną (kontrolę nad dostępem personelu dostawcy).
 
 Analiza techniczna:
-a. **Suwerenność danych (Rezydentność) (A):** Ograniczenie `constraints/gcp.resourceLocations` w polityce organizacji pozwala na zdefiniowanie dozwolonych regionów geograficznych dla tworzenia wszelkich zasobów (np. tylko regiony z grupy `europe-west`). Uniemożliwia to deweloperom przypadkowe wdrożenie danych lub maszyn w USA czy Azji.
-b. **Suwerenność operacyjna (C):** Key Access Justifications (KAJ) działa w połączeniu z zewnętrznym zarządzaniem kluczami (EKM). Przy każdej próbie odszyfrowania danych przez Google (np. w celach wsparcia technicznego), KAJ przesyła szczegółowe uzasadnienie żądania. Klient może automatycznie zablokować odszyfrowanie klucza, jeśli personel Google nie spełnia określonych kryteriów (np. nie jest obywatelem UE lub nie znajduje się fizycznie na terenie UE).
+a. <strong>Suwerenność danych (Rezydentność) (A):</strong> Ograniczenie `constraints/gcp.resourceLocations` w polityce organizacji pozwala na zdefiniowanie dozwolonych regionów geograficznych dla tworzenia wszelkich zasobów (np. tylko regiony z grupy `europe-west`). Uniemożliwia to deweloperom przypadkowe wdrożenie danych lub maszyn w USA czy Azji.
+b. <strong>Suwerenność operacyjna (C):</strong> Key Access Justifications (KAJ) działa w połączeniu z zewnętrznym zarządzaniem kluczami (EKM). Przy każdej próbie odszyfrowania danych przez Google (np. w celach wsparcia technicznego), KAJ przesyła szczegółowe uzasadnienie żądania. Klient może automatycznie zablokować odszyfrowanie klucza, jeśli personel Google nie spełnia określonych kryteriów (np. nie jest obywatelem UE lub nie znajduje się fizycznie na terenie UE).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. Use Cloud IDS to get east-west and north-south traffic visibility...
@@ -112,8 +112,8 @@ E. Use VPC Flow Logs to monitor intra-VPC and inter-VPC traffic in the EU.
 
 4. Wskazówki, hinty, tips and tricks:
 * Suwerenność w GCP (Sovereign Cloud) opiera się na:
-  - Rezydentność zasobów -> **Resource Locations Org Policy**.
-  - Kontrola nad dostępem Google -> **Key Access Justifications (KAJ) + Access Approval**.
+  - Rezydentność zasobów -> <strong>Resource Locations Org Policy</strong>.
+  - Kontrola nad dostępem Google -> <strong>Key Access Justifications (KAJ) + Access Approval</strong>.
 * Zawsze kojarz GDPR i suwerenność operacyjną z KAJ (Key Access Justifications) oraz Cloud EKM.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

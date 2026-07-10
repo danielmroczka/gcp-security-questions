@@ -105,7 +105,7 @@ Wymaganiem jest użycie polityki Google Cloud Armor w celu ochrony aplikacji web
 - C. Wymóg sieci Premium Network Service Tier: Cloud Armor może działać również z regionalnymi load balancerami, które mogą być skonfigurowane w Standard Tier. Premium Tier nie jest technicznym warunkiem koniecznym do włączenia samych polityk bezpieczeństwa.
 
 4. Wskazówki, hinty, tips and tricks:
-- Ochrona WAF w GCP (SQLi, XSS, L7 DDoS) = **Cloud Armor + Zewnętrzny (External) Load Balancer HTTP(S)**.
+- Ochrona WAF w GCP (SQLi, XSS, L7 DDoS) = <strong>Cloud Armor + Zewnętrzny (External) Load Balancer HTTP(S)</strong>.
 - Cloud Armor nie chroni bezpośrednio instancji Compute Engine czy kubełków GCS – musi być zawsze przypisany do usługi backendowej (Backend Service) Load Balancera o schemacie zewnętrznym.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

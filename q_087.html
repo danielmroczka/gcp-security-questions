@@ -90,25 +90,25 @@ You have an application where the frontend is deployed on a managed instance gro
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagane jest zezwolenie na dostęp do bazy danych MySQL (port 3306) wyłącznie dla maszyn z warstwy frontendowej (Subnet A), bez zezwalania innym maszynom w tej samej podsieci na dostęp, co stanowi implementację mikrosegmentacji sieciowej:
-- **Skonfigurowanie reguły zapory sieciowej opartej na kontach usług (Service Accounts) (B):** W Google Cloud reguły firewall mogą być definiowane nie tylko za pomocą zakresów IP czy tagów sieciowych, ale także na podstawie tożsamości maszyn (konta usługi powiązanego z maszyną wirtualną). Konfiguracja reguły zezwalającej na ruch z konta usługi frontendu do konta usługi bazy danych jest najbezpieczniejszym rozwiązaniem. Działa niezależnie od adresacji IP oraz uniemożliwia innym maszynom w Subnet A (które mają inne konta usługi) na dostęp do bazy danych.
+- <strong>Skonfigurowanie reguły zapory sieciowej opartej na kontach usług (Service Accounts) (B):</strong> W Google Cloud reguły firewall mogą być definiowane nie tylko za pomocą zakresów IP czy tagów sieciowych, ale także na podstawie tożsamości maszyn (konta usługi powiązanego z maszyną wirtualną). Konfiguracja reguły zezwalającej na ruch z konta usługi frontendu do konta usługi bazy danych jest najbezpieczniejszym rozwiązaniem. Działa niezależnie od adresacji IP oraz uniemożliwia innym maszynom w Subnet A (które mają inne konta usługi) na dostęp do bazy danych.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Reguła oparta na zakresie IP podsieci A:** Zezwoliłaby na ruch z *każdej* maszyny znajdującej się w podsieci A, co narusza zasadę najmniejszych uprawnień (inne aplikacje w tej podsieci również zyskałyby dostęp).
-- **C. Reguła egress z bazy do frontendu:** Reguły typu egress kontrolują ruch wychodzący. Zezwolenie na ruch wychodzący z bazy do frontendu nie jest właściwym sposobem na autoryzowanie połączeń inicjowanych przez frontend w kierunku bazy (potrzebna jest reguła ingress na bazie).
-- **D. Reguła oparta na tagach sieciowych ("fe-tag" i "data-tag"):** Tagi sieciowe nie są powiązane z tożsamością maszyn i mogą być łatwo zmieniane przez osoby z uprawnieniami do edycji VM. Ponadto, reguły oparte na kontach usług (Service Accounts) są rekomendowaną praktyką bezpieczeństwa w GCP, ponieważ IAM ściśle kontroluje, kto może uruchomić maszynę z danym kontem usługi.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Reguła oparta na zakresie IP podsieci A:</strong> Zezwoliłaby na ruch z *każdej* maszyny znajdującej się w podsieci A, co narusza zasadę najmniejszych uprawnień (inne aplikacje w tej podsieci również zyskałyby dostęp).
+- <strong>C. Reguła egress z bazy do frontendu:</strong> Reguły typu egress kontrolują ruch wychodzący. Zezwolenie na ruch wychodzący z bazy do frontendu nie jest właściwym sposobem na autoryzowanie połączeń inicjowanych przez frontend w kierunku bazy (potrzebna jest reguła ingress na bazie).
+- <strong>D. Reguła oparta na tagach sieciowych ("fe-tag" i "data-tag"):</strong> Tagi sieciowe nie są powiązane z tożsamością maszyn i mogą być łatwo zmieniane przez osoby z uprawnieniami do edycji VM. Ponadto, reguły oparte na kontach usług (Service Accounts) są rekomendowaną praktyką bezpieczeństwa w GCP, ponieważ IAM ściśle kontroluje, kto może uruchomić maszynę z danym kontem usługi.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Definiowanie reguł firewall na podstawie **konta usługi (Service Account)** jest bezpieczniejsze niż na podstawie **tagów sieciowych (network tags)**, ponieważ uprawnienie do przypisania konta usługi (`iam.serviceAccounts.actAs`) jest ściślej kontrolowane niż uprawnienie do edycji tagów sieciowych.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Definiowanie reguł firewall na podstawie <strong>konta usługi (Service Account)</strong> jest bezpieczniejsze niż na podstawie <strong>tagów sieciowych (network tags)</strong>, ponieważ uprawnienie do przypisania konta usługi (`iam.serviceAccounts.actAs`) jest ściślej kontrolowane niż uprawnienie do edycji tagów sieciowych.
 - Reguły firewall oparte na kontach usług umożliwiają prawdziwą mikrosegmentację w GCP.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Ścisłe ograniczenie ruchu między warstwami aplikacji (frontend -> backend/database) -> Użycie kont usług (Service Accounts) jako źródła i celu w regułach firewall.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - VPC firewall rules filtering by service account: https://cloud.google.com/vpc/docs/firewalls#service-accounts
 </pre>
 

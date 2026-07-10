@@ -92,27 +92,27 @@ Which two tasks should your team perform to handle this request? (Choose two.)
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: AD**
+<strong>Poprawna odpowiedź: AD</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Cel: Zablokowanie wszystkim użytkownikom możliwości samodzielnego tworzenia nowych projektów w organizacji GCP i przekazanie tego uprawnienia wyłącznie dedykowanemu zespołowi DevOps.
-W chmurze GCP uprawnienie do tworzenia projektów na poziomie organizacji jest kontrolowane przez rolę IAM o nazwie **Project Creator (roles/resourcemanager.projectCreator)**. Aby zrealizować to wymaganie:
-- **A. Usunięcie wszystkich użytkowników z roli Project Creator na poziomie organizacji:** Domyślnie Google nadaje uprawnienie do tworzenia projektów wszystkim użytkownikom w domenie. Usunięcie tej roli blokuje tę możliwość dla ogółu pracowników.
-- **D. Przypisanie roli Project Creator na poziomie organizacji wyłącznie wybranej grupie użytkowników (zespołowi DevOps):** Dzięki temu tylko członkowie grupy DevOps będą mieli techniczne uprawnienie do zatwierdzania i tworzenia nowych projektów.
+W chmurze GCP uprawnienie do tworzenia projektów na poziomie organizacji jest kontrolowane przez rolę IAM o nazwie <strong>Project Creator (roles/resourcemanager.projectCreator)</strong>. Aby zrealizować to wymaganie:
+- <strong>A. Usunięcie wszystkich użytkowników z roli Project Creator na poziomie organizacji:</strong> Domyślnie Google nadaje uprawnienie do tworzenia projektów wszystkim użytkownikom w domenie. Usunięcie tej roli blokuje tę możliwość dla ogółu pracowników.
+- <strong>D. Przypisanie roli Project Creator na poziomie organizacji wyłącznie wybranej grupie użytkowników (zespołowi DevOps):</strong> Dzięki temu tylko członkowie grupy DevOps będą mieli techniczne uprawnienie do zatwierdzania i tworzenia nowych projektów.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Użycie Organization Policy:** Chociaż polityka organizacji pozwala na wiele ograniczeń, nie służy do bezpośredniego odbierania i nadawania uprawnień administracyjnych dla konkretnych grup użytkowników (od tego jest IAM).
-- **C. Grant Project Editor na poziomie organizacji:** Rola Project Editor na poziomie organizacji dałaby użytkownikom pełne prawa do edycji wszystkich istniejących projektów i zasobów w firmie, co jest ogromnym zagrożeniem dla bezpieczeństwa i nie ogranicza tworzenia nowych projektów.
-- **E. Rola billing account creator:** Pozwala na tworzenie nowych kont rozliczeniowych, a nie projektów w strukturze organizacji.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Użycie Organization Policy:</strong> Chociaż polityka organizacji pozwala na wiele ograniczeń, nie służy do bezpośredniego odbierania i nadawania uprawnień administracyjnych dla konkretnych grup użytkowników (od tego jest IAM).
+- <strong>C. Grant Project Editor na poziomie organizacji:</strong> Rola Project Editor na poziomie organizacji dałaby użytkownikom pełne prawa do edycji wszystkich istniejących projektów i zasobów w firmie, co jest ogromnym zagrożeniem dla bezpieczeństwa i nie ogranicza tworzenia nowych projektów.
+- <strong>E. Rola billing account creator:</strong> Pozwala na tworzenie nowych kont rozliczeniowych, a nie projektów w strukturze organizacji.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Do tworzenia projektów w GCP wymagana jest rola **Project Creator** przypisana na poziomie Organizacji (Organization level).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Do tworzenia projektów w GCP wymagana jest rola <strong>Project Creator</strong> przypisana na poziomie Organizacji (Organization level).
 - Domyślnie rola ta jest przypisana do grupy `everyone` w nowej organizacji Google Workspace. Pierwszym krokiem zabezpieczania organizacji jest jej usunięcie.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Blokowanie/zezwolenie na tworzenie projektów -> Rola Project Creator na poziomie Organizacji.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Managing default organization roles: https://cloud.google.com/resource-manager/docs/creating-managing-organization#default_organization_roles
 </pre>
 

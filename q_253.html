@@ -65,8 +65,8 @@ B. Discover and transform PII data in both input and output by using the Cloud D
 Odpowiedź B jest prawidłowa, ponieważ Cloud Data Loss Prevention (Cloud DLP) API jest dedykowaną usługą w GCP służącą do skanowania, wykrywania (discovery) i transformacji (np. maskowania, redagowania) danych wrażliwych w czasie rzeczywistym w strumieniach tekstowych.
 
 Zastosowanie w chatbocie GenAI:
-a. **Skanowanie wejścia (Input/Prompt):** Przed wysłaniem zapytania pracownika do modelu językowego (LLM), chatbot przesyła tekst do DLP API. Jeśli użytkownik wpisał w prompt PII (np. "Nazywam się Jan Kowalski, PESEL..."), DLP API może zredagować te dane (np. zamienić na `[NAME]`, `[ID]`), chroniąc dane przed wyciekiem do silnika AI.
-b. **Skanowanie wyjścia (Output/Response):** Przed wyświetleniem odpowiedzi generowanej przez model użytkownikowi, chatbot ponownie skanuje tekst w DLP API w celu upewnienia się, że model nie wygenerował przypadkowo żadnych danych wrażliwych z bazy treningowej.
+a. <strong>Skanowanie wejścia (Input/Prompt):</strong> Przed wysłaniem zapytania pracownika do modelu językowego (LLM), chatbot przesyła tekst do DLP API. Jeśli użytkownik wpisał w prompt PII (np. "Nazywam się Jan Kowalski, PESEL..."), DLP API może zredagować te dane (np. zamienić na `[NAME]`, `[ID]`), chroniąc dane przed wyciekiem do silnika AI.
+b. <strong>Skanowanie wyjścia (Output/Response):</strong> Przed wyświetleniem odpowiedzi generowanej przez model użytkownikowi, chatbot ponownie skanuje tekst w DLP API w celu upewnienia się, że model nie wygenerował przypadkowo żadnych danych wrażliwych z bazy treningowej.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Encrypt data at rest... by using Cloud KMS...
@@ -77,7 +77,7 @@ D. Scan both input and output by using data encryption tools from the Google Clo
    * Dlaczego nieprawidłowa: Narzędzia szyfrujące (encryption tools) służą do kodowania danych w celu ochrony ich poufności, a nie do inteligentnej inspekcji tekstu, klasyfikacji danych wrażliwych i selektywnego ich usuwania/maskowania w locie, co jest domeną silnika NLP w Cloud DLP.
 
 4. Wskazówki, hinty, tips and tricks:
-* Jeśli celem jest zapobieganie wysyłaniu/przetwarzaniu PII w aplikacjach tekstowych (jak chatbots, formularze) -> Zawsze używaj **Cloud DLP API** w celu inspekcji i redagowania (inspect and redact) tekstu w locie.
+* Jeśli celem jest zapobieganie wysyłaniu/przetwarzaniu PII w aplikacjach tekstowych (jak chatbots, formularze) -> Zawsze używaj <strong>Cloud DLP API</strong> w celu inspekcji i redagowania (inspect and redact) tekstu w locie.
 * DLP API posiada predefiniowane detektory (infoTypes) dla setek typów danych wrażliwych z całego świata.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

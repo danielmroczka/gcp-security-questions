@@ -91,25 +91,25 @@ What should you do?
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagane jest zablokowanie możliwości tworzenia dysków startowych z nieautoryzowanych obrazów i dopuszczenie obrazów wyłącznie z jednego, zaufanego i dedykowanego projektu:
-- **Skorzystanie z usługi Polityki Organizacji (Organization Policy Service) i nałożenie ograniczenia `compute.trustedimageProjects` na poziomie organizacji, definiując zaufany projekt jako dozwolony (A):** Ograniczenie `compute.trustedimageProjects` to wbudowana reguła polityki organizacji w GCP. Umożliwia ona zdefiniowanie białej listy (whitelist) projektów, z których użytkownicy w całej organizacji mogą pobierać obrazy systemowe do tworzenia maszyn VM. Każda próba użycia obrazu spoza tej listy (np. obrazów publicznych) zostanie natychmiast zablokowana przez system.
+- <strong>Skorzystanie z usługi Polityki Organizacji (Organization Policy Service) i nałożenie ograniczenia `compute.trustedimageProjects` na poziomie organizacji, definiując zaufany projekt jako dozwolony (A):</strong> Ograniczenie `compute.trustedimageProjects` to wbudowana reguła polityki organizacji w GCP. Umożliwia ona zdefiniowanie białej listy (whitelist) projektów, z których użytkownicy w całej organizacji mogą pobierać obrazy systemowe do tworzenia maszyn VM. Każda próba użycia obrazu spoza tej listy (np. obrazów publicznych) zostanie natychmiast zablokowana przez system.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Ograniczenie z regułą deny (blokuj):** Ograniczenie `compute.trustedimageProjects` wymaga zdefiniowania projektów, które są zaufane (reguła Allow). Próba definiowania wyjątków przez "Deny" jest nieefektywna i trudna w utrzymaniu, ponieważ domyślnie pozwalałaby na pobieranie obrazów z każdego nowo powstałego projektu w internecie.
-- **C. IAM role Compute Image User dla organizacji na projekcie zaufanym:** Nadanie tej roli pozwala użytkownikom na dostęp do obrazów w tym projekcie, ale w żaden sposób nie zabrania im korzystania z innych publicznych lub prywatnych projektów z obrazami (brak wymuszenia ograniczenia).
-- **D. IAM role Compute Image User dla projektu na organizacji:** Przypisanie roli IAM w ten sposób jest logicznie niepoprawne i nie blokuje tworzenia dysków ze źródeł zewnętrznych.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Ograniczenie z regułą deny (blokuj):</strong> Ograniczenie `compute.trustedimageProjects` wymaga zdefiniowania projektów, które są zaufane (reguła Allow). Próba definiowania wyjątków przez "Deny" jest nieefektywna i trudna w utrzymaniu, ponieważ domyślnie pozwalałaby na pobieranie obrazów z każdego nowo powstałego projektu w internecie.
+- <strong>C. IAM role Compute Image User dla organizacji na projekcie zaufanym:</strong> Nadanie tej roli pozwala użytkownikom na dostęp do obrazów w tym projekcie, ale w żaden sposób nie zabrania im korzystania z innych publicznych lub prywatnych projektów z obrazami (brak wymuszenia ograniczenia).
+- <strong>D. IAM role Compute Image User dla projektu na organizacji:</strong> Przypisanie roli IAM w ten sposób jest logicznie niepoprawne i nie blokuje tworzenia dysków ze źródeł zewnętrznych.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Ograniczanie źródeł obrazów maszyn wirtualnych w GCP realizuje się wyłącznie za pomocą polityki organizacji z ograniczeniem **`compute.trustedimageProjects`**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Ograniczanie źródeł obrazów maszyn wirtualnych w GCP realizuje się wyłącznie za pomocą polityki organizacji z ograniczeniem <strong>`compute.trustedimageProjects`</strong>.
 - Pamiętaj, że polityki organizacji (Organization Policies) wymuszają twarde limity (guardrails) niezależnie od uprawnień IAM użytkowników.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Ograniczenie dozwolonych obrazów maszyn wirtualnych -> Org Policy + `compute.trustedimageProjects` (Allow whitelist).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Restricting image access with trusted image policies: https://cloud.google.com/compute/docs/images/restricting-image-access
 </pre>
 

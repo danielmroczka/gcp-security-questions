@@ -89,29 +89,29 @@ A customer's company has multiple business units. Each business unit operates in
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagania to:
 - Organizacja projektów na podstawie jednostek biznesowych (Business Units).
 - Przypisywanie różnych uprawnień IAM dla każdego działu.
 - Pełna widoczność wszystkich projektów w firmie (brak Shadow IT).
 Zalecaną strukturą zarządzania zasobami w GCP jest:
-- **Utworzenie węzła organizacji (Organization Node) i folderów dla każdej jednostki biznesowej (A):** Węzeł organizacji reprezentuje firmę w GCP. Pod nim tworzy się foldery (np. Dział Finansowy, Dział HR), które odzwierciedlają strukturę firmy. Pozwala to na dziedziczenie uprawnień IAM (przypisanie roli na poziomie folderu daje dostęp do wszystkich projektów wewnątrz) i zapewnia centralnemu zespołowi pełny wgląd we wszystkie zasoby.
+- <strong>Utworzenie węzła organizacji (Organization Node) i folderów dla każdej jednostki biznesowej (A):</strong> Węzeł organizacji reprezentuje firmę w GCP. Pod nim tworzy się foldery (np. Dział Finansowy, Dział HR), które odzwierciedlają strukturę firmy. Pozwala to na dziedziczenie uprawnień IAM (przypisanie roli na poziomie folderu daje dostęp do wszystkich projektów wewnątrz) i zapewnia centralnemu zespołowi pełny wgląd we wszystkie zasoby.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Samodzielne projekty z kontami gmail.com:** Używanie prywatnych kont gmail.com uniemożliwia jakąkolwiek centralną kontrolę, audyt czy zarządzanie tożsamościami. Jest to ogromna podatność bezpieczeństwa.
-- **C. Etykiety (Labels):** Etykiety są przydatne do celów rozliczeniowych i filtrowania, ale nie służą do logicznej organizacji hierarchii zasobów i nie można na ich podstawie przydzielać uprawnień IAM w tak bezpieczny sposób jak przez foldery.
-- **D. Podział sieciowy (VPC):** Separacja sieciowa w VPC kontroluje ruch sieciowy, ale nie organizuje projektów z punktu widzenia uprawnień IAM dla użytkowników administracyjnych.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Samodzielne projekty z kontami gmail.com:</strong> Używanie prywatnych kont gmail.com uniemożliwia jakąkolwiek centralną kontrolę, audyt czy zarządzanie tożsamościami. Jest to ogromna podatność bezpieczeństwa.
+- <strong>C. Etykiety (Labels):</strong> Etykiety są przydatne do celów rozliczeniowych i filtrowania, ale nie służą do logicznej organizacji hierarchii zasobów i nie można na ich podstawie przydzielać uprawnień IAM w tak bezpieczny sposób jak przez foldery.
+- <strong>D. Podział sieciowy (VPC):</strong> Separacja sieciowa w VPC kontroluje ruch sieciowy, ale nie organizuje projektów z punktu widzenia uprawnień IAM dla użytkowników administracyjnych.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Hierarchia zasobów w GCP wygląda następująco: **Organizacja -> Foldery -> Projekty -> Zasoby**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Hierarchia zasobów w GCP wygląda następująco: <strong>Organizacja -> Foldery -> Projekty -> Zasoby</strong>.
 - Przypisanie uprawnień IAM na wyższym poziomie (np. Folder) powoduje automatyczne dziedziczenie tych uprawnień w dół.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Podział i zarządzanie wieloma zespołami w firmie -> Węzeł Organizacji + struktura Folderów.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - GCP Resource Hierarchy: https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
 </pre>
 

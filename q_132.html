@@ -105,8 +105,8 @@ Wymagane jest eksportowanie logów aktywności logowania do konsoli oraz wywoła
 - E. Przetwarzanie pola AuthenticationInfo przez SIEM: Jest to operacja po stronie systemu SIEM do interpretacji danych, a nie krok konfiguracyjny w Google Cloud niezbędny do wyeksportowania logów.
 
 4. Wskazówki, hinty, tips and tricks:
-- Prawdziwy czas rzeczywisty (near real-time) eksportu logów do systemów trzecich (SIEM, Elasticsearch) w GCP osiąga się wyłącznie za pomocą **Pub/Sub**.
-- Eksport z całej hierarchii (wszystkich projektów) wymaga **Aggregated Sink** na poziomie folderu lub organizacji, co definiuje się za pomocą flagi `includeChildren`.
+- Prawdziwy czas rzeczywisty (near real-time) eksportu logów do systemów trzecich (SIEM, Elasticsearch) w GCP osiąga się wyłącznie za pomocą <strong>Pub/Sub</strong>.
+- Eksport z całej hierarchii (wszystkich projektów) wymaga <strong>Aggregated Sink</strong> na poziomie folderu lub organizacji, co definiuje się za pomocą flagi `includeChildren`.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Real-time SIEM integration + cała organizacja -> Pub/Sub destination + Log Sink z includeChildren.

@@ -89,25 +89,25 @@ A DevOps team will create a new container to run on Google Kubernetes Engine. As
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymaganiem jest zminimalizowanie powierzchni ataku kontenera działającego w GKE, ponieważ będzie on wystawiony bezpośrednio na ruch z internetu:
-- **Budowanie małych kontenerów przy użyciu minimalnych obrazów bazowych (B):** Im mniejszy obraz bazowy (np. `alpine`, `distroless` lub czysty `scratch`), tym mniej bibliotek, narzędzi pomocniczych (takich jak shell, curl, kompilatory) i kodu znajduje się wewnątrz kontenera. W przypadku wykrycia luki w aplikacji, napastnik nie będzie miał dostępu do tych narzędzi systemowych, co drastycznie ogranicza jego możliwości eskalacji uprawnień i poruszania się wewnątrz klastra.
+- <strong>Budowanie małych kontenerów przy użyciu minimalnych obrazów bazowych (B):</strong> Im mniejszy obraz bazowy (np. `alpine`, `distroless` lub czysty `scratch`), tym mniej bibliotek, narzędzi pomocniczych (takich jak shell, curl, kompilatory) i kodu znajduje się wewnątrz kontenera. W przypadku wykrycia luki w aplikacji, napastnik nie będzie miał dostępu do tych narzędzi systemowych, co drastycznie ogranicza jego możliwości eskalacji uprawnień i poruszania się wewnątrz klastra.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Użycie Cloud Build:** Cloud Build to narzędzie CI/CD do budowania obrazów. Samo użycie tego narzędzia nie gwarantuje, że powstały kontener będzie bezpieczny i będzie miał małą powierzchnię ataku (zależy to od definicji Dockerfile).
-- **C. Usuwanie nieużywanych wersji z Container Registry:** Pomaga oszczędzać miejsce na dysku w rejestrze obrazów, ale nie ma żadnego wpływu na bezpieczeństwo i powierzchnię ataku kontenera, który jest już uruchomiony w klastrze GKE.
-- **D. Użycie narzędzia Continuous Delivery:** Automatyzuje proces wdrożenia aplikacji, ale nie wpływa na bezpieczeństwo wewnętrzne obrazu kontenerowego.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Użycie Cloud Build:</strong> Cloud Build to narzędzie CI/CD do budowania obrazów. Samo użycie tego narzędzia nie gwarantuje, że powstały kontener będzie bezpieczny i będzie miał małą powierzchnię ataku (zależy to od definicji Dockerfile).
+- <strong>C. Usuwanie nieużywanych wersji z Container Registry:</strong> Pomaga oszczędzać miejsce na dysku w rejestrze obrazów, ale nie ma żadnego wpływu na bezpieczeństwo i powierzchnię ataku kontenera, który jest już uruchomiony w klastrze GKE.
+- <strong>D. Użycie narzędzia Continuous Delivery:</strong> Automatyzuje proces wdrożenia aplikacji, ale nie wpływa na bezpieczeństwo wewnętrzne obrazu kontenerowego.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Złota zasada bezpieczeństwa kontenerów: **"Czego nie ma w obrazie kontenera, tego nie da się wykorzystać do ataku"**. Dlatego standardem w produkcji są obrazy typu **distroless** (nie zawierają nawet basha).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Złota zasada bezpieczeństwa kontenerów: <strong>"Czego nie ma w obrazie kontenera, tego nie da się wykorzystać do ataku"</strong>. Dlatego standardem w produkcji są obrazy typu <strong>distroless</strong> (nie zawierają nawet basha).
 - Mniejszy rozmiar obrazu to również szybsze pobieranie (lepsze skalowanie podów w GKE) oraz szybsze skanowanie podatności.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Minimalizacja powierzchni ataku kontenera -> Małe, dedykowane obrazy bazowe (minimal base images/distroless).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Best practices for building containers: https://cloud.google.com/architecture/best-practices-for-building-containers
 </pre>
 

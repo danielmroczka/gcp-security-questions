@@ -90,28 +90,28 @@ You need to follow Google-recommended practices to leverage envelope encryption 
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Envelope Encryption (Szyfrowanie kopertowe) polega na szyfrowaniu danych za pomocą lokalnego klucza (Data Encryption Key - DEK), a następnie zaszyfrowaniu tego klucza za pomocą klucza nadrzędnego (Key Encryption Key - KEK) zarządzanego w Cloud KMS:
-- **Wygenerowanie DEK lokalnie, zaszyfrowanie danych kluczem DEK, wygenerowanie KEK w Cloud KMS w celu zaszyfrowania DEK, a następnie zapisanie zaszyfrowanych danych oraz zaszyfrowanego DEK (A):** Ta metoda minimalizuje opóźnienia sieciowe, ponieważ dane są szyfrowane na miejscu (lokalnie) szybkim algorytmem symetrycznym (np. AES-256), a do usługi KMS przesyłany jest tylko mały klucz DEK w celu zaszyfrowania (tzw. "opakowania"). Przechowujemy zaszyfrowany DEK obok danych – do odszyfrowania aplikacja wyśle zaszyfrowany DEK do KMS, otrzyma odszyfrowany DEK i nim odszyfruje dane.
+- <strong>Wygenerowanie DEK lokalnie, zaszyfrowanie danych kluczem DEK, wygenerowanie KEK w Cloud KMS w celu zaszyfrowania DEK, a następnie zapisanie zaszyfrowanych danych oraz zaszyfrowanego DEK (A):</strong> Ta metoda minimalizuje opóźnienia sieciowe, ponieważ dane są szyfrowane na miejscu (lokalnie) szybkim algorytmem symetrycznym (np. AES-256), a do usługi KMS przesyłany jest tylko mały klucz DEK w celu zaszyfrowania (tzw. "opakowania"). Przechowujemy zaszyfrowany DEK obok danych – do odszyfrowania aplikacja wyśle zaszyfrowany DEK do KMS, otrzyma odszyfrowany DEK i nim odszyfruje dane.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Store both the encrypted data and the KEK:** KEK to klucz główny (klucz-klucz), który nigdy nie opuszcza bezpiecznego modułu HSM w Cloud KMS. Zapisanie KEK lokalnie obok danych jest niemożliwe i zaprzecza idei bezpieczeństwa KMS.
-- **C. Generate a new DEK in Cloud KMS, generate KEK locally:** DEK (klucz szyfrowania danych) jest generowany lokalnie przez aplikację do szyfrowania wolumenu danych, natomiast KEK (klucz szyfrowania klucza) jest generowany i przechowywany w chmurze (KMS), a nie lokalnie.
-- **D. Generate DEK in KMS, generate KEK locally and store KEK:** Podobnie jak w C, odwraca to role i narusza zasady bezpieczeństwa szyfrowania kopertowego.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Store both the encrypted data and the KEK:</strong> KEK to klucz główny (klucz-klucz), który nigdy nie opuszcza bezpiecznego modułu HSM w Cloud KMS. Zapisanie KEK lokalnie obok danych jest niemożliwe i zaprzecza idei bezpieczeństwa KMS.
+- <strong>C. Generate a new DEK in Cloud KMS, generate KEK locally:</strong> DEK (klucz szyfrowania danych) jest generowany lokalnie przez aplikację do szyfrowania wolumenu danych, natomiast KEK (klucz szyfrowania klucza) jest generowany i przechowywany w chmurze (KMS), a nie lokalnie.
+- <strong>D. Generate DEK in KMS, generate KEK locally and store KEK:</strong> Podobnie jak w C, odwraca to role i narusza zasady bezpieczeństwa szyfrowania kopertowego.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
 - Zapamiętaj prosty schemat szyfrowania kopertowego (Envelope Encryption):
-  1. Wygeneruj **DEK** lokalnie.
-  2. Szyfruj dane lokalnie za pomocą **DEK**.
-  3. Wyślij **DEK** do Cloud KMS, aby zaszyfrować go kluczem **KEK**.
-  4. Przechowuj **zaszyfrowane dane** + **zaszyfrowany DEK** (nigdy jawny DEK i nigdy KEK!).
+  1. Wygeneruj <strong>DEK</strong> lokalnie.
+  2. Szyfruj dane lokalnie za pomocą <strong>DEK</strong>.
+  3. Wyślij <strong>DEK</strong> do Cloud KMS, aby zaszyfrować go kluczem <strong>KEK</strong>.
+  4. Przechowuj <strong>zaszyfrowane dane</strong> + <strong>zaszyfrowany DEK</strong> (nigdy jawny DEK i nigdy KEK!).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Szyfrowanie kopertowe -> Szyfruj dane lokalnym DEK, szyfruj DEK za pomocą KEK w KMS, przechowuj zaszyfrowany DEK.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Cloud KMS Envelope Encryption: https://cloud.google.com/kms/docs/envelope-encryption
 </pre>
 

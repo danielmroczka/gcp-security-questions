@@ -90,28 +90,28 @@ Your company is using Cloud Dataproc for its Spark and Hadoop jobs. You want to 
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 W architekturze bezpieczeństwa danych Google Cloud, dane w spoczynku są szyfrowane dwuwarstwowo (szyfrowanie kopertowe - envelope encryption):
-- Dane są bezpośrednio szyfrowane za pomocą **Data Encryption Key (DEK)**. DEK jest zarządzany automatycznie przez system plików i Google.
-- Klucz DEK jest następnie szyfrowany za pomocą **Key Encryption Key (KEK)**.
+- Dane są bezpośrednio szyfrowane za pomocą <strong>Data Encryption Key (DEK)</strong>. DEK jest zarządzany automatycznie przez system plików i Google.
+- Klucz DEK jest następnie szyfrowany za pomocą <strong>Key Encryption Key (KEK)</strong>.
 Klient chce samodzielnie zarządzać (tworzyć, rotować, niszczyć) kluczami szyfrującymi dla dysków Cloud Dataproc:
-- **Zarządzanie kluczem KEK za pomocą Cloud Key Management Service (B):** Klient w Cloud KMS ma kontrolę nad kluczem nadrzędnym (KEK). Dzięki temu zachowuje pełną władzę nad bezpieczeństwem danych w chmurze (zniszczenie KEK uniemożliwi odszyfrowanie DEK, a w konsekwencji danych na dyskach), podczas gdy wydajne szyfrowanie danych za pomocą DEK odbywa się automatycznie.
+- <strong>Zarządzanie kluczem KEK za pomocą Cloud Key Management Service (B):</strong> Klient w Cloud KMS ma kontrolę nad kluczem nadrzędnym (KEK). Dzięki temu zachowuje pełną władzę nad bezpieczeństwem danych w chmurze (zniszczenie KEK uniemożliwi odszyfrowanie DEK, a w konsekwencji danych na dyskach), podczas gdy wydajne szyfrowanie danych za pomocą DEK odbywa się automatycznie.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Cloud KMS do zarządzania DEK:** Klucze DEK są generowane bezpośrednio przy dyskach i nie są bezpośrednio wystawiane w Cloud KMS do zarządzania dla użytkownika w celu optymalizacji wydajności.
-- **C. CSEK do zarządzania DEK:** CSEK (Customer-Supplied Keys) dostarcza klucz KEK, który szyfruje DEK. Klient nie zarządza bezpośrednio DEK.
-- **D. CSEK do zarządzania KEK:** CSEK wymaga, aby to klient dostarczał klucz w każdym wywołaniu API, co uniemożliwia przechowywanie klucza w chmurze (KMS), a pytanie wyraźnie zaznacza: "Keys can be stored in the cloud".
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Cloud KMS do zarządzania DEK:</strong> Klucze DEK są generowane bezpośrednio przy dyskach i nie są bezpośrednio wystawiane w Cloud KMS do zarządzania dla użytkownika w celu optymalizacji wydajności.
+- <strong>C. CSEK do zarządzania DEK:</strong> CSEK (Customer-Supplied Keys) dostarcza klucz KEK, który szyfruje DEK. Klient nie zarządza bezpośrednio DEK.
+- <strong>D. CSEK do zarządzania KEK:</strong> CSEK wymaga, aby to klient dostarczał klucz w każdym wywołaniu API, co uniemożliwia przechowywanie klucza w chmurze (KMS), a pytanie wyraźnie zaznacza: "Keys can be stored in the cloud".
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Pamiętaj, że w modelu Cloud KMS w GCP klient **zawsze zarządza kluczem KEK (Key Encryption Key)**, a Google automatycznie zarządza kluczem DEK (Data Encryption Key).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Pamiętaj, że w modelu Cloud KMS w GCP klient <strong>zawsze zarządza kluczem KEK (Key Encryption Key)</strong>, a Google automatycznie zarządza kluczem DEK (Data Encryption Key).
 - KEK szyfruje DEK. To podstawa Envelope Encryption.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Zarządzanie kluczami w Cloud KMS -> Zarządzanie KEK.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Encryption at rest in Google Cloud: https://cloud.google.com/docs/security/encryption-at-rest
 </pre>
 

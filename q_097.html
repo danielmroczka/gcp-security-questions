@@ -90,27 +90,27 @@ Your organization has implemented synchronization and SAML federation between Cl
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Organizacja korzysta z synchronizacji oraz federacji tożsamości (SAML) między Microsoft Active Directory (jako dostawcą tożsamości - IdP) a Cloud Identity (jako dostawcą usług - SP). Celem jest zmniejszenie ryzyka kompromitacji kont użytkowników:
-- **Utworzenie silnej polityki haseł w Active Directory oraz skonfigurowanie weryfikacji dwuetapowej (2SV) z kluczami bezpieczeństwa po stronie Google (post-SSO) (C):** Ponieważ AD jest źródłem prawdy i obsługuje uwierzytelnianie SAML, to w AD należy wymusić silną politykę haseł. Gdy użytkownik pomyślnie zaloguje się w AD (SSO), zostaje przekierowany z powrotem do Google. Google Cloud Identity pozwala na skonfigurowanie weryfikacji dwuetapowej uruchamianej **po logowaniu jednokrotnym (post-SSO 2SV)**. Użycie fizycznych kluczy bezpieczeństwa (np. YubiKey / FIDO2) zapewnia najwyższy poziom ochrony przed phishingiem i przejęciem sesji.
+- <strong>Utworzenie silnej polityki haseł w Active Directory oraz skonfigurowanie weryfikacji dwuetapowej (2SV) z kluczami bezpieczeństwa po stronie Google (post-SSO) (C):</strong> Ponieważ AD jest źródłem prawdy i obsługuje uwierzytelnianie SAML, to w AD należy wymusić silną politykę haseł. Gdy użytkownik pomyślnie zaloguje się w AD (SSO), zostaje przekierowany z powrotem do Google. Google Cloud Identity pozwala na skonfigurowanie weryfikacji dwuetapowej uruchamianej <strong>po logowaniu jednokrotnym (post-SSO 2SV)</strong>. Użycie fizycznych kluczy bezpieczeństwa (np. YubiKey / FIDO2) zapewnia najwyższy poziom ochrony przed phishingiem i przejęciem sesji.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A i B. Tworzenie polityki haseł w Cloud Identity:** W architekturze federacji SAML, hasła są weryfikowane przez lokalne Active Directory, a nie przez Cloud Identity. Wdrożenie polityki haseł w Cloud Identity nie będzie miało żadnego wpływu na użytkowników logujących się przez SSO.
-- **D. Użycie kodów SMS/połączeń telefonicznych:** Kody jednorazowe przesyłane za pomocą SMS lub połączeń telefonicznych są podatne na ataki typu SIM-swapping oraz phishing, dlatego są znacznie mniej bezpieczne niż fizyczne klucze bezpieczeństwa (Security Keys) rekomendowane w opcji C.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A i B. Tworzenie polityki haseł w Cloud Identity:</strong> W architekturze federacji SAML, hasła są weryfikowane przez lokalne Active Directory, a nie przez Cloud Identity. Wdrożenie polityki haseł w Cloud Identity nie będzie miało żadnego wpływu na użytkowników logujących się przez SSO.
+- <strong>D. Użycie kodów SMS/połączeń telefonicznych:</strong> Kody jednorazowe przesyłane za pomocą SMS lub połączeń telefonicznych są podatne na ataki typu SIM-swapping oraz phishing, dlatego są znacznie mniej bezpieczne niż fizyczne klucze bezpieczeństwa (Security Keys) rekomendowane w opcji C.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
 - W federacji tożsamości (SAML SSO):
-  - Polityka haseł leży po stronie **dostawcy tożsamości (IdP)** -> czyli Active Directory.
-  - Dodatkowe uwierzytelnienie wieloskładnikowe (MFA) może być wymuszone po zalogowaniu do AD -> czyli **post-SSO 2-Step Verification** w konsoli Google.
+  - Polityka haseł leży po stronie <strong>dostawcy tożsamości (IdP)</strong> -> czyli Active Directory.
+  - Dodatkowe uwierzytelnienie wieloskładnikowe (MFA) może być wymuszone po zalogowaniu do AD -> czyli <strong>post-SSO 2-Step Verification</strong> w konsoli Google.
 - Fizyczne klucze bezpieczeństwa (Security Keys / FIDO2) są zawsze najbezpieczniejszą formą 2FA na egzaminie Google Cloud.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Polityka haseł w federacji -> W AD (lokalnie).
 - Bezpieczne MFA po SSO -> post-SSO 2SV z Security Keys w Google Admin.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Enforcing 2-Step Verification for SSO users: https://support.google.com/a/answer/9373117
 </pre>
 

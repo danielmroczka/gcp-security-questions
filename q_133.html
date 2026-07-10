@@ -95,14 +95,14 @@ C. Project
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 CISO wymaga, aby dane były przechowywane w określonych lokalizacjach geograficznych (Data Residency). Struktura folderów może zawierać projekty o *różnych* lokalizacjach przechowywania danych. Wymagane jest użycie polityki `Resource Location Restriction` na odpowiednim poziomie hierarchii zasobów:
 - Ponieważ struktura folderów w organizacji jest mieszana i projekty w tym samym folderze mogą wymagać przechowywania danych w zupełnie różnych regionach (np. jeden w UE, inny w USA), nałożenie restrykcji na poziomie Organizacji (D) lub Folderu (A) wymusiłoby dziedziczenie tej samej lokalizacji przez wszystkie projekty podrzędne.
-- Aby umożliwić elastyczność i przypisać konkretne, odmienne lokalizacje rezydencji danych dla poszczególnych systemów, politykę `Resource Location Restriction` należy nałożyć bezpośrednio na poziomie **Projektu** (Project).
+- Aby umożliwić elastyczność i przypisać konkretne, odmienne lokalizacje rezydencji danych dla poszczególnych systemów, politykę `Resource Location Restriction` należy nałożyć bezpośrednio na poziomie <strong>Projektu</strong> (Project).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A i D. Poziom Folderu lub Organizacji: Wymusiłyby jednolitą lokalizację dla wszystkich podrzędnych zasobów, uniemożliwiając sytuację, w której ta sama struktura folderów zawiera projekty z różnymi lokalizacjami rezydencji danych.
 - B. Poziom zasobu (Resource): Ograniczenia polityki organizacji (Organization Policies) mogą być nakładane wyłącznie na węzłach hierarchii zasobów (Organizacja, Folder, Projekt). Nie można ich nakładać na pojedyncze zasoby końcowe (np. pojedynczy kubełek Cloud Storage czy bazę danych) bezpośrednio jako polityki organizacji.
 
 4. Wskazówki, hinty, tips and tricks:
-- Zasada dziedziczenia w GCP: Polityki organizacji nałożone wyżej (np. na folderze) są dziedziczone w dół przez wszystkie projekty. Jeśli projekty w jednym folderze mają mieć różne reguły rezydencji danych, politykę musisz skonfigurować na poziomie **Projektu**.
+- Zasada dziedziczenia w GCP: Polityki organizacji nałożone wyżej (np. na folderze) są dziedziczone w dół przez wszystkie projekty. Jeśli projekty w jednym folderze mają mieć różne reguły rezydencji danych, politykę musisz skonfigurować na poziomie <strong>Projektu</strong>.
 - Nazwa ograniczenia to: `gcp.resourceLocations`.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

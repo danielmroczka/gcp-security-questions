@@ -91,26 +91,26 @@ When creating a secure container image, which two items should you incorporate i
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: BC**
+<strong>Poprawna odpowiedź: BC</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Bezpieczeństwo obrazów kontenerowych opiera się na minimalizacji powierzchni ataku oraz poprawnym podziale funkcji:
-- **Package a single app as a container (B):** Kontener powinien uruchamiać tylko jedną aplikację (jeden proces). Upraszcza to monitorowanie, skalowanie oraz izolację bezpieczeństwa.
-- **Remove any unnecessary tools not needed by the app (C):** Usunięcie zbędnych narzędzi (np. curl, ping, kompilatorów, powłok shell) uniemożliwia potencjalnemu napastnikowi użycie ich po ewentualnym przejęciu kontenera. Standardem są tu obrazy typu *distroless*.
+- <strong>Package a single app as a container (B):</strong> Kontener powinien uruchamiać tylko jedną aplikację (jeden proces). Upraszcza to monitorowanie, skalowanie oraz izolację bezpieczeństwa.
+- <strong>Remove any unnecessary tools not needed by the app (C):</strong> Usunięcie zbędnych narzędzi (np. curl, ping, kompilatorów, powłok shell) uniemożliwia potencjalnemu napastnikowi użycie ich po ewentualnym przejęciu kontenera. Standardem są tu obrazy typu *distroless*.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Ensure that the app does not run as PID 1:** Aplikacja w kontenerze *powinna* działać jako PID 1, aby poprawnie odbierać sygnały systemowe (np. SIGTERM przy wyłączaniu). Uruchamianie aplikacji za pośrednictwem skryptów powłoki jako PID 1 utrudnia poprawne zarządzanie cyklem życia kontenera.
-- **D. Use public container images as a base image:** Korzystanie z niesprawdzonych publicznych obrazów bazowych niesie za sobą duże ryzyko podatności i złośliwego oprogramowania. Bezpieczniejszą praktyką jest używanie zaufanych, prywatnych lub minimalnych obrazów bazowych.
-- **E. Use many container image layers to hide sensitive information:** Warstwy obrazu kontenera nie ukrywają danych – każda warstwa jest jawna i może zostać zbadana. Przechowywanie tam poufnych informacji (np. kluczy API) to poważny błąd bezpieczeństwa.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Ensure that the app does not run as PID 1:</strong> Aplikacja w kontenerze *powinna* działać jako PID 1, aby poprawnie odbierać sygnały systemowe (np. SIGTERM przy wyłączaniu). Uruchamianie aplikacji za pośrednictwem skryptów powłoki jako PID 1 utrudnia poprawne zarządzanie cyklem życia kontenera.
+- <strong>D. Use public container images as a base image:</strong> Korzystanie z niesprawdzonych publicznych obrazów bazowych niesie za sobą duże ryzyko podatności i złośliwego oprogramowania. Bezpieczniejszą praktyką jest używanie zaufanych, prywatnych lub minimalnych obrazów bazowych.
+- <strong>E. Use many container image layers to hide sensitive information:</strong> Warstwy obrazu kontenera nie ukrywają danych – każda warstwa jest jawna i może zostać zbadana. Przechowywanie tam poufnych informacji (np. kluczy API) to poważny błąd bezpieczeństwa.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Dobrą praktyką przy budowaniu kontenerów jest stosowanie **multi-stage builds** w Dockerfile (do oddzielenia środowiska kompilacji od uruchomieniowego) oraz stosowanie obrazów **distroless** (brak powłoki shell).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Dobrą praktyką przy budowaniu kontenerów jest stosowanie <strong>multi-stage builds</strong> w Dockerfile (do oddzielenia środowiska kompilacji od uruchomieniowego) oraz stosowanie obrazów <strong>distroless</strong> (brak powłoki shell).
 - Zapamiętaj: jeden kontener = jedna aplikacja/proces.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Minimalna powierzchnia ataku kontenera -> Usuń zbędne narzędzia, pakuj tylko jedną aplikację.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Google Container Registry Best Practices: https://cloud.google.com/architecture/best-practices-for-building-containers
 </pre>
 

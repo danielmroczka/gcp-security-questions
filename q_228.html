@@ -99,8 +99,8 @@ C. Create Confidential VMs to access the sensitive data.
 Odpowiedzi B i C są prawidłowe, ponieważ łącznie spełniają skomplikowane wymagania regulacyjne dotyczące ochrony danych w spoczynku i w użyciu przy zachowaniu suwerenności kluczy szyfrujących poza chmurą Google.
 
 Szczegóły rozwiązań:
-a. **Szyfrowanie danych w spoczynku poza GCP (B):** Użycie Cloud External Key Manager (Cloud EKM) pozwala na to, aby klucz szyfrujący (KEK) fizycznie znajdował się u zewnętrznego dostawcy (on-premises HSM) poza jurysdykcją i infrastrukturą Google Cloud. Cloud EKM jest zintegrowany z Cloud Storage, co pozwala na automatyczne szyfrowanie danych podczas przesyłania ich do kubełka i ich odszyfrowywanie przy pobieraniu przez autoryzowane maszyny wirtualne.
-b. **Szyfrowanie danych w użyciu (C):** Maszyny wirtualne przetwarzające te dane w pamięci RAM muszą być skonfigurowane jako **Confidential VMs** (Poufne Maszyny Wirtualne). Wykorzystują one sprzętowe szyfrowanie pamięci (RAM encryption), dzięki czemu dane w użyciu są chronione przed potencjalnym odczytem z poziomu systemu hosta fizycznego GCP.
+a. <strong>Szyfrowanie danych w spoczynku poza GCP (B):</strong> Użycie Cloud External Key Manager (Cloud EKM) pozwala na to, aby klucz szyfrujący (KEK) fizycznie znajdował się u zewnętrznego dostawcy (on-premises HSM) poza jurysdykcją i infrastrukturą Google Cloud. Cloud EKM jest zintegrowany z Cloud Storage, co pozwala na automatyczne szyfrowanie danych podczas przesyłania ich do kubełka i ich odszyfrowywanie przy pobieraniu przez autoryzowane maszyny wirtualne.
+b. <strong>Szyfrowanie danych w użyciu (C):</strong> Maszyny wirtualne przetwarzające te dane w pamięci RAM muszą być skonfigurowane jako <strong>Confidential VMs</strong> (Poufne Maszyny Wirtualne). Wykorzystują one sprzętowe szyfrowanie pamięci (RAM encryption), dzięki czemu dane w użyciu są chronione przed potencjalnym odczytem z poziomu systemu hosta fizycznego GCP.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Configure Customer Managed Encryption Keys...
@@ -111,8 +111,8 @@ E. Create a VPC Service Controls service perimeter...
    * Dlaczego nieprawidłowa: VPC Service Controls zapobiega eksfiltracji danych z projektów, ale nie szyfruje danych w użyciu (w pamięci RAM) ani nie pozwala na zarządzanie kluczami u zewnętrznego dostawcy.
 
 4. Wskazówki, hinty, tips and tricks:
-* Przechowywanie kluczy poza chmurą (External control of keys) -> **Cloud EKM (External Key Manager)**.
-* Ochrona danych w użyciu w procesorze/pamięci (encryption in-use) -> **Confidential VMs**.
+* Przechowywanie kluczy poza chmurą (External control of keys) -> <strong>Cloud EKM (External Key Manager)</strong>.
+* Ochrona danych w użyciu w procesorze/pamięci (encryption in-use) -> <strong>Confidential VMs</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Encryption key outside Google Cloud + encrypt data in memory -> Cloud EKM + Confidential VMs.

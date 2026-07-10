@@ -99,8 +99,8 @@ E. Cloud External Key Manager
 Odpowiedzi C i E są prawidłowe, ponieważ wspólnie realizują wymagania suwerenności danych oraz pełnej separacji dostawcy usług danych od dostawcy kluczy szyfrujących.
 
 Analiza wymagań:
-a. **Separacja zarządzania kluczami od zarządzania danymi:** Cloud External Key Manager (Cloud EKM) (E) umożliwia przechowywanie i zarządzanie kluczami szyfrującymi w zewnętrznym systemie zarządzania kluczami (np. Thales, Fortanix), który znajduje się fizycznie poza infrastrukturą Google Cloud. Usługi takie jak BigQuery czy Cloud SQL przy każdej operacji zapisu/odczytu muszą wysłać żądanie odszyfrowania do zewnętrznego EKM.
-b. **Widoczność i kontrola żądań szyfrowania:** Key Access Justifications (KAJ) (C) działa w parze z EKM. Przy każdym żądaniu klucza, Google przesyła do EKM zakodowane uzasadnienie (np. żądanie od klienta, automatyczne zadanie systemowe). Klient może skonfigurować swój zewnętrzny system EKM tak, by automatycznie odrzucał żądania bez prawidłowego uzasadnienia. Daje to pełny audyt i ostateczną kontrolę nad tym, kiedy i dlaczego dane są odszyfrowywane.
+a. <strong>Separacja zarządzania kluczami od zarządzania danymi:</strong> Cloud External Key Manager (Cloud EKM) (E) umożliwia przechowywanie i zarządzanie kluczami szyfrującymi w zewnętrznym systemie zarządzania kluczami (np. Thales, Fortanix), który znajduje się fizycznie poza infrastrukturą Google Cloud. Usługi takie jak BigQuery czy Cloud SQL przy każdej operacji zapisu/odczytu muszą wysłać żądanie odszyfrowania do zewnętrznego EKM.
+b. <strong>Widoczność i kontrola żądań szyfrowania:</strong> Key Access Justifications (KAJ) (C) działa w parze z EKM. Przy każdym żądaniu klucza, Google przesyła do EKM zakodowane uzasadnienie (np. żądanie od klienta, automatyczne zadanie systemowe). Klient może skonfigurować swój zewnętrzny system EKM tak, by automatycznie odrzucał żądania bez prawidłowego uzasadnienia. Daje to pełny audyt i ostateczną kontrolę nad tym, kiedy i dlaczego dane są odszyfrowywane.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Customer-managed encryption keys (CMEK)
@@ -111,8 +111,8 @@ D. Access Transparency and Approval
    * Dlaczego nieprawidłowa: Access Transparency i Access Approval dają wgląd i wymagają zatwierdzenia dostępu personelu Google do zasobów, ale nie są bezpośrednim mechanizmem zarządzania kluczami kryptograficznymi szyfrującymi dane w spoczynku.
 
 4. Wskazówki, hinty, tips and tricks:
-* Integracja zewnętrznego systemu zarządzania kluczami z GCP -> **Cloud EKM (External Key Manager)**.
-* Widoczność i decyzyjność o powodach użycia klucza -> **Key Access Justifications (KAJ)**.
+* Integracja zewnętrznego systemu zarządzania kluczami z GCP -> <strong>Cloud EKM (External Key Manager)</strong>.
+* Widoczność i decyzyjność o powodach użycia klucza -> <strong>Key Access Justifications (KAJ)</strong>.
 * KAJ i Cloud EKM to kluczowe elementy oferty "Sovereign Cloud" w Google Cloud.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

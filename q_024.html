@@ -89,27 +89,27 @@ A company's application is deployed with a user-managed Service Account key. You
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Rotacja klucza konta usługowego zarządzanego przez użytkownika (user-managed service account key) musi zostać przeprowadzona bez przerw w działaniu aplikacji:
-- **Utworzenie nowego klucza, wdrożenie go w aplikacji, a następnie usunięcie starego klucza z konta usługowego (C):** Jest to bezpieczna procedura rotacji. Umożliwia aplikacji płynne przejście na nowe poświadczenia. Dopiero po upewnieniu się, że aplikacja poprawnie korzysta z nowego klucza, stary (nieużywany) klucz jest trwale usuwany, co minimalizuje ryzyko awarii i okno podatności.
+- <strong>Utworzenie nowego klucza, wdrożenie go w aplikacji, a następnie usunięcie starego klucza z konta usługowego (C):</strong> Jest to bezpieczna procedura rotacji. Umożliwia aplikacji płynne przejście na nowe poświadczenia. Dopiero po upewnieniu się, że aplikacja poprawnie korzysta z nowego klucza, stary (nieużywany) klucz jest trwale usuwany, co minimalizuje ryzyko awarii i okno podatności.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. gcloud iam service-accounts enable-auto-rotate:** Taka komenda w ogóle nie istnieje. Google nie oferuje automatycznej rotacji dla kluczy generowanych i pobieranych przez użytkownika (kluczy prywatnych JSON).
-- **B. gcloud iam service-accounts keys rotate:** Komenda w tej formie nie istnieje i nie obsługuje przekazywania klucza w parametrze `--key=NEW_KEY`.
-- **D. Przechowywanie starego klucza jako backup:** Przechowywanie nieużywanych, starych kluczy prywatnych na systemie jest bardzo złą praktyką – zwiększa to ryzyko wycieku poświadczeń. Klucze nieaktywne powinny być natychmiast usuwane z GCP.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. gcloud iam service-accounts enable-auto-rotate:</strong> Taka komenda w ogóle nie istnieje. Google nie oferuje automatycznej rotacji dla kluczy generowanych i pobieranych przez użytkownika (kluczy prywatnych JSON).
+- <strong>B. gcloud iam service-accounts keys rotate:</strong> Komenda w tej formie nie istnieje i nie obsługuje przekazywania klucza w parametrze `--key=NEW_KEY`.
+- <strong>D. Przechowywanie starego klucza jako backup:</strong> Przechowywanie nieużywanych, starych kluczy prywatnych na systemie jest bardzo złą praktyką – zwiększa to ryzyko wycieku poświadczeń. Klucze nieaktywne powinny być natychmiast usuwane z GCP.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
 - Pamiętaj, że klucze konta usługowego dzielą się na:
   1. Google-managed (zarządzane przez Google, rotowane automatycznie).
   2. User-managed (zarządzane przez użytkownika, pobierane jako pliki JSON).
 - Rotacja kluczy zarządzanych przez użytkownika to zawsze proces 3-etapowy: 1) Utwórz nowy, 2) Zastąp w aplikacji, 3) Usuń stary.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Rotacja kluczy konta usługowego -> Utwórz nowy -> podmień -> skasuj stary.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Best practices for managing service account keys: https://cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys
 </pre>
 

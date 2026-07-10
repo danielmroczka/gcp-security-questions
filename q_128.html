@@ -94,7 +94,7 @@ A. Enable Firewall Rules Logging on the latest rules that were changed. Use Logs
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Aplikacja produkcyjna uległa awarii i podejrzewasz, że winna jest niedawna zmiana w regułach zapory sieciowej (firewall). Należy to sprawdzić szybko i bez zakłócania ruchu:
-- Włączenie funkcji **Firewall Rules Logging** dla zmodyfikowanych reguł pozwala na rejestrowanie każdego pakietu sieciowego, który pasuje do danej reguły (zarówno reguł blokujących, jak i zezwalających). Logi te są przesyłane do Cloud Logging.
+- Włączenie funkcji <strong>Firewall Rules Logging</strong> dla zmodyfikowanych reguł pozwala na rejestrowanie każdego pakietu sieciowego, który pasuje do danej reguły (zarówno reguł blokujących, jak i zezwalających). Logi te są przesyłane do Cloud Logging.
 - Za pomocą Logs Explorer można natychmiast wyszukać zdarzenia blokady (action: "DENY") powiązane ze sprawdzanym adresem IP lub portem aplikacji. Pozwala to precyzyjnie wskazać, która reguła odrzuca ruch użytkowników, co czyni tę metodę najszybszą i najbardziej precyzyjną diagnostycznie.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
@@ -103,7 +103,7 @@ Aplikacja produkcyjna uległa awarii i podejrzewasz, że winna jest niedawna zmi
 - D. Włączenie VPC Flow Logs: Chociaż VPC Flow Logs pokazują kierunek przepływów IP, to nie wiążą one zdarzenia blokady z konkretną nazwą reguły zapory sieciowej w sposób tak bezpośredni i czytelny jak dedykowane logi reguł firewalla.
 
 4. Wskazówki, hinty, tips and tricks:
-- W celu debugowania, diagnostyki lub audytu działania reguł zapory sieciowej w GCP, zawsze używaj **Firewall Rules Logging**.
+- W celu debugowania, diagnostyki lub audytu działania reguł zapory sieciowej w GCP, zawsze używaj <strong>Firewall Rules Logging</strong>.
 - W logach szukaj pól takich jak `jsonPayload.rule_details.name` oraz `jsonPayload.rule_details.action`.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

@@ -94,8 +94,8 @@ A. Use service perimeter and create an access level based on the authorized sour
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Masz wrażliwy zbiór danych w BigQuery. Należy zablokować możliwość eksfiltracji danych oraz ograniczyć dostęp do zapytań SQL wyłącznie do żądań pochodzących z autoryzowanych adresów IP z internetu:
-- **VPC Service Controls** pozwala na otoczenie BigQuery perymetrem bezpieczeństwa (Service Perimeter), co blokuje do niego dostęp z publicznego internetu.
-- Aby umożliwić dostęp dla wybranych użytkowników zewnętrznych, tworzy się **poziom dostępu (Access Level)** w usłudze Access Context Manager.
+- <strong>VPC Service Controls</strong> pozwala na otoczenie BigQuery perymetrem bezpieczeństwa (Service Perimeter), co blokuje do niego dostęp z publicznego internetu.
+- Aby umożliwić dostęp dla wybranych użytkowników zewnętrznych, tworzy się <strong>poziom dostępu (Access Level)</strong> w usłudze Access Context Manager.
 - W poziomie dostępu definiuje się warunek (condition) oparty na dozwolonych adresach IP (IP subnets). Połączenia do API BigQuery spoza perymetru zostaną dopuszczone tylko wtedy, gdy IP klienta pasuje do zdefiniowanej listy zaufanych adresów.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
@@ -103,7 +103,7 @@ Masz wrażliwy zbiór danych w BigQuery. Należy zablokować możliwość eksfil
 - C i D. Polityki organizacji typu Restrict Resource Service Usage: Te polityki określają, które usługi Google mogą być włączane i używane w projektach, ale nie filtrują ruchu sieciowego i dostępu na podstawie adresu IP klienta.
 
 4. Wskazówki, hinty, tips and tricks:
-- Filtrowanie dostępu do API usług Google (takich jak BigQuery, Cloud Storage) na podstawie atrybutów sieciowych (np. **adresów IP klienta**) realizuje się za pomocą **VPC Service Controls** w połączeniu z **Access Levels** (Access Context Manager).
+- Filtrowanie dostępu do API usług Google (takich jak BigQuery, Cloud Storage) na podstawie atrybutów sieciowych (np. <strong>adresów IP klienta</strong>) realizuje się za pomocą <strong>VPC Service Controls</strong> w połączeniu z <strong>Access Levels</strong> (Access Context Manager).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Ograniczenie dostępu do BigQuery/API GCP do określonych IP + ochrona przed eksfiltracją -> VPC Service Controls + Access Level (Access Context Manager).

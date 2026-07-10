@@ -110,7 +110,7 @@ D. Use Identity and Access Management (IAM) custom roles...
    * Dlaczego nieprawidłowa: Uprawnienia IAM (np. `compute.instances.create`) są globalne lub projektowe i decydują o tym, *czy* użytkownik może stworzyć zasób. IAM nie posiada wbudowanych funkcji szczegółowego filtrowania uprawnień w zależności od regionu geograficznego, w którym zasób ma powstać.
 
 4. Wskazówki, hinty, tips and tricks:
-* Rezydentność danych (data residency) / zakaz tworzenia zasobów poza określonym kontynentem/krajem -> Zawsze polityka organizacji **`constraints/gcp.resourceLocations`**.
+* Rezydentność danych (data residency) / zakaz tworzenia zasobów poza określonym kontynentem/krajem -> Zawsze polityka organizacji <strong>`constraints/gcp.resourceLocations`</strong>.
 * Aplikuj reguły na poziomie organizacji (org node) w celu globalnego egzekwowania.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

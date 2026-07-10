@@ -97,9 +97,9 @@ D. Generate a key in your on-premises environment and store it in a Hardware Sec
 Odpowiedź D jest prawidłowa, ponieważ w pełni realizuje zaawansowane wymagania suwerenności danych oraz pełnej kontroli klienta nad procesem odszyfrowywania za pomocą zewnętrznego zarządzania kluczami (Cloud EKM) oraz Key Access Justifications (KAJ).
 
 Analiza krok po kroku:
-a. **Kontrola klucza on-premises:** Klucz generowany i przechowywany w lokalnym module HSM (on-premises HSM) gwarantuje, że materiał klucza (key material) nigdy nie znajdzie się w chmurze Google.
-b. **Integracja z GCP:** Cloud EKM pozwala na odwołanie się do tego zewnętrznego klucza podczas szyfrowania kubełka Cloud Storage.
-c. **Key Access Justifications (KAJ):** Przy każdej próbie odczytu danych przez GCP, Google przesyła do zewnętrznego HSM uzasadnienie (rationale) dostępu. Lokalny HSM klienta analizuje to uzasadnienie i jeśli żądanie nie jest autoryzowane (lub brak poprawnego uzasadnienia), odrzuca operację odszyfrowania, co uniemożliwia dostęp do danych.
+a. <strong>Kontrola klucza on-premises:</strong> Klucz generowany i przechowywany w lokalnym module HSM (on-premises HSM) gwarantuje, że materiał klucza (key material) nigdy nie znajdzie się w chmurze Google.
+b. <strong>Integracja z GCP:</strong> Cloud EKM pozwala na odwołanie się do tego zewnętrznego klucza podczas szyfrowania kubełka Cloud Storage.
+c. <strong>Key Access Justifications (KAJ):</strong> Przy każdej próbie odczytu danych przez GCP, Google przesyła do zewnętrznego HSM uzasadnienie (rationale) dostępu. Lokalny HSM klienta analizuje to uzasadnienie i jeśli żądanie nie jest autoryzowane (lub brak poprawnego uzasadnienia), odrzuca operację odszyfrowania, co uniemożliwia dostęp do danych.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Encrypt the data... using Customer Managed Encryption Keys. Configure an IAM deny policy...
@@ -110,7 +110,7 @@ C. Encrypt the data... using Customer Managed Encryption Keys backed by a Cloud 
    * Dlaczego nieprawidłowa: Cloud HSM to usługa zarządzana w chmurze Google. Klucze nie są przechowywane w lokalnej serwerowni klienta. Logi dostępu (Data Access Logs) są jedynie mechanizmem audytowym po fakcie, a nie aktywnym systemem odrzucania nieautoryzowanych zapytań o klucz na bazie KAJ.
 
 4. Wskazówki, hinty, tips and tricks:
-* Pełna kontrola nad kluczami poza GCP + wymaganie uzasadnienia żądań dostępu -> **External HSM (Cloud EKM)** + **Key Access Justifications (KAJ)**.
+* Pełna kontrola nad kluczami poza GCP + wymaganie uzasadnienia żądań dostępu -> <strong>External HSM (Cloud EKM)</strong> + <strong>Key Access Justifications (KAJ)</strong>.
 * KAJ pozwala na blokowanie żądań bezpośrednio na zewnętrznym systemie klienta (external key coordinator/system).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

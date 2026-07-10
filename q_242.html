@@ -99,7 +99,7 @@ Odpowiedź D jest prawidłowa, ponieważ polityka organizacji `constraints/iam.a
 Analiza hierarchii i dziedziczenia:
 a. Na poziomie organizacji dozwolona była domena `terramearth.com`.
 b. Na poziomie folderu "Apps" zdefiniowano politykę zezwalającą wyłącznie na domenę `flowlogistic.com`.
-c. Ustawienie właściwości `inheritFromParent: false` oznacza, że folder "Apps" (i wszystkie projekty pod nim) **nie dziedziczą** reguł z poziomu organizacji. Jedyną obowiązującą regułą dla folderu jest ta zdefiniowana bezpośrednio na nim.
+c. Ustawienie właściwości `inheritFromParent: false` oznacza, że folder "Apps" (i wszystkie projekty pod nim) <strong>nie dziedziczą</strong> reguł z poziomu organizacji. Jedyną obowiązującą regułą dla folderu jest ta zdefiniowana bezpośrednio na nim.
 d. W związku z tym, w projektach wewnątrz folderu "Apps" można nadawać uprawnienia IAM wyłącznie użytkownikom z domeny `flowlogistic.com`. Próba dodania użytkownika `testuser@terramearth.com` zostanie zablokowana przez silnik IAM jako naruszenie polityki organizacji.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
@@ -112,7 +112,7 @@ C. The action fails because a... policy must be defined on the current project t
 
 4. Wskazówki, hinty, tips and tricks:
 * Ograniczenie `constraints/iam.allowedPolicyMemberDomains` służy do limitowania domen e-mail (identyfikatorów katalogu Cloud Identity), które mogą otrzymać role IAM w zasobach.
-* Parametr **`inheritFromParent: false`** przerywa łańcuch dziedziczenia i sprawia, że polityki z wyższych poziomów nie są brane pod uwagę (nadpisanie całkowite).
+* Parametr <strong>`inheritFromParent: false`</strong> przerywa łańcuch dziedziczenia i sprawia, że polityki z wyższych poziomów nie są brane pod uwagę (nadpisanie całkowite).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Policy at folder level with `inheritFromParent: false` -> Policy from organization does not apply. Only folder-level domains allowed.

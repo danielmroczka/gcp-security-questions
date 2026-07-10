@@ -94,7 +94,7 @@ A. Configure a throttle action by using Google Cloud Armor to limit the number o
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Aplikacja doświadcza nagłych skoków natężenia ruchu (traffic spikes) z wielu adresów IP. Ponieważ intencje klientów i status adresów IP (czy są złośliwe, czy to np. nagły wzrost popularności serwisu) nie są znane, priorytetem jest zabezpieczenie dostępności aplikacji przy jednoczesnym uniknięciu fałszywych dopasowań (false positives) i całkowitego zablokowania potencjalnych, prawdziwych klientów.
-Google Cloud Armor posiada mechanizm ograniczania natężenia ruchu (Rate Limiting). Konfiguracja akcji typu **Throttle** pozwala na nałożenie limitu na liczbę żądań HTTP(S), jakie dany klient może wysłać w określonym przedziale czasu (np. maksymalnie 100 żądań na minutę). Jeśli limit zostanie przekroczony, nadmiarowy ruch jest odrzucany, a po zresetowaniu licznika czasu klient może ponownie wysyłać zapytania. Jest to optymalny kompromis chroniący serwery aplikacyjne przed przeciążeniem bez odcinania dostępu klientom na stałe.
+Google Cloud Armor posiada mechanizm ograniczania natężenia ruchu (Rate Limiting). Konfiguracja akcji typu <strong>Throttle</strong> pozwala na nałożenie limitu na liczbę żądań HTTP(S), jakie dany klient może wysłać w określonym przedziale czasu (np. maksymalnie 100 żądań na minutę). Jeśli limit zostanie przekroczony, nadmiarowy ruch jest odrzucany, a po zresetowaniu licznika czasu klient może ponownie wysyłać zapytania. Jest to optymalny kompromis chroniący serwery aplikacyjne przed przeciążeniem bez odcinania dostępu klientom na stałe.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - B. Configure a rate_based_ban action...: Akcja typu ban całkowicie blokuje (zrzuca cały ruch) z danego adresu IP na określony czas (np. 5 minut) po przekroczeniu limitu. Przy braku pewności, czy ruch jest złośliwy, może to doprowadzić do zablokowania prawdziwych użytkowników na długi czas.
@@ -102,8 +102,8 @@ Google Cloud Armor posiada mechanizm ograniczania natężenia ruchu (Rate Limiti
 - D. Configure a deny action by using Google Cloud Armor to deny the clients that issued too many requests...: Zwykła akcja `deny` w Cloud Armor po prostu bezwarunkowo blokuje ruch na podstawie reguły (np. adresu IP), ale nie jest to mechanizm dynamicznego rate-limitingu (nie potrafi zliczać zapytań w oknie czasowym per-client).
 
 4. Wskazówki, hinty, tips and tricks:
-- Jeśli ruch pochodzi z nieznanych źródeł (nie wiemy, czy to atak, czy legalni klienci) i celem jest ochrona wydajności / dostępności (availability), wybieramy **Throttle** (dławienie ruchu ponad limit).
-- Jeśli celem jest twarde odcięcie ataku typu Brute Force lub DDoS ze znanych złośliwych IP, wybieramy **rate_based_ban**.
+- Jeśli ruch pochodzi z nieznanych źródeł (nie wiemy, czy to atak, czy legalni klienci) i celem jest ochrona wydajności / dostępności (availability), wybieramy <strong>Throttle</strong> (dławienie ruchu ponad limit).
+- Jeśli celem jest twarde odcięcie ataku typu Brute Force lub DDoS ze znanych złośliwych IP, wybieramy <strong>rate_based_ban</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - "limit traffic from clients" + "unknown whether IPs are malicious" + "limit over time interval" -> Cloud Armor -> throttle action.

@@ -96,7 +96,7 @@ C. Deploy an external HTTP(S) load balancer in the service project with the MIG 
 Chcesz udostępniać usługi webowe użytkownikom zewnętrznym, ale jednocześnie usunąć publiczne adresy IP z maszyn wirtualnych MIG, które działają w projekcie usługowym (Service Project) podłączonym do Shared VPC (Host Project):
 - Usunięcie publicznych adresów IP z maszyn wirtualnych minimalizuje powierzchnię ataku. Aby ruch z internetu mógł docierać do maszyn prywatnych, przed grupą instancji (MIG) należy umieścić zewnętrzny Load Balancer HTTP(S) (External HTTP(S) Load Balancer).
 - Load Balancer posiada publiczny adres IP na brzegu sieci Google i przekazuje ruch HTTP/HTTPS do prywatnych adresów IP maszyn wirtualnych backendu.
-- Zgodnie z dobrymi praktykami Shared VPC, zasoby aplikacyjne (MIG oraz przypisany do niego Load Balancer) muszą być wdrażane w **projekcie usługowym** (Service Project), gdzie deweloperzy zarządzają swoimi aplikacjami, a nie w projekcie hosta (który powinien służyć wyłącznie do zarządzania infrastrukturą sieciową).
+- Zgodnie z dobrymi praktykami Shared VPC, zasoby aplikacyjne (MIG oraz przypisany do niego Load Balancer) muszą być wdrażane w <strong>projekcie usługowym</strong> (Service Project), gdzie deweloperzy zarządzają swoimi aplikacjami, a nie w projekcie hosta (który powinien służyć wyłącznie do zarządzania infrastrukturą sieciową).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A i B. Wdrożenie bramy Cloud NAT: Cloud NAT umożliwia maszynom bez publicznych adresów IP na inicjowanie połączeń *wychodzących* do internetu (np. aktualizacja systemu), ale całkowicie blokuje i nie obsługuje ruchu *przychodzącego* inicjowanego z zewnątrz, co uniemożliwiłoby serwowanie ruchu webowego dla użytkowników.

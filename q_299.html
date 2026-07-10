@@ -96,9 +96,9 @@ D. Create a new project for the application, and use VPC Network Peering to acce
 Odpowiedź D jest prawidłowa, ponieważ umieszczenie nowej aplikacji zewnętrznej w wydzielonym projekcie (Dedicated Project) oraz sieci VPC jest podstawową zasadą izolacji bezpieczeństwa (security isolation) w chmurze.
 
 Dlaczego to zapewnia najlepszą izolację:
-a. **Izolacja na poziomie projektu (Blast Radius):** Projekt jest główną granicą bezpieczeństwa w GCP. Jeśli zewnętrzna aplikacja zostanie zhakowana (skompromitowana), napastnik nie uzyska automatycznie dostępu do zasobów wewnętrznych aplikacji, które znajdują się w innych projektach.
-b. **Kontrolowana łączność (VPC Peering):** Użycie VPC Network Peering pozwala na bezpieczną, prywatną komunikację sieciową między siecią VPC aplikacji zewnętrznej a sieciami wewnętrznymi tylko na portach i dla zasobów, które zostaną jawnie dopuszczone przez reguły firewall.
-c. **Separacja administracyjna:** Pozwala na przydzielenie zespołowi deweloperskiemu uprawnień do zarządzania tą jedną aplikacją bez dawania im dostępu do systemów wewnętrznych.
+a. <strong>Izolacja na poziomie projektu (Blast Radius):</strong> Projekt jest główną granicą bezpieczeństwa w GCP. Jeśli zewnętrzna aplikacja zostanie zhakowana (skompromitowana), napastnik nie uzyska automatycznie dostępu do zasobów wewnętrznych aplikacji, które znajdują się w innych projektach.
+b. <strong>Kontrolowana łączność (VPC Peering):</strong> Użycie VPC Network Peering pozwala na bezpieczną, prywatną komunikację sieciową między siecią VPC aplikacji zewnętrznej a sieciami wewnętrznymi tylko na portach i dla zasobów, które zostaną jawnie dopuszczone przez reguły firewall.
+c. <strong>Separacja administracyjna:</strong> Pozwala na przydzielenie zespołowi deweloperskiemu uprawnień do zarządzania tą jedną aplikacją bez dawania im dostępu do systemów wewnętrznych.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Deploy the application within the same project as an internal application. Use a Shared VPC model...
@@ -109,7 +109,7 @@ C. Create a VPC Service Controls perimeter, and place the new application's proj
    * Dlaczego nieprawidłowa: Perymetr VPC Service Controls (VPC SC) służy do izolowania usług zarządzanych (np. zakaz wywoływania API BigQuery z zewnątrz perymetru). Sam perymetr nie służy do separacji ruchu sieciowego dla nowo wdrażanej publicznej aplikacji webowej i nie zastępuje potrzeby wdrożenia jej w osobnym projekcie w celu izolacji maszyn.
 
 4. Wskazówki, hinty, tips and tricks:
-* Podstawową granicą izolacji (security boundary) w GCP jest **Projekt (Project)**.
+* Podstawową granicą izolacji (security boundary) w GCP jest <strong>Projekt (Project)</strong>.
 * Zawsze wdrażaj aplikacje o różnym profilu ryzyka (np. publiczne vs. wewnętrzne) w osobnych projektach GCP.
 * Używaj VPC Peering lub Shared VPC do bezpiecznego łączenia wydzielonych środowisk.
 

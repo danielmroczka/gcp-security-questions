@@ -96,7 +96,7 @@ B. Configure packet mirroring policies.
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Zespoły bezpieczeństwa i sieci muszą identyfikować anomalie sieciowe oraz mieć techniczną możliwość przechwytywania zawartości pakietów (payload) wewnątrz sieci VPC:
 - Aby przechwytywać rzeczywistą zawartość pakietów (payload), konieczne jest sklonowanie ruchu sieciowego na poziomie interfejsów wirtualnych maszyn.
-- Usługa **Packet Mirroring** w GCP umożliwia klonowanie całego ruchu (nagłówki + payload) i kierowanie go do systemu analizy (np. IDS). Pozwala to na pełny zapis i inspekcję pakietów sieciowych, spełniając wymaganie przechwytywania payloadu.
+- Usługa <strong>Packet Mirroring</strong> w GCP umożliwia klonowanie całego ruchu (nagłówki + payload) i kierowanie go do systemu analizy (np. IDS). Pozwala to na pełny zapis i inspekcję pakietów sieciowych, spełniając wymaganie przechwytywania payloadu.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A. Organization policy constraint: Polityki organizacji definiują ograniczenia konfiguracyjne (np. wyłączenie publicznych adresów IP), ale nie przechwytują ani nie analizują ruchu sieciowego w czasie rzeczywistym.
@@ -104,7 +104,7 @@ Zespoły bezpieczeństwa i sieci muszą identyfikować anomalie sieciowe oraz mi
 - D. Cloud Audit Logs: Logują wywołania API administracyjnych w GCP, a nie ruch sieciowy IP generowany przez maszyny wirtualne wewnątrz VPC.
 
 4. Wskazówki, hinty, tips and tricks:
-- Zawsze zwracaj uwagę na wymóg **"capture payloads"** (przechwytywanie zawartości pakietów). W sieciach GCP jedynym narzędziem, które na to pozwala, jest **Packet Mirroring**. VPC Flow Logs rejestrują tylko nagłówki/metadane połączeń.
+- Zawsze zwracaj uwagę na wymóg <strong>"capture payloads"</strong> (przechwytywanie zawartości pakietów). W sieciach GCP jedynym narzędziem, które na to pozwala, jest <strong>Packet Mirroring</strong>. VPC Flow Logs rejestrują tylko nagłówki/metadane połączeń.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Przechwytywanie zawartości pakietów (payload) w sieci -> Packet Mirroring.

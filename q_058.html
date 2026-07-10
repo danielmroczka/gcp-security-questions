@@ -91,27 +91,27 @@ Which two security characteristics are related to the use of VPC peering to conn
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: BC**
+<strong>Poprawna odpowiedź: BC</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 VPC Network Peering umożliwia bezpośrednią komunikację sieciową o niskich opóźnieniach między dwiema sieciami VPC w GCP. Charakteryzuje się następującymi cechami bezpieczeństwa:
-- **Non-transitive communication (B):** Peering VPC jest nieprzechodni (non-transitive). Oznacza to, że jeśli Sieć A ma peering z Siecią B, a Sieć B ma peering z Siecią C, to Sieć A **nie może** komunikować się z Siecią C za pośrednictwem Sieci B, chyba że skonfigurowano dodatkowy routing (np. za pomocą bram VPN lub routerów programowych). Podnosi to bezpieczeństwo i izolację sieci.
-- **Peering across different organizations (C):** Peering VPC umożliwia łączenie sieci należących do zupełnie różnych organizacji w GCP (np. integracja z siecią partnera biznesowego lub dostawcy oprogramowania).
+- <strong>Non-transitive communication (B):</strong> Peering VPC jest nieprzechodni (non-transitive). Oznacza to, że jeśli Sieć A ma peering z Siecią B, a Sieć B ma peering z Siecią C, to Sieć A <strong>nie może</strong> komunikować się z Siecią C za pośrednictwem Sieci B, chyba że skonfigurowano dodatkowy routing (np. za pomocą bram VPN lub routerów programowych). Podnosi to bezpieczeństwo i izolację sieci.
+- <strong>Peering across different organizations (C):</strong> Peering VPC umożliwia łączenie sieci należących do zupełnie różnych organizacji w GCP (np. integracja z siecią partnera biznesowego lub dostawcy oprogramowania).
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Centralne zarządzanie trasami i firewallami:** Peering łączy sieci na poziomie routingu, ale każda sieć VPC zachowuje własne, niezależne reguły zapory sieciowej (firewall rules) i własne tabele routingu. Nie ma tu centralnego zarządzania w taki sposób jak w Shared VPC.
-- **D. Reguły firewall z tagami sieciowymi między sieciami w peeringu:** Tagi sieciowe (network tags) są unikalne dla danej sieci VPC i **nie mogą** być używane jako źródło (source tag) ani cel (target tag) w regułach zapory sieciowej chroniących drugą sieć w peeringu. Do filtrowania ruchu między sieciami w peeringu należy używać adresów IP/CIDR lub kont usługowych.
-- **E. Udostępnianie wybranych podsieci:** Peering VPC domyślnie udostępnia całe sieci VPC (wszystkie podsieci) i nie pozwala na precyzyjne odizolowanie i udostępnienie tylko jednej wybranej podsieci bez stosowania reguł firewall.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Centralne zarządzanie trasami i firewallami:</strong> Peering łączy sieci na poziomie routingu, ale każda sieć VPC zachowuje własne, niezależne reguły zapory sieciowej (firewall rules) i własne tabele routingu. Nie ma tu centralnego zarządzania w taki sposób jak w Shared VPC.
+- <strong>D. Reguły firewall z tagami sieciowymi między sieciami w peeringu:</strong> Tagi sieciowe (network tags) są unikalne dla danej sieci VPC i <strong>nie mogą</strong> być używane jako źródło (source tag) ani cel (target tag) w regułach zapory sieciowej chroniących drugą sieć w peeringu. Do filtrowania ruchu między sieciami w peeringu należy używać adresów IP/CIDR lub kont usługowych.
+- <strong>E. Udostępnianie wybranych podsieci:</strong> Peering VPC domyślnie udostępnia całe sieci VPC (wszystkie podsieci) i nie pozwala na precyzyjne odizolowanie i udostępnienie tylko jednej wybranej podsieci bez stosowania reguł firewall.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
 - Pamiętaj o dwóch fundamentalnych limitach peeringu VPC w GCP:
-  1. Brak przechodniości (Peering is **non-transitive**).
-  2. Brak możliwości używania **tagów sieciowych** (network tags) w regułach firewall dla ruchu przechodzącego przez peering.
+  1. Brak przechodniości (Peering is <strong>non-transitive</strong>).
+  2. Brak możliwości używania <strong>tagów sieciowych</strong> (network tags) w regułach firewall dla ruchu przechodzącego przez peering.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Cechy peeringu VPC -> Brak przechodniości, brak wsparcia dla tagów sieciowych, łączenie między różnymi projektami/organizacjami.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - VPC Network Peering overview: https://cloud.google.com/vpc/docs/vpc-peering
 </pre>
 

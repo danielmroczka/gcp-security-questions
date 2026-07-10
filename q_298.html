@@ -96,8 +96,8 @@ C. Use Cloud Audit Logs. Create log export sinks to send these logs to a securit
 Odpowiedź C jest prawidłowa, ponieważ Cloud Audit Logs rejestruje wszystkie istotne zdarzenia związane z modyfikacjami polityk IAM, działaniami użytkowników oraz zachowaniem kont serwisowych w Google Cloud.
 
 Dlaczego to najlepsza metoda dochodzeniowa:
-a. **Pełne pokrycie (Visibility):** Logi audytowe Admin Activity oraz Data Access rejestrują wywołania API (kto, co, kiedy, z jakiego IP). Każda zmiana uprawnień w IAM oraz każda próba dostępu do danych w projektach zostaje zapisana.
-b. **Integracja z SIEM (Correlation):** Przesłanie tych logów za pomocą log sinks (odbiorników logów) do zewnętrznego systemu SIEM pozwala na korelację tych danych z logami z innych systemów firmy (np. logowania do VPN, lokalny Active Directory). Umożliwia to wykrycie zaawansowanych ataków (np. logowanie na konto serwisowe z IP z innego kraju zaraz po tym, jak inżynier zalogował się lokalnie).
+a. <strong>Pełne pokrycie (Visibility):</strong> Logi audytowe Admin Activity oraz Data Access rejestrują wywołania API (kto, co, kiedy, z jakiego IP). Każda zmiana uprawnień w IAM oraz każda próba dostępu do danych w projektach zostaje zapisana.
+b. <strong>Integracja z SIEM (Correlation):</strong> Przesłanie tych logów za pomocą log sinks (odbiorników logów) do zewnętrznego systemu SIEM pozwala na korelację tych danych z logami z innych systemów firmy (np. logowania do VPN, lokalny Active Directory). Umożliwia to wykrycie zaawansowanych ataków (np. logowanie na konto serwisowe z IP z innego kraju zaraz po tym, jak inżynier zalogował się lokalnie).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Configure Google Cloud Functions to be triggered by changes to IAM policies. Analyze changes by using the policy simulator...
@@ -108,8 +108,8 @@ D. Deploy the OS Config Management agent to your VMs. Use OS Config Management t
    * Dlaczego nieprawidłowa: OS Config Management (VM Manager) służy do zarządzania systemami operacyjnymi maszyn wirtualnych (np. instalowanie poprawek). Nie monitoruje zmian w politykach IAM na poziomie platformy Google Cloud ani nie analizuje dostępu do wrażliwych projektów.
 
 4. Wskazówki, hinty, tips and tricks:
-* Szczegółowa widoczność zmian IAM, operacji użytkowników i kont serwisowych (visibility into IAM changes and user activity) -> Zawsze używaj **Cloud Audit Logs**.
-* Analiza bezpieczeństwa i korelacja zdarzeń w skali przedsiębiorstwa -> Eksport logów do **SIEM**.
+* Szczegółowa widoczność zmian IAM, operacji użytkowników i kont serwisowych (visibility into IAM changes and user activity) -> Zawsze używaj <strong>Cloud Audit Logs</strong>.
+* Analiza bezpieczeństwa i korelacja zdarzeń w skali przedsiębiorstwa -> Eksport logów do <strong>SIEM</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Visibility into changes to IAM + user activity + service account behavior -> Cloud Audit Logs + export to SIEM.

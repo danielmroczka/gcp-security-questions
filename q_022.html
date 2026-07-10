@@ -90,25 +90,25 @@ A website design company recently migrated all customer sites to App Engine. Som
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
-Wymagane jest ograniczenie dostępu do niedokończonych stron hostowanych w App Engine tylko dla klientów i pracowników z **dowolnej lokalizacji**:
-- **Włączenie Cloud Identity-Aware Proxy (IAP) (C):** Jest to najlepsze i zgodne z zaleceniami chmurowymi rozwiązanie. IAP kontroluje dostęp do aplikacji na podstawie tożsamości użytkownika (konto Google/Workspace) oraz przypisanych ról IAM. Ponieważ autoryzacja odbywa się na poziomie tożsamości, użytkownicy mogą bezpiecznie logować się z dowolnego miejsca na świecie bez konieczności korzystania z sieci VPN czy posiadania statycznego IP.
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
+Wymagane jest ograniczenie dostępu do niedokończonych stron hostowanych w App Engine tylko dla klientów i pracowników z <strong>dowolnej lokalizacji</strong>:
+- <strong>Włączenie Cloud Identity-Aware Proxy (IAP) (C):</strong> Jest to najlepsze i zgodne z zaleceniami chmurowymi rozwiązanie. IAP kontroluje dostęp do aplikacji na podstawie tożsamości użytkownika (konto Google/Workspace) oraz przypisanych ról IAM. Ponieważ autoryzacja odbywa się na poziomie tożsamości, użytkownicy mogą bezpiecznie logować się z dowolnego miejsca na świecie bez konieczności korzystania z sieci VPN czy posiadania statycznego IP.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Upload pliku .htaccess:** Pliki `.htaccess` są specyficzne dla serwera Apache. App Engine nie korzysta z Apache i nie interpretuje plików `.htaccess`.
-- **B. App Engine firewall rule:** Reguły zapory App Engine filtrują ruch wyłącznie po adresach IP. Ponieważ klienci i pracownicy mogą łączyć się z "dowolnej lokalizacji" (np. z domów, kawiarni z dynamicznymi IP), zarządzanie regułami firewall dla setek zmieniających się adresów IP jest niemożliwe i nieskuteczne.
-- **D. Cloud VPN:** Wdrożenie VPN wymagałoby od każdego klienta zewnętrznego instalacji i konfiguracji oprogramowania VPN, co jest zbyt inwazyjne, trudne do wdrożenia u klientów i niepotrzebnie skomplikowane w porównaniu z IAP.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Upload pliku .htaccess:</strong> Pliki `.htaccess` są specyficzne dla serwera Apache. App Engine nie korzysta z Apache i nie interpretuje plików `.htaccess`.
+- <strong>B. App Engine firewall rule:</strong> Reguły zapory App Engine filtrują ruch wyłącznie po adresach IP. Ponieważ klienci i pracownicy mogą łączyć się z "dowolnej lokalizacji" (np. z domów, kawiarni z dynamicznymi IP), zarządzanie regułami firewall dla setek zmieniających się adresów IP jest niemożliwe i nieskuteczne.
+- <strong>D. Cloud VPN:</strong> Wdrożenie VPN wymagałoby od każdego klienta zewnętrznego instalacji i konfiguracji oprogramowania VPN, co jest zbyt inwazyjne, trudne do wdrożenia u klientów i niepotrzebnie skomplikowane w porównaniu z IAP.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Słowo-klucz: **from any location** (z dowolnej lokalizacji). Filtrowanie po IP (Firewall) odpada w scenariuszach pracy mobilnej/zdalnej.
-- Cloud IAP realizuje model bezpieczeństwa **Zero Trust** (BeyondCorp) na poziomie warstwy aplikacyjnej.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Słowo-klucz: <strong>from any location</strong> (z dowolnej lokalizacji). Filtrowanie po IP (Firewall) odpada w scenariuszach pracy mobilnej/zdalnej.
+- Cloud IAP realizuje model bezpieczeństwa <strong>Zero Trust</strong> (BeyondCorp) na poziomie warstwy aplikacyjnej.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Dostęp dla uprawnionych użytkowników z dowolnego IP -> Cloud IAP.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Dokumentacja Cloud IAP dla App Engine: https://cloud.google.com/iap/docs/app-engine-quickstart
 </pre>
 

@@ -65,10 +65,10 @@ B. Collect all logs into an organization-level aggregated log sink and send the 
 Odpowiedź B jest prawidłowa, ponieważ przedstawia wysoce niezawodną, skalowalną i odporną na awarie (fault-tolerant) architekturę przesyłania logów w czasie rzeczywistym z Google Cloud do lokalnego systemu SIEM, zgodną z najlepszymi praktykami Google.
 
 Analiza techniczna:
-a. **Zagregowany log sink (Aggregated Log Sink):** Zbiera logi ze wszystkich projektów w organizacji w jednym miejscu, co gwarantuje pełną widoczność.
-b. **Pub/Sub jako bufor:** Zapewnia asynchroniczne i odporne na skoki obciążenia kolejkowanie logów. Działa w trybie "at-least-once delivery", gwarantując, że żadna wiadomość nie zostanie utracona w przypadku niedostępności SIEM.
-c. **Dataflow (Autoscaling & Reliability):** Usługa Dataflow automatycznie dopasowuje liczbę procesów do ilości generowanych logów. Użycie szablonu Pub/Sub to Splunk/SIEM pozwala na bezpieczne przesyłanie logów przez HTTPS.
-d. **Obsługa błędów (Dead-Letter Queue / Replay):** Zdefiniowanie zapasowego potoku Dataflow do ponownego wysyłania nieudanych dostarczeń (np. z powodu chwilowej awarii sieci on-premises) gwarantuje spełnienie wymogu bezwzględnego dostarczenia wszystkich logów (fault tolerance).
+a. <strong>Zagregowany log sink (Aggregated Log Sink):</strong> Zbiera logi ze wszystkich projektów w organizacji w jednym miejscu, co gwarantuje pełną widoczność.
+b. <strong>Pub/Sub jako bufor:</strong> Zapewnia asynchroniczne i odporne na skoki obciążenia kolejkowanie logów. Działa w trybie "at-least-once delivery", gwarantując, że żadna wiadomość nie zostanie utracona w przypadku niedostępności SIEM.
+c. <strong>Dataflow (Autoscaling & Reliability):</strong> Usługa Dataflow automatycznie dopasowuje liczbę procesów do ilości generowanych logów. Użycie szablonu Pub/Sub to Splunk/SIEM pozwala na bezpieczne przesyłanie logów przez HTTPS.
+d. <strong>Obsługa błędów (Dead-Letter Queue / Replay):</strong> Zdefiniowanie zapasowego potoku Dataflow do ponownego wysyłania nieudanych dostarczeń (np. z powodu chwilowej awarii sieci on-premises) gwarantuje spełnienie wymogu bezwzględnego dostarczenia wszystkich logów (fault tolerance).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. ...Write a custom Python script on a Cloud Function... Schedule... twice per day.
@@ -79,7 +79,7 @@ D. Utilize custom firewall rules to allow your SIEM to directly query Google Clo
    * Dlaczego nieprawidłowa: Bezpośrednie odpytywanie (querying) logów GCP przez lokalny SIEM przez sieć zewnętrzną jest nieefektywne, generuje ogromne koszty zapytań API i transferu oraz nie jest rozwiązaniem typu "push" w czasie rzeczywistym.
 
 4. Wskazówki, hinty, tips and tricks:
-* Przesyłanie logów do SIEM (np. Splunk) w czasie rzeczywistym z obsługą błędów -> Standardowy wzorzec architektoniczny: **Cloud Logging -> Pub/Sub -> Dataflow (z obsługą nieudanych zapytań) -> SIEM**.
+* Przesyłanie logów do SIEM (np. Splunk) w czasie rzeczywistym z obsługą błędów -> Standardowy wzorzec architektoniczny: <strong>Cloud Logging -> Pub/Sub -> Dataflow (z obsługą nieudanych zapytań) -> SIEM</strong>.
 * Pub/Sub i Dataflow są w pełni zarządzanymi usługami, które automatycznie skalują się do dowolnego wolumenu danych.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

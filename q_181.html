@@ -94,8 +94,8 @@ D. Ensure that VM Manager is installed and running on the VMs. In the OS patch m
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Firma musi codziennie instalować krytyczne poprawki systemu operacyjnego (OS patching) na maszynach prywatnych (za bramą Cloud NAT) oraz generować raporty podsumowujące:
-- **VM Manager** to zestaw zintegrowanych narzędzi GCP służących do zarządzania systemami operacyjnymi na instancjach Compute Engine.
-- Moduł **OS patch management** (zarządzanie poprawkami) pozwala na pełne zautomatyzowanie procesu wdrażania poprawek. Zamiast pisać skrypty, administrator definiuje zadania aktualizacji (Patch Jobs) bezpośrednio w konsoli chmury, wskazując harmonogram (np. codziennie) oraz typ poprawek (np. krytyczne). VM Manager dba o pobranie poprawek przez Cloud NAT, ich instalację oraz automatycznie generuje raporty zgodności, co całkowicie eliminuje narzut operacyjny.
+- <strong>VM Manager</strong> to zestaw zintegrowanych narzędzi GCP służących do zarządzania systemami operacyjnymi na instancjach Compute Engine.
+- Moduł <strong>OS patch management</strong> (zarządzanie poprawkami) pozwala na pełne zautomatyzowanie procesu wdrażania poprawek. Zamiast pisać skrypty, administrator definiuje zadania aktualizacji (Patch Jobs) bezpośrednio w konsoli chmury, wskazując harmonogram (np. codziennie) oraz typ poprawek (np. krytyczne). VM Manager dba o pobranie poprawek przez Cloud NAT, ich instalację oraz automatycznie generuje raporty zgodności, co całkowicie eliminuje narzut operacyjny.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A. Ręczne logowanie się i uruchamianie aktualizacji: Generuje gigantyczny narzut operacyjny dla administratorów przy zarządzaniu wieloma maszynami i uniemożliwia spójne generowanie raportów audytowych.
@@ -103,7 +103,7 @@ Firma musi codziennie instalować krytyczne poprawki systemu operacyjnego (OS pa
 - C. Przypisywanie publicznych adresów IP maszynom wirtualnym: Jest to poważne naruszenie zasad bezpieczeństwa, wystawiające prywatne maszyny bezpośrednio na zagrożenia z internetu.
 
 4. Wskazówki, hinty, tips and tricks:
-- Do centralnego, automatycznego aktualizowania systemów operacyjnych maszyn wirtualnych (patching) i generowania raportów w GCP służy usługa **VM Manager** (wymagająca zainstalowania agenta OS Config na instancjach).
+- Do centralnego, automatycznego aktualizowania systemów operacyjnych maszyn wirtualnych (patching) i generowania raportów w GCP służy usługa <strong>VM Manager</strong> (wymagająca zainstalowania agenta OS Config na instancjach).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Codzienne instalowanie krytycznych łatek (patching) + raportowanie -> VM Manager (OS patch management).

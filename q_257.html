@@ -65,9 +65,9 @@ A. Create a service account. Grant bucket access to the Pods by using Workload I
 Odpowiedź A jest prawidłowa, ponieważ Workload Identity Federation for GKE (dawniej znane jako GKE Workload Identity) jest zalecaną i najbezpieczniejszą metodą nadawania uprawnień IAM aplikacjom działającym w kontenerach na klastrach GKE.
 
 Mechanizm działania i zalety:
-a. **Mapowanie tożsamości Kubernetes na IAM:** Łączymy konto serwisowe Kubernetes (KSA - używane wewnątrz klastra przez Pod) z kontem serwisowym Google Cloud (GSA).
-b. **Brak kluczy:** Pod pobiera krótkotrwałe tokeny dostępu bezpośrednio z serwera metadanych GKE w locie. Całkowicie eliminuje to potrzebę generowania, zapisywania, rotowania i zabezpieczania fizycznych kluczy prywatnych kont serwisowych (plików JSON) wewnątrz klastra.
-c. **Minimalizacja narzutu (least management overhead):** Zarządzanie uprawnieniami odbywa się w pełni deklaratywnie przez pliki YAML w Kubernetes, a tokeny są odnawiane automatycznie przez platformę GCP.
+a. <strong>Mapowanie tożsamości Kubernetes na IAM:</strong> Łączymy konto serwisowe Kubernetes (KSA - używane wewnątrz klastra przez Pod) z kontem serwisowym Google Cloud (GSA).
+b. <strong>Brak kluczy:</strong> Pod pobiera krótkotrwałe tokeny dostępu bezpośrednio z serwera metadanych GKE w locie. Całkowicie eliminuje to potrzebę generowania, zapisywania, rotowania i zabezpieczania fizycznych kluczy prywatnych kont serwisowych (plików JSON) wewnątrz klastra.
+c. <strong>Minimalizacja narzutu (least management overhead):</strong> Zarządzanie uprawnieniami odbywa się w pełni deklaratywnie przez pliki YAML w Kubernetes, a tokeny są odnawiane automatycznie przez platformę GCP.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. ...Store the keys in Secret Manager with a 30-day rotation schedule...
@@ -78,7 +78,7 @@ D. ...Store the keys in Secret Manager. Reference the keys...
    * Dlaczego nieprawidłowa: Podobnie jak opcja B, ta metoda wymaga zarządzania sekretami i integracji z Secret Managerem z poziomu kodu aplikacji w Podach, co zwiększa złożoność kodu i narzut operacyjny w porównaniu z automatycznym i natywnym Workload Identity.
 
 4. Wskazówki, hinty, tips and tricks:
-* Nadawanie uprawnień Podom w GKE do usług GCP (GCS, BigQuery itp.) -> Zawsze wybieraj **Workload Identity Federation for GKE** (Workload Identity).
+* Nadawanie uprawnień Podom w GKE do usług GCP (GCS, BigQuery itp.) -> Zawsze wybieraj <strong>Workload Identity Federation for GKE</strong> (Workload Identity).
 * Jest to złoty standard bezpieczeństwa GKE eliminujący pliki kluczy kont serwisowych.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

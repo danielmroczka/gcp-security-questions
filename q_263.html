@@ -65,8 +65,8 @@ A. Use VM Manager to automatically distribute and apply patches to VMs across yo
 Odpowiedź A jest prawidłowa, ponieważ łączy centralne zarządzanie utwardzonymi obrazami maszyn wirtualnych z automatyzacją procesu instalowania poprawek (patching) w skali całej organizacji.
 
 Zalety tego rozwiązania:
-a. **Centralny rejestr obrazów (Central Repository):** Stworzenie zaufanego projektu, w którym przechowywane są certyfikowane, utwardzone obrazy maszyn (hardened images) pozwala na wymuszenie stosowania wyłącznie tych obrazów przez inne zespoły (np. za pomocą polityki organizacji `constraints/compute.trustedImageProjects`).
-b. **Automatyzacja poprawek (VM Manager):** Usługa OS Patch Management w VM Managerze pozwala na definiowanie harmonogramów aktualizacji systemów operacyjnych dla wszystkich maszyn wirtualnych w wielu projektach jednocześnie. Gwarantuje to, że nowo uruchomione maszyny oraz te już działające są stale patchowane i zgodne z baselinem bezpieczeństwa.
+a. <strong>Centralny rejestr obrazów (Central Repository):</strong> Stworzenie zaufanego projektu, w którym przechowywane są certyfikowane, utwardzone obrazy maszyn (hardened images) pozwala na wymuszenie stosowania wyłącznie tych obrazów przez inne zespoły (np. za pomocą polityki organizacji `constraints/compute.trustedImageProjects`).
+b. <strong>Automatyzacja poprawek (VM Manager):</strong> Usługa OS Patch Management w VM Managerze pozwala na definiowanie harmonogramów aktualizacji systemów operacyjnych dla wszystkich maszyn wirtualnych w wielu projektach jednocześnie. Gwarantuje to, że nowo uruchomione maszyny oraz te już działające są stale patchowane i zgodne z baselinem bezpieczeństwa.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. Configure the sole-tenancy feature in Compute Engine for all projects...
@@ -77,8 +77,8 @@ D. Activate Security Command Center Enterprise. Use VM discovery and posture man
    * Dlaczego nieprawidłowa: SCC Enterprise pozwala na monitorowanie stanu maszyn i zgłaszanie alertów o braku poprawek (compliance), ale nie jest dedykowanym narzędziem do bezpośredniego wdrażania aktualizacji pakietów systemowych na maszynach w taki sposób jak VM Manager.
 
 4. Wskazówki, hinty, tips and tricks:
-* VM Sprawl i spójność poprawek systemowych -> Zawsze używaj **VM Manager** (OS Patch Management).
-* Do wymuszenia bezpiecznych obrazów bazowych stosuj **Trusted Image Projects** na poziomie polityki organizacji.
+* VM Sprawl i spójność poprawek systemowych -> Zawsze używaj <strong>VM Manager</strong> (OS Patch Management).
+* Do wymuszenia bezpiecznych obrazów bazowych stosuj <strong>Trusted Image Projects</strong> na poziomie polityki organizacji.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Centralize VM image management + automate patch enforcement -> VM Manager + central repository of hardened images.

@@ -110,7 +110,7 @@ C. Configure Cloud Interconnect with HA VPN. Replace the default 0.0.0.0/0 route
    * Dlaczego nieprawidłowa: Chociaż Cloud Interconnect z HA VPN (tzw. VPN over Interconnect) zapewnia szyfrowanie IPsec, to dodanie warstwy VPN na fizycznym łączu Interconnect drastycznie ogranicza przepustowość do limitów tuneli VPN oraz narzuca narzut na procesowanie pakietów. Pytanie prosi o najwyższą wydajność/przepustowość, co wskazuje na czysty Cloud Interconnect.
 
 4. Wskazówki, hinty, tips and tricks:
-* Najwyższa wydajność i przepustowość łącza hybrydowego w GCP -> Zawsze **Cloud Interconnect**.
+* Najwyższa wydajność i przepustowość łącza hybrydowego w GCP -> Zawsze <strong>Cloud Interconnect</strong>.
 * Przekierowanie ruchu internetowego do sieci lokalnej (forced tunneling) realizuje się poprzez ogłoszenie trasy `0.0.0.0/0` przez protokół BGP z lokalnej serwerowni do GCP Cloud Router.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

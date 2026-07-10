@@ -89,25 +89,25 @@ A company has redundant mail servers in different Google Cloud Platform regions 
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Klient posiada serwery pocztowe w różnych regionach GCP i chce kierować ruch do najbliższej lokalizacji na porcie TCP 995 (bezpieczny POP3/SSL):
-- **Skonfigurowanie TCP Proxy Load Balancing (A):** Jest to globalna usługa równoważenia obciążenia (Global Load Balancer) przeznaczona dla ruchu TCP niebędącego ruchem HTTP(S). Działa na poziomie globalnym z użyciem jednego adresu IP typu anycast, automatycznie terminując sesje TCP w najbliższym punkcie dostępowym Google (Edge POP) i przekazując ruch do najbliższego zdrowego serwera pocztowego w chmurze na porcie 995.
+- <strong>Skonfigurowanie TCP Proxy Load Balancing (A):</strong> Jest to globalna usługa równoważenia obciążenia (Global Load Balancer) przeznaczona dla ruchu TCP niebędącego ruchem HTTP(S). Działa na poziomie globalnym z użyciem jednego adresu IP typu anycast, automatycznie terminując sesje TCP w najbliższym punkcie dostępowym Google (Edge POP) i przekazując ruch do najbliższego zdrowego serwera pocztowego w chmurze na porcie 995.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Network Load Balancer (NLB):** NLB jest usługą regionalną, nie globalną. Działa na poziomie warstwy 4 (bez terminacji proxy) i nie kieruje automatycznie ruchu z całego świata do najbliższego geograficznie regionu na podstawie jednego IP anycast w tak efektywny sposób jak TCP Proxy.
-- **C. HTTP(S) Load Balancer:** Protokół pocztowy POP3/SSL na porcie 995 korzysta z czystego TCP, a nie HTTP(S). HTTP(S) LB nie obsługuje ruchu nie-HTTP.
-- **D. Cloud CDN:** Służy do buforowania zawartości statycznej (obrazki, skrypty) dla stron WWW, nie obsługuje protokołów pocztowych TCP takich jak POP3.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Network Load Balancer (NLB):</strong> NLB jest usługą regionalną, nie globalną. Działa na poziomie warstwy 4 (bez terminacji proxy) i nie kieruje automatycznie ruchu z całego świata do najbliższego geograficznie regionu na podstawie jednego IP anycast w tak efektywny sposób jak TCP Proxy.
+- <strong>C. HTTP(S) Load Balancer:</strong> Protokół pocztowy POP3/SSL na porcie 995 korzysta z czystego TCP, a nie HTTP(S). HTTP(S) LB nie obsługuje ruchu nie-HTTP.
+- <strong>D. Cloud CDN:</strong> Służy do buforowania zawartości statycznej (obrazki, skrypty) dla stron WWW, nie obsługuje protokołów pocztowych TCP takich jak POP3.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Jeśli ruch to czyste TCP/SSL (inne niż porty 80/443), a wymaganiem jest globalne kierowanie i wysoka dostępność -> Użyj **TCP Proxy Load Balancing** lub **SSL Proxy Load Balancing**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Jeśli ruch to czyste TCP/SSL (inne niż porty 80/443), a wymaganiem jest globalne kierowanie i wysoka dostępność -> Użyj <strong>TCP Proxy Load Balancing</strong> lub <strong>SSL Proxy Load Balancing</strong>.
 - Pamiętaj, że proxy terminują ruch na brzegu sieci (Google Edge).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Globalny ruch TCP (nie-HTTP) -> TCP Proxy Load Balancer.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - TCP Proxy Load Balancing Overview: https://cloud.google.com/load-balancing/docs/tcp
 </pre>
 

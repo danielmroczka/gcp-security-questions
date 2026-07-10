@@ -97,9 +97,9 @@ D. Activate Identity-Aware Proxy (IAP) on the Application Load Balancer backend.
 Odpowiedź D jest prawidłowa, ponieważ włączenie Identity-Aware Proxy (IAP) na poziomie zewnętrznego Load Balancera (Application Load Balancer) chroniącego usługę Cloud Run w pełni realizuje wymaganie uwierzytelniania użytkowników za pomocą przeglądarki z obsługą Single Sign-On (SSO).
 
 Szczegóły mechanizmu:
-a. **Integracja z Load Balancerem:** Ruch z internetu trafia do Load Balancera, który przekazuje go do backendu Cloud Run.
-b. **Wymuszenie logowania (IAP):** Po aktywacji IAP na usłudze backendu, IAP przechwytuje żądania przeglądarki i automatycznie przekierowuje użytkowników do centralnego portalu logowania (Google SSO / Cloud Identity).
-c. **Kontrola dostępu:** Tylko użytkownicy posiadający rolę `roles/iap.httpsResourceAccessor` (IAP-secured Web App User) mogą przejść dalej. Cloud Run może być wówczas skonfigurowany tak, by akceptować ruch wyłącznie pochodzący z Load Balancera/IAP, co zapobiega bezpośrednim próbom dostępu.
+a. <strong>Integracja z Load Balancerem:</strong> Ruch z internetu trafia do Load Balancera, który przekazuje go do backendu Cloud Run.
+b. <strong>Wymuszenie logowania (IAP):</strong> Po aktywacji IAP na usłudze backendu, IAP przechwytuje żądania przeglądarki i automatycznie przekierowuje użytkowników do centralnego portalu logowania (Google SSO / Cloud Identity).
+c. <strong>Kontrola dostępu:</strong> Tylko użytkownicy posiadający rolę `roles/iap.httpsResourceAccessor` (IAP-secured Web App User) mogą przejść dalej. Cloud Run może być wówczas skonfigurowany tak, by akceptować ruch wyłącznie pochodzący z Load Balancera/IAP, co zapobiega bezpośrednim próbom dostępu.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Change Cloud Run configuration to require authentication. Assign the role of Cloud Run Invoker to the group...
@@ -110,7 +110,7 @@ C. Change the Ingress Control configuration of Cloud Run to internal and create 
    * Dlaczego nieprawidłowa: Ustawienie Ingress na `internal` uniemożliwia bezpośredni dostęp z internetu, ale zapora sieciowa (firewall rules) w GCP nie filtruje tożsamości użytkowników i nie oferuje mechanizmu SSO dla przeglądarek. Ponadto Cloud Run nie jest bezpośrednio chroniony tradycyjnymi regułami zapory sieciowej VPC na poziomie portów w taki sposób jak maszyny VM.
 
 4. Wskazówki, hinty, tips and tricks:
-* Ochrona publicznych aplikacji webowych (browser access + SSO) w GCP (Cloud Run, GKE, GCE) -> Zawsze **Identity-Aware Proxy (IAP)** na **HTTPS Load Balancerze**.
+* Ochrona publicznych aplikacji webowych (browser access + SSO) w GCP (Cloud Run, GKE, GCE) -> Zawsze <strong>Identity-Aware Proxy (IAP)</strong> na <strong>HTTPS Load Balancerze</strong>.
 * IAP zarządza sesjami użytkowników w przeglądarce i integruje się z systemami Identity Provider (IdP) firmy.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

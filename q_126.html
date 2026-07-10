@@ -101,7 +101,7 @@ Wymaganiem jest utrzymanie oryginalnego adresu IP klienta (Client IP) w nagłów
 - C. Internal TCP/UDP Load Balancer: Jest to wewnętrzny load balancer, który nie jest dostępny dla ruchu z publicznego internetu i nie ma zastosowania przy wdrażaniu zewnętrznych usług w Standard Tier.
 
 4. Wskazówki, hinty, tips and tricks:
-- "Maintain client IP by default" (utrzymanie adresu IP klienta) wskazuje na passthrough load balancery, czyli **Network Load Balancers**.
+- "Maintain client IP by default" (utrzymanie adresu IP klienta) wskazuje na passthrough load balancery, czyli <strong>Network Load Balancers</strong>.
 - Proxy Load Balancery (HTTP(S), SSL Proxy, TCP Proxy) zawsze maskują IP klienta adresem load balancera, chyba że włączony jest protokół PROXY lub wstrzykiwane są nagłówki L7 (jak `X-Forwarded-For`).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

@@ -105,7 +105,7 @@ W procesie ETL dane PII trafiają do BigQuery. Wymagane jest zaciemnienie (obfus
 - D. Automatyczne usuwanie/redagowanie tekstu (automatic text redaction): Trwale zastępuje wrażliwy tekst maską (np. zastępuje nazwisko tekstem `[NAME]`), co jest procesem nieodwracalnym i niszczy spójność referencyjną danych analitycznych.
 
 4. Wskazówki, hinty, tips and tricks:
-- Kiedy wymagane jest zaciemnienie danych z możliwością ich **późniejszego odczytania/odwrócenia (re-identify)**, poprawnym wyborem jest **Deterministic Encryption (AES-SIV)** z kluczami zarządzanymi w **Cloud KMS**.
+- Kiedy wymagane jest zaciemnienie danych z możliwością ich <strong>późniejszego odczytania/odwrócenia (re-identify)</strong>, poprawnym wyborem jest <strong>Deterministic Encryption (AES-SIV)</strong> z kluczami zarządzanymi w <strong>Cloud KMS</strong>.
 - Haszowanie i klasyczna redakcja (redaction) są nieodwracalne.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

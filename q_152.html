@@ -103,7 +103,7 @@ Należy scentralizować logi z projektów produkcyjnych w taki sposób, aby zesp
 - C. Eksport do kubełka Cloud Storage (GCS): Cloud Storage jest świetnym i tanim rozwiązaniem do długoterminowej archiwizacji logów (Cold Storage/Audyt), ale pliki logów są tam zapisywane w formie obiektów JSON/CSV. Nie można ich bezpośrednio przeszukiwać w interaktywnym narzędziu Logs Explorer (wymagałoby to importu do BigQuery lub pobierania plików).
 
 4. Wskazówki, hinty, tips and tricks:
-- Aby logi były przeszukiwalne w **Logs Explorer**, celem eksportu musi być **Log Bucket** (`logging.googleapis.com/.../buckets/...`).
+- Aby logi były przeszukiwalne w <strong>Logs Explorer</strong>, celem eksportu musi być <strong>Log Bucket</strong> (`logging.googleapis.com/.../buckets/...`).
 - Zlew zagregowany (Aggregate Sink) z opcją `includeChildren` to standardowy sposób zbierania logów z wielu projektów w strukturze folderów/organizacji.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

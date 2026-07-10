@@ -97,8 +97,8 @@ C. Create curated tables in a separate dataset and assign the role roles/bigquer
 Odpowiedź C jest prawidłowa, ponieważ separacja danych na poziomie zbiorów danych (datasets) w BigQuery jest standardową i najbezpieczniejszą metodą implementacji zasady najmniejszych uprawnień (least privilege) dla użytkowników biznesowych, którzy potrzebują wglądu jedynie w przetworzone i bezpieczne raporty.
 
 Analiza techniczna:
-a. **Zasada Need to Know:** Biznesowi użytkownicy nie powinni mieć dostępu do surowych, wrażliwych danych. Stworzenie wydzielonego zbioru danych (dataset) zawierającego wyłącznie wyselekcjonowane i zagregowane tabele/widoki (curated tables/views) izoluje wrażliwe informacje u źródła.
-b. **Rola Data Viewer:** Przypisanie roli `roles/bigquery.dataViewer` do tego dedykowanego zbioru danych pozwala użytkownikom biznesowym na odpytywanie i przeglądanie danych raportowych, jednocześnie blokując im możliwość modyfikacji danych lub wglądu w inne, nieautoryzowane zbiory danych w projekcie.
+a. <strong>Zasada Need to Know:</strong> Biznesowi użytkownicy nie powinni mieć dostępu do surowych, wrażliwych danych. Stworzenie wydzielonego zbioru danych (dataset) zawierającego wyłącznie wyselekcjonowane i zagregowane tabele/widoki (curated tables/views) izoluje wrażliwe informacje u źródła.
+b. <strong>Rola Data Viewer:</strong> Przypisanie roli `roles/bigquery.dataViewer` do tego dedykowanego zbioru danych pozwala użytkownikom biznesowym na odpytywanie i przeglądanie danych raportowych, jednocześnie blokując im możliwość modyfikacji danych lub wglądu w inne, nieautoryzowane zbiory danych w projekcie.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Configure data access log for BigQuery services, and grant Project Viewer role...
@@ -109,7 +109,7 @@ D. Generate a CSV data file based on the business user's needs, and send the dat
    * Dlaczego nieprawidłowa: Ręczne lub automatyczne wysyłanie plików CSV e-mailem jest niebezpieczne (dane mogą zostać przechwycone, brak kontroli po wysłaniu pliku) i nieefektywne w porównaniu z kontrolowanym dostępem przez natywne mechanizmy BigQuery.
 
 4. Wskazówki, hinty, tips and tricks:
-* Aby ograniczyć dostęp użytkownikom do wrażliwych tabel w BigQuery, dobrą praktyką jest stosowanie **Autoryzowanych Widoków (Authorized Views)** lub dedykowanych zbiorów danych (Datasets) z rolą **BigQuery Data Viewer**.
+* Aby ograniczyć dostęp użytkownikom do wrażliwych tabel w BigQuery, dobrą praktyką jest stosowanie <strong>Autoryzowanych Widoków (Authorized Views)</strong> lub dedykowanych zbiorów danych (Datasets) z rolą <strong>BigQuery Data Viewer</strong>.
 * Operator bezpieczeństwa (Security Operator) powinien mieć dostęp do logów audytowych w Cloud Logging, a nie bezpośrednie role projektowe w BigQuery.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

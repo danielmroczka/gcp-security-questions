@@ -89,27 +89,27 @@ Your company has deployed an application on Compute Engine. The application is a
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: D**
+<strong>Poprawna odpowiedź: D</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagania dotyczące Load Balancera to:
 - Równoważenie obciążenia dla ruchu niebędącego ruchem HTTP/HTTPS (port 587 - SMTP).
 - Wymóg szyfrowania TLS zakończonego (terminowanego) na Load Balancerze (SSL termination).
-- **SSL Proxy Load Balancing (D):** Jest to globalny Load Balancer przeznaczony dla ruchu szyfrowanego SSL/TLS nie-HTTP (takiego jak SMTP na porcie 587). SSL Proxy przyjmuje połączenie SSL od klienta, deszyfruje je na brzegu sieci Google przy użyciu zainstalowanego certyfikatu i przesyła czysty ruch TCP do instancji backendowych w chmurze. Zapewnia to centralne zarządzanie certyfikatami i odciąża procesory maszyn wirtualnych.
+- <strong>SSL Proxy Load Balancing (D):</strong> Jest to globalny Load Balancer przeznaczony dla ruchu szyfrowanego SSL/TLS nie-HTTP (takiego jak SMTP na porcie 587). SSL Proxy przyjmuje połączenie SSL od klienta, deszyfruje je na brzegu sieci Google przy użyciu zainstalowanego certyfikatu i przesyła czysty ruch TCP do instancji backendowych w chmurze. Zapewnia to centralne zarządzanie certyfikatami i odciąża procesory maszyn wirtualnych.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Network Load Balancing (NLB):** Działa w warstwie 4 i nie ma możliwości deszyfrowania ani terminacji SSL/TLS na poziomie Load Balancera. Przekazuje zaszyfrowany ruch bezpośrednio do maszyn backendowych, co zmusza do instalacji certyfikatów na każdej maszynie.
-- **B. HTTP(S) Load Balancing:** Działa w warstwie 7, ale obsługuje wyłącznie ruch protokołów HTTP i HTTPS. Nie może obsługiwać innych protokołów TCP takich jak bezpieczny SMTP na porcie 587.
-- **C. TCP Proxy Load Balancing:** Równoważy ruch TCP nie-HTTP i terminuje połączenia TCP na LB, ale nie obsługuje natywnej terminacji i deszyfrowania SSL/TLS przy użyciu certyfikatów w taki sposób jak SSL Proxy.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Network Load Balancing (NLB):</strong> Działa w warstwie 4 i nie ma możliwości deszyfrowania ani terminacji SSL/TLS na poziomie Load Balancera. Przekazuje zaszyfrowany ruch bezpośrednio do maszyn backendowych, co zmusza do instalacji certyfikatów na każdej maszynie.
+- <strong>B. HTTP(S) Load Balancing:</strong> Działa w warstwie 7, ale obsługuje wyłącznie ruch protokołów HTTP i HTTPS. Nie może obsługiwać innych protokołów TCP takich jak bezpieczny SMTP na porcie 587.
+- <strong>C. TCP Proxy Load Balancing:</strong> Równoważy ruch TCP nie-HTTP i terminuje połączenia TCP na LB, ale nie obsługuje natywnej terminacji i deszyfrowania SSL/TLS przy użyciu certyfikatów w taki sposób jak SSL Proxy.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Słowo-klucz: **secured using TLS** (szyfrowanie SSL) oraz **terminated by the Load Balancer** (terminacja na LB) dla ruchu nie-HTTP (port 587). Prawidłową odpowiedzią jest **SSL Proxy Load Balancing**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Słowo-klucz: <strong>secured using TLS</strong> (szyfrowanie SSL) oraz <strong>terminated by the Load Balancer</strong> (terminacja na LB) dla ruchu nie-HTTP (port 587). Prawidłową odpowiedzią jest <strong>SSL Proxy Load Balancing</strong>.
 - Jeśli ruch byłby czystym TCP bez deszyfrowania -> TCP Proxy. Jeśli ruchem byłby HTTPS -> HTTP(S) LB.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Szyfrowanie SSL (nie-HTTP) + terminacja na Load Balancerze -> SSL Proxy Load Balancer.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - SSL Proxy Load Balancing overview: https://cloud.google.com/load-balancing/docs/ssl
 </pre>
 

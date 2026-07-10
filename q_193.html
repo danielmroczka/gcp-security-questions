@@ -95,7 +95,7 @@ B. Create a Cloud Data loss Prevention (DLP) inspection job that de-identifies P
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Wymaganiem jest automatyczne wykrycie i usunięcie danych osobowych (PII) z plików (np. skanów dowodów osobistych i umów) starszych niż 12 miesięcy, a następnie zarchiwizowanie zanonimizowanych plików w Cloud Storage oraz usunięcie oryginalnych, zawierających PII.
-Do wyszukiwania i maskowania/usuwania danych wrażliwych (PII) w plikach tekstowych lub graficznych służy dedykowana usługa **Cloud Data Loss Prevention (Cloud DLP)**.
+Do wyszukiwania i maskowania/usuwania danych wrażliwych (PII) w plikach tekstowych lub graficznych służy dedykowana usługa <strong>Cloud Data Loss Prevention (Cloud DLP)</strong>.
 Prawidłowy scenariusz zakłada:
 1. Uruchomienie zadania inspekcji DLP (Inspection Job), które skanuje pliki starsze niż 12 miesięcy.
 2. Zastosowanie reguł de-identyfikacji (de-identification / redaction) w celu usunięcia/zamaskowania wrażliwych fragmentów (np. PESEL, numer dowodu osobistego).
@@ -108,7 +108,7 @@ Prawidłowy scenariusz zakłada:
 - D. Implement a lifecycle policy to move objects to the Archive storage class... Use DLP API to remove PII: Ta kolejność działań jest niepoprawna. Przeniesienie plików za pomocą lifecycle policy do klasy Archive przed usunięciem PII spowodowałoby, że w archiwum wylądowałyby niezaszyfrowane, pełne dane PII. Ponadto operacja DLP musiałaby być uruchamiana na zarchiwizowanych obiektach, co generuje wysokie koszty operacyjne (opłaty za pobranie z Archive class).
 
 4. Wskazówki, hinty, tips and tricks:
-- Do modyfikacji i usuwania danych osobowych (PII / de-identification / redaction) w plikach przechowywanych w Cloud Storage zawsze służy **Cloud DLP**.
+- Do modyfikacji i usuwania danych osobowych (PII / de-identification / redaction) w plikach przechowywanych w Cloud Storage zawsze służy <strong>Cloud DLP</strong>.
 - Zapamiętaj, że polityki cyklu życia (Lifecycle Policies) działają tylko na poziomie metadanych (usunąć plik, zmienić klasę), a nie na zawartości pliku.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

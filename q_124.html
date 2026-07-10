@@ -103,9 +103,9 @@ Cel to deidentyfikacja (anonymizacja) wrażliwych danych PHI w systemie analityc
 - D. Użycie kluczy opakowanych w Cloud KMS (wrapped keys): Jest to metoda zarządzania kluczami szyfrującymi (koperta kryptograficzna), a nie metoda bezpośredniej transformacji i anonimizacji danych w Cloud DLP.
 
 4. Wskazówki, hinty, tips and tricks:
-- Jeśli proces ma być **nieodwracalny** (non-reversible) i **nie może zachowywać formatu/długości**, właściwym rozwiązaniem w Cloud DLP jest **Cryptographic Hashing**.
-- Jeśli proces ma być **odwracalny** i zachowywać spójność referencyjną (np. do operacji JOIN) -> Deterministic Encryption.
-- Jeśli proces ma być **odwracalny** i zachowywać format (np. dla walidacji UI) -> Format-preserving encryption (FPE).
+- Jeśli proces ma być <strong>nieodwracalny</strong> (non-reversible) i <strong>nie może zachowywać formatu/długości</strong>, właściwym rozwiązaniem w Cloud DLP jest <strong>Cryptographic Hashing</strong>.
+- Jeśli proces ma być <strong>odwracalny</strong> i zachowywać spójność referencyjną (np. do operacji JOIN) -> Deterministic Encryption.
+- Jeśli proces ma być <strong>odwracalny</strong> i zachowywać format (np. dla walidacji UI) -> Format-preserving encryption (FPE).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Nieodwracalna anonimizacja + zmiana długości i formatu -> Cryptographic hashing.

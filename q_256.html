@@ -65,9 +65,9 @@ C. Configure an egress rule for the Cloud Storage bucket in Perimeter-A and a co
 Odpowiedź C jest prawidłowa, ponieważ reguły wejścia i wyjścia (Ingress/Egress Rules) w VPC Service Controls (VPC SC) pozwalają na precyzyjne wdrożenie zasady najmniejszych uprawnień (least privilege) dla komunikacji między perymetrami, ograniczając dostęp tylko do konkretnych kubełków i tożsamości.
 
 Dlaczego to najlepsze podejście:
-a. **Egress Rule w Perymetrze A:** Pozwala na ruch wychodzący z zasobów wewnątrz Perymetru A (np. z projektu źródłowego) wyłącznie do określonego celu w Perymetrze B (np. do docelowego kubełka Cloud Storage).
-b. **Ingress Rule w Perymetrze B:** Zezwala na ruch przychodzący do Perymetru B wyłącznie z autoryzowanego źródła w Perymetrze A (np. z konkretnego konta serwisowego wykonującego kopiowanie).
-c. **Bezpieczeństwo:** Ta metoda nie znosi ogólnych zabezpieczeń perymetru – ruch jest dopuszczony tylko dla jednego, wskazanego zadania kopiowania i nie stwarza ryzyka masowego wycieku danych (exfiltration) z innych projektów w perymetrach.
+a. <strong>Egress Rule w Perymetrze A:</strong> Pozwala na ruch wychodzący z zasobów wewnątrz Perymetru A (np. z projektu źródłowego) wyłącznie do określonego celu w Perymetrze B (np. do docelowego kubełka Cloud Storage).
+b. <strong>Ingress Rule w Perymetrze B:</strong> Zezwala na ruch przychodzący do Perymetru B wyłącznie z autoryzowanego źródła w Perymetrze A (np. z konkretnego konta serwisowego wykonującego kopiowanie).
+c. <strong>Bezpieczeństwo:</strong> Ta metoda nie znosi ogólnych zabezpieczeń perymetru – ruch jest dopuszczony tylko dla jednego, wskazanego zadania kopiowania i nie stwarza ryzyka masowego wycieku danych (exfiltration) z innych projektów w perymetrach.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Configure a perimeter bridge... and specify the Cloud Storage buckets as the resources...
@@ -79,8 +79,8 @@ D. Configure a bidirectional egress/ingress rule for the Cloud Storage buckets..
 
 4. Wskazówki, hinty, tips and tricks:
 * Aby połączyć dwa perymetry VPC SC:
-  - Dla szerokiego połączenia projektów -> **Perimeter Bridge**.
-  - Dla precyzyjnego dostępu opartego na tożsamościach i konkretnych zasobach (least privilege) -> **Ingress/Egress Rules**.
+  - Dla szerokiego połączenia projektów -> <strong>Perimeter Bridge</strong>.
+  - Dla precyzyjnego dostępu opartego na tożsamościach i konkretnych zasobach (least privilege) -> <strong>Ingress/Egress Rules</strong>.
 * Zawsze preferuj reguły Ingress/Egress nad mostami perymetru na egzaminie z bezpieczeństwa, gdy wymagana jest kontrola granularna.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

@@ -96,9 +96,9 @@ C. Implement Cloud External Key Manager (Cloud EKM) with Key Access Justificatio
 Odpowiedź C jest prawidłowa, ponieważ połączenie Cloud External Key Manager (Cloud EKM) z funkcją Key Access Justifications (KAJ) w pełni spełnia rygorystyczne wymagania suwerenności danych oraz pełnej kontroli klienta nad operacjami odszyfrowywania w bankowości.
 
 Kluczowe zalety rozwiązania:
-a. **Klucze poza chmurą:** Klucze szyfrujące (KEK) są generowane i przechowywane w lokalnym systemie zarządzania kluczami (on-premises HSM) banku, niezależnie od Google.
-b. **Decyzyjność o odszyfrowaniu (KAJ):** Przy każdej próbie odszyfrowania danych w GCP (np. odczyt bazy przez aplikację lub wsparcie Google), GCP wysyła żądanie do lokalnego HSM wraz z kodem uzasadnienia (Key Access Justification). Bank może zdefiniować zasady, które automatycznie odrzucą (deny) żądania z nieprawidłowym uzasadnieniem (np. brak zgody klienta, nieautoryzowana próba wsparcia technicznego).
-c. **Pełen audyt:** Każde żądanie użycia klucza jest rejestrowane w lokalnym systemie banku, dając 100% pewność audytową niezależną od logów chmurowych.
+a. <strong>Klucze poza chmurą:</strong> Klucze szyfrujące (KEK) są generowane i przechowywane w lokalnym systemie zarządzania kluczami (on-premises HSM) banku, niezależnie od Google.
+b. <strong>Decyzyjność o odszyfrowaniu (KAJ):</strong> Przy każdej próbie odszyfrowania danych w GCP (np. odczyt bazy przez aplikację lub wsparcie Google), GCP wysyła żądanie do lokalnego HSM wraz z kodem uzasadnienia (Key Access Justification). Bank może zdefiniować zasady, które automatycznie odrzucą (deny) żądania z nieprawidłowym uzasadnieniem (np. brak zgody klienta, nieautoryzowana próba wsparcia technicznego).
+c. <strong>Pełen audyt:</strong> Każde żądanie użycia klucza jest rejestrowane w lokalnym systemie banku, dając 100% pewność audytową niezależną od logów chmurowych.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Utilize Google default encryption and Cloud IAM...
@@ -109,7 +109,7 @@ D. Utilize customer-managed encryption keys (CMEK) created in a dedicated Google
    * Dlaczego nieprawidłowa: Przechowywanie kluczy na maszynie wirtualnej wewnątrz GCP (nawet z Confidential Compute) oznacza, że klucze nadal fizycznie znajdują się w chmurze Google. Nie realizuje to wymogu pełnego wyodrębnienia i kontroli kluczy "niezależnie od dostawcy chmury" (independent of the cloud provider) w lokalnej infrastrukturze banku.
 
 4. Wskazówki, hinty, tips and tricks:
-* Pełna kontrola nad kluczami poza GCP + auditowanie i prawo do odrzucania żądań odszyfrowania (deny decrypt requests) -> Złoty standard suwerenności: **Cloud EKM** + **Key Access Justifications (KAJ)**.
+* Pełna kontrola nad kluczami poza GCP + auditowanie i prawo do odrzucania żądań odszyfrowania (deny decrypt requests) -> Złoty standard suwerenności: <strong>Cloud EKM</strong> + <strong>Key Access Justifications (KAJ)</strong>.
 * KAJ dostarcza powód (rationale) żądania klucza przy każdej operacji kryptograficznej.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

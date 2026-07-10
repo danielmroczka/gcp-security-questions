@@ -90,25 +90,25 @@ A business unit at a multinational corporation signs up for GCP and starts movin
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: A**
+<strong>Poprawna odpowiedź: A</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Dział bezpieczeństwa chce przejąć kontrolę nad zarządzaniem uprawnieniami (managing permissions) ORAZ audytowaniem (auditing) zasobów w nowo odkrytym zasobie organizacji chmurowej:
-- **Organization Administrator (A):** Rola Administratora Organizacji daje pełną kontrolę nad wszystkimi zasobami w hierarchii GCP (organizacja, foldery, projekty). Umożliwia zarówno przydzielanie ról IAM innym użytkownikom (zarządzanie uprawnieniami), jak i definiowanie polityk oraz audytowanie całego środowiska.
+- <strong>Organization Administrator (A):</strong> Rola Administratora Organizacji daje pełną kontrolę nad wszystkimi zasobami w hierarchii GCP (organizacja, foldery, projekty). Umożliwia zarówno przydzielanie ról IAM innym użytkownikom (zarządzanie uprawnieniami), jak i definiowanie polityk oraz audytowanie całego środowiska.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Security Reviewer (Przeglądający zabezpieczenia):** Ta rola pozwala jedynie na wgląd (odczyt) w konfigurację zabezpieczeń i logi (audyt), ale nie pozwala na modyfikowanie i zarządzanie uprawnieniami IAM (brak możliwości zapisu/edycji uprawnień).
-- **C. Organization Role Administrator:** Ta rola pozwala jedynie na tworzenie i zarządzanie niestandardowymi rolami (Custom Roles) w organizacji, ale nie daje uprawnień do przypisywania tych ról użytkownikom do konkretnych zasobów.
-- **D. Organization Policy Administrator:** Pozwala jedynie na zarządzanie ograniczeniami polityki organizacji (Organization Policies), nie daje wglądu ani uprawnień do zarządzania standardowymi rolami IAM dla użytkowników.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Security Reviewer (Przeglądający zabezpieczenia):</strong> Ta rola pozwala jedynie na wgląd (odczyt) w konfigurację zabezpieczeń i logi (audyt), ale nie pozwala na modyfikowanie i zarządzanie uprawnieniami IAM (brak możliwości zapisu/edycji uprawnień).
+- <strong>C. Organization Role Administrator:</strong> Ta rola pozwala jedynie na tworzenie i zarządzanie niestandardowymi rolami (Custom Roles) w organizacji, ale nie daje uprawnień do przypisywania tych ról użytkownikom do konkretnych zasobów.
+- <strong>D. Organization Policy Administrator:</strong> Pozwala jedynie na zarządzanie ograniczeniami polityki organizacji (Organization Policies), nie daje wglądu ani uprawnień do zarządzania standardowymi rolami IAM dla użytkowników.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Uważaj na różnicę między **Security Reviewer** (tylko odczyt/audyt) a **Organization Administrator** (pełna władza, w tym zarządzanie uprawnieniami). Ponieważ pytanie żąda *zarządzania uprawnieniami i audytu*, wymagana jest rola administratora.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Uważaj na różnicę między <strong>Security Reviewer</strong> (tylko odczyt/audyt) a <strong>Organization Administrator</strong> (pełna władza, w tym zarządzanie uprawnieniami). Ponieważ pytanie żąda *zarządzania uprawnieniami i audytu*, wymagana jest rola administratora.
 - Administrator Organizacji to rola najwyższego poziomu w hierarchii zasobów GCP.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Zarządzanie uprawnieniami + audyt w skali całej organizacji -> Organization Administrator.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - GCP Resource Hierarchy and IAM Roles: https://cloud.google.com/iam/docs/understanding-roles#organization-roles
 </pre>
 

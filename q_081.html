@@ -91,26 +91,26 @@ A customer is running an analytics workload on Google Cloud Platform (GCP) where
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: AB**
+<strong>Poprawna odpowiedź: AB</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymaganiem jest uniemożliwienie instancjom Compute Engine dostępu do internetu oraz zablokowanie dostępu z internetu do nich, przy jednoczesnym zachowaniu możliwości korzystania z usług Google Cloud takich jak Cloud Storage (GCS):
-- **Brak publicznych adresów IP (B):** Usunięcie lub nieprzypisywanie publicznych adresów IP do maszyn wirtualnych uniemożliwia bezpośredni dwukierunkowy ruch z i do internetu.
-- **Private Google Access (A):** Jest to ustawienie na poziomie podsieci VPC. Po włączeniu pozwala maszynom wirtualnym, które posiadają wyłącznie prywatne adresy IP, na bezpieczną komunikację z publicznymi punktami końcowymi API usług Google (np. Cloud Storage, BigQuery) bez przechodzenia przez publiczny internet.
+- <strong>Brak publicznych adresów IP (B):</strong> Usunięcie lub nieprzypisywanie publicznych adresów IP do maszyn wirtualnych uniemożliwia bezpośredni dwukierunkowy ruch z i do internetu.
+- <strong>Private Google Access (A):</strong> Jest to ustawienie na poziomie podsieci VPC. Po włączeniu pozwala maszynom wirtualnym, które posiadają wyłącznie prywatne adresy IP, na bezpieczną komunikację z publicznymi punktami końcowymi API usług Google (np. Cloud Storage, BigQuery) bez przechodzenia przez publiczny internet.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **C. Osobna podsieć:** Samo umieszczenie maszyn w osobnej podsieci nie blokuje dostępu do internetu ani z internetu, jeśli podsieć ta ma trasę do bramy internetowej (default internet gateway) i maszyny mają publiczne IP.
-- **D. Wyłączenie IP forwarding:** IP forwarding pozwala instancji na przekazywanie pakietów przeznaczonych dla innych adresów (np. działanie jako router). Wyłączenie tego nie odcina dostępu samej instancji do internetu.
-- **E. Cloud NAT gateway:** Cloud NAT pozwala maszynom z prywatnymi IP na inicjowanie połączeń *wychodzących* do internetu. Włączenie Cloud NAT złamałoby warunek, że maszyny nie mogą mieć dostępu do internetu.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>C. Osobna podsieć:</strong> Samo umieszczenie maszyn w osobnej podsieci nie blokuje dostępu do internetu ani z internetu, jeśli podsieć ta ma trasę do bramy internetowej (default internet gateway) i maszyny mają publiczne IP.
+- <strong>D. Wyłączenie IP forwarding:</strong> IP forwarding pozwala instancji na przekazywanie pakietów przeznaczonych dla innych adresów (np. działanie jako router). Wyłączenie tego nie odcina dostępu samej instancji do internetu.
+- <strong>E. Cloud NAT gateway:</strong> Cloud NAT pozwala maszynom z prywatnymi IP na inicjowanie połączeń *wychodzących* do internetu. Włączenie Cloud NAT złamałoby warunek, że maszyny nie mogą mieć dostępu do internetu.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Dostęp do usług Google (Cloud Storage, BigQuery) z sieci bez dostępu do internetu -> **Private Google Access** (na poziomie podsieci) + brak publicznych adresów IP.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Dostęp do usług Google (Cloud Storage, BigQuery) z sieci bez dostępu do internetu -> <strong>Private Google Access</strong> (na poziomie podsieci) + brak publicznych adresów IP.
 - Cloud NAT daje dostęp do internetu (tylko ruch wychodzący), podczas gdy Private Google Access daje dostęp *tylko* do API Google, a nie do całego internetu.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Brak internetu + Dostęp do Google APIs -> Private Google Access (PGA) + Brak publicznego IP.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Private Google Access overview: https://cloud.google.com/vpc/docs/private-google-access
 </pre>
 

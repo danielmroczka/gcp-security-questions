@@ -94,7 +94,7 @@ D. Data Access
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Administrator bazy danych chce monitorować połączenia/wywołania API, które odczytują konfigurację lub metadane zasobów Cloud SQL (np. operacje typu get lub list):
-- W Google Cloud logi audytowe (Cloud Audit Logs) dzielą się na cztery kategorie. Operacje odczytu metadanych oraz konfiguracji zasobów (np. pobranie szczegółów instancji bazy danych) są rejestrowane w logach **Data Access audit logs** (kategoria: Admin Read). Logi te rejestrują również odczyty i zapisy samych danych użytkownika wewnątrz usług.
+- W Google Cloud logi audytowe (Cloud Audit Logs) dzielą się na cztery kategorie. Operacje odczytu metadanych oraz konfiguracji zasobów (np. pobranie szczegółów instancji bazy danych) są rejestrowane w logach <strong>Data Access audit logs</strong> (kategoria: Admin Read). Logi te rejestrują również odczyty i zapisy samych danych użytkownika wewnątrz usług.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A. Admin Activity logs: Rejestrują wyłącznie operacje zapisu (modyfikacji, tworzenia, usuwania) metadanych i konfiguracji (np. utworzenie nowej bazy danych Cloud SQL, zmiana typu instancji). Nie logują operacji odczytu (read-only).
@@ -103,9 +103,9 @@ Administrator bazy danych chce monitorować połączenia/wywołania API, które 
 
 4. Wskazówki, hinty, tips and tricks:
 - Zapamiętaj podział logów audytowych:
-  - **Admin Activity** -> Operacje modyfikujące (write) konfigurację zasobów (np. `create`, `update`, `delete`). Zawsze włączone.
-  - **Data Access** -> Operacje odczytujące (read) konfigurację zasobów (np. `get`, `list`) oraz operacje na danych użytkownika. Domyślnie wyłączone (oprócz BigQuery).
-  - **Access Transparency** -> Działania inżynierów Google.
+  - <strong>Admin Activity</strong> -> Operacje modyfikujące (write) konfigurację zasobów (np. `create`, `update`, `delete`). Zawsze włączone.
+  - <strong>Data Access</strong> -> Operacje odczytujące (read) konfigurację zasobów (np. `get`, `list`) oraz operacje na danych użytkownika. Domyślnie wyłączone (oprócz BigQuery).
+  - <strong>Access Transparency</strong> -> Działania inżynierów Google.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Odczyt konfiguracji / metadanych zasobu -> Data Access logs.

@@ -65,8 +65,8 @@ C. Migrate the application to Confidential VMs to provide hardware-level encrypt
 Odpowiedź C jest prawidłowa, ponieważ Poufne Maszyny Wirtualne (Confidential VMs) oferują sprzętowe szyfrowanie pamięci operacyjnej (RAM encryption) w czasie rzeczywistym, co bezpośrednio chroni dane przed zaawansowanymi atakami typu side-channel (takimi jak ataki czasowe czy wyciąganie danych z pamięci fizycznej przez system hosta).
 
 Dlaczego to najlepsze rozwiązanie dla starego kodu:
-a. **Sprzętowe szyfrowanie (AMD SEV):** Klucze szyfrujące pamięć są generowane przez procesor wewnątrz bezpiecznej enklawy i nie są znane oprogramowaniu Google ani systemowi hosta. Chroni to dane w użyciu (in-use).
-b. **Brak modyfikacji kodu:** Confidential VMs działają transparentnie dla systemu operacyjnego i aplikacji. Przeniesienie aplikacji na ten typ maszyn nie wymaga przepisywania starego kodu ani zmian w architekturze oprogramowania, co minimalizuje ryzyko błędów (application problems).
+a. <strong>Sprzętowe szyfrowanie (AMD SEV):</strong> Klucze szyfrujące pamięć są generowane przez procesor wewnątrz bezpiecznej enklawy i nie są znane oprogramowaniu Google ani systemowi hosta. Chroni to dane w użyciu (in-use).
+b. <strong>Brak modyfikacji kodu:</strong> Confidential VMs działają transparentnie dla systemu operacyjnego i aplikacji. Przeniesienie aplikacji na ten typ maszyn nie wymaga przepisywania starego kodu ani zmian w architekturze oprogramowania, co minimalizuje ryzyko błędów (application problems).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Enforce stricter access controls for Compute Engine... least privilege IAM...
@@ -77,7 +77,7 @@ D. Utilize customer-managed encryption keys (CMEK)...
    * Dlaczego nieprawidłowa: Klucze CMEK chronią dane w spoczynku (at-rest) na dyskach oraz w kubełkach. Nie chronią danych w momencie, gdy są one ładowane w postaci jawnej do pamięci RAM procesora w celu wykonania obliczeń finansowych.
 
 4. Wskazówki, hinty, tips and tricks:
-* Ochrona danych w użyciu (data in use) przed atakami na poziomie sprzętowym/pamięci RAM (side-channel attacks) -> **Confidential VMs**.
+* Ochrona danych w użyciu (data in use) przed atakami na poziomie sprzętowym/pamięci RAM (side-channel attacks) -> <strong>Confidential VMs</strong>.
 * Confidential VMs nie wymagają żadnych modyfikacji w kodzie aplikacji.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

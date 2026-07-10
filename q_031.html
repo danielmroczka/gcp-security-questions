@@ -89,25 +89,25 @@ An organization is starting to move its infrastructure from its on-premises envi
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Pierwszym krokiem migracji jest stworzenie skalowalnego i niedrogiego środowiska do przechowywania kopii zapasowych i danych odzyskiwania katastroficznego (DR) z serwerowni lokalnej:
-- **Cloud Storage z użyciem zaplanowanego zadania i narzędzia gsutil (B):** Cloud Storage to wysoce skalowalna, obiektowa pamięć masowa o niemal nieograniczonej pojemności. Klasy przechowywania (np. Coldline lub Archive) zapewniają minimalne koszty dla rzadko używanych danych DR. Narzędzie `gsutil` pozwala na łatwe skryptowanie i automatyzację przesyłania kopii zapasowych z lokalnych serwerów.
+- <strong>Cloud Storage z użyciem zaplanowanego zadania i narzędzia gsutil (B):</strong> Cloud Storage to wysoce skalowalna, obiektowa pamięć masowa o niemal nieograniczonej pojemności. Klasy przechowywania (np. Coldline lub Archive) zapewniają minimalne koszty dla rzadko używanych danych DR. Narzędzie `gsutil` pozwala na łatwe skryptowanie i automatyzację przesyłania kopii zapasowych z lokalnych serwerów.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. BigQuery:** Jest to hurtownia danych przeznaczona do analiz analitycznych SQL. Przechowywanie tam surowych kopii zapasowych (np. obrazów dysków, backupów baz) jest nieefektywne i niezwykle kosztowne.
-- **C. Compute Engine VM z Persistent Disk:** Wymagałoby to ciągłego działania maszyn wirtualnych i opłacania stałej alokacji dysków SSD/HDD, co jest rozwiązaniem drogim i słabo skalowalnym w porównaniu do obiektowego Cloud Storage.
-- **D. Cloud Datastore (obecnie Firestore):** To baza danych NoSQL dla małych obiektów/dokumentów, całkowicie niedostosowana do przechowywania dużych plików kopii zapasowych.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. BigQuery:</strong> Jest to hurtownia danych przeznaczona do analiz analitycznych SQL. Przechowywanie tam surowych kopii zapasowych (np. obrazów dysków, backupów baz) jest nieefektywne i niezwykle kosztowne.
+- <strong>C. Compute Engine VM z Persistent Disk:</strong> Wymagałoby to ciągłego działania maszyn wirtualnych i opłacania stałej alokacji dysków SSD/HDD, co jest rozwiązaniem drogim i słabo skalowalnym w porównaniu do obiektowego Cloud Storage.
+- <strong>D. Cloud Datastore (obecnie Firestore):</strong> To baza danych NoSQL dla małych obiektów/dokumentów, całkowicie niedostosowana do przechowywania dużych plików kopii zapasowych.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Dla kopii zapasowych (backups) i archiwizacji danych (disaster recovery) w chmurze najtańszym i najprostszym wyborem jest zawsze **Cloud Storage** z odpowiednią klasą dostępu (Nearline/Coldline/Archive).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Dla kopii zapasowych (backups) i archiwizacji danych (disaster recovery) w chmurze najtańszym i najprostszym wyborem jest zawsze <strong>Cloud Storage</strong> z odpowiednią klasą dostępu (Nearline/Coldline/Archive).
 - Narzędzie `gsutil` to standardowe narzędzie CLI do zarządzania obiektami w Cloud Storage.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Przechowywanie kopii zapasowych (DR) -> Cloud Storage.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Cloud Storage classes: https://cloud.google.com/storage/docs/storage-classes
 </pre>
 

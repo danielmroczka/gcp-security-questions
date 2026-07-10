@@ -97,8 +97,8 @@ C. Explain Google's shared responsibility model. Focus the configuration review 
 Odpowiedź C jest prawidłowa, ponieważ model współdzielonej odpowiedzialności (Shared Responsibility Model) w chmurze precyzyjnie definiuje granice bezpieczeństwa między dostawcą chmury (Google) a klientem, zwłaszcza w usługach zarządzanych typu PaaS/SaaS (takich jak managed AI/Vertex AI).
 
 Podział odpowiedzialności w usługach zarządzanych AI:
-a. **Odpowiedzialność Google (Security OF the Cloud):** Google odpowiada za bezpieczeństwo infrastruktury fizycznej, sieci szkieletowej, hypervisora, kodu samej usługi AI oraz zabezpieczenie przed podatnościami platformy.
-b. **Odpowiedzialność Klienta (Security IN the Cloud):** Klient odpowiada za poprawne skonfigurowanie dostępu do usługi (uprawnienia IAM – kto może wywoływać model lub modyfikować konfigurację), bezpieczeństwo przesyłanych danych (szyfrowanie CMEK, bezpieczne przesyłanie do Cloud Storage), oraz monitorowanie logów użycia (Cloud Audit Logs) w celu wykrycia nadużyć. Opcja C skupia się dokładnie na tych elementach, które leżą w gestii klienta.
+a. <strong>Odpowiedzialność Google (Security OF the Cloud):</strong> Google odpowiada za bezpieczeństwo infrastruktury fizycznej, sieci szkieletowej, hypervisora, kodu samej usługi AI oraz zabezpieczenie przed podatnościami platformy.
+b. <strong>Odpowiedzialność Klienta (Security IN the Cloud):</strong> Klient odpowiada za poprawne skonfigurowanie dostępu do usługi (uprawnienia IAM – kto może wywoływać model lub modyfikować konfigurację), bezpieczeństwo przesyłanych danych (szyfrowanie CMEK, bezpieczne przesyłanie do Cloud Storage), oraz monitorowanie logów użycia (Cloud Audit Logs) w celu wykrycia nadużyć. Opcja C skupia się dokładnie na tych elementach, które leżą w gestii klienta.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Explain that using platform-as-a-service (PaaS) transfers security concerns to Google...

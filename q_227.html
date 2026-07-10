@@ -99,8 +99,8 @@ E. Enforce Security Key Authentication with 2SV.
 Odpowiedzi A i E są prawidłowe, ponieważ bezpośrednio utrudniają przechwycenie i ponowne użycie (replay) ciasteczek sesyjnych (session cookies) oraz poświadczeń użytkowników przez złośliwe oprogramowanie na stacjach klienckich.
 
 Analiza techniczna:
-a. **Krótszy czas trwania sesji (A):** Skrócenie czasu ważności sesji w konsoli administracyjnej ogranicza czas przydatności skradzionego ciasteczka sesyjnego. Nawet jeśli napastnik przechwyci ciastko (cookie), szybko straci ono ważność, zmuszając użytkownika do ponownej weryfikacji.
-b. **Klucze bezpieczeństwa (Security Keys - FIDO2/WebAuthn) (E):** Wymuszenie fizycznych kluczy bezpieczeństwa jako drugiego składnika (2SV) chroni przed wieloma wektorami ataków. Standard FIDO2 opiera się na kryptografii asymetrycznej i jest odporny na phishing oraz przechwycenie sesji w locie. Tokeny autoryzacyjne FIDO2 są powiązane z konkretną domeną (origin-bound), co uniemożliwia ich ponowne użycie na fałszywych witrynach i utrudnia ataki typu man-in-the-middle / session replay.
+a. <strong>Krótszy czas trwania sesji (A):</strong> Skrócenie czasu ważności sesji w konsoli administracyjnej ogranicza czas przydatności skradzionego ciasteczka sesyjnego. Nawet jeśli napastnik przechwyci ciastko (cookie), szybko straci ono ważność, zmuszając użytkownika do ponownej weryfikacji.
+b. <strong>Klucze bezpieczeństwa (Security Keys - FIDO2/WebAuthn) (E):</strong> Wymuszenie fizycznych kluczy bezpieczeństwa jako drugiego składnika (2SV) chroni przed wieloma wektorami ataków. Standard FIDO2 opiera się na kryptografii asymetrycznej i jest odporny na phishing oraz przechwycenie sesji w locie. Tokeny autoryzacyjne FIDO2 są powiązane z konkretną domeną (origin-bound), co uniemożliwia ich ponowne użycie na fałszywych witrynach i utrudnia ataki typu man-in-the-middle / session replay.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. Set an organizational policy for OAuth 2.0 access token with a shorter duration.
@@ -111,8 +111,8 @@ D. Configure a third-party identity provider with session management.
    * Dlaczego nieprawidłowa: Przeniesienie zarządzania sesją do zewnętrznego dostawcy tożsamości (IdP) nie eliminuje podatności po stronie Google – po pomyślnym uwierzytelnieniu w zewnętrznym IdP, Google i tak wystawia własne ciasteczka sesyjne (GCP session cookies) na stacji użytkownika, które nadal byłyby podatne na ataki replay.
 
 4. Wskazówki, hinty, tips and tricks:
-* Najlepsza ochrona przed phishingiem i man-in-the-middle / session replay -> **FIDO2 Security Keys** (np. YubiKey).
-* Zarządzanie czasem życia sesji w Google odbywa się przez **Google session control**.
+* Najlepsza ochrona przed phishingiem i man-in-the-middle / session replay -> <strong>FIDO2 Security Keys</strong> (np. YubiKey).
+* Zarządzanie czasem życia sesji w Google odbywa się przez <strong>Google session control</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Cookie replay attacks protection -> Google session control + Security Key (FIDO/2SV).

@@ -110,7 +110,7 @@ C. The CMEK is in a different project than the Cloud Storage bucket.
    * Dlaczego nieprawidłowa: GCP w pełni wspiera konfiguracje międzyprojektowe (cross-project CMEK). Klucz KMS może znajdować się w projekcie A (`prj-a`), a kubełek w projekcie B (`prj-b`), pod warunkiem, że nadano odpowiednie uprawnienia IAM dla konta serwisowego Cloud Storage z projektu B na kluczu w projekcie A. Sam fakt bycia w innym projekcie nie uniemożliwia dostępu.
 
 4. Wskazówki, hinty, tips and tricks:
-* Dla Cloud Storage: Klucz CMEK **musi** znajdować się w tej samej lokalizacji (regionie) co kubełek. Wyjątkiem są lokalizacje wieloregionowe (multi-region), gdzie lokalizacja klucza musi odpowiadać strukturze multi-regionu.
+* Dla Cloud Storage: Klucz CMEK <strong>musi</strong> znajdować się w tej samej lokalizacji (regionie) co kubełek. Wyjątkiem są lokalizacje wieloregionowe (multi-region), gdzie lokalizacja klucza musi odpowiadać strukturze multi-regionu.
 * Pamiętaj, że dostęp cross-project dla CMEK jest dozwolony i jest powszechną praktyką bezpieczeństwa (centralny projekt KMS).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

@@ -97,9 +97,9 @@ D. 1. Create a general service account "g-sa" to orchestrate the batch jobs. 2. 
 Odpowiedź D jest prawidłowa, ponieważ realizuje zasadę najmniejszych uprawnień (least privilege) za pomocą mechanizmu podszywania się pod konta serwisowe (Service Account Impersonation) z użyciem tokenów krótkotrwałych (short-lived tokens), całkowicie eliminując potrzebę zarządzania niebezpiecznymi kluczami długoterminowymi.
 
 Szczegóły techniczne:
-a. **Izolacja uprawnień:** Każde z pięciu zadań wsadowych (batch jobs) ma przypisane własne konto serwisowe (`b-sa-1` do `b-sa-5`) z precyzyjnie dobranymi rolami IAM. Dzięki temu błąd lub przejęcie jednego zadania nie zagraża zasobom powiązanym z pozostałymi zadaniami.
-b. **Bezpieczna orchestracja:** Maszyna wirtualna, na której działa aplikacja, używa ogólnego konta serwisowego `g-sa`. Konto to nie ma bezpośrednich uprawnień do zasobów zewnętrznych, a jedynie uprawnienie `roles/iam.serviceAccountTokenCreator` (Kreator tokenów konta serwisowego) dla pięciu kont zadaniowych.
-c. **Brak kluczy:** Gdy zachodzi potrzeba uruchomienia zadania, aplikacja (jako `g-sa`) wysyła żądanie do API Google o wygenerowanie tymczasowego tokenu dostępu OAuth 2.0 dla odpowiedniego konta `b-sa-X`. Token ten wygasa automatycznie (domyślnie po godzinie) i nie musi być nigdzie zapisywany na dysku.
+a. <strong>Izolacja uprawnień:</strong> Każde z pięciu zadań wsadowych (batch jobs) ma przypisane własne konto serwisowe (`b-sa-1` do `b-sa-5`) z precyzyjnie dobranymi rolami IAM. Dzięki temu błąd lub przejęcie jednego zadania nie zagraża zasobom powiązanym z pozostałymi zadaniami.
+b. <strong>Bezpieczna orchestracja:</strong> Maszyna wirtualna, na której działa aplikacja, używa ogólnego konta serwisowego `g-sa`. Konto to nie ma bezpośrednich uprawnień do zasobów zewnętrznych, a jedynie uprawnienie `roles/iam.serviceAccountTokenCreator` (Kreator tokenów konta serwisowego) dla pięciu kont zadaniowych.
+c. <strong>Brak kluczy:</strong> Gdy zachodzi potrzeba uruchomienia zadania, aplikacja (jako `g-sa`) wysyła żądanie do API Google o wygenerowanie tymczasowego tokenu dostępu OAuth 2.0 dla odpowiedniego konta `b-sa-X`. Token ten wygasa automatycznie (domyślnie po godzinie) i nie musi być nigdzie zapisywany na dysku.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. ...generate service account keys for each... Store the service account keys in Secret Manager...
@@ -110,7 +110,7 @@ C. ...Create a workload identity pool... Generate credential configuration files
    * Dlaczego nieprawidłowa: Workload Identity Federation (WIF) służy do nadawania tożsamości obciążeniom działającym *poza* Google Cloud (np. na AWS, Azure czy on-premises). W tym scenariuszu aplikacja działa wyłącznie na maszynach Compute Engine (VMs wewnątrz GCP), więc stosowanie WIF jest nadmiernie skomplikowane i niepotrzebne.
 
 4. Wskazówki, hinty, tips and tricks:
-* Impersonacja konta serwisowego (Service Account Impersonation) w GCP opiera się na roli **`roles/iam.serviceAccountTokenCreator`** (Service Account Token Creator).
+* Impersonacja konta serwisowego (Service Account Impersonation) w GCP opiera się na roli <strong>`roles/iam.serviceAccountTokenCreator`</strong> (Service Account Token Creator).
 * Pozwala to jednemu podmiotowi (np. maszynie z kontem `g-sa`) na generowanie tymczasowych tokenów dla innych kont serwisowych bez posiadania ich kluczy prywatnych.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

@@ -97,8 +97,8 @@ D. Define a lifecycle policy JSON with an action on SetStorageClass to COLDLINE 
 Odpowiedź D jest prawidłowa, ponieważ obiektowe zarządzanie cyklem życia (Object Lifecycle Management) w Cloud Storage jest natywną, zautomatyzowaną i bezkosztową funkcją służącą do zarządzania przechowywaniem danych i optymalizacji kosztów.
 
 Zasada działania:
-a. **Reguły cyklu życia (Lifecycle Rules):** Pozwalają na zdefiniowanie zestawu warunków (conditions) i akcji (actions).
-b. **Konfiguracja:** Warunek wieku (`age: 365`) i typu początkowego (`matchStorageClass: ["STANDARD"]`) w połączeniu z akcją `SetStorageClass` ustawioną na `COLDLINE` sprawia, że Cloud Storage automatycznie zidentyfikuje obiekty starsze niż rok i przeniesie je do tańszej klasy przechowywania Coldline. Proces ten odbywa się w tle, bez konieczności pisania kodu i ponoszenia kosztów za operacje compute.
+a. <strong>Reguły cyklu życia (Lifecycle Rules):</strong> Pozwalają na zdefiniowanie zestawu warunków (conditions) i akcji (actions).
+b. <strong>Konfiguracja:</strong> Warunek wieku (`age: 365`) i typu początkowego (`matchStorageClass: ["STANDARD"]`) w połączeniu z akcją `SetStorageClass` ustawioną na `COLDLINE` sprawia, że Cloud Storage automatycznie zidentyfikuje obiekty starsze niż rok i przeniesie je do tańszej klasy przechowywania Coldline. Proces ten odbywa się w tle, bez konieczności pisania kodu i ponoszenia kosztów za operacje compute.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Use Cloud Asset Inventory to generate a report... Examine the Lifecycle management policy...
@@ -109,7 +109,7 @@ C. Enable the Autoclass feature to manage all aspects of bucket storage classes.
    * Dlaczego nieprawidłowa: Funkcja Autoclass automatycznie przenosi dane między klasami (Standard, Nearline, Coldline, Archive) w zależności od częstotliwości rzeczywistego dostępu (access patterns) do obiektów. Nie pozwala na sztywne wymuszenie przejścia do klasy Coldline dokładnie po 365 dniach, jeśli dane są nadal sporadycznie odpytywane, co może nie przynieść pożądanej redukcji kosztów zgodnie ze zdefiniowanym wymaganiem wieku.
 
 4. Wskazówki, hinty, tips and tricks:
-* Automatyczne przenoszenie danych między klasami przechowywania (storage classes) w Cloud Storage lub ich usuwanie po określonym czasie -> Zawsze używaj **Object Lifecycle Management**.
+* Automatyczne przenoszenie danych między klasami przechowywania (storage classes) w Cloud Storage lub ich usuwanie po określonym czasie -> Zawsze używaj <strong>Object Lifecycle Management</strong>.
 * Warunki w polityce cyklu życia obejmują: wiek (age), datę utworzenia, liczbę nowszych wersji (dla wersjonowania) itp.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

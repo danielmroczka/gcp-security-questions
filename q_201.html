@@ -96,9 +96,9 @@ B. 1. Create one log sink at the organization level that includes all the child 
 Odpowiedź B jest prawidłowa, ponieważ centralizacja logów z wielu projektów (tutaj 200 projektów) i integracja z lokalnym systemem klasy SIEM w czasie rzeczywistym wymaga zastosowania zagregowanego odbiornika logów (Aggregated Sink) na poziomie organizacji oraz kolejki Pub/Sub.
 
 Kluczowe aspekty tego rozwiązania:
-a. **Zagregowany log sink (Aggregated Log Sink):** Tworząc jeden sink na poziomie organizacji z flagą uwzględniania zasobów podrzędnych (`includeChildren=true`), automatycznie przechwytujemy logi ze wszystkich istniejących i nowo tworzonych projektów bez konieczności ręcznej konfiguracji sinków w każdym projekcie z osobna. Jest to wysoce skalowalne i odporne na błędy administracyjne.
-b. **Pub/Sub jako miejsce docelowe:** Przesyłanie logów w czasie rzeczywistym do systemu SIEM on-premises najlepiej zrealizować poprzez Pub/Sub, który działa jako wysoce wydajny bufor wiadomości i pozwala na asynchroniczne pobieranie logów przez lokalne kolektory SIEM.
-c. **Uprawnienia do widoczności konfiguracji:** Nadanie zespołowi bezpieczeństwa roli `Viewer` na poziomie organizacji daje im prawo do przeglądania konfiguracji i metadanych zasobów w konsoli, co jest niezbędne do analizowania środowiska, nie dając jednocześnie uprawnień do edycji lub dostępu do danych wrażliwych.
+a. <strong>Zagregowany log sink (Aggregated Log Sink):</strong> Tworząc jeden sink na poziomie organizacji z flagą uwzględniania zasobów podrzędnych (`includeChildren=true`), automatycznie przechwytujemy logi ze wszystkich istniejących i nowo tworzonych projektów bez konieczności ręcznej konfiguracji sinków w każdym projekcie z osobna. Jest to wysoce skalowalne i odporne na błędy administracyjne.
+b. <strong>Pub/Sub jako miejsce docelowe:</strong> Przesyłanie logów w czasie rzeczywistym do systemu SIEM on-premises najlepiej zrealizować poprzez Pub/Sub, który działa jako wysoce wydajny bufor wiadomości i pozwala na asynchroniczne pobieranie logów przez lokalne kolektory SIEM.
+c. <strong>Uprawnienia do widoczności konfiguracji:</strong> Nadanie zespołowi bezpieczeństwa roli `Viewer` na poziomie organizacji daje im prawo do przeglądania konfiguracji i metadanych zasobów w konsoli, co jest niezbędne do analizowania środowiska, nie dając jednocześnie uprawnień do edycji lub dostępu do danych wrażliwych.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. 1. Create a dedicated log sink for each project... 4. Grant the role Monitoring Viewer...
@@ -109,7 +109,7 @@ D. 1. Create one sink for the Production folder... 2. Use a log bucket...
    * Dlaczego nieprawidłowa: Logowanie do lokalnego Log Bucket w GCP utrudnia integrację z on-premises SIEM. Ponadto ta opcja nie obejmuje całej organizacji, a rola `Security Reviewer` na poziomie organizacji daje duże uprawnienia, ale samo rozwiązanie nie realizuje integracji SIEM on-premises w sposób natychmiastowy i efektywny za pomocą Pub/Sub.
 
 4. Wskazówki, hinty, tips and tricks:
-* Kiedy celem jest integracja z zewnętrznym/lokalnym (on-premises) systemem SIEM, domyślnym i zalecanym mechanizmem transportu w GCP jest **Pub/Sub**.
+* Kiedy celem jest integracja z zewnętrznym/lokalnym (on-premises) systemem SIEM, domyślnym i zalecanym mechanizmem transportu w GCP jest <strong>Pub/Sub</strong>.
 * Zagregowane odbiorniki logów (Aggregated Sinks) na poziomie Organizacji lub Folderu są jedyną poprawną metodą zbierania logów w środowiskach wieloprojektowych (multi-project).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

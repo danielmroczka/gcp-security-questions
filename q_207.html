@@ -99,8 +99,8 @@ Odpowiedzi B i C są prawidłowe, ponieważ umożliwiają maszynie wirtualnej po
 
 Analiza scenariusza:
 Polityka organizacji `compute.vmExternalIpAccess` zabrania przypisywania zewnętrznych (publicznych) adresów IP do maszyn wirtualnych Compute Engine. W rezultacie maszyna budująca (Packer VM) posiada wyłącznie prywatny adres IP. Aby proces budowania obrazu zakończył się sukcesem, maszyna musi wykonać dwie operacje sieciowe:
-1. **Pobrać binarki z Cloud Storage (usługa Google):** Aby maszyna z prywatnym adresem IP mogła połączyć się z API Cloud Storage bez przechodzenia przez internet, na jej podsieci musi być włączone **Private Google Access (C)**.
-2. **Pobrać pakiety z repozytoriów zewnętrznych (internet):** Ponieważ repozytoria te znajdują się w publicznym internecie, maszyna potrzebuje bramki sieciowej, która przetłumaczy jej adres prywatny na publiczny. Służy do tego usługa **Cloud NAT (B)**, która pozwala instancjom bez publicznego IP inicjować bezpieczne połączenia wychodzące do internetu.
+1. <strong>Pobrać binarki z Cloud Storage (usługa Google):</strong> Aby maszyna z prywatnym adresem IP mogła połączyć się z API Cloud Storage bez przechodzenia przez internet, na jej podsieci musi być włączone <strong>Private Google Access (C)</strong>.
+2. <strong>Pobrać pakiety z repozytoriów zewnętrznych (internet):</strong> Ponieważ repozytoria te znajdują się w publicznym internecie, maszyna potrzebuje bramki sieciowej, która przetłumaczy jej adres prywatny na publiczny. Służy do tego usługa <strong>Cloud NAT (B)</strong>, która pozwala instancjom bez publicznego IP inicjować bezpieczne połączenia wychodzące do internetu.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Provision an HTTP load balancer...
@@ -112,8 +112,8 @@ E. Provision a Cloud VPN tunnel in the same VPC and region...
 
 4. Wskazówki, hinty, tips and tricks:
 * Maszyna wirtualna bez publicznego IP w GCP:
-  - Dostęp do API Google (np. Cloud Storage) -> **Private Google Access**.
-  - Dostęp do ogólnego internetu (wychodzący) -> **Cloud NAT**.
+  - Dostęp do API Google (np. Cloud Storage) -> <strong>Private Google Access</strong>.
+  - Dostęp do ogólnego internetu (wychodzący) -> <strong>Cloud NAT</strong>.
 * Te dwa mechanizmy są podstawą bezpiecznego projektowania sieci w chmurze (Private-only VMs).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

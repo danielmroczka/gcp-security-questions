@@ -97,8 +97,8 @@ A. Set up a workload identity pool with your corporate Active Directory Federati
 Odpowiedź A jest prawidłowa, ponieważ implementacja Workload Identity Federation (WIF) z lokalnym ADFS wymaga precyzyjnego ograniczenia (zasady najmniejszych uprawnień) tożsamości, które mogą uzyskiwać dostęp do chmury i przybierać tożsamość konta serwisowego.
 
 Kluczowe elementy konfiguracji:
-a. **Workload Identity Pool & Provider:** Tworzymy pulę dedykowaną dla aplikacji on-premises, a jako providera konfigurujemy ADFS (obsługującego SAML lub OIDC).
-b. **Konfiguracja reguł dostępu (impersonation rules):** Zamiast pozwalać wszystkim tożsamościom z ADFS na dostęp (co stanowiłoby ogromne zagrożenie, gdyby dowolny użytkownik domeny AD mógł kontrolować zasoby GCP), musimy zdefiniować regułę (np. sprawdzającą członkostwo w danej grupie AD lub konkretny identyfikator aplikacji) i tylko tym wybranym podmiotom (principals) zezwolić na przybranie roli konta serwisowego GCP (`roles/iam.workloadIdentityUser`).
+a. <strong>Workload Identity Pool & Provider:</strong> Tworzymy pulę dedykowaną dla aplikacji on-premises, a jako providera konfigurujemy ADFS (obsługującego SAML lub OIDC).
+b. <strong>Konfiguracja reguł dostępu (impersonation rules):</strong> Zamiast pozwalać wszystkim tożsamościom z ADFS na dostęp (co stanowiłoby ogromne zagrożenie, gdyby dowolny użytkownik domeny AD mógł kontrolować zasoby GCP), musimy zdefiniować regułę (np. sprawdzającą członkostwo w danej grupie AD lub konkretny identyfikator aplikacji) i tylko tym wybranym podmiotom (principals) zezwolić na przybranie roli konta serwisowego GCP (`roles/iam.workloadIdentityUser`).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. ...Let all principals in the pool impersonate the Google Cloud service account.

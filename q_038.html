@@ -90,25 +90,25 @@ A customer's internal security team must manage its own encryption keys for encr
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Klient zdecydował się na użycie kluczy szyfrujących dostarczanych przez użytkownika (Customer-Supplied Encryption Keys - CSEK) w Cloud Storage:
-- **Użycie narzędzia gsutil do przesłania obiektu z określeniem lokalizacji klucza szyfrującego na maszynie lokalnej (B):** W przypadku CSEK, Google Cloud nie przechowuje klucza. Klient musi przekazać 256-bitowy klucz AES w nagłówkach żądania przy każdej operacji zapisu i odczytu. Narzędzie `gsutil` obsługuje to poprzez plik konfiguracyjny `.boto` (sekcja `encryption_key`), w którym definiuje się klucz, lub przez odpowiednie flagi w linii poleceń. Dane są szyfrowane po stronie Google przy użyciu dostarczonego w locie klucza.
+- <strong>Użycie narzędzia gsutil do przesłania obiektu z określeniem lokalizacji klucza szyfrującego na maszynie lokalnej (B):</strong> W przypadku CSEK, Google Cloud nie przechowuje klucza. Klient musi przekazać 256-bitowy klucz AES w nagłówkach żądania przy każdej operacji zapisu i odczytu. Narzędzie `gsutil` obsługuje to poprzez plik konfiguracyjny `.boto` (sekcja `encryption_key`), w którym definiuje się klucz, lub przez odpowiednie flagi w linii poleceń. Dane są szyfrowane po stronie Google przy użyciu dostarczonego w locie klucza.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Upload klucza do tego samego kubła GCS:** Przechowywanie klucza szyfrującego w tym samym miejscu co zaszyfrowane dane (w tym samym kubełku) całkowicie niweczy cel bezpieczeństwa szyfrowania.
-- **C. Generowanie klucza w Konsoli GCP i upload:** Konsola GCP nie pozwala na generowanie kluczy CSEK do pobrania. Klucz CSEK musi zostać wygenerowany przez klienta lokalnie i nie może być przechowywany w infrastrukturze Google.
-- **D. Ręczne szyfrowanie przed wysłaniem:** Szyfrowanie po stronie klienta (Client-side encryption) to inna technika. Pytanie dotyczy technologii CSEK, w której to Google Cloud wykonuje operację szyfrowania/odszyfrowywania w locie, korzystając z klucza przekazanego przez klienta w żądaniu API.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Upload klucza do tego samego kubła GCS:</strong> Przechowywanie klucza szyfrującego w tym samym miejscu co zaszyfrowane dane (w tym samym kubełku) całkowicie niweczy cel bezpieczeństwa szyfrowania.
+- <strong>C. Generowanie klucza w Konsoli GCP i upload:</strong> Konsola GCP nie pozwala na generowanie kluczy CSEK do pobrania. Klucz CSEK musi zostać wygenerowany przez klienta lokalnie i nie może być przechowywany w infrastrukturze Google.
+- <strong>D. Ręczne szyfrowanie przed wysłaniem:</strong> Szyfrowanie po stronie klienta (Client-side encryption) to inna technika. Pytanie dotyczy technologii CSEK, w której to Google Cloud wykonuje operację szyfrowania/odszyfrowywania w locie, korzystając z klucza przekazanego przez klienta w żądaniu API.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Zapamiętaj: W **CSEK** klucze są przechowywane przez klienta (on-premises) i przekazywane w żądaniu API. Narzędzie `gsutil` konfiguruje się do tego za pomocą pliku `.boto`.
-- Konsola GCP (GUI) **nie wspiera** wgrywania ani pobierania plików za pomocą CSEK (wspiera tylko CMEK w KMS).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Zapamiętaj: W <strong>CSEK</strong> klucze są przechowywane przez klienta (on-premises) i przekazywane w żądaniu API. Narzędzie `gsutil` konfiguruje się do tego za pomocą pliku `.boto`.
+- Konsola GCP (GUI) <strong>nie wspiera</strong> wgrywania ani pobierania plików za pomocą CSEK (wspiera tylko CMEK w KMS).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - CSEK dla Cloud Storage -> Użycie `gsutil` + lokalna konfiguracja klucza (np. w pliku `.boto`).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Customer-supplied encryption keys in Cloud Storage: https://cloud.google.com/storage/docs/encryption/customer-supplied-keys
 </pre>
 

@@ -94,8 +94,8 @@ A. Use date shifting with the context set to the unique ID of the test subject.
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Należy zanonimizować (obfuscate) daty rozpoczęcia i zakończenia brania leków w tabeli BigQuery w taki sposób, aby same daty nie ujawniły tożsamości pacjentów (Outliers), ale jednocześnie kluczowe jest zachowanie dokładnego czasu trwania przedziału (interval data) między datami:
-- **Przesuwanie dat (Date Shifting)** w Cloud DLP przesuwa daty o losową liczbę dni w przód lub w tył.
-- Ustawienie **kontekstu (context)** na unikalny identyfikator pacjenta (test subject ID) sprawia, że dla danego pacjenta wszystkie daty w jego wierszu (data rozpoczęcia i zakończenia) zostaną przesunięte o **dokładnie tę samą liczbę dni**.
+- <strong>Przesuwanie dat (Date Shifting)</strong> w Cloud DLP przesuwa daty o losową liczbę dni w przód lub w tył.
+- Ustawienie <strong>kontekstu (context)</strong> na unikalny identyfikator pacjenta (test subject ID) sprawia, że dla danego pacjenta wszystkie daty w jego wierszu (data rozpoczęcia i zakończenia) zostaną przesunięte o <strong>dokładnie tę samą liczbę dni</strong>.
 - W efekcie konkretne daty zostaną całkowicie zmienione (obfuscated), ale czas trwania kuracji (różnica między datą zakończenia a rozpoczęcia) pozostanie nienaruszony i w 100% spójny matematycznie do analizy.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
@@ -104,7 +104,7 @@ Należy zanonimizować (obfuscate) daty rozpoczęcia i zakończenia brania lekó
 - D. Szyfrowanie zachowujące format (FPE): Szyfruje daty w taki sposób, że wynik wygląda jak prawidłowa data (np. 12-05-1985), ale nie gwarantuje zachowania stałej odległości czasowej (interwału) pomiędzy dwoma różnymi polami dat w wierszu.
 
 4. Wskazówki, hinty, tips and tricks:
-- Słowo-klucz w pytaniach o anonimizację dat: jeśli wymagane jest **ukrycie dokładnych dat przy jednoczesnym zachowaniu czasu trwania odstępu (interval/duration)** między nimi, poprawnym rozwiązaniem jest **Date Shifting z powiązaniem kontekstowym (context)**.
+- Słowo-klucz w pytaniach o anonimizację dat: jeśli wymagane jest <strong>ukrycie dokładnych dat przy jednoczesnym zachowaniu czasu trwania odstępu (interval/duration)</strong> między nimi, poprawnym rozwiązaniem jest <strong>Date Shifting z powiązaniem kontekstowym (context)</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Ukrycie dat + zachowanie przedziału czasu (duration/interval) -> Date shifting z kontekstem (context).

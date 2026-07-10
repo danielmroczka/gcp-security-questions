@@ -97,19 +97,19 @@ E. Client-side encryption
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Wymagane jest zapewnienie pełnego szyfrowania typu end-to-end obejmującego wszystkie trzy stany danych w chmurze Google Cloud: dane w tranzycie (in transit), dane w użyciu (in use) oraz dane w spoczynku (at rest):
-- **Opcja D (Confidential Computing + Istio)**:
-  - **Dane w użyciu (in use)**: Usługa **Confidential Computing** (Confidential VMs/GKE Nodes) wykorzystuje szyfrowanie pamięci RAM na poziomie sprzętowym (np. AMD SEV). Dane są w pełni zaszyfrowane w pamięci operacyjnej podczas przetwarzania przez procesor.
-  - **Dane w tranzycie (in transit)**: **Istio** (Service Mesh) wdraża automatyczne szyfrowanie wzajemnego TLS (mTLS) dla komunikacji sieciowej pomiędzy wszystkimi kontenerami aplikacji.
-  - **Dane w spoczynku (at rest)**: GCP domyślnie szyfruje wszystkie dane na dyskach i w bazach.
-- **Opcja E (Client-side encryption)**:
+- <strong>Opcja D (Confidential Computing + Istio)</strong>:
+  - <strong>Dane w użyciu (in use)</strong>: Usługa <strong>Confidential Computing</strong> (Confidential VMs/GKE Nodes) wykorzystuje szyfrowanie pamięci RAM na poziomie sprzętowym (np. AMD SEV). Dane są w pełni zaszyfrowane w pamięci operacyjnej podczas przetwarzania przez procesor.
+  - <strong>Dane w tranzycie (in transit)</strong>: <strong>Istio</strong> (Service Mesh) wdraża automatyczne szyfrowanie wzajemnego TLS (mTLS) dla komunikacji sieciowej pomiędzy wszystkimi kontenerami aplikacji.
+  - <strong>Dane w spoczynku (at rest)</strong>: GCP domyślnie szyfruje wszystkie dane na dyskach i w bazach.
+- <strong>Opcja E (Client-side encryption)</strong>:
   - Szyfrowanie danych po stronie klienta (Client-side) przed wysłaniem ich do chmury gwarantuje, że dane są chronione podczas przesyłania (in transit), są przechowywane w postaci zaszyfrowanej (at rest), a chmura Google nie ma możliwości ich odszyfrowania w swojej pamięci RAM (in use), co również realizuje koncepcję end-to-end.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A, B i C. External Key Manager, Customer-supplied keys (CSEK), Hardware Security Module (HSM): Są to wyłącznie technologie zarządzania kluczami szyfrującymi dla danych w spoczynku (at rest). Żadne z tych rozwiązań samo z siebie nie chroni danych w użyciu (w pamięci RAM podczas wykonywania programu) ani nie szyfruje ruchu sieciowego (in transit).
 
 4. Wskazówki, hinty, tips and tricks:
-- Zapamiętaj pojęcie **Data in Use Encryption** (szyfrowanie danych w użyciu / w pamięci RAM) – w chmurach publicznych jedyną technologią, która to realizuje, jest **Confidential Computing** (sprzętowe szyfrowanie pamięci maszyn wirtualnych).
-- Do szyfrowania ruchu (Data in transit) w mikroserwisach służy mTLS z poziomu **Istio**.
+- Zapamiętaj pojęcie <strong>Data in Use Encryption</strong> (szyfrowanie danych w użyciu / w pamięci RAM) – w chmurach publicznych jedyną technologią, która to realizuje, jest <strong>Confidential Computing</strong> (sprzętowe szyfrowanie pamięci maszyn wirtualnych).
+- Do szyfrowania ruchu (Data in transit) w mikroserwisach służy mTLS z poziomu <strong>Istio</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Kompleksowe szyfrowanie end-to-end (at rest, in transit, in use) -> Confidential Computing (in use) + Istio (in transit) lub Client-side encryption.

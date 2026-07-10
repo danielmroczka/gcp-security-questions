@@ -89,25 +89,25 @@ A company is deploying their application on Google Cloud Platform. Company polic
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymaganie polityki firmy polega na automatycznym replikowaniu długoterminowych danych w co najmniej dwóch odrębnych obszarach geograficznych (geographic places):
-- **Cloud BigQuery (B):** BigQuery przy tworzeniu zestawu danych (dataset) umożliwia wybranie lokalizacji typu **Multi-region** (np. `US` lub `EU`). Wybranie tej opcji sprawia, że Google automatycznie i w sposób niewidoczny dla użytkownika replikuje dane w co najmniej dwóch różnych regionach geograficznych w obrębie wybranego kontynentu. Zapewnia to najwyższą odporność na awarie katastroficzne całego regionu.
+- <strong>Cloud BigQuery (B):</strong> BigQuery przy tworzeniu zestawu danych (dataset) umożliwia wybranie lokalizacji typu <strong>Multi-region</strong> (np. `US` lub `EU`). Wybranie tej opcji sprawia, że Google automatycznie i w sposób niewidoczny dla użytkownika replikuje dane w co najmniej dwóch różnych regionach geograficznych w obrębie wybranego kontynentu. Zapewnia to najwyższą odporność na awarie katastroficzne całego regionu.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Cloud Bigtable:** Bigtable wspiera replikację wewnątrzstrefową i międzyregionalną, ale wymaga to ręcznego dodawania klastrów w innych regionach oraz samodzielnej konfiguracji i zarządzania replikacją – nie dzieje się to w pełni automatycznie "by default" na poziomie pojedynczej prostej alokacji.
-- **C. Compute Engine SSD Disk:** Lokalny dysk SSD jest fizycznie przypisany do jednego konkretnego serwera w jednej strefie i nie ma żadnej replikacji sieciowej poza tę strefę.
-- **D. Compute Engine Persistent Disk:** Dysk sieciowy Persistent Disk może być replikowany regionalnie (Regional PD), ale odbywa się to tylko między dwiema strefami (zones) w obrębie **jednego** regionu (np. europe-west1-b i europe-west1-c), co nie spełnia wymogu podziału na dwa różne obszary geograficzne (regiony).
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Cloud Bigtable:</strong> Bigtable wspiera replikację wewnątrzstrefową i międzyregionalną, ale wymaga to ręcznego dodawania klastrów w innych regionach oraz samodzielnej konfiguracji i zarządzania replikacją – nie dzieje się to w pełni automatycznie "by default" na poziomie pojedynczej prostej alokacji.
+- <strong>C. Compute Engine SSD Disk:</strong> Lokalny dysk SSD jest fizycznie przypisany do jednego konkretnego serwera w jednej strefie i nie ma żadnej replikacji sieciowej poza tę strefę.
+- <strong>D. Compute Engine Persistent Disk:</strong> Dysk sieciowy Persistent Disk może być replikowany regionalnie (Regional PD), ale odbywa się to tylko między dwiema strefami (zones) w obrębie <strong>jednego</strong> regionu (np. europe-west1-b i europe-west1-c), co nie spełnia wymogu podziału na dwa różne obszary geograficzne (regiony).
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Słowo-klucz: **replicate data over at least two geographic places** (dwa odrębne obszary geograficzne / regiony).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Słowo-klucz: <strong>replicate data over at least two geographic places</strong> (dwa odrębne obszary geograficzne / regiony).
 - Odróżniaj strefy (Zones) od regionów (Regions/Geographic places). Replikacja regionalna (np. Regional PD) chroni przed awarią strefy, ale tylko replikacja multi-regionalna (dostępna w GCS i BigQuery) chroni przed awarią całego regionu geograficznego.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Replikacja wieloregionowa (multi-region) bez administracji -> BigQuery (lub Cloud Storage Multi-region).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - BigQuery datasets locations: https://cloud.google.com/bigquery/docs/locations
 </pre>
 

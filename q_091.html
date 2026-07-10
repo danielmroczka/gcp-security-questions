@@ -91,27 +91,27 @@ You need to provide a corporate user account in Google Cloud for each of your de
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: AD**
+<strong>Poprawna odpowiedź: AD</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Firma musi zsynchronizować konta użytkowników z lokalnego systemu tożsamości do Cloud Identity z obsługą logowania jednokrotnego (SSO) oraz rozwiązać problem "kont konfliktowych" (gdy pracownicy utworzyli osobiste konta Google przy użyciu firmowych adresów e-mail):
-- **Synchronizacja za pomocą Google Cloud Directory Sync (A):** GCDS jest zalecanym narzędziem do automatycznego przenoszenia kont użytkowników i grup z lokalnego katalogu (np. AD) do Cloud Identity.
-- **Użycie Transfer Tool for Unmanaged Users (TTUU) (D):** TTUU to oficjalne narzędzie w konsoli administracyjnej Google, które pozwala zidentyfikować konta osobiste zarejestrowane na firmowe adresy e-mail (tzw. unmanaged users) i wysłać im zaproszenie do migracji (przekształcenia konta osobistego w konto zarządzane przez firmę) lub zmiany adresu e-mail konta osobistego.
+- <strong>Synchronizacja za pomocą Google Cloud Directory Sync (A):</strong> GCDS jest zalecanym narzędziem do automatycznego przenoszenia kont użytkowników i grup z lokalnego katalogu (np. AD) do Cloud Identity.
+- <strong>Użycie Transfer Tool for Unmanaged Users (TTUU) (D):</strong> TTUU to oficjalne narzędzie w konsoli administracyjnej Google, które pozwala zidentyfikować konta osobiste zarejestrowane na firmowe adresy e-mail (tzw. unmanaged users) i wysłać im zaproszenie do migracji (przekształcenia konta osobistego w konto zarządzane przez firmę) lub zmiany adresu e-mail konta osobistego.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **B. Użycie Google Admin console do podglądu recovery email:** Konsola Admin nie pozwala na wymuszenie migracji lub naprawienie konfliktu poprzez sam podgląd adresów pomocniczych (recovery email).
-- **C. Zmuszanie użytkowników do ręcznej zmiany powiązań:** Ręczne zmuszanie użytkowników do zmian bez użycia dedykowanego narzędzia TTUU jest nieefektywne i trudne do wyegzekwowania w skali organizacji.
-- **E. Nakazanie usunięcia kont w wiadomości e-mail:** Wysyłanie e-maili z prośbą o usunięcie kont jest nieskuteczne i może prowadzić do utraty danych pracowników, którzy zgromadzili dokumenty na tych kontach.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>B. Użycie Google Admin console do podglądu recovery email:</strong> Konsola Admin nie pozwala na wymuszenie migracji lub naprawienie konfliktu poprzez sam podgląd adresów pomocniczych (recovery email).
+- <strong>C. Zmuszanie użytkowników do ręcznej zmiany powiązań:</strong> Ręczne zmuszanie użytkowników do zmian bez użycia dedykowanego narzędzia TTUU jest nieefektywne i trudne do wyegzekwowania w skali organizacji.
+- <strong>E. Nakazanie usunięcia kont w wiadomości e-mail:</strong> Wysyłanie e-maili z prośbą o usunięcie kont jest nieskuteczne i może prowadzić do utraty danych pracowników, którzy zgromadzili dokumenty na tych kontach.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Konflikt kont (unmanaged accounts z firmową domeną) -> **Transfer Tool for Unmanaged Users (TTUU)**.
-- Synchronizacja tożsamości z lokalnego AD/LDAP -> **Google Cloud Directory Sync (GCDS)**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Konflikt kont (unmanaged accounts z firmową domeną) -> <strong>Transfer Tool for Unmanaged Users (TTUU)</strong>.
+- Synchronizacja tożsamości z lokalnego AD/LDAP -> <strong>Google Cloud Directory Sync (GCDS)</strong>.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Migracja unmanaged/conflicting accounts -> TTUU.
 - Synchronizacja kont AD -> GCDS.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Migrating unmanaged Google Accounts with TTUU: https://support.google.com/a/answer/6178657
 </pre>
 

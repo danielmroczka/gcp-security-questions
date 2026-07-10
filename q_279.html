@@ -78,7 +78,7 @@ D. Artifact Registry requires external HTTP/HTTPS access. Create a new firewall 
    * Dlaczego nieprawidłowa: Otwieranie portów na zaporze sieciowej GCP nie rozwiąże problemu braku routingu do internetu i błędnego DNS on-premises. Ponadto ruch z VPN/Interconnect jest ruchem wewnętrznym, a nie zewnętrznym internetowym HTTP/S.
 
 4. Wskazówki, hinty, tips and tricks:
-* Brak dostępu z on-premises (przez VPN/Interconnect) do usług Google przy braku wyjścia na internet -> Zawsze w pierwszej kolejności skonfiguruj **DNS dla `private.googleapis.com` lub `restricted.googleapis.com`** w lokalnym DNS.
+* Brak dostępu z on-premises (przez VPN/Interconnect) do usług Google przy braku wyjścia na internet -> Zawsze w pierwszej kolejności skonfiguruj <strong>DNS dla `private.googleapis.com` lub `restricted.googleapis.com`</strong> w lokalnym DNS.
 * Usługa Artifact Registry korzysta z domeny `*.pkg.dev`, która również musi być mapowana na prywatne IP Google.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

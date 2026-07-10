@@ -90,26 +90,26 @@ You are on your company's development team. You noticed that your web applicatio
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: D**
+<strong>Poprawna odpowiedź: D</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 W aplikacji wykryto lukę typu Cross-Site Scripting (XSS), polegającą na dynamicznym wstrzykiwaniu niezweryfikowanych danych użytkownika do przeglądarki. Należy zapobiec i trwale naprawić tę podatność w środowisku staging:
-- **Użycie Web Security Scanner w staging do symulacji ataków XSS oraz wdrożenie systemu szablonów obsługującego automatyczne uciekanie znaków (contextual auto-escaping) (D):** Web Security Scanner (część Security Command Center) pozwala na automatyczne testowanie aplikacji w środowisku staging pod kątem podatności takich jak XSS czy SQL injection. Aby trwale wyeliminować podatność w kodzie źródłowym, należy użyć silnika szablonów (templating engine), który automatycznie koduje (escape) znaki specjalne HTML (np. `<`, >, `&`) w zależności od kontekstu (HTML, atrybut, JavaScript), co uniemożliwia przeglądarce wykonanie wstrzykniętego kodu jako skryptu.
+- <strong>Użycie Web Security Scanner w staging do symulacji ataków XSS oraz wdrożenie systemu szablonów obsługującego automatyczne uciekanie znaków (contextual auto-escaping) (D):</strong> Web Security Scanner (część Security Command Center) pozwala na automatyczne testowanie aplikacji w środowisku staging pod kątem podatności takich jak XSS czy SQL injection. Aby trwale wyeliminować podatność w kodzie źródłowym, należy użyć silnika szablonów (templating engine), który automatycznie koduje (escape) znaki specjalne HTML (np. `<`, >, `&`) w zależności od kontekstu (HTML, atrybut, JavaScript), co uniemożliwia przeglądarce wykonanie wstrzykniętego kodu jako skryptu.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Użycie Cloud IAP na podstawie IP lub urządzenia:** IAP kontroluje dostęp do aplikacji (uwierzytelnianie i autoryzacja), ale nie modyfikuje kodu aplikacji ani nie chroni przed lukami XSS wewnątrz samej aplikacji po zalogowaniu się użytkownika.
-- **B. Użycie Cloud Armor w produkcji:** Cloud Armor może pomóc zablokować niektóre próby ataków XSS na brzegu sieci, ale nie naprawia samej luki w kodzie aplikacji. Zadanie pyta o zapobieżenie i *naprawienie* podatności (prevent and fix).
-- **C. Web Security Scanner do sprawdzania nieaktualnych bibliotek:** Web Security Scanner wykrywa podatności aplikacyjne (np. XSS), ale nie służy głównie do analizy składników oprogramowania (Software Component Analysis / dependency scanning) pod kątem wersji bibliotek (od tego są inne narzędzia, np. Artifact Registry scanning). Ponadto zmiana wersji biblioteki nie naprawi luki, jeśli tkwi ona w autorskim kodzie renderującym dane wejściowe.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Użycie Cloud IAP na podstawie IP lub urządzenia:</strong> IAP kontroluje dostęp do aplikacji (uwierzytelnianie i autoryzacja), ale nie modyfikuje kodu aplikacji ani nie chroni przed lukami XSS wewnątrz samej aplikacji po zalogowaniu się użytkownika.
+- <strong>B. Użycie Cloud Armor w produkcji:</strong> Cloud Armor może pomóc zablokować niektóre próby ataków XSS na brzegu sieci, ale nie naprawia samej luki w kodzie aplikacji. Zadanie pyta o zapobieżenie i *naprawienie* podatności (prevent and fix).
+- <strong>C. Web Security Scanner do sprawdzania nieaktualnych bibliotek:</strong> Web Security Scanner wykrywa podatności aplikacyjne (np. XSS), ale nie służy głównie do analizy składników oprogramowania (Software Component Analysis / dependency scanning) pod kątem wersji bibliotek (od tego są inne narzędzia, np. Artifact Registry scanning). Ponadto zmiana wersji biblioteki nie naprawi luki, jeśli tkwi ona w autorskim kodzie renderującym dane wejściowe.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- **XSS (Cross-Site Scripting):** Najlepszym sposobem na trwałą naprawę w kodzie jest **contextual auto-escaping** w silnikach szablonów.
-- **Web Security Scanner:** Narzędzie GCP dedykowane do automatycznego skanowania aplikacji webowych pod kątem luk bezpieczeństwa (takich jak XSS) w środowiskach deweloperskich i staging.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- <strong>XSS (Cross-Site Scripting):</strong> Najlepszym sposobem na trwałą naprawę w kodzie jest <strong>contextual auto-escaping</strong> w silnikach szablonów.
+- <strong>Web Security Scanner:</strong> Narzędzie GCP dedykowane do automatycznego skanowania aplikacji webowych pod kątem luk bezpieczeństwa (takich jak XSS) w środowiskach deweloperskich i staging.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Wykrywanie luk webowych w staging (XSS, SQLi) -> Web Security Scanner.
 - Naprawa XSS w kodzie -> Contextual auto-escaping.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Web Security Scanner overview: https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview
 </pre>
 

@@ -91,25 +91,25 @@ A customer's data science group wants to use Google Cloud Platform (GCP) for the
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: D**
+<strong>Poprawna odpowiedź: D</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 W tej sytuacji mamy do czynienia z tzw. "Shadow IT" – inny dział firmy bez wiedzy działu IT założył konto Google (np. korzystając z G Suite) na tej samej domenie firmowej. Chcemy wdrożyć Cloud Identity i zintegrować logowanie przez SAML z zachowaniem ciągłości:
-- **Poproszenie kierownictwa o zlokalizowanie istniejącego konta/usługi oraz współpraca z obecnym administratorem Super Administrator (D):** Jest to najbardziej dyplomatyczne, najszybsze i najmniej inwazyjne podejście. Pozwala na przejęcie lub współdzielenie istniejącego konta organizacji bez zakłócania pracy działu, który już z niego korzysta.
+- <strong>Poproszenie kierownictwa o zlokalizowanie istniejącego konta/usługi oraz współpraca z obecnym administratorem Super Administrator (D):</strong> Jest to najbardziej dyplomatyczne, najszybsze i najmniej inwazyjne podejście. Pozwala na przejęcie lub współdzielenie istniejącego konta organizacji bez zakłócania pracy działu, który już z niego korzysta.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Domain Contestation Process (Proces kwestionowania domeny):** Jest to procedura długa i inwazyjna, stosowana w ostateczności, gdy nie ma kontaktu z właścicielem konta. W tym przypadku administratorzy są w tej samej firmie, więc kwestionowanie domeny wewnątrz własnej organizacji jest bezcelowe.
-- **B. Rejestracja nowej domeny:** Narusza to wymóg firmowy (użycie oficjalnej domeny) i utrudnia proces uwierzytelniania użytkowników, zmuszając ich do korzystania z innych adresów e-mail.
-- **C. Provision manager's account as Super Administrator:** Zmuszenie Google do nadania uprawnień Super Admina bez zgody i wiedzy obecnego właściciela nie jest możliwe bez przejścia weryfikacji domeny lub kontaktu z obecnym administratorem.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Domain Contestation Process (Proces kwestionowania domeny):</strong> Jest to procedura długa i inwazyjna, stosowana w ostateczności, gdy nie ma kontaktu z właścicielem konta. W tym przypadku administratorzy są w tej samej firmie, więc kwestionowanie domeny wewnątrz własnej organizacji jest bezcelowe.
+- <strong>B. Rejestracja nowej domeny:</strong> Narusza to wymóg firmowy (użycie oficjalnej domeny) i utrudnia proces uwierzytelniania użytkowników, zmuszając ich do korzystania z innych adresów e-mail.
+- <strong>C. Provision manager's account as Super Administrator:</strong> Zmuszenie Google do nadania uprawnień Super Admina bez zgody i wiedzy obecnego właściciela nie jest możliwe bez przejścia weryfikacji domeny lub kontaktu z obecnym administratorem.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
 - Egzaminy Google Cloud promują rozwiązania oparte na współpracy biznesowej i minimalizacji zakłóceń operacyjnych ("least disruption").
 - Jeśli domena jest już zajęta w Google (np. przez G Suite), oznacza to, że organizacja w Google już istnieje. Pierwszym krokiem jest zawsze kontakt z jej administratorem (Super Admin).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Domena już w użyciu w Google -> Współpraca z istniejącym Super Administratorem organizacji.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Google Cloud Identity Help - Domain in use: https://support.google.com/a/answer/183374
 </pre>
 

@@ -97,9 +97,9 @@ D. Configure an HTTP Load Balancing instance that points to the managed group wi
 Odpowiedź D jest prawidłowa, ponieważ Identity-Aware Proxy (IAP) zintegrowany z zewnętrznym Load Balancerem HTTP(S) (Application Load Balancer) jest najlepszym i zalecanym sposobem na bezpieczne udostępnienie aplikacji webowej użytkownikom zewnętrznym z wymuszeniem autoryzacji opartej na tożsamości Google.
 
 Korzyści z tego podejścia:
-a. **Brak publicznego IP na VM:** Maszyny wirtualne w grupie zarządzanej mogą pozostać całkowicie prywatne i nie mieć bezpośredniego dostępu do internetu ani publicznych adresów IP.
-b. **Centralna kontrola dostępu (IAP):** Gdy użytkownik próbuje wejść na adres Load Balancera, IAP przechwytuje żądanie i przekierowuje do ekranu logowania Google. Dostęp jest przyznawany tylko wtedy, gdy użytkownik posiada rolę `IAP-secured Web App User` w IAM.
-c. **Konfiguracja zapory sieciowej:** Zapora sieciowa VPC (firewall) musi zezwalać na ruch przychodzący do maszyn na port 5601 wyłącznie z zakresu adresów IP Google Front End (GFE) i IAP proxy, co zapobiega ominięciu zabezpieczeń.
+a. <strong>Brak publicznego IP na VM:</strong> Maszyny wirtualne w grupie zarządzanej mogą pozostać całkowicie prywatne i nie mieć bezpośredniego dostępu do internetu ani publicznych adresów IP.
+b. <strong>Centralna kontrola dostępu (IAP):</strong> Gdy użytkownik próbuje wejść na adres Load Balancera, IAP przechwytuje żądanie i przekierowuje do ekranu logowania Google. Dostęp jest przyznawany tylko wtedy, gdy użytkownik posiada rolę `IAP-secured Web App User` w IAM.
+c. <strong>Konfiguracja zapory sieciowej:</strong> Zapora sieciowa VPC (firewall) musi zezwalać na ruch przychodzący do maszyn na port 5601 wyłącznie z zakresu adresów IP Google Front End (GFE) i IAP proxy, co zapobiega ominięciu zabezpieczeń.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Configure the bastion host with OS Login... Log in... by using SSH-in-browser and then to the web application.
@@ -110,7 +110,7 @@ C. Configure Secure Shell Access (SSH) bastion host in a public network... Use a
    * Dlaczego nieprawidłowa: Podobnie jak opcja A, to rozwiązanie jest przeznaczone dla administratorów IT (zarządzanie serwerem przez tunelowanie SSH), a nie dla zwykłych użytkowników aplikacji webowej, którzy potrzebują prostego dostępu przez przeglądarkę (HTTP/S).
 
 4. Wskazówki, hinty, tips and tricks:
-* Bezpieczne udostępnianie wewnętrznych aplikacji webowych (web interfaces/port HTTP) w GCP z logowaniem Google -> Zawsze **Identity-Aware Proxy (IAP)** na **HTTP(S) Load Balancerze**.
+* Bezpieczne udostępnianie wewnętrznych aplikacji webowych (web interfaces/port HTTP) w GCP z logowaniem Google -> Zawsze <strong>Identity-Aware Proxy (IAP)</strong> na <strong>HTTP(S) Load Balancerze</strong>.
 * Zapora sieciowa (firewall) dla IAP na backendzie musi pozwalać na ruch z zakresów IP proxy Google.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

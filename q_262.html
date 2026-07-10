@@ -65,9 +65,9 @@ A. Configure Cloud Firewall to permit allow-listed traffic only, deploy Google C
 Odpowiedź A jest prawidłowa, ponieważ łączy trzy komplementarne, natywne technologie bezpieczeństwa GCP w celu ochrony aplikacji na różnych poziomach modelu OSI (defense in depth).
 
 Analiza komponentów ochrony:
-a. **Restrykcja ruchu (Cloud Firewall):** Działa w warstwach 3 i 4. Pozwala na precyzyjne odcięcie niepotrzebnych portów i protokołów, wpuszczając ruch wyłącznie do dozwolonych podsieci (allow-listed traffic).
-b. **Ochrona przed atakami webowymi (Cloud Armor):** Działa w warstwie 7 (aplikacyjnej). Chroni frontend aplikacji przed atakami typu SQL Injection (SQLi), Cross-Site Scripting (XSS), atakami L7 DDoS oraz innymi lukami z listy OWASP Top 10 przy użyciu predefiniowanych reguł WAF (WAF rules).
-c. **Wykrywanie anomalii wewnętrznych (Cloud IDS):** Monitoruje ruch wewnątrz sieci VPC (ruch typu East-West między frontendem a backendem). Wykorzystuje silnik wykrywania zagrożeń Palo Alto Networks do identyfikacji prób włamań, malware i anomalii sieciowych wewnątrz środowiska.
+a. <strong>Restrykcja ruchu (Cloud Firewall):</strong> Działa w warstwach 3 i 4. Pozwala na precyzyjne odcięcie niepotrzebnych portów i protokołów, wpuszczając ruch wyłącznie do dozwolonych podsieci (allow-listed traffic).
+b. <strong>Ochrona przed atakami webowymi (Cloud Armor):</strong> Działa w warstwie 7 (aplikacyjnej). Chroni frontend aplikacji przed atakami typu SQL Injection (SQLi), Cross-Site Scripting (XSS), atakami L7 DDoS oraz innymi lukami z listy OWASP Top 10 przy użyciu predefiniowanych reguł WAF (WAF rules).
+c. <strong>Wykrywanie anomalii wewnętrznych (Cloud IDS):</strong> Monitoruje ruch wewnątrz sieci VPC (ruch typu East-West między frontendem a backendem). Wykorzystuje silnik wykrywania zagrożeń Palo Alto Networks do identyfikacji prób włamań, malware i anomalii sieciowych wewnątrz środowiska.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. ...configure DNS Security Extensions (DNSSEC) on Cloud DNS to secure against common web attacks...
@@ -79,9 +79,9 @@ D. Configure Cloud DNS to secure incoming traffic, deploy Cloud IDS to detect...
 
 4. Wskazówki, hinty, tips and tricks:
 * Kompleksowe bezpieczeństwo sieciowe aplikacji w GCP:
-  - Filtrowanie IP/portów -> **VPC Firewall**.
-  - Blokowanie ataków webowych (WAF/OWASP) -> **Cloud Armor**.
-  - Wykrywanie zagrożeń w ruchu wewnętrznym -> **Cloud IDS**.
+  - Filtrowanie IP/portów -> <strong>VPC Firewall</strong>.
+  - Blokowanie ataków webowych (WAF/OWASP) -> <strong>Cloud Armor</strong>.
+  - Wykrywanie zagrożeń w ruchu wewnętrznym -> <strong>Cloud IDS</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Restrict incoming traffic + protect against web-based attacks + monitor internal traffic -> Cloud Firewall + Cloud Armor + Cloud IDS.

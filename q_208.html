@@ -96,9 +96,9 @@ C. 1. Change the bucket permissions to limit access. 2. Query the bucket's usage
 Odpowiedź C jest prawidłowa, ponieważ przedstawia kompletny i zgodny z najlepszymi praktykami GCP proces reagowania na incydenty bezpieczeństwa związany z wyciekiem danych z Cloud Storage.
 
 Etapy procesu:
-a. **Natychmiastowe usunięcie zagrożenia:** Pierwszym krokiem jest zmiana uprawnień (permissions) na kubełkach, aby zablokować dostęp dla użytkowników `allUsers` lub `allAuthenticatedUsers`.
-b. **Analiza powłamaniowa (Forensics):** Aby sprawdzić, czy doszło do nieuprawnionego pobrania danych, należy przeanalizować dzienniki użycia (storage usage logs / data access logs). Pozwalają one na identyfikację adresów IP, tożsamości oraz obiektów, które zostały pobrane w czasie, gdy kubełek był publiczny.
-c. **Zapobieganie ponownym incydentom (Remediation/Prevention):** Wdrożenie polityki organizacji `storage.publicAccessPrevention` na poziomie projektów lub folderów trwale blokuje możliwość ustawienia jakiegokolwiek kubełka jako publicznego w przyszłości, eliminując ryzyko błędu ludzkiego.
+a. <strong>Natychmiastowe usunięcie zagrożenia:</strong> Pierwszym krokiem jest zmiana uprawnień (permissions) na kubełkach, aby zablokować dostęp dla użytkowników `allUsers` lub `allAuthenticatedUsers`.
+b. <strong>Analiza powłamaniowa (Forensics):</strong> Aby sprawdzić, czy doszło do nieuprawnionego pobrania danych, należy przeanalizować dzienniki użycia (storage usage logs / data access logs). Pozwalają one na identyfikację adresów IP, tożsamości oraz obiektów, które zostały pobrane w czasie, gdy kubełek był publiczny.
+c. <strong>Zapobieganie ponownym incydentom (Remediation/Prevention):</strong> Wdrożenie polityki organizacji `storage.publicAccessPrevention` na poziomie projektów lub folderów trwale blokuje możliwość ustawienia jakiegokolwiek kubełka jako publicznego w przyszłości, eliminując ryzyko błędu ludzkiego.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. ...Apply the organization policy storage.uniformBucketLevelAccess to prevent regressions...
@@ -109,8 +109,8 @@ D. ...After the misconfiguration is corrected, mute the finding in the Security 
    * Dlaczego nieprawidłowa: Samo wyciszenie (mute) alertu w SCC to krok kosmetyczny w konsoli i nie stanowi zabezpieczenia zapobiegającego przyszłym błędom (brak wdrożenia polityki prewencyjnej takiej jak `publicAccessPrevention`).
 
 4. Wskazówki, hinty, tips and tricks:
-* Aby trwale zabronić publicznego udostępniania jakichkolwiek kubełków Cloud Storage w organizacji/projekcie, używa się polityki organizacji **`storage.publicAccessPrevention`**.
-* Śledzenie operacji odczytu/zapisu na obiektach w Cloud Storage wymaga włączenia **Data Access Audit Logs** (część Cloud Audit Logs) lub analizy **Storage Usage Logs**.
+* Aby trwale zabronić publicznego udostępniania jakichkolwiek kubełków Cloud Storage w organizacji/projekcie, używa się polityki organizacji <strong>`storage.publicAccessPrevention`</strong>.
+* Śledzenie operacji odczytu/zapisu na obiektach w Cloud Storage wymaga włączenia <strong>Data Access Audit Logs</strong> (część Cloud Audit Logs) lub analizy <strong>Storage Usage Logs</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Blokowanie publicznego dostępu do GCS w przyszłości -> `storage.publicAccessPrevention`.

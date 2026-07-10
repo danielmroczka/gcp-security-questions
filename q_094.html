@@ -90,26 +90,26 @@ You are responsible for protecting highly sensitive data in BigQuery. Your opera
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: D**
+<strong>Poprawna odpowiedź: D</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Wymagane jest zabezpieczenie wrażliwych danych (takich jak adresy e-mail i imiona) w BigQuery przed dostępem zespołów operacyjnych, przy jednoczesnym zachowaniu możliwości odczytu tych danych przez zespół HR na zasadzie "need-to-know":
-- **Wykonanie tokenizacji w celu pseudonimizacji (Tokenization for Pseudonymization) za pomocą Cloud Data Loss Prevention (Cloud DLP) API (D):** Tokenizacja (pseudonimizacja) polega na zastąpieniu wrażliwych danych (np. tekstu jawnego) unikalnym tokenem (kryptograficznym lub deterministycznym). Zespoły operacyjne mogą analizować dane w BigQuery, widząc jedynie tokeny, co uniemożliwia im identyfikację osób. Jednocześnie zespół HR (lub autoryzowana aplikacja) posiadający klucz deszyfrujący może zdetokenizować dane w razie potrzeby, odzyskując oryginalne wartości.
+- <strong>Wykonanie tokenizacji w celu pseudonimizacji (Tokenization for Pseudonymization) za pomocą Cloud Data Loss Prevention (Cloud DLP) API (D):</strong> Tokenizacja (pseudonimizacja) polega na zastąpieniu wrażliwych danych (np. tekstu jawnego) unikalnym tokenem (kryptograficznym lub deterministycznym). Zespoły operacyjne mogą analizować dane w BigQuery, widząc jedynie tokeny, co uniemożliwia im identyfikację osób. Jednocześnie zespół HR (lub autoryzowana aplikacja) posiadający klucz deszyfrujący może zdetokenizować dane w razie potrzeby, odzyskując oryginalne wartości.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Maskowanie danych (Data masking):** Zastępuje znaki stałym symbolem (np. `***@***.com`). Jest to proces nieodwracalny w miejscu zapisu – jeśli dane zostaną zamaskowane i zapisane w BigQuery, zespół HR również nie będzie mógł odzyskać oryginalnych adresów e-mail.
-- **B. Redakcja danych (Data redaction):** Całkowicie usuwa wrażliwy tekst ze zbioru danych. Podobnie jak w przypadku maskowania, jest to proces jednostronny i nieodwracalny, co uniemożliwia zespołowi HR dostęp do oryginalnych danych.
-- **C. Inspekcja danych (Data inspection):** Służy jedynie do wykrywania i raportowania obecności danych wrażliwych, ale nie zabezpiecza ich ani nie modyfikuje w bazie danych.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Maskowanie danych (Data masking):</strong> Zastępuje znaki stałym symbolem (np. `<strong>*@</strong>*.com`). Jest to proces nieodwracalny w miejscu zapisu – jeśli dane zostaną zamaskowane i zapisane w BigQuery, zespół HR również nie będzie mógł odzyskać oryginalnych adresów e-mail.
+- <strong>B. Redakcja danych (Data redaction):</strong> Całkowicie usuwa wrażliwy tekst ze zbioru danych. Podobnie jak w przypadku maskowania, jest to proces jednostronny i nieodwracalny, co uniemożliwia zespołowi HR dostęp do oryginalnych danych.
+- <strong>C. Inspekcja danych (Data inspection):</strong> Służy jedynie do wykrywania i raportowania obecności danych wrażliwych, ale nie zabezpiecza ich ani nie modyfikuje w bazie danych.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- **Pseudonimizacja/Tokenizacja:** Pozwala na odwrócenie procesu (odzyskanie danych pierwotnych) przez uprawnione osoby przy użyciu klucza.
-- **Maskowanie/Redakcja:** Procesy nieodwracalne (destrukcyjne dla oryginalnej treści).
-- Jeśli dane muszą być ukryte przed jednymi, ale dostępne dla innych w oryginalnej formie -> wybierz **Tokenizację/Pseudonimizację**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- <strong>Pseudonimizacja/Tokenizacja:</strong> Pozwala na odwrócenie procesu (odzyskanie danych pierwotnych) przez uprawnione osoby przy użyciu klucza.
+- <strong>Maskowanie/Redakcja:</strong> Procesy nieodwracalne (destrukcyjne dla oryginalnej treści).
+- Jeśli dane muszą być ukryte przed jednymi, ale dostępne dla innych w oryginalnej formie -> wybierz <strong>Tokenizację/Pseudonimizację</strong>.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Ukrycie danych wrażliwych z możliwością ich późniejszego odczytania (odwrócenie procesu) -> Tokenization for Pseudonymization (DLP).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Pseudonymization using Cloud DLP: https://cloud.google.com/dlp/docs/pseudonymization
 </pre>
 

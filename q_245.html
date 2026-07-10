@@ -110,7 +110,7 @@ D. Create a Cloud Cloud NAT gateway for the region where the private subnet is c
    * Dlaczego nieprawidłowa: Cloud NAT pozwala maszynom prywatnym na dostęp do ogólnego internetu (np. w celu pobrania aktualizacji systemu). Choć ruch do API Google również mógłby przechodzić przez NAT, to Cloud NAT tłumaczy adresy na publiczne i kieruje ruch przez internetową bramę Google (traversing the internet), co jest mniej bezpieczne i generuje koszty transferu NAT w porównaniu do darmowego i wewnętrznego Private Google Access.
 
 4. Wskazówki, hinty, tips and tricks:
-* Dostęp z maszyn bez publicznego IP (private VMs) do usług Google (Cloud Storage, BigQuery itp.) bez internetu -> Zawsze **Private Google Access** (PGA).
+* Dostęp z maszyn bez publicznego IP (private VMs) do usług Google (Cloud Storage, BigQuery itp.) bez internetu -> Zawsze <strong>Private Google Access</strong> (PGA).
 * PGA jest konfigurowane jako prosta flaga (włącz/wyłącz) bezpośrednio na poziomie podsieci (subnet level).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

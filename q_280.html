@@ -65,9 +65,9 @@ B. Create an access level that includes conditions for internal IP address range
 Odpowiedź B jest prawidłowa, ponieważ łączy weryfikację tożsamości użytkownika (IAM) z weryfikacją kontekstu sieciowego (Access Context Manager) w ramach jednej spójnej polityki Identity-Aware Proxy (IAP).
 
 Zasada działania:
-a. **Identity-Aware Proxy (IAP):** Zabezpiecza aplikację w Cloud Run. Aby użytkownik mógł wejść do aplikacji, IAP musi autoryzować jego tożsamość.
-b. **Access Context Manager (ACM) & Access Levels:** Tworzymy poziom dostępu (Access Level) w ACM. Definiujemy w nim warunki: adres IP klienta musi należeć do wewnętrznych zakresów firmowych (IP ranges), a tożsamość musi być członkiem grupy `AppDev`.
-c. **Powiązanie z IAP:** Ten poziom dostępu aplikujemy bezpośrednio do polityki IAP dla Cloud Run. W rezultacie użytkownicy z grupy AppDev będą mieli dostęp wyłącznie wtedy, gdy będą łączyć się z biura lub przez firmowy VPN (pochodząc z dozwolonego IP). Ruch z innych lokalizacji zostanie zablokowany na poziomie IAP.
+a. <strong>Identity-Aware Proxy (IAP):</strong> Zabezpiecza aplikację w Cloud Run. Aby użytkownik mógł wejść do aplikacji, IAP musi autoryzować jego tożsamość.
+b. <strong>Access Context Manager (ACM) & Access Levels:</strong> Tworzymy poziom dostępu (Access Level) w ACM. Definiujemy w nim warunki: adres IP klienta musi należeć do wewnętrznych zakresów firmowych (IP ranges), a tożsamość musi być członkiem grupy `AppDev`.
+c. <strong>Powiązanie z IAP:</strong> Ten poziom dostępu aplikujemy bezpośrednio do polityki IAP dla Cloud Run. W rezultacie użytkownicy z grupy AppDev będą mieli dostęp wyłącznie wtedy, gdy będą łączyć się z biura lub przez firmowy VPN (pochodząc z dozwolonego IP). Ruch z innych lokalizacji zostanie zablokowany na poziomie IAP.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Deploy a VPN gateway and instruct the AppDev group to connect...
@@ -78,7 +78,7 @@ D. Configure IAP to enforce multi-factor authentication (MFA) for all users and 
    * Dlaczego nieprawidłowa: Włączenie MFA zwiększa bezpieczeństwo logowania, ale nie ogranicza dostępu fizycznego wyłącznie do określonych zakresów adresów IP (internal network IPs), co było kluczowym wymaganiem sieciowym zadania.
 
 4. Wskazówki, hinty, tips and tricks:
-* Ograniczenie dostępu do aplikacji za IAP na podstawie adresu IP i tożsamości użytkownika -> Zawsze używaj **Access Context Manager (Access Levels)** i przypisz je do polityki IAP.
+* Ograniczenie dostępu do aplikacji za IAP na podstawie adresu IP i tożsamości użytkownika -> Zawsze używaj <strong>Access Context Manager (Access Levels)</strong> i przypisz je do polityki IAP.
 * IAP w pełni współpracuje z Access Context Manager w celu wdrażania zasad Zero Trust.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

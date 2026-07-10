@@ -97,9 +97,9 @@ B. Use a subordinate CA in the Google Certificate Authority Service from the on-
 Odpowiedź B jest prawidłowa, ponieważ wykorzystanie podrzędnego urzędu certyfikacji (Subordinate CA) w ramach usługi Google Certificate Authority Service (CAS), który jest podpisany przez lokalny (on-premises) główny urząd certyfikacji (Root CA), pozwala na automatyczne, bezpieczne i wysoce skalowalne wystawianie certyfikatów w chmurze bez obciążania lokalnego zespołu PKI.
 
 Zalety tego rozwiązania:
-a. **Skalowalność i automatyzacja:** Google CAS jest w pełni zarządzaną, wysoce dostępną usługą. Po skonfigurowaniu podrzędnego CA w CAS, certyfikaty dla Load Balancerów mogą być wystawiane automatycznie (np. przy użyciu integracji z Certificate Managerem) w kilka sekund, bez konieczności ręcznego generowania żądań i podpisywania ich on-premises.
-b. **Zachowanie zaufania (Chain of Trust):** Ponieważ podrzędny CA w chmurze jest podpisany przez lokalny Root CA firmy, wszystkie systemy wewnątrz organizacji (które domyślnie ufają lokalnemu Root CA) będą automatycznie ufać certyfikatom wystawionym w GCP.
-c. **Minimalizacja wpływu na on-premises PKI:** Lokalny zespół PKI musi uczestniczyć w procesie tylko raz – podczas jednorazowego podpisania certyfikatu podrzędnego urzędu (subordinate CA) dla chmury.
+a. <strong>Skalowalność i automatyzacja:</strong> Google CAS jest w pełni zarządzaną, wysoce dostępną usługą. Po skonfigurowaniu podrzędnego CA w CAS, certyfikaty dla Load Balancerów mogą być wystawiane automatycznie (np. przy użyciu integracji z Certificate Managerem) w kilka sekund, bez konieczności ręcznego generowania żądań i podpisywania ich on-premises.
+b. <strong>Zachowanie zaufania (Chain of Trust):</strong> Ponieważ podrzędny CA w chmurze jest podpisany przez lokalny Root CA firmy, wszystkie systemy wewnątrz organizacji (które domyślnie ufają lokalnemu Root CA) będą automatycznie ufać certyfikatom wystawionym w GCP.
+c. <strong>Minimalizacja wpływu na on-premises PKI:</strong> Lokalny zespół PKI musi uczestniczyć w procesie tylko raz – podczas jednorazowego podpisania certyfikatu podrzędnego urzędu (subordinate CA) dla chmury.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Use Certificate Manager to issue Google managed public certificates...
@@ -110,7 +110,7 @@ D. Use the web applications with PKCS12 certificates... External TCP/UDP Network
    * Dlaczego nieprawidłowa: PKCS12 to format kontenera (często zawierający klucz prywatny i certyfikat), który nie jest bezpośrednio używany na load balancerach HTTP w ten sposób. Ponadto przejście na External TCP/UDP Network Load Balancer (który działa w warstwie 4) uniemożliwia terminowanie połączeń SSL na poziomie Load Balancera (brak funkcji warstwy 7, takich jak routing URL czy IAP), co zmusza do zarządzania certyfikatami na samych maszynach wirtualnych (ogromny narzut operacyjny).
 
 4. Wskazówki, hinty, tips and tricks:
-* Jeśli firma posiada własne PKI on-premises i chce zintegrować je z GCP w celu skalowalnego wystawiania certyfikatów -> Zawsze używaj **Certificate Authority Service (CAS)** w trybie **Subordinate CA** (podrzędny urząd certyfikacji).
+* Jeśli firma posiada własne PKI on-premises i chce zintegrować je z GCP w celu skalowalnego wystawiania certyfikatów -> Zawsze używaj <strong>Certificate Authority Service (CAS)</strong> w trybie <strong>Subordinate CA</strong> (podrzędny urząd certyfikacji).
 * Pozwala to na zachowanie łańcucha zaufania (Chain of Trust) przy jednoczesnym przeniesieniu ciężaru wystawiania certyfikatów do chmury.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

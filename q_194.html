@@ -98,8 +98,8 @@ E. Use the transfer tool to invite those corporate employees to transfer their u
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Podczas synchronizacji tożsamości z zewnętrznego dostawcy (IdP) do Cloud Identity pojawia się problem kont niezarządzanych (unmanaged accounts). Są to konta osobiste założone samodzielnie przez pracowników przy użyciu służbowych adresów e-mail (np. przed wdrożeniem Cloud Identity w organizacji). Powstaje konflikt kont (conflicting accounts).
 Zgodnie z najlepszymi praktykami Google Cloud:
-- **B (Reconcile):** Pierwszym krokiem jest identyfikacja i uzgodnienie (reconciliation) kont, które już istnieją w systemie Google Cloud, ale nie są powiązane z Twoim zewnętrznym IdP. Pozwala to na precyzyjne namierzenie wszystkich kont niezarządzanych.
-- **E (Transfer Tool):** Google udostępnia dedykowane narzędzie do migracji użytkowników niezarządzanych (Transfer Tool for Unmanaged Users - TTUU). Narzędzie to pozwala administratorowi na wysłanie zaproszeń do pracowników posiadających konta konfliktowe. Pracownik po zalogowaniu może zaakceptować zaproszenie i przenieść swoje dotychczasowe konto wraz ze wszystkimi jego danymi (np. plikami na Dysku Google) pod pełną kontrolę organizacji.
+- <strong>B (Reconcile):</strong> Pierwszym krokiem jest identyfikacja i uzgodnienie (reconciliation) kont, które już istnieją w systemie Google Cloud, ale nie są powiązane z Twoim zewnętrznym IdP. Pozwala to na precyzyjne namierzenie wszystkich kont niezarządzanych.
+- <strong>E (Transfer Tool):</strong> Google udostępnia dedykowane narzędzie do migracji użytkowników niezarządzanych (Transfer Tool for Unmanaged Users - TTUU). Narzędzie to pozwala administratorowi na wysłanie zaproszeń do pracowników posiadających konta konfliktowe. Pracownik po zalogowaniu może zaakceptować zaproszenie i przenieść swoje dotychczasowe konto wraz ze wszystkimi jego danymi (np. plikami na Dysku Google) pod pełną kontrolę organizacji.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A. Mandate that those corporate employees delete their unmanaged consumer accounts: Zmuszanie pracowników do usuwania kont jest nieefektywne, trudne do wyegzekwowania i może doprowadzić do bezpowrotnej utraty ważnych służbowych danych, które pracownicy mogli zgromadzić na tych kontach.
@@ -107,7 +107,7 @@ Zgodnie z najlepszymi praktykami Google Cloud:
 - D. Use Google Cloud Directory Sync (GCDS) to migrate the unmanaged consumer accounts' emails as user aliases: GCDS synchronizuje dane o kontach z lokalnego katalogu (np. AD) do Cloud Identity. Nie służy jednak do rozwiązywania problemu konfliktów kont i migracji kont osobistych na konta zarządzane. Mapowanie ich jako aliasów nie daje kontroli nad bazowymi kontami konsumenckimi.
 
 4. Wskazówki, hinty, tips and tricks:
-- Rozwiązaniem konfliktu kont konsumenckich (consumer accounts) założonych na adresy firmowe jest zawsze użycie narzędzia **Transfer Tool for Unmanaged Users**.
+- Rozwiązaniem konfliktu kont konsumenckich (consumer accounts) założonych na adresy firmowe jest zawsze użycie narzędzia <strong>Transfer Tool for Unmanaged Users</strong>.
 - Pamiętaj, że proces transferu wymaga interakcji ze strony użytkownika – musi on zaakceptować zaproszenie wysłane przez to narzędzie.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

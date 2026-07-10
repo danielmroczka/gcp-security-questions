@@ -91,25 +91,25 @@ In order to meet PCI DSS requirements, a customer wants to ensure that all outbo
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: CD**
+<strong>Poprawna odpowiedź: CD</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Norma PCI DSS wymaga, aby cały ruch wychodzący do sieci publicznej był autoryzowany. Zgodnie z oficjalną interpretacją Google Cloud w kontekście PCI DSS:
-- **Compute Engine (C) i Google Kubernetes Engine (D):** Jako usługi typu IaaS i Hybrid, umożliwiają one uruchomienie instancji wewnątrz sieci VPC. Ruch sieciowy z maszyn wirtualnych (CE) i podów (GKE) podlega bezpośrednio stanowym regułom zapory sieciowej VPC (VPC Firewall Rules). Umożliwia to zdefiniowanie reguł blokujących domyślnie cały ruch wychodzący i zezwalających wyłącznie na ruch do autoryzowanych adresów docelowych bez stosowania dodatkowych mechanizmów kompensacyjnych.
+- <strong>Compute Engine (C) i Google Kubernetes Engine (D):</strong> Jako usługi typu IaaS i Hybrid, umożliwiają one uruchomienie instancji wewnątrz sieci VPC. Ruch sieciowy z maszyn wirtualnych (CE) i podów (GKE) podlega bezpośrednio stanowym regułom zapory sieciowej VPC (VPC Firewall Rules). Umożliwia to zdefiniowanie reguł blokujących domyślnie cały ruch wychodzący i zezwalających wyłącznie na ruch do autoryzowanych adresów docelowych bez stosowania dodatkowych mechanizmów kompensacyjnych.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. App Engine:** Działa jako usługa Serverless. Domyślnie ruch wychodzący z App Engine nie przechodzi przez sieć VPC i nie można go kontrolować za pomocą standardowych reguł firewall VPC bez wdrożenia dodatkowej usługi Serverless VPC Access Connector.
-- **B. Cloud Functions:** Podobnie jak App Engine, to usługa Serverless (FaaS) i wymaga dodatkowego Serverless VPC Access Connector, aby móc kierować i kontrolować ruch wychodzący w ramach VPC.
-- **E. Cloud Storage:** Jest to usługa obiektowa dostępna przez publiczne API Google. Dostęp i ruch wychodzący z GCS nie są kontrolowane za pomocą reguł zapory sieciowej VPC na poziomie sieciowym bez dodatkowych narzędzi takich jak VPC Service Controls.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. App Engine:</strong> Działa jako usługa Serverless. Domyślnie ruch wychodzący z App Engine nie przechodzi przez sieć VPC i nie można go kontrolować za pomocą standardowych reguł firewall VPC bez wdrożenia dodatkowej usługi Serverless VPC Access Connector.
+- <strong>B. Cloud Functions:</strong> Podobnie jak App Engine, to usługa Serverless (FaaS) i wymaga dodatkowego Serverless VPC Access Connector, aby móc kierować i kontrolować ruch wychodzący w ramach VPC.
+- <strong>E. Cloud Storage:</strong> Jest to usługa obiektowa dostępna przez publiczne API Google. Dostęp i ruch wychodzący z GCS nie są kontrolowane za pomocą reguł zapory sieciowej VPC na poziomie sieciowym bez dodatkowych narzędzi takich jak VPC Service Controls.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
 - W oficjalnych materiałach Google usługi Serverless (App Engine, Cloud Functions) wymagają "dodatkowych mechanizmów kompensacyjnych/kontrolnych" w postaci VPC Access Connector do spełnienia tego wymogu PCI. Natomiast zasoby umieszczone bezpośrednio w VPC (CE, GKE) spełniają go natywnie.
-- Słowo-klucz: **outbound traffic authorized** bez dodatkowych mechanizmów kompensacyjnych.
+- Słowo-klucz: <strong>outbound traffic authorized</strong> bez dodatkowych mechanizmów kompensacyjnych.
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Autoryzacja i kontrola ruchu wychodzącego -> Zasoby wewnątrz VPC (Compute Engine, GKE).
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Dokumentacja Google Cloud Compliance (PCI DSS): https://cloud.google.com/solutions/pci-dss
 </pre>
 

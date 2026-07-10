@@ -91,25 +91,25 @@ A customer deploys an application to App Engine and needs to check for Open Web 
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Projekt OWASP (Open Web Application Security Project) definiuje najczęstsze podatności aplikacji webowych (np. SQL Injection, Cross-Site Scripting - XSS).
-- **Web Security Scanner (C):** Jest to dedykowana usługa bezpieczeństwa w Google Cloud (część Security Command Center), która skanuje aplikacje wdrożone w App Engine, Compute Engine oraz GKE pod kątem luk z listy OWASP Top 10. Działa poprzez automatyczne pełzanie (crawling) po aplikacji i symulowanie ataków bezpieczeństwa.
+- <strong>Web Security Scanner (C):</strong> Jest to dedykowana usługa bezpieczeństwa w Google Cloud (część Security Command Center), która skanuje aplikacje wdrożone w App Engine, Compute Engine oraz GKE pod kątem luk z listy OWASP Top 10. Działa poprzez automatyczne pełzanie (crawling) po aplikacji i symulowanie ataków bezpieczeństwa.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Cloud Armor:** To zapora WAF, która blokuje ataki w czasie rzeczywistym, ale nie służy do skanowania kodu i wykrywania podatności w samej aplikacji (nie jest skanerem bezpieczeństwa).
-- **B. Google Cloud Audit Logs:** Rejestrują operacje administracyjne na zasobach GCP, nie analizują kodu ani podatności w aplikacjach użytkownika.
-- **D. Anomaly Detection (Wykrywanie anomalii):** Służy do identyfikacji nietypowych wzorców zachowań w logach lub ruchu sieciowym, a nie do aktywnego testowania podatności OWASP.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Cloud Armor:</strong> To zapora WAF, która blokuje ataki w czasie rzeczywistym, ale nie służy do skanowania kodu i wykrywania podatności w samej aplikacji (nie jest skanerem bezpieczeństwa).
+- <strong>B. Google Cloud Audit Logs:</strong> Rejestrują operacje administracyjne na zasobach GCP, nie analizują kodu ani podatności w aplikacjach użytkownika.
+- <strong>D. Anomaly Detection (Wykrywanie anomalii):</strong> Służy do identyfikacji nietypowych wzorców zachowań w logach lub ruchu sieciowym, a nie do aktywnego testowania podatności OWASP.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Wykrywanie luk OWASP w aplikacjach GCP (App Engine/GKE/GCE) -> Zawsze wybieraj **Web Security Scanner**.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Wykrywanie luk OWASP w aplikacjach GCP (App Engine/GKE/GCE) -> Zawsze wybieraj <strong>Web Security Scanner</strong>.
 - Pamiętaj, że Web Security Scanner jest narzędziem pasywnym/aktywnym do testowania, a Cloud Armor to narzędzie aktywne do ochrony w czasie rzeczywistym (inline mitigation).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Skanowanie podatności webowych w GCP -> Web Security Scanner.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Web Security Scanner Guide: https://cloud.google.com/security-command-center/docs/concepts-web-security-scanner-overview
 </pre>
 

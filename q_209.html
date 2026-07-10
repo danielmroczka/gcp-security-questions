@@ -98,8 +98,8 @@ E. Configure the Binary Authorization policy with respective attestations for th
 Odpowiedzi C i E są prawidłowe, ponieważ Binary Authorization (Autoryzacja Binarna) jest flagową usługą bezpieczeństwa Google Cloud służącą do egzekwowania wdrażania wyłącznie podpisanych i zaufanych obrazów kontenerowych na klastrach GKE.
 
 Szczegóły wdrożenia:
-a. **Polityka organizacji (C):** Aby upewnić się, że żadne klastry GKE w projektach nie ominą tego zabezpieczenia, administrator może utworzyć lub włączyć politykę organizacji wymuszającą aktywację usługi Binary Authorization na każdym nowo tworzonym klastrze GKE.
-b. **Reguły i atestatory (Attestators) (E):** Konfiguracja samej polityki Binary Authorization polega na zdefiniowaniu reguł (np. blokowanie wszystkich obrazów poza określonymi wyjątkami) oraz zdefiniowaniu Atestatorów. Atestatory to tożsamości, które muszą kryptograficznie podpisać (attest) obraz kontenera (np. po pomyślnym przejściu skanowania podatności w potoku CI/CD), aby GKE zezwoliło na jego uruchomienie.
+a. <strong>Polityka organizacji (C):</strong> Aby upewnić się, że żadne klastry GKE w projektach nie ominą tego zabezpieczenia, administrator może utworzyć lub włączyć politykę organizacji wymuszającą aktywację usługi Binary Authorization na każdym nowo tworzonym klastrze GKE.
+b. <strong>Reguły i atestatory (Attestators) (E):</strong> Konfiguracja samej polityki Binary Authorization polega na zdefiniowaniu reguł (np. blokowanie wszystkich obrazów poza określonymi wyjątkami) oraz zdefiniowaniu Atestatorów. Atestatory to tożsamości, które muszą kryptograficznie podpisać (attest) obraz kontenera (np. po pomyślnym przejściu skanowania podatności w potoku CI/CD), aby GKE zezwoliło na jego uruchomienie.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Enable Container Threat Detection in the Security Command Center (SCC) for the project.
@@ -110,7 +110,7 @@ D. Enable PodSecurity standards, and set them to Restricted.
    * Dlaczego nieprawidłowa: Standardy bezpieczeństwa Podów (Pod Security Standards) w Kubernetes kontrolują uprawnienia kontenerów wewnątrz systemu (np. zakaz uruchamiania jako root, dostęp do sieci hosta), ale nie weryfikują podpisów kryptograficznych samych obrazów przed wdrożeniem.
 
 4. Wskazówki, hinty, tips and tricks:
-* Weryfikacja podpisów kontenerów / dopuszczenie tylko zaufanych obrazów do uruchomienia na GKE -> Zawsze **Binary Authorization**.
+* Weryfikacja podpisów kontenerów / dopuszczenie tylko zaufanych obrazów do uruchomienia na GKE -> Zawsze <strong>Binary Authorization</strong>.
 * Atestacja (attestation) to proces podpisywania obrazu przez zaufany podmiot (np. potok Jenkins/GitHub Actions lub skaner podatności Cloud Build).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

@@ -89,25 +89,25 @@ When working with agents in the support center via online chat, your organizatio
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: C**
+<strong>Poprawna odpowiedź: C</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Problem dotyczy usuwania danych wrażliwych (PII) z obrazów dokumentów przesyłanych przez klientów, przy jednoczesnym zachowaniu przydatności samych dokumentów do dalszej analizy (data utility):
-- **Użycie akcji inspekcji i redagowania obrazów (image inspection and redaction) w Cloud Data Loss Prevention (DLP) API (C):** DLP API posiada specjalną metodę do analizy obrazów. Wykrywa ona tekst na obrazku (OCR), wyszukuje dane wrażliwe (np. PESEL, numery kart, nazwiska) za pomocą wbudowanych detektorów (infoTypes), a następnie nakłada czarne maski maskujące bezpośrednio na te fragmenty obrazu. Pozwala to na bezpieczne zapisanie oczyszczonego obrazu do dalszych analiz.
+- <strong>Użycie akcji inspekcji i redagowania obrazów (image inspection and redaction) w Cloud Data Loss Prevention (DLP) API (C):</strong> DLP API posiada specjalną metodę do analizy obrazów. Wykrywa ona tekst na obrazku (OCR), wyszukuje dane wrażliwe (np. PESEL, numery kart, nazwiska) za pomocą wbudowanych detektorów (infoTypes), a następnie nakłada czarne maski maskujące bezpośrednio na te fragmenty obrazu. Pozwala to na bezpieczne zapisanie oczyszczonego obrazu do dalszych analiz.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Szyfrowanie KMS:** Zaszyfrowanie całego obrazu chroni go przed osobami trzecimi, ale uniemożliwia wewnętrznym analitykom trendów przeglądanie jakichkolwiek informacji na obrazku (niszczy data utility).
-- **B. Lifecycle Management:** Usunięcie całego pliku powoduje bezpowrotną utratę danych i uniemożliwia jakąkolwiek analizę trendów.
-- **D. Generalization i bucketing na tekście:** Ta opcja dotyczy danych tekstowych (tabelarycznych), a nie plików graficznych/obrazów, o których mowa w pytaniu.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Szyfrowanie KMS:</strong> Zaszyfrowanie całego obrazu chroni go przed osobami trzecimi, ale uniemożliwia wewnętrznym analitykom trendów przeglądanie jakichkolwiek informacji na obrazku (niszczy data utility).
+- <strong>B. Lifecycle Management:</strong> Usunięcie całego pliku powoduje bezpowrotną utratę danych i uniemożliwia jakąkolwiek analizę trendów.
+- <strong>D. Generalization i bucketing na tekście:</strong> Ta opcja dotyczy danych tekstowych (tabelarycznych), a nie plików graficznych/obrazów, o których mowa w pytaniu.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Słowo-klucz: **pictures of their documents** (obrazy) oraz **redact PII** (usuwanie danych wrażliwych).
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Słowo-klucz: <strong>pictures of their documents</strong> (obrazy) oraz <strong>redact PII</strong> (usuwanie danych wrażliwych).
 - Zapamiętaj, że DLP API radzi sobie doskonale zarówno z tekstem ustrukturyzowanym, jak i z obrazami (poprzez wbudowany mechanizm OCR).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Ukrywanie danych wrażliwych na obrazach -> DLP API Image Inspection & Redaction.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Redacting sensitive data from images: https://cloud.google.com/dlp/docs/redacting-sensitive-data-images
 </pre>
 

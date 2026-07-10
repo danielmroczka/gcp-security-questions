@@ -100,10 +100,10 @@ C. Use predefined IAM roles tailored to each team's access needs, such as Storag
 Odpowiedź C jest prawidłowa, ponieważ kompleksowo spełnia wszystkie cztery wymagania bezpieczeństwa i zgodności postawione przed systemem przechowywania danych w Cloud Storage.
 
 Spełnienie wymagań krok po kroku:
-a. **Zróżnicowany dostęp (Least Privilege):** Zastosowanie predefiniowanych ról IAM (np. `Storage Object Viewer` dla odczytu oraz `Storage Object User` dla zapisu i odczytu) pozwala na precyzyjne przydzielenie uprawnień zespołom bez nadmiarowych uprawnień administracyjnych.
-b. **Ochrona danych w spoczynku i kontrola kluczy:** Wykorzystanie kluczy szyfrujących dostarczanych przez klienta (Customer-Supplied Encryption Keys - CSEK) gwarantuje, że bank/organizacja ma 100% kontroli nad kluczami, ponieważ Google nie zapisuje ich na dyskach i są one dostarczane w wywołaniach API.
-c. **Ochrona w locie:** Wymuszenie szyfrowania TLS (HTTPS) zabezpiecza dane przed podsłuchem podczas przesyłania.
-d. **Śledzenie zmian i audyt:** Włączenie wersjonowania obiektów (Object Versioning) pozwala na odzyskanie i śledzenie zmian w plikach, a aktywacja Cloud Audit Logs zapewnia pełną rozliczalność (kto i kiedy uzyskał dostęp do plików).
+a. <strong>Zróżnicowany dostęp (Least Privilege):</strong> Zastosowanie predefiniowanych ról IAM (np. `Storage Object Viewer` dla odczytu oraz `Storage Object User` dla zapisu i odczytu) pozwala na precyzyjne przydzielenie uprawnień zespołom bez nadmiarowych uprawnień administracyjnych.
+b. <strong>Ochrona danych w spoczynku i kontrola kluczy:</strong> Wykorzystanie kluczy szyfrujących dostarczanych przez klienta (Customer-Supplied Encryption Keys - CSEK) gwarantuje, że bank/organizacja ma 100% kontroli nad kluczami, ponieważ Google nie zapisuje ich na dyskach i są one dostarczane w wywołaniach API.
+c. <strong>Ochrona w locie:</strong> Wymuszenie szyfrowania TLS (HTTPS) zabezpiecza dane przed podsłuchem podczas przesyłania.
+d. <strong>Śledzenie zmian i audyt:</strong> Włączenie wersjonowania obiektów (Object Versioning) pozwala na odzyskanie i śledzenie zmian w plikach, a aktywacja Cloud Audit Logs zapewnia pełną rozliczalność (kto i kiedy uzyskał dostęp do plików).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. ...Employ server-side encryption and Object Versioning by Google Cloud Storage...
@@ -114,9 +114,9 @@ D. Assign IAM permissions for all teams at the object level... Implement third-p
    * Dlaczego nieprawidłowa: Przypisywanie uprawnień na poziomie obiektów jest skomplikowane i nieefektywne. Używanie oprogramowania firm trzecich (third-party software) do szyfrowania danych w locie wprowadza niepotrzebną złożoność i nie integruje się natywnie z Cloud Storage. Ponadto logi sieciowe (network logs) nie dostarczają szczegółowych informacji o operacjach na plikach API GCS (brak audytu specyficznego dla przechowywania obiektów).
 
 4. Wskazówki, hinty, tips and tricks:
-* Kontrola nad kluczami szyfrującymi w GCS -> **Customer-Supplied Encryption Keys (CSEK)** lub **Customer-Managed Encryption Keys (CMEK)**.
-* Śledzenie zmian plików w GCS -> **Object Versioning**.
-* Audytowanie dostępu do obiektów -> **Cloud Audit Logs** (Data Access Logs).
+* Kontrola nad kluczami szyfrującymi w GCS -> <strong>Customer-Supplied Encryption Keys (CSEK)</strong> lub <strong>Customer-Managed Encryption Keys (CMEK)</strong>.
+* Śledzenie zmian plików w GCS -> <strong>Object Versioning</strong>.
+* Audytowanie dostępu do obiektów -> <strong>Cloud Audit Logs</strong> (Data Access Logs).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Track file changes + audit access + organization control keys -> Object Versioning + Cloud Audit Logs + CSEK/CMEK.

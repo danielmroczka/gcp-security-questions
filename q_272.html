@@ -65,8 +65,8 @@ D. Set an organization policy that denies the creation of Compute Engine instanc
 Odpowiedź D jest prawidłowa, ponieważ łączy prewencyjne egzekwowanie zasad za pomocą polityk organizacji (Resource Location Restriction) z niezbędnymi krokami operacyjnymi w celu doprowadzenia istniejącej infrastruktury do stanu zgodności (compliance).
 
 Kluczowe kroki:
-a. **Polityka prewencyjna (Org Policy):** Ustawienie ograniczenia `constraints/gcp.resourceLocations` typu `deny` dla wszystkich regionów poza UE (lub typu `allow` wyłącznie dla lokalizacji w Europie) gwarantuje, że od momentu jej wdrożenia żadne nowe maszyny Compute Engine nie powstaną w USA czy Azji.
-b. **Audyt i migracja (Remediation):** Polityki organizacji działają prewencyjnie – nie modyfikują i nie usuwają automatycznie zasobów, które powstały przed wdrożeniem polityki. Aby zapewnić 100% zgodności, należy zidentyfikować istniejące maszyny w niedozwolonych regionach i ręcznie lub skryptowo zmigrować ich dyski i konfigurację do Europy.
+a. <strong>Polityka prewencyjna (Org Policy):</strong> Ustawienie ograniczenia `constraints/gcp.resourceLocations` typu `deny` dla wszystkich regionów poza UE (lub typu `allow` wyłącznie dla lokalizacji w Europie) gwarantuje, że od momentu jej wdrożenia żadne nowe maszyny Compute Engine nie powstaną w USA czy Azji.
+b. <strong>Audyt i migracja (Remediation):</strong> Polityki organizacji działają prewencyjnie – nie modyfikują i nie usuwają automatycznie zasobów, które powstały przed wdrożeniem polityki. Aby zapewnić 100% zgodności, należy zidentyfikować istniejące maszyny w niedozwolonych regionach i ręcznie lub skryptowo zmigrować ich dyski i konfigurację do Europy.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Use a third-party configuration management tool to monitor... Automatically delete or migrate...
@@ -77,7 +77,7 @@ C. Use organization policy constraints in Resource Manager to enforce allowed re
    * Dlaczego nieprawidłowa: Ta opcja konfiguruje blokadę dla nowych maszyn, ale całkowicie ignoruje problem już istniejących wdrożeń (existing deployments), które pozostałyby w niedozwolonych lokalizacjach, nie spełniając wymogów audytu.
 
 4. Wskazówki, hinty, tips and tricks:
-* Aby trwale zablokować tworzenie zasobów poza określonym obszarem geograficznym -> Używaj polityki organizacji **`constraints/gcp.resourceLocations`**.
+* Aby trwale zablokować tworzenie zasobów poza określonym obszarem geograficznym -> Używaj polityki organizacji <strong>`constraints/gcp.resourceLocations`</strong>.
 * Pamiętaj, że polityki organizacji nie działają wstecz (they are not retroactive) – istniejące zasoby muszą być zmigrowane ręcznie.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

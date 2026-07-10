@@ -96,9 +96,9 @@ B. Create a workforce identity pool and federate the identity pool with the iden
 Odpowiedź B jest prawidłowa, ponieważ federowanie tożsamości za pomocą Workforce Identity Federation pozwala na automatyczne powiązanie cyklu życia kont zewnętrznych konsultantów z ich statusem zatrudnienia u ich macierzystego pracodawcy.
 
 Zalety tego podejścia:
-a. **Automatyczne usuwanie dostępu:** Konsultanci partnera logują się przy użyciu swojego lokalnego IdP (np. Okta partnera). Jeśli pracownik zostanie zwolniony z firmy partnerskiej lub usunięty z ich Active Directory, jego konto IdP zostanie wyłączone. Od tego momentu automatycznie straci on możliwość zalogowania się i uzyskania tokenu dostępu do zasobów w Twojej chmurze GCP.
-b. **Brak zarządzania kontami:** Twoja firma nie musi tworzyć, resetować haseł ani ręcznie usuwać kont partnera po 18 miesiącach (brak narzutu administracyjnego).
-c. **Zgodność z compliance:** Spełnia to wymóg twardej kontroli i natychmiastowego odcięcia dostępu po ustaniu stosunku pracy z partnerem.
+a. <strong>Automatyczne usuwanie dostępu:</strong> Konsultanci partnera logują się przy użyciu swojego lokalnego IdP (np. Okta partnera). Jeśli pracownik zostanie zwolniony z firmy partnerskiej lub usunięty z ich Active Directory, jego konto IdP zostanie wyłączone. Od tego momentu automatycznie straci on możliwość zalogowania się i uzyskania tokenu dostępu do zasobów w Twojej chmurze GCP.
+b. <strong>Brak zarządzania kontami:</strong> Twoja firma nie musi tworzyć, resetować haseł ani ręcznie usuwać kont partnera po 18 miesiącach (brak narzutu administracyjnego).
+c. <strong>Zgodność z compliance:</strong> Spełnia to wymóg twardej kontroli i natychmiastowego odcięcia dostępu po ustaniu stosunku pracy z partnerem.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create a temporary username and password... Auto-clean... after the work engagement has ended.
@@ -109,7 +109,7 @@ D. Add the identities of the temporary partner team members to your identity pro
    * Dlaczego nieprawidłowa: Dodanie zewnętrznych użytkowników bezpośrednio do Twojego wewnętrznego IdP (np. Cloud Identity) zmusza Cię do ręcznego zarządzania ich hasłami i cyklem życia. Jeśli partner zwolni pracownika, Twoje IT może o tym nie wiedzieć i konto w Twoim systemie pozostanie aktywne.
 
 4. Wskazówki, hinty, tips and tricks:
-* Gdy kluczowym wymogiem jest natychmiastowe odebranie dostępu użytkownikom zewnętrznym (partnerom/dostawcom) po usunięciu ich z ich firmy macierzystej -> Używaj **Workforce Identity Federation** powiązanego z ich IdP.
+* Gdy kluczowym wymogiem jest natychmiastowe odebranie dostępu użytkownikom zewnętrznym (partnerom/dostawcom) po usunięciu ich z ich firmy macierzystej -> Używaj <strong>Workforce Identity Federation</strong> powiązanego z ich IdP.
 * Zapewnia to suwerenność tożsamości po stronie partnera.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

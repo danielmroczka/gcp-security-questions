@@ -65,8 +65,8 @@ B. Enable logging in the Application Load Balancer backend and set the log level
 Odpowiedź B jest prawidłowa, ponieważ Cloud Armor generuje szczegółowe logi dotyczące zablokowanych lub dopuszczonych żądań, a logi te są zapisywane i analizowane jako część logów powiązanego zewnętrznego Load Balancera (Application Load Balancer).
 
 Dlaczego te kroki są konieczne:
-a. **Logowanie na backendzie:** Logi Cloud Armor nie istnieją samodzielnie – są one zintegrowane z logami żądań HTTP(S) Load Balancera. Należy upewnić się, że usługa backendowa ma włączone logowanie (HTTP logging enabled).
-b. **Log Level VERBOSE:** Ustawienie poziomu logowania na `VERBOSE` w polityce bezpieczeństwa Cloud Armor gwarantuje, że w logach znajdą się szczegółowe informacje na temat reguł, które zostały dopasowane (np. dopasowane sygnatury WAF, dokładna reguła, która zablokowała żądanie). Umożliwia to precyzyjną diagnostykę fałszywych alarmów (false positives).
+a. <strong>Logowanie na backendzie:</strong> Logi Cloud Armor nie istnieją samodzielnie – są one zintegrowane z logami żądań HTTP(S) Load Balancera. Należy upewnić się, że usługa backendowa ma włączone logowanie (HTTP logging enabled).
+b. <strong>Log Level VERBOSE:</strong> Ustawienie poziomu logowania na `VERBOSE` w polityce bezpieczeństwa Cloud Armor gwarantuje, że w logach znajdą się szczegółowe informacje na temat reguł, które zostały dopasowane (np. dopasowane sygnatury WAF, dokładna reguła, która zablokowała żądanie). Umożliwia to precyzyjną diagnostykę fałszywych alarmów (false positives).
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Modify the Application Load Balancer backend and increase the log sample rate...
@@ -78,7 +78,7 @@ D. Create a log sink with a filter for logs containing redirected_by_security_po
 
 4. Wskazówki, hinty, tips and tricks:
 * Logi Cloud Armor są częścią logów zewnętrznego Load Balancera HTTP(S).
-* Aby analizować szczegóły blokad WAF (np. fałszywe alarmy) -> Ustaw log level w polityce Cloud Armor na **`VERBOSE`**.
+* Aby analizować szczegóły blokad WAF (np. fałszywe alarmy) -> Ustaw log level w polityce Cloud Armor na <strong>`VERBOSE`</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 * Investigate blocked traffic by Cloud Armor / collect request logs -> Enable logging in ALB backend + set log level to VERBOSE in Cloud Armor.

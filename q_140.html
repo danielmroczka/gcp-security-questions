@@ -95,14 +95,14 @@ D. Store the data in a Cloud Storage bucket, and configure the bucket's Object L
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Wymagane jest automatyczne i tanie usuwanie starych kopii zapasowych (backups) po określonym czasie w celu zachowania zgodności z przepisami o ochronie danych:
 - Kopie zapasowe to pliki nieustrukturyzowane (obrazy dysków, dumpy baz danych), dla których najbardziej opłacalnym i standardowym miejscem przechowywania są kubełki Cloud Storage (oferujące tanie klasy archiwalne, np. Coldline lub Archive).
-- Usługa Cloud Storage posiada wbudowaną, bezpłatną funkcję **Object Lifecycle Management** (cykl życia obiektów). Pozwala ona na zdefiniowanie prostej reguły (np. akcja `Delete` dla obiektów o wieku `Age` powyżej X dni). Proces ten zachodzi w pełni automatycznie w tle, bez narzutu operacyjnego i bez konieczności utrzymywania dodatkowych serwerów czy pisania kodu.
+- Usługa Cloud Storage posiada wbudowaną, bezpłatną funkcję <strong>Object Lifecycle Management</strong> (cykl życia obiektów). Pozwala ona na zdefiniowanie prostej reguły (np. akcja `Delete` dla obiektów o wieku `Age` powyżej X dni). Proces ten zachodzi w pełni automatycznie w tle, bez narzutu operacyjnego i bez konieczności utrzymywania dodatkowych serwerów czy pisania kodu.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 - A. Przechowywanie na dyskach Persistent Disk i usuwanie dysku: Dyski PD są przeznaczone do wydajnego zapisu blokowego dla działających maszyn VM i są znacznie droższe niż Cloud Storage. Usunięcie całego dysku skasowałoby wszystkie kopie na nim zawarte, w tym te, które jeszcze nie wygasły.
 - B i C. Użycie baz Cloud Bigtable lub tabel BigQuery: Są to zaawansowane systemy bazodanowe i analityczne. Przechowywanie w nich surowych plików kopii zapasowych generowałoby ogromne i nieuzasadnione koszty finansowe, znacznie przewyższające koszt przechowywania w Cloud Storage.
 
 4. Wskazówki, hinty, tips and tricks:
-- Jeśli w pytaniu o automatyczną retencję i usuwanie starych plików kopii zapasowych pojawia się wymóg minimalizacji kosztów przechowywania ("minimize storage costs"), prawidłową odpowiedzią jest zawsze **Cloud Storage z Object Lifecycle Management**.
+- Jeśli w pytaniu o automatyczną retencję i usuwanie starych plików kopii zapasowych pojawia się wymóg minimalizacji kosztów przechowywania ("minimize storage costs"), prawidłową odpowiedzią jest zawsze <strong>Cloud Storage z Object Lifecycle Management</strong>.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
 - Tanie przechowywanie kopii zapasowych + automatyczne usuwanie po czasie -> Cloud Storage + Object Lifecycle Management.

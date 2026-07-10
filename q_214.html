@@ -97,8 +97,8 @@ B. Implement an organization policy that ensures all VM resources created across
 Odpowiedź B jest prawidłowa, ponieważ Confidential VMs (Poufne Maszyny Wirtualne) to technologia Google Cloud, która szyfruje dane w pamięci RAM podczas ich przetwarzania (encryption in-use). Zastosowanie polityki organizacji gwarantuje centralne i bezwyjątkowe egzekwowanie tej reguły.
 
 Szczegóły techniczne:
-a. **Szyfrowanie danych w użyciu (Encryption in-use):** Tradycyjne szyfrowanie chroni dane w spoczynku (at-rest) i w transporcie (in-transit). Dane w pamięci RAM procesora są jednak jawne. Confidential VMs wykorzystują sprzętowe wsparcie procesorów (np. AMD SEV - Secure Encrypted Virtualization) do szyfrowania pamięci maszyn wirtualnych za pomocą kluczy generowanych sprzętowo, do których nie ma dostępu nawet hypervisor Google.
-b. **Wymuszenie w skali organizacji:** Poprzez wdrożenie ograniczenia polityki organizacji `constraints/compute.requireConfidentialCompute` (wymagaj poufnych obliczeń), administrator zabezpiecza całe środowisko przed uruchomieniem standardowej (nienależącej do kategorii Confidential) maszyny wirtualnej.
+a. <strong>Szyfrowanie danych w użyciu (Encryption in-use):</strong> Tradycyjne szyfrowanie chroni dane w spoczynku (at-rest) i w transporcie (in-transit). Dane w pamięci RAM procesora są jednak jawne. Confidential VMs wykorzystują sprzętowe wsparcie procesorów (np. AMD SEV - Secure Encrypted Virtualization) do szyfrowania pamięci maszyn wirtualnych za pomocą kluczy generowanych sprzętowo, do których nie ma dostępu nawet hypervisor Google.
+b. <strong>Wymuszenie w skali organizacji:</strong> Poprzez wdrożenie ograniczenia polityki organizacji `constraints/compute.requireConfidentialCompute` (wymagaj poufnych obliczeń), administrator zabezpiecza całe środowisko przed uruchomieniem standardowej (nienależącej do kategorii Confidential) maszyny wirtualnej.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. ...use customer-managed encryption keys (CMEK) protection.
@@ -111,7 +111,7 @@ D. No action is necessary because Google encrypts data while it is in use by def
 4. Wskazówki, hinty, tips and tricks:
 * Szyfrowanie danych w spoczynku -> CMEK / CSEK.
 * Szyfrowanie danych w transporcie -> TLS / IPsec.
-* Szyfrowanie danych w użyciu (in-use / in memory) -> **Confidential VMs / Confidential Computing**.
+* Szyfrowanie danych w użyciu (in-use / in memory) -> <strong>Confidential VMs / Confidential Computing</strong>.
 * Ograniczenie polityki organizacji dla Confidential VM to `compute.requireConfidentialCompute`.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

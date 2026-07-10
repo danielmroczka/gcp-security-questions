@@ -90,25 +90,25 @@ An organization's typical network and security review consists of analyzing appl
 
 <h2>Wyjaśnienie</h2>
 <pre>
-**Poprawna odpowiedź: B**
+<strong>Poprawna odpowiedź: B</strong>
 
-**1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:**
+<strong>1. Kompleksowe wyjaśnienie poprawnej odpowiedzi:</strong>
 Organizacja chce umożliwić deweloperom samodzielne wdrażanie aplikacji przy jednoczesnym automatycznym egzekwowaniu reguł bezpieczeństwa (sieć, zapory, trasy) bez narzutu czasochłonnych, ręcznych przeglądów bezpieczeństwa:
-- **Wprowadzenie zasad Infrastructure as Code (IaC) oraz wdrożenie analizy statycznej w potokach CI/CD do egzekwowania polityk (B):** Użycie narzędzi takich jak Terraform (IaC) pozwala na deklaratywne definiowanie zasobów. Skanowanie kodu infrastruktury w potoku CI/CD (np. za pomocą narzędzi do analizy statycznej/polityk takich jak Terraform Validator, Checkov czy OPA) pozwala automatycznie zablokować wdrożenia naruszające reguły bezpieczeństwa zanim trafią one do chmury. Daje to deweloperom szybkość, a zespołowi bezpieczeństwa pełną kontrolę.
+- <strong>Wprowadzenie zasad Infrastructure as Code (IaC) oraz wdrożenie analizy statycznej w potokach CI/CD do egzekwowania polityk (B):</strong> Użycie narzędzi takich jak Terraform (IaC) pozwala na deklaratywne definiowanie zasobów. Skanowanie kodu infrastruktury w potoku CI/CD (np. za pomocą narzędzi do analizy statycznej/polityk takich jak Terraform Validator, Checkov czy OPA) pozwala automatycznie zablokować wdrożenia naruszające reguły bezpieczeństwa zanim trafią one do chmury. Daje to deweloperom szybkość, a zespołowi bezpieczeństwa pełną kontrolę.
 
-**2. Wyjaśnienie niepoprawnych odpowiedzi:**
-- **A. Forseti w środowisku produkcyjnym:** Forseti to doskonałe narzędzie, ale działa reaktywnie (wykrywa błędy konfiguracji już po ich wdrożeniu na produkcji). Nie zapobiega to wdrożeniu błędnych konfiguracji, a jedynie o nich raportuje.
-- **C. Kierowanie ruchu przez własne routery:** Wprowadza to ogromny narzut wydajnościowy, dodatkowe punkty awarii i nie rozwiązuje problemu wdrożeń niezgodnych z politykami.
-- **D. Praca w chmurze tylko dla Dev/QA, a produkcja on-premises:** To podejście neguje korzyści z migracji do chmury i nie rozwiązuje problemu automatyzacji kontroli w środowiskach deweloperskich.
+<strong>2. Wyjaśnienie niepoprawnych odpowiedzi:</strong>
+- <strong>A. Forseti w środowisku produkcyjnym:</strong> Forseti to doskonałe narzędzie, ale działa reaktywnie (wykrywa błędy konfiguracji już po ich wdrożeniu na produkcji). Nie zapobiega to wdrożeniu błędnych konfiguracji, a jedynie o nich raportuje.
+- <strong>C. Kierowanie ruchu przez własne routery:</strong> Wprowadza to ogromny narzut wydajnościowy, dodatkowe punkty awarii i nie rozwiązuje problemu wdrożeń niezgodnych z politykami.
+- <strong>D. Praca w chmurze tylko dla Dev/QA, a produkcja on-premises:</strong> To podejście neguje korzyści z migracji do chmury i nie rozwiązuje problemu automatyzacji kontroli w środowiskach deweloperskich.
 
-**3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):**
-- Nowoczesne bezpieczeństwo w chmurze stawia na podejście **Shift-Left** – czyli wykrywanie błędów konfiguracji jak najwcześniej (w fazie kodu / CI/CD pipeline), a nie po wdrożeniu.
+<strong>3. Wskazówki i pułapki egzaminacyjne (Tips & Tricks):</strong>
+- Nowoczesne bezpieczeństwo w chmurze stawia na podejście <strong>Shift-Left</strong> – czyli wykrywanie błędów konfiguracji jak najwcześniej (w fazie kodu / CI/CD pipeline), a nie po wdrożeniu.
 - Statyczna analiza kodu infrastruktury (IaC static analysis) w potokach CI/CD to złoty standard automatycznego egzekwowania polityk (Policy as Code).
 
-**4. Reguły wyboru odpowiedzi:**
+<strong>4. Reguły wyboru odpowiedzi:</strong>
 - Bezpieczne wdrożenia bez ręcznego przeglądu -> Automatyczne testy polityk w CI/CD + Infrastructure as Code.
 
-**5. Dodatkowe źródła:**
+<strong>5. Dodatkowe źródła:</strong>
 - Google Cloud - Policy intelligence: https://cloud.google.com/policy-intelligence/docs
 </pre>
 

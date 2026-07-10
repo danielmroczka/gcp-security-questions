@@ -97,8 +97,8 @@ A. Assign a BigQuery Data Viewer role along with an IAM condition that limits th
 Odpowiedź A jest prawidłowa, ponieważ warunki IAM (IAM Conditions) są wbudowanym, deklaratywnym i w pełni zarządzanym przez GCP mechanizmem do ograniczania dostępu do zasobów na podstawie czasu (temporal access control).
 
 Dlaczego to najlepsze rozwiązanie:
-a. **IAM Conditions:** Pozwalają na definiowanie reguł sprawdzających atrybuty żądania. Możemy użyć atrybutu `request.time` i zdefiniować zakres godzin (np. 9:00 - 17:00 od poniedziałku do piątku).
-b. **Automatyzacja i brak skryptów:** System IAM sam decyduje w locie, czy w momencie wysłania zapytania do BigQuery warunek czasu jest spełniony. Jeśli użytkownik spróbuje uzyskać dostęp o 20:00, otrzyma odmowę dostępu (Access Denied). Nie wymaga to uruchamiania żadnych zewnętrznych skryptów, zadań cron ani modyfikowania uprawnień w bazie danych.
+a. <strong>IAM Conditions:</strong> Pozwalają na definiowanie reguł sprawdzających atrybuty żądania. Możemy użyć atrybutu `request.time` i zdefiniować zakres godzin (np. 9:00 - 17:00 od poniedziałku do piątku).
+b. <strong>Automatyzacja i brak skryptów:</strong> System IAM sam decyduje w locie, czy w momencie wysłania zapytania do BigQuery warunek czasu jest spełniony. Jeśli użytkownik spróbuje uzyskać dostęp o 20:00, otrzyma odmowę dostępu (Access Denied). Nie wymaga to uruchamiania żadnych zewnętrznych skryptów, zadań cron ani modyfikowania uprawnień w bazie danych.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. Run a gsutil script that assigns a BigQuery Data Viewer role, and remove it only...
@@ -109,7 +109,7 @@ D. Configure Cloud Scheduler so that it triggers a Cloud Functions instance that
    * Dlaczego nieprawidłowa: Polityki organizacji (Organization Policies) nakładają globalne ograniczenia na konfigurację zasobów (np. zakaz publicznego GCS, ograniczenie regionów), ale nie służą do przyznawania lub odbierania uprawnień do odczytu danych w BigQuery dla poszczególnych użytkowników w zależności od pory dnia.
 
 4. Wskazówki, hinty, tips and tricks:
-* Jeśli wymagane jest ograniczenie dostępu (Access Control) w określonych godzinach (working hours / specific time window) -> Zawsze używaj **IAM Conditions** z atrybutem czasu (`request.time`).
+* Jeśli wymagane jest ograniczenie dostępu (Access Control) w określonych godzinach (working hours / specific time window) -> Zawsze używaj <strong>IAM Conditions</strong> z atrybutem czasu (`request.time`).
 * Jest to rozwiązanie wbudowane bezpośrednio w system autoryzacji GCP i nie wymaga pisania kodu.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

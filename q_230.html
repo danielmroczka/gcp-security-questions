@@ -97,8 +97,8 @@ A. Create your secret with a user managed replication policy, and choose only co
 Odpowiedź A jest prawidłowa, ponieważ Secret Manager pozwala na precyzyjne kontrolowanie lokalizacji przechowywania danych sekretów (payloads) za pomocą zasad replikacji zarządzanych przez użytkownika (user-managed replication).
 
 Jak to działa:
-a. **Replikacja automatyczna (Automatic):** Powoduje, że Secret Manager replikuje sekret w wielu regionach wybranych automatycznie przez Google w celu zapewnienia wysokiej dostępności i wydajności na całym świecie. Nie gwarantuje to zgodności z przepisami o rezydentności danych w Europie (dane mogą trafić np. do USA).
-b. **Replikacja zarządzana przez użytkownika (User-managed):** Pozwala administratorowi na ręczne wskazanie listy regionów (np. wyłącznie `europe-west1` w Belgii i `europe-west4` w Holandii). Sekret zostanie powielony w obu tych regionach, co zapewnia wysoką dostępność (High Availability) w przypadku awarii jednego z nich, a jednocześnie gwarantuje, że dane nigdy nie opuszczą tych lokalizacji.
+a. <strong>Replikacja automatyczna (Automatic):</strong> Powoduje, że Secret Manager replikuje sekret w wielu regionach wybranych automatycznie przez Google w celu zapewnienia wysokiej dostępności i wydajności na całym świecie. Nie gwarantuje to zgodności z przepisami o rezydentności danych w Europie (dane mogą trafić np. do USA).
+b. <strong>Replikacja zarządzana przez użytkownika (User-managed):</strong> Pozwala administratorowi na ręczne wskazanie listy regionów (np. wyłącznie `europe-west1` w Belgii i `europe-west4` w Holandii). Sekret zostanie powielony w obu tych regionach, co zapewnia wysoką dostępność (High Availability) w przypadku awarii jednego z nich, a jednocześnie gwarantuje, że dane nigdy nie opuszczą tych lokalizacji.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. Create your secret with an automatic replication policy, and choose only compliant locations.

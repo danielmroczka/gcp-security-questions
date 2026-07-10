@@ -96,9 +96,9 @@ D. Enable Event Threat Detection and Security Health Analytics in Security Comma
 Odpowiedź D jest prawidłowa, ponieważ łączy wdrożenie podstawowych rejestrów zdarzeń (Cloud Audit Logs) ze zautomatyzowaną analizą i monitorowaniem w czasie rzeczywistym przy użyciu Security Command Center (SCC) Premium.
 
 Analiza i korzyści:
-a. **Cloud Audit Logs (Fundament audytu):** Zapewnia rejestrację wszystkich działań administracyjnych (Admin Activity) oraz zmian w uprawnieniach IAM (kto zmienił rolę, kto dodał użytkownika). Umożliwia to pełną identyfikację działań użytkowników uprzywilejowanych.
-b. **Security Health Analytics (SHA):** Skanuje konfigurację zasobów chmurowych pod kątem błędów i nieuprawnionych zmian (np. publiczne kubełki GCS, wyłączone logowanie).
-c. **Event Threat Detection (ETD):** Analizuje logi w poszukiwaniu podejrzanych zachowań (np. próby eskalacji uprawnień, logowanie z podejrzanych IP), co pozwala na natychmiastowe wykrycie incydentów.
+a. <strong>Cloud Audit Logs (Fundament audytu):</strong> Zapewnia rejestrację wszystkich działań administracyjnych (Admin Activity) oraz zmian w uprawnieniach IAM (kto zmienił rolę, kto dodał użytkownika). Umożliwia to pełną identyfikację działań użytkowników uprzywilejowanych.
+b. <strong>Security Health Analytics (SHA):</strong> Skanuje konfigurację zasobów chmurowych pod kątem błędów i nieuprawnionych zmian (np. publiczne kubełki GCS, wyłączone logowanie).
+c. <strong>Event Threat Detection (ETD):</strong> Analizuje logi w poszukiwaniu podejrzanych zachowań (np. próby eskalacji uprawnień, logowanie z podejrzanych IP), co pozwala na natychmiastowe wykrycie incydentów.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. Create log sinks to Cloud Storage for long-term retention... Enable VPC Flow Logs...
@@ -109,7 +109,7 @@ C. Detect sensitive administrative actions by using Cloud Logging with custom fi
    * Dlaczego nieprawidłowa: Samodzielne pisanie filtrów w Cloud Logging i analizowanie ruchu w BigQuery wymaga ciągłej pracy deweloperskiej i nie oferuje gotowych, inteligentnych algorytmów wykrywania zagrożeń, które SCC (ETD/SHA) dostarcza natywnie z pudełka.
 
 4. Wskazówki, hinty, tips and tricks:
-* Monitorowanie zmian w IAM, akcji administratorów oraz audyt konfiguracji chmury -> Zawsze włączaj **Cloud Audit Logs** (w tym Data Access Logs) i integruj je z **Security Command Center (SHA/ETD)**.
+* Monitorowanie zmian w IAM, akcji administratorów oraz audyt konfiguracji chmury -> Zawsze włączaj <strong>Cloud Audit Logs</strong> (w tym Data Access Logs) i integruj je z <strong>Security Command Center (SHA/ETD)</strong>.
 * Logi Admin Activity są włączone domyślnie i bezpłatnie w GCP.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

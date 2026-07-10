@@ -95,9 +95,9 @@ C. 1. Use Google Shielded VM including secure boot, Virtual Trusted Platform Mod
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Odpowiedź C jest prawidłowa, ponieważ łączy dwa zaawansowane mechanizmy bezpieczeństwa maszyn wirtualnych w GCP w celu ochrony przed zagrożeniami na różnych etapach cyklu życia danych:
-1. **Zabezpieczenie przed malware podczas rozruchu (Shielded VMs):** Shielded VMs zapewniają ochronę przed rootkitami i bootkitami na poziomie jądra (kernel) i bootloadera za pomocą Secure Boot (podpisywanie cyfrowe komponentów startowych), vTPM (weryfikacja stanu maszyny) oraz Integrity Monitoring (raportowanie zmian w procesie bootowania).
-2. **Szyfrowanie danych w użyciu (Confidential Computing):** Confidential VMs szyfrują dane w pamięci RAM za pomocą kluczy generowanych sprzętowo przez procesor (np. AMD SEV). Uniemożliwia to odczytanie danych w użyciu przez hypervisor Google Cloud, system operacyjny hosta oraz inne maszyny wirtualne współdzielące ten sam serwer fizyczny.
-3. **Wymuszenie automatyczne:** Użycie polityk organizacji (np. `compute.requireConfidentialCompute` oraz `compute.requireShieldedVm`) gwarantuje, że żadna maszyna w organizacji nie zostanie uruchomiona bez tych zabezpieczeń, eliminując ryzyko błędów ludzkich.
+1. <strong>Zabezpieczenie przed malware podczas rozruchu (Shielded VMs):</strong> Shielded VMs zapewniają ochronę przed rootkitami i bootkitami na poziomie jądra (kernel) i bootloadera za pomocą Secure Boot (podpisywanie cyfrowe komponentów startowych), vTPM (weryfikacja stanu maszyny) oraz Integrity Monitoring (raportowanie zmian w procesie bootowania).
+2. <strong>Szyfrowanie danych w użyciu (Confidential Computing):</strong> Confidential VMs szyfrują dane w pamięci RAM za pomocą kluczy generowanych sprzętowo przez procesor (np. AMD SEV). Uniemożliwia to odczytanie danych w użyciu przez hypervisor Google Cloud, system operacyjny hosta oraz inne maszyny wirtualne współdzielące ten sam serwer fizyczny.
+3. <strong>Wymuszenie automatyczne:</strong> Użycie polityk organizacji (np. `compute.requireConfidentialCompute` oraz `compute.requireShieldedVm`) gwarantuje, że żadna maszyna w organizacji nie zostanie uruchomiona bez tych zabezpieczeń, eliminując ryzyko błędów ludzkich.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 A. ...Create a Cloud Run function to check for the VM settings...
@@ -108,8 +108,8 @@ D. 1. Use secure hardened images from the Google Cloud Marketplace...
    * Dlaczego nieprawidłowa: Choć utwardzone obrazy (hardened images) są dobrą praktyką, to same w sobie nie zapewniają sprzętowej ochrony procesu bootowania (Shielded VM) ani szyfrowania pamięci RAM (Confidential Computing) bez jawnej aktywacji tych funkcji na poziomie platformy Compute Engine.
 
 4. Wskazówki, hinty, tips and tricks:
-* Ochrona bootowania/jądra przed malware -> **Shielded VM** (Secure Boot, vTPM).
-* Ochrona danych w użyciu (in-use data / RAM encryption) -> **Confidential Computing** (Confidential VMs).
+* Ochrona bootowania/jądra przed malware -> <strong>Shielded VM</strong> (Secure Boot, vTPM).
+* Ochrona danych w użyciu (in-use data / RAM encryption) -> <strong>Confidential Computing</strong> (Confidential VMs).
 * Zawsze wdrażaj te zabezpieczenia w sposób prewencyjny za pomocą polityk organizacji (Organization Policies).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

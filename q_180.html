@@ -95,7 +95,7 @@ D. 1. Generate Supply Chain Levels for Software Artifacts (SLSA) level 3 assuran
 
 2. Kompleksowe wyjaśnienie dlaczego dana odpowiedź jest prawidłowa (Analiza):
 Organizacja chce zabezpieczyć łańcuch dostaw oprogramowania i dostarczyć dowód pochodzenia (provenance) kompilacji potwierdzający, że kod nie został zmodyfikowany:
-- Usługa **Cloud Build** posiada natywne wsparcie dla standardu **SLSA (Supply Chain Levels for Software Artifacts) Level 3**.
+- Usługa <strong>Cloud Build</strong> posiada natywne wsparcie dla standardu <strong>SLSA (Supply Chain Levels for Software Artifacts) Level 3</strong>.
 - Podczas procesu budowania kontenera lub pakietu, Cloud Build automatycznie generuje i podpisuje cyfrowo metadane pochodzenia (build provenance). Zawierają one informacje o kodzie źródłowym, sumach kontrolnych, krokach kompilacji i użytym środowisku. Dane te są weryfikowalne i odporne na fałszowanie, a ich status i szczegóły można wygodnie przeglądać w konsoli Google Cloud w panelu Security Insights, co minimalizuje narzut operacyjny.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
@@ -104,7 +104,7 @@ Organizacja chce zabezpieczyć łańcuch dostaw oprogramowania i dostarczyć dow
 - C. Publikowanie kodu jako open-source i programy Bug Bounty: Pomagają w wykrywaniu podatności w kodzie źródłowym, ale nie dostarczają dowodu pochodzenia (provenance) skompilowanego artefaktu binarnego.
 
 4. Wskazówki, hinty, tips and tricks:
-- Standardem zabezpieczenia łańcucha dostaw oprogramowania (Software Supply Chain) w GCP jest **SLSA** w integracji z **Cloud Build**.
+- Standardem zabezpieczenia łańcucha dostaw oprogramowania (Software Supply Chain) w GCP jest <strong>SLSA</strong> w integracji z <strong>Cloud Build</strong>.
 - Cloud Build generuje podpisaną deklarację pochodzenia (provenance metadata) spełniającą wymagania SLSA Level 3.
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):

@@ -65,8 +65,8 @@ A. Identify the users who will migrate the application, revoke the default user 
 Odpowiedź A jest prawidłowa, ponieważ tworzenie i przypisywanie ról niestandardowych (Custom Roles) jest podstawowym i zalecanym mechanizmem w GCP do wdrażania zasad najmniejszych uprawnień (least privilege) oraz rozdziału obowiązków (separation of duties).
 
 Dlaczego to podejście jest poprawne:
-a. **Odrzucenie ról domyślnych:** Role predefiniowane o szerokim zakresie (takie jak Owner, Editor czy Viewer) dają zbyt duże uprawnienia (np. prawo do usuwania zasobów lub wglądu w dane poufne).
-b. **Custom Roles (Role niestandardowe):** Pozwalają administratorowi na wybranie z dokładnością do pojedynczego uprawnienia API (np. `compute.instances.start` bez prawa do ich usuwania) zestawu akcji niezbędnych do wykonania migracji przez poszczególnych inżynierów. Dzięki temu każdy użytkownik ma dostęp wyłącznie do tych funkcji, które są mu niezbędne do pracy.
+a. <strong>Odrzucenie ról domyślnych:</strong> Role predefiniowane o szerokim zakresie (takie jak Owner, Editor czy Viewer) dają zbyt duże uprawnienia (np. prawo do usuwania zasobów lub wglądu w dane poufne).
+b. <strong>Custom Roles (Role niestandardowe):</strong> Pozwalają administratorowi na wybranie z dokładnością do pojedynczego uprawnienia API (np. `compute.instances.start` bez prawa do ich usuwania) zestawu akcji niezbędnych do wykonania migracji przez poszczególnych inżynierów. Dzięki temu każdy użytkownik ma dostęp wyłącznie do tych funkcji, które są mu niezbędne do pracy.
 
 3. Wyjaśnienie z osobna każdej niepoprawnej odpowiedzi:
 B. Use multiple external identity providers (IdP) configured to use different SAML profiles...
@@ -77,7 +77,7 @@ D. No action needed. When a Google Cloud organization is created, the appropriat
    * Dlaczego nieprawidłowa: Jest to nieprawda. Po utworzeniu organizacji domyślni użytkownicy domeny nie otrzymują automatycznie precyzyjnych uprawnień administracyjnych dostosowanych do konkretnej migracji aplikacji. Brak jakichkolwiek działań doprowadzi do braku kontroli dostępu lub zablokowania prac.
 
 4. Wskazówki, hinty, tips and tricks:
-* Najmniejsze uprawnienia (Least Privilege) w IAM -> Unikaj ról podstawowych (primitive roles: Owner, Editor, Viewer). Twórz **Custom Roles** (role dedykowane) z minimalnym zakresem uprawnień API.
+* Najmniejsze uprawnienia (Least Privilege) w IAM -> Unikaj ról podstawowych (primitive roles: Owner, Editor, Viewer). Twórz <strong>Custom Roles</strong> (role dedykowane) z minimalnym zakresem uprawnień API.
 * Rozdział obowiązków (Separation of Duties) polega na rozdzieleniu ról tak, aby jedna osoba nie mogła kontrolować całego procesu (np. deweloper nie może być administratorem bezpieczeństwa).
 
 5. Reguły wyboru odpowiedzi (Słowa kluczowe):
