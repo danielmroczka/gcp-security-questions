@@ -1,15 +1,25 @@
 // navigation.js
 
-// Dynamic loading of interpretations.js
+// Theme Initialization (Run immediately to avoid Flash of Unstyled Content)
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.body.classList.add('dark-theme');
+    }
+})();
+
+// Dynamic loading of interpretations.js & Styling Injection
 (function() {
     const script = document.createElement('script');
     script.src = 'interpretations.js';
     script.async = true;
     document.head.appendChild(script);
 
-    // Inject modal styles
+    // Inject modal, general, and dark mode styles
     const style = document.createElement('style');
     style.textContent = `
+        /* Modal Styles */
         .hint-modal-overlay {
             position: fixed;
             top: 0;
@@ -114,6 +124,142 @@
             font-size: 0.8rem;
             color: #38bdf8;
         }
+
+        /* --- Dark Mode Styles --- */
+        body.dark-theme {
+            background-color: #0f172a !important;
+            color: #f1f5f9 !important;
+        }
+        body.dark-theme .q-card {
+            background-color: #1e293b !important;
+            color: #f1f5f9 !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3) !important;
+        }
+        body.dark-theme .c-card {
+            background-color: #1e293b !important;
+            color: #e2e8f0 !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        body.dark-theme .c-date {
+            color: #94a3b8 !important;
+        }
+        body.dark-theme .c-badge {
+            background: #334155 !important;
+            border-color: #475569 !important;
+            color: #cbd5e1 !important;
+        }
+        body.dark-theme .c-upvotes {
+            color: #38bdf8 !important;
+        }
+        body.dark-theme .correct-answer-box {
+            background-color: #1e293b !important;
+            color: #38bdf8 !important;
+        }
+        body.dark-theme .bg-light {
+            background-color: #1e293b !important;
+            color: #f1f5f9 !important;
+        }
+        body.dark-theme .question-answer {
+            background-color: #1e293b !important;
+            color: #cbd5e1 !important;
+        }
+        body.dark-theme h1, body.dark-theme h2, body.dark-theme h3 {
+            color: #f1f5f9 !important;
+        }
+        body.dark-theme .q-id {
+            color: #38bdf8 !important;
+        }
+        body.dark-theme .q-item {
+            background-color: #1e293b !important;
+            color: #cbd5e1 !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+        body.dark-theme .q-item:hover {
+            background-color: #334155 !important;
+            color: #f1f5f9 !important;
+        }
+        body.dark-theme .multi-choice-item {
+            color: #cbd5e1 !important;
+        }
+        body.dark-theme .btn-outline-primary {
+            color: #38bdf8 !important;
+            border-color: #38bdf8 !important;
+        }
+        body.dark-theme .btn-outline-primary:hover {
+            background-color: #38bdf8 !important;
+            color: #0f172a !important;
+        }
+        body.dark-theme .btn-outline-secondary {
+            color: #cbd5e1 !important;
+            border-color: #475569 !important;
+        }
+        body.dark-theme .btn-outline-secondary:hover {
+            background-color: #475569 !important;
+            color: #f1f5f9 !important;
+        }
+        body.dark-theme .ai-analysis-container {
+            background-color: #1e293b !important;
+            color: #e2e8f0 !important;
+            border-left: 5px solid #38bdf8 !important;
+        }
+        body.dark-theme pre {
+            background-color: #0b1020 !important;
+            color: #e6edf3 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+        body.dark-theme .text-dark {
+            color: #f1f5f9 !important;
+        }
+        body.dark-theme .text-muted {
+            color: #94a3b8 !important;
+        }
+        body.dark-theme .card-text {
+            color: #e2e8f0 !important;
+        }
+        body.dark-theme .correct-answer {
+            color: #10b981 !important;
+            font-weight: bold;
+        }
+        
+        /* Floating Toggle Button Style */
+        .theme-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            min-width: 48px;
+            height: 48px;
+            border-radius: 24px;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            z-index: 9999;
+            transition: all 0.2s ease;
+            user-select: none;
+            padding: 0 15px;
+            font-weight: 600;
+            color: #333;
+        }
+        .theme-toggle-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+        }
+        body.dark-theme .theme-toggle-btn {
+            background: #1e293b;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            color: #f1f5f9;
+        }
+        
+        /* Nav integration */
+        .q-nav .theme-toggle-nav {
+            margin: 0 10px;
+        }
     `;
     document.head.appendChild(style);
 
@@ -135,9 +281,64 @@
     tempDiv.innerHTML = modalHtml.trim();
     document.body.appendChild(tempDiv.firstChild);
 
+    // Create and Append Theme Toggle Buttons
+    function createToggleBtn(isNav = false) {
+        const btn = document.createElement('button');
+        btn.className = isNav ? 'btn btn-outline-secondary theme-toggle-nav' : 'theme-toggle-btn';
+        btn.setAttribute('title', 'Przełącz tryb (skrót: T)');
+        
+        function updateLabel() {
+            const isDark = document.body.classList.contains('dark-theme');
+            if (isNav) {
+                btn.innerHTML = isDark ? '☀️ Tryb Jasny' : '🌙 Tryb Ciemny';
+            } else {
+                btn.innerHTML = isDark ? '☀️' : '🌙';
+            }
+        }
+        
+        btn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-theme');
+            const isDarkNow = document.body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDarkNow ? 'dark' : 'light');
+            document.querySelectorAll('.theme-toggle-btn, .theme-toggle-nav').forEach(b => {
+                const isBNav = b.classList.contains('theme-toggle-nav');
+                b.innerHTML = isDarkNow ? (isBNav ? '☀️ Tryb Jasny' : '☀️') : (isBNav ? '🌙 Tryb Ciemny' : '🌙');
+            });
+        });
+        
+        updateLabel();
+        return btn;
+    }
+    
+    // Add to Float
+    const floatingBtn = createToggleBtn(false);
+    document.body.appendChild(floatingBtn);
+
+    // Add to Navigation Bar if exists
+    const nav = document.querySelector('.q-nav');
+    if (nav) {
+        const navBtn = createToggleBtn(true);
+        // Insert before the last link (usually "Następne")
+        const links = nav.querySelectorAll('a');
+        if (links.length > 0) {
+            links[links.length - 1].before(navBtn);
+        } else {
+            nav.appendChild(navBtn);
+        }
+    } else {
+        // Fallback for index.html - add near the top header
+        const header = document.querySelector('.q-list h2');
+        if (header) {
+            const navBtn = createToggleBtn(true);
+            navBtn.style.marginBottom = '20px';
+            header.after(navBtn);
+        }
+    }
+
     // Modal helpers
     window.showQuestionHint = function() {
         const modal = document.getElementById('hint-modal');
+        if (!modal) return;
         const content = document.getElementById('hint-modal-body-content');
         
         let qNum = 1;
@@ -182,10 +383,16 @@
     };
 
     // Event listeners for close
-    document.getElementById('hint-modal-close-btn').addEventListener('click', window.hideQuestionHint);
-    document.getElementById('hint-modal').addEventListener('click', function(e) {
-        if (e.target === this) window.hideQuestionHint();
-    });
+    const closeBtn = document.getElementById('hint-modal-close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', window.hideQuestionHint);
+    }
+    const modalEl = document.getElementById('hint-modal');
+    if (modalEl) {
+        modalEl.addEventListener('click', function(e) {
+            if (e.target === this) window.hideQuestionHint();
+        });
+    }
 })();
 
 // 1. Toggling mechanism
@@ -240,6 +447,10 @@ document.addEventListener('keydown', function(e) {
         }
     } else if (e.key === 'Escape') {
         window.hideQuestionHint();
+    } else if (e.key.toLowerCase() === 't') {
+        // Toggle dark theme
+        const toggleBtn = document.querySelector('.theme-toggle-nav') || document.querySelector('.theme-toggle-btn');
+        if (toggleBtn) toggleBtn.click();
     }
 });
 
