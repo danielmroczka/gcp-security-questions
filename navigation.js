@@ -7,6 +7,11 @@
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         document.body.classList.add('dark-theme');
     }
+    // Font size initialization
+    const savedFontSize = localStorage.getItem('fontSize');
+    if (savedFontSize) {
+        document.documentElement.style.fontSize = savedFontSize + 'px';
+    }
 })();
 
 // Dynamic loading of interpretations.js & Styling Injection
@@ -257,8 +262,8 @@
         }
         
         /* Nav integration */
-        .q-nav .theme-toggle-nav {
-            margin: 0 10px;
+        .q-nav .theme-toggle-nav, .q-nav .font-size-btn {
+            margin: 0 5px;
         }
     `;
     document.head.appendChild(style);
@@ -290,7 +295,7 @@
         function updateLabel() {
             const isDark = document.body.classList.contains('dark-theme');
             if (isNav) {
-                btn.innerHTML = isDark ? '☀️ Tryb Jasny' : '🌙 Tryb Ciemny';
+                btn.innerHTML = isDark ? '☀️ Jasny' : '🌙 Ciemny';
             } else {
                 btn.innerHTML = isDark ? '☀️' : '🌙';
             }
@@ -302,7 +307,7 @@
             localStorage.setItem('theme', isDarkNow ? 'dark' : 'light');
             document.querySelectorAll('.theme-toggle-btn, .theme-toggle-nav').forEach(b => {
                 const isBNav = b.classList.contains('theme-toggle-nav');
-                b.innerHTML = isDarkNow ? (isBNav ? '☀️ Tryb Jasny' : '☀️') : (isBNav ? '🌙 Tryb Ciemny' : '🌙');
+                b.innerHTML = isDarkNow ? (isBNav ? '☀️ Jasny' : '☀️') : (isBNav ? '🌙 Ciemny' : '🌙');
             });
         });
         
@@ -314,26 +319,52 @@
     const floatingBtn = createToggleBtn(false);
     document.body.appendChild(floatingBtn);
 
+    // Font size controls
+    function createFontSizeControls() {
+        const controls = document.createElement('span');
+        
+        function createBtn(label, delta) {
+            const btn = document.createElement('button');
+            btn.className = 'btn btn-outline-secondary font-size-btn';
+            btn.textContent = label;
+            btn.addEventListener('click', function() {
+                let size = parseInt(localStorage.getItem('fontSize')) || 16;
+                if (delta === 0) size = 16;
+                else size += delta;
+                
+                size = Math.max(10, Math.min(30, size));
+                document.documentElement.style.fontSize = size + 'px';
+                localStorage.setItem('fontSize', size);
+            });
+            return btn;
+        }
+        
+        controls.appendChild(createBtn('A-', -2));
+        controls.appendChild(createBtn('A+', 2));
+        return controls;
+    }
+
     // Add to Navigation Bar if exists
     const nav = document.querySelector('.q-nav');
     if (nav) {
-        const navBtn = createToggleBtn(true);
+        const fsControls = createFontSizeControls();
+        
         // Insert before the last link (usually "Następne")
         const links = nav.querySelectorAll('a');
         if (links.length > 0) {
-            links[links.length - 1].before(navBtn);
+            links[links.length - 1].before(fsControls);
         } else {
-            nav.appendChild(navBtn);
+            nav.appendChild(fsControls);
         }
     } else {
         // Fallback for index.html - add near the top header
         const header = document.querySelector('.q-list h2');
         if (header) {
-            const navBtn = createToggleBtn(true);
-            navBtn.style.marginBottom = '20px';
-            header.after(navBtn);
+            const fsControls = createFontSizeControls();
+            header.after(fsControls);
         }
     }
+
 
     // Modal helpers
     window.showQuestionHint = function() {
