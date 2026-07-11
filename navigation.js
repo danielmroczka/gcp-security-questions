@@ -388,9 +388,10 @@
         let hintHtml = '';
         if (window.questionInterpretations && window.questionInterpretations[qNum]) {
             const item = window.questionInterpretations[qNum];
+            const qDisplay = item.q_pl || item.q;
             hintHtml = `
                 <div class="hint-modal-section-title" style="color: #f43f5e; font-size: 1.1rem; margin-top: 0;">Pytanie po polsku:</div>
-                <div class="hint-modal-text" style="font-style: italic; color: #f1f5f9; background: rgba(0,0,0,0.25); padding: 12px; border-radius: 8px; border-left: 4px solid #f43f5e; margin-bottom: 16px;">${item.q}</div>
+                <div class="hint-modal-text" style="font-style: italic; color: #f1f5f9; background: rgba(0,0,0,0.25); padding: 12px; border-radius: 8px; border-left: 4px solid #f43f5e; margin-bottom: 16px;">${qDisplay}</div>
                 <div class="hint-modal-section-title">O co właściwie chodzi w tym pytaniu?</div>
                 <div class="hint-modal-text">${item.about}</div>
                 <div class="hint-modal-section-title">Jak je interpretować? (Klucz / Pułapka)</div>

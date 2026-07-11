@@ -361,28 +361,33 @@ window.questionInterpretations = {
   },
   "91": {
     "q": "You need to provide a corporate user account in Google Cloud for each of your developers and operational staff who need direct access to GCP resources.<br/>Corporate policy requires you to maintain the user identity in a third-party identity management provider and leverage single sign-on. You learn that a significant number of users are using their corporate domain email addresses for personal Google accounts, and you need to follow Google recommended practices to convert existing unmanaged users to managed accounts.<br/>Which two actions should you take? (Choose two.)",
-    "about": "Zarządzanie tożsamością w środowisku hybrydowym.",
-    "interpret": "Użyj Google Cloud Directory Sync (GCDS) do synchronizacji użytkowników i użyj narzędzia Transfer Tool for Unmanaged Users (TTUU) do rozwiązania konfliktów kont."
+    "about": "Zarządzanie tożsamością w środowisku hybrydowym z wykorzystaniem Google Cloud.",
+    "interpret": "Aby zintegrować lokalny Active Directory z Google Cloud, należy użyć narzędzia Google Cloud Directory Sync (GCDS) do synchronizacji użytkowników. W przypadku konfliktów z już istniejącymi kontami prywatnymi (consumer accounts), użyj narzędzia Transfer Tool for Unmanaged Users (TTUU) do przeniesienia ich pod zarząd organizacji.",
+    "q_pl": "Musisz zapewnić konto użytkownika firmowego w Google Cloud dla każdego z programistów i personelu operacyjnego, którzy potrzebują bezpośredniego dostępu do zasobów GCP. Polityka firmy wymaga utrzymywania tożsamości użytkownika u zewnętrznego dostawcy zarządzania tożsamością i wykorzystania logowania jednokrotnego (SSO). Dowiadujesz się, że znaczna liczba użytkowników używa swoich firmowych adresów e-mail dla osobistych kont Google i musisz postępować zgodnie z zalecanymi praktykami Google, aby przekonwertować istniejących niezarządzanych użytkowników na konta zarządzane. Jakie dwa działania powinieneś podjąć?"
   },
   "92": {
     "q": "You are on your company's development team. You noticed that your web application hosted in staging on GKE dynamically includes user data in web pages without first properly validating the inputted data. This could allow an attacker to execute gibberish commands and display arbitrary content in a victim user's browser in a production environment.<br/>How should you prevent and fix this vulnerability?",
-    "about": "Zapobieganie podatnościom typu XSS (Cross-Site Scripting).",
-    "interpret": "Użyj Web Security Scanner do identyfikacji luk i wdróż bezpieczny system szablonów z automatycznym uciekaniem znaków (auto-escaping)."
+    "about": "Zapobieganie podatnościom typu XSS (Cross-Site Scripting) w aplikacjach GKE.",
+    "interpret": "Użyj narzędzia Web Security Scanner do automatycznego wykrywania luk w bezpieczeństwie. Aby naprawić błąd XSS, wdróż w aplikacji bezpieczny system szablonów, który domyślnie stosuje uciekanie znaków (auto-escaping) dla danych wejściowych od użytkownika.",
+    "q_pl": "Jesteś w zespole programistów firmy. Zauważyłeś, że aplikacja internetowa hostowana w środowisku stagingowym na GKE dynamicznie uwzględnia dane użytkownika na stronach internetowych bez uprzedniej poprawnej walidacji wprowadzonych danych. Może to pozwolić atakującemu na wykonanie dowolnych poleceń i wyświetlenie dowolnej treści w przeglądarce użytkownika w środowisku produkcyjnym. Jak należy zapobiec tej podatności i ją naprawić?"
   },
   "93": {
     "q": "You are part of a security team that wants to ensure that a Cloud Storage bucket in Project A can only be readable from Project B. You also want to ensure that data in the Cloud Storage bucket cannot be accessed from or copied to Cloud Storage buckets outside the network, even if the user has the correct credentials.<br/>What should you do?",
-    "about": "Izolacja zasobów między projektami.",
-    "interpret": "Użyj VPC Service Controls (VPC SC) do stworzenia perymetru bezpieczeństwa obejmującego oba projekty i ograniczającego dostęp do Cloud Storage."
+    "about": "Izolacja zasobów Cloud Storage między projektami.",
+    "interpret": "VPC Service Controls pozwala na stworzenie perymetru bezpieczeństwa. Umieszczenie projektu A i B w tym samym perymetrze i włączenie usługi Cloud Storage ograniczy dostęp do bucketa tylko do zasobów znajdujących się wewnątrz tego perymetru.",
+    "q_pl": "Jesteś częścią zespołu ds. bezpieczeństwa, który chce zapewnić, że bucket Cloud Storage w Projekcie A może być odczytywany tylko z Projektu B. Chcesz również upewnić się, że danych w bucket Cloud Storage nie można skopiować do innych bucketów poza siecią, nawet jeśli użytkownik ma poprawne uprawnienia. Co powinieneś zrobić?"
   },
   "94": {
     "q": "You are responsible for protecting highly sensitive data in BigQuery. Your operations teams need access to this data, but given privacy regulations, you want to ensure that they cannot read the sensitive fields such as email addresses and first names. These specific sensitive fields should only be available on a need-to-know basis to the Human Resources team. What should you do?",
-    "about": "Ochrona danych wrażliwych w BigQuery (maskowanie/tokenizacja).",
-    "interpret": "Użyj Cloud DLP API do tokenizacji wrażliwych danych (np. email) przed ich zapisaniem w BigQuery, co pozwala zachować użyteczność danych bez ujawniania ich treści."
+    "about": "Ochrona danych wrażliwych w BigQuery (tokenizacja).",
+    "interpret": "Tokenizacja za pomocą Cloud DLP API pozwala zamienić wrażliwe dane (np. adresy email) na nieodwracalne tokeny (lub odwracalne, jeśli użyjemy odpowiedniej metody) przed ich zapisem. Dzięki temu dane w BigQuery pozostają użyteczne dla analityków bez ujawniania tożsamości użytkowników.",
+    "q_pl": "Jesteś odpowiedzialny za ochronę wysoce wrażliwych danych w BigQuery. Twoje zespoły operacyjne potrzebują dostępu do tych danych, ale ze względu na regulacje dotyczące prywatności, musisz zapewnić, że nie mogą oni odczytać wrażliwych pól, takich jak adresy e-mail i imiona. Te pola powinny być dostępne tylko dla zespołu Human Resources na zasadzie \"need-to-know\". Co powinieneś zrobić?"
   },
   "95": {
     "q": "You are a Security Administrator at your organization. You need to restrict service account creation capability within production environments. You want to accomplish this centrally across the organization. What should you do?",
-    "about": "Ograniczanie możliwości tworzenia kluczy kont serwisowych.",
-    "interpret": "Użyj zasady polityki organizacji (Organization Policy) `iam.disableServiceAccountKeyCreation` aby zablokować możliwość tworzenia nowych kluczy w produkcji."
+    "about": "Ograniczanie możliwości tworzenia kluczy kont serwisowych w produkcji.",
+    "interpret": "Skorzystaj z polityki organizacji (Organization Policy Service) `iam.disableServiceAccountKeyCreation`, aby centralnie zablokować tworzenie nowych kluczy kont serwisowych w wyznaczonych folderach lub projektach produkcyjnych.",
+    "q_pl": "Jesteś administratorem bezpieczeństwa w organizacji. Musisz ograniczyć możliwość tworzenia kont serwisowych w środowiskach produkcyjnych. Chcesz to osiągnąć centralnie w całej organizacji. Co powinieneś zrobić?"
   },
   "96": {
     "q": "You are the project owner for a regulated workload that runs in a project you own and manage as an Identity and Access Management (IAM) admin. For an upcoming audit, you need to provide access reviews evidence. Which tool should you use?",
