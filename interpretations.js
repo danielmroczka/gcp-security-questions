@@ -1166,253 +1166,253 @@ window.questionInterpretations = {
   },
   "251": {
     "q_pl": "Your organization has a centralized identity provider that is used to manage human and machine access. You want to leverage this existing identity management system to enable on-premises applications to access Google Cloud without hard coded credentials. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 251).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo baz danych w chmurze.",
+    "interpret": "Stosuj szyfrowanie w spoczynku, ogranicz dostęp do baz tylko do serwerów aplikacji poprzez firewall i używaj CMEK."
   },
   "252": {
     "q_pl": "Your organization is migrating a sensitive data processing workflow from on-premises infrastructure to Google Cloud. This workflow involves the collection, storage, and analysis of customer information that includes personally identifiable information (PII). You need to design security measures to mitigate the risk of data exfiltration in this new cloud environment. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 252).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zarządzanie certyfikatami w Load Balancerze.",
+    "interpret": "Google Cloud Load Balancing obsługuje certyfikaty zarządzane przez Google, co automatyzuje ich wystawianie i odnawianie."
   },
   "253": {
     "q_pl": "Your organization is building a chatbot that is powered by generative AI to deliver automated conversations with internal employees. You must ensure that no data with personally identifiable information (PII) is communicated through the chatbot. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 253).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Audyt zmian (Cloud Logging).",
+    "interpret": "Wymuś retencję logów audytowych dla celów zgodności i audytów zewnętrznych."
   },
   "254": {
     "q_pl": "Your organization has applications that run in multiple clouds. The applications require access to a Google Cloud resource running in your project. You must use short-lived access credentials to maintain security across the clouds. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 254).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo storage (IAM).",
+    "interpret": "Używaj ról IAM na poziomie bucketa zamiast starych ACL, aby zapewnić spójność zarządzania dostępem."
   },
   "255": {
     "q_pl": "Your organization's financial modeling application is already deployed on Google Cloud. The application processes large amounts of sensitive customer financial data. Application code is old and poorly understood by your current software engineers. Recent threat modeling exercises have highlighted the potential risk of sophisticated side-channel attacks against the application while the application is running. You need to further harden the Google Cloud solution to mitigate the risk of these side-channel attacks, ensuring maximum protection for the confidentiality of financial data during processing, while minimizing application problems. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 255).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Ochrona przed wyciekiem danych (DLP).",
+    "interpret": "Używaj DLP API do inspekcji danych w Cloud Storage przed ich udostępnieniem publicznym."
   },
   "256": {
     "q_pl": "Your organization has two VPC Service Controls service perimeters, Perimeter-A and Perimeter-B, in Google Cloud. You want to allow data to be copied from a Cloud Storage bucket in Perimeter-A to another Cloud Storage bucket in Perimeter-B. You must minimize exfiltration risk, only allow required connections, and follow the principle of least privilege. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 256).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo w środowiskach kontenerowych.",
+    "interpret": "Wdróż automatyczne skanowanie obrazów w Artifact Registry."
   },
   "257": {
     "q_pl": "You are running code in Google Kubernetes Engine (GKE) containers in Google Cloud that require access to objects stored in a Cloud Storage bucket. You need to securely grant the Pods access to the bucket while minimizing management overhead. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 257).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zasady IAM w skali.",
+    "interpret": "Używaj grup Google do zarządzania uprawnieniami, aby uniknąć ręcznego dodawania użytkowników do ról."
   },
   "258": {
     "q_pl": "Your organization is adopting Google Cloud and wants to ensure sensitive resources are only accessible from devices within the internal on-premises corporate network. You must configure Access Context Manager to enforce this requirement. These considerations apply: • The internal network uses IP ranges 10.100.0.0/16 and 192.168.0.0/16. • Some employees work remotely but connect securely through a company-managed virtual private network (VPN). The VPN dynamically allocates IP addresses from the pool 172.16.0.0/20. • Access should be restricted to a specific Google Cloud project that is contained within an existing service perimeter. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 258).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo aplikacji w Cloud Run.",
+    "interpret": "Używaj IAP lub IAM dla usług Cloud Run, aby zapewnić uwierzytelniony dostęp."
   },
   "259": {
     "q_pl": "Your team maintains 1PB of sensitive data within BigQuery that contains personally identifiable information (PII). You need to provide access to this dataset to another team within your organization for analysis purposes. You must share the BigQuery dataset with the other team while protecting the PII. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 259).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Szyfrowanie w tranzycie.",
+    "interpret": "Zawsze wymagaj TLS dla wszystkich punktów końcowych aplikacji."
   },
   "260": {
     "q_pl": "Your organization uses Google Cloud to process large amounts of location data for analysis and visualization. The location data is potentially sensitive. You must design a solution that allows storing and processing the location data securely, minimizing data exposure risks, and adhering to both regulatory guidelines and your organization's internal data residency policies. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 260).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Audyt dostępu przez Google.",
+    "interpret": "Włącz Access Transparency i monitoruj logi w Cloud Logging."
   },
   "261": {
     "q_pl": "Your organization utilizes Cloud Run services within multiple projects underneath the non-production folder which requires primarily internal communication. Some services need external access to approved fully qualified domain names (FQDN) while other external traffic must be blocked. Internal applications must not be exposed. You must achieve this granular control with allowlists overriding broader restrictions only for designated VPCs. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 261).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zabezpieczenie przed atakami na API.",
+    "interpret": "Wdróż API Gateway z polityką uwierzytelniania (np. JWT)."
   },
   "262": {
     "q_pl": "Your organization hosts a sensitive web application in Google Cloud. To protect the web application, you've set up a virtual private cloud (VPC) with dedicated subnets for the application's frontend and backend components. You must implement security controls to restrict incoming traffic, protect against web-based attacks, and monitor internal traffic. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 262).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zarządzanie tożsamością w GKE.",
+    "interpret": "Workload Identity to standard zapewniający bezpieczne przypisanie tożsamości do podów."
   },
   "263": {
     "q_pl": "Your organization relies heavily on virtual machines (VMs) in Compute Engine. Due to team growth and resource demands, VM sprawl is becoming problematic. Maintaining consistent security hardening and timely package updates poses an increasing challenge. You need to centralize VM image management and automate the enforcement of security baselines throughout the virtual machine lifecycle. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 263).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zasady organizacji (Org Policy).",
+    "interpret": "Polityki organizacji to fundament bezpieczeństwa w skali GCP."
   },
   "264": {
     "q_pl": "Customers complain about error messages when they access your organization's website. You suspect that the web application firewall rules configured in Cloud Armor are too strict. You want to collect request logs to investigate what triggered the rules and blocked the traffic. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 264).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Izolacja w Shared VPC.",
+    "interpret": "Używaj subnetów do odizolowania różnych środowisk w ramach jednej sieci VPC."
   },
   "265": {
     "q_pl": "Your organization must follow the Payment Card Industry Data Security Standard (PCI DSS). To prepare for an audit, you must detect deviations on an infrastructure-as-a-service level in your Google Cloud landing zone. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 265).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Monitorowanie zagrożeń.",
+    "interpret": "Włącz Security Command Center Premium dla zaawansowanej detekcji zagrożeń."
   },
   "266": {
     "q_pl": "Your organization is migrating a complex application to Google Cloud. The application has multiple internal components that interact with each other across several Google Cloud projects. Security is a major concern, and you must design an authorization scheme for administrators that aligns with the principles of least privilege and separation of duties. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 266).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zarządzanie kluczami (CMEK).",
+    "interpret": "CMEK oferuje pełną kontrolę i zgodność z regulacjami."
   },
   "267": {
     "q_pl": "Your organization operates in a highly regulated industry and needs to implement strict controls around temporary access to sensitive Google Cloud resources. You have been using Access Approval to manage this access, but your compliance team has mandated the use of a custom signing key. Additionally, they require that the key be stored in a hardware security module (HSM) located outside Google Cloud. You need to configure Access Approval to use a custom signing key that meets the compliance requirements. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 267).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Szyfrowanie CI/CD.",
+    "interpret": "Szyfruj sekrety w repozytorium kodu, jeśli to konieczne."
   },
   "268": {
     "q_pl": "Your organization has sensitive data stored in BigQuery and Cloud Storage. You need to design a solution that provides granular and flexible control authorization to read data. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 268).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Praca z kontraktorami.",
+    "interpret": "Używaj dedykowanych kont z ograniczonym czasem dostępu (TTL) i IAM."
   },
   "269": {
     "q_pl": "Your organization is using Security Command Center Premium as a central tool to detect and alert on security threats. You also want to alert on suspicious outbound traffic that is targeting domains of known suspicious web services. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 269).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Konfiguracja VPC.",
+    "interpret": "Loguj ruch zablokowany przez reguły firewall w celu analizy prób ataków."
   },
   "270": {
     "q_pl": "You work for a healthcare provider that is expanding into the cloud to store and process sensitive patient data. You must ensure the chosen Google Cloud configuration meets these strict regulatory requirements: • Data must reside within specific geographic regions. • Certain administrative actions on patient data require explicit approval from designated compliance officers. • Access to patient data must be auditable. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 270).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Audyt (Access Transparency).",
+    "interpret": "Logi Access Transparency pozwalają weryfikować działania wsparcia Google."
   },
   "271": {
     "q_pl": "You work for a multinational organization that has systems deployed across multiple cloud providers, including Google Cloud. Your organization maintains an extensive on-premises security information and event management (SIEM) system. New security compliance regulations require that relevant Google Cloud logs be integrated seamlessly with the existing SIEM to provide a unified view of security events. You need to implement a solution that exports Google Cloud logs to your on-premises SIEM by using a push-based, near real-time approach. You must prioritize fault tolerance, security, and auto scaling capabilities. In particular, you must ensure that if a log delivery fails, logs are re-sent. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 271).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zabezpieczenie App Engine.",
+    "interpret": "Ustawiaj limity (quotas) w App Engine dla ochrony przed nieautoryzowanym zużyciem."
   },
   "272": {
     "q_pl": "You work for a global company. Due to compliance requirements, certain Compute Engine instances that reside within specific projects must be located exclusively in cloud regions within the European Union (EU). You need to ensure that existing non-compliant workloads are remediated and prevent future Compute Engine instances from being launched in restricted regions. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 272).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Ochrona przed CSRF.",
+    "interpret": "Stosuj tokeny anty-CSRF w formularzach aplikacji."
   },
   "273": {
     "q_pl": "You are working with developers to secure custom training jobs running on Vertex AI. For compliance reasons, all supported data types must be encrypted by key materials that reside in the Europe region and are controlled by your organization. The encryption activity must not impact the training operation in Vertex AI. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 273).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Weryfikacja obrazów.",
+    "interpret": "Binary Authorization zapewnia, że tylko zaufane obrazy mogą być uruchomione."
   },
   "274": {
     "q_pl": "Your EU-based organization stores both Personally Identifiable Information (PII) and non-PII data in Cloud Storage buckets across multiple Google Cloud regions. EU data privacy laws require that the PII data must not be stored outside of the EU. To help meet this compliance requirement, you want to detect if Cloud Storage buckets outside of the EU contain healthcare data. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 274).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Szyfrowanie (CSEK).",
+    "interpret": "CSEK to opcja dla klientów z zewnętrznym zarządzaniem kluczami."
   },
   "275": {
     "q_pl": "Your organization is migrating business critical applications to Google Cloud across multiple projects. You only have the required IAM permission at the Google Cloud organization level. You want to grant project access to support engineers from two partner organizations using their existing identity provider (IdP) credentials. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 275).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Izolacja w GKE.",
+    "interpret": "Używaj RBAC wewnątrz klastra dla kontroli dostępu do zasobów K8s."
   },
   "276": {
     "q_pl": "You are creating a secure network architecture. You must fully isolate development and production environments, and prevent any network traffic between the two environments. The network team requires that there is only one central entry point to the cloud network from the on-premises environment. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 276).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Kontrola uprawnień.",
+    "interpret": "IAM Conditions umożliwiają nadawanie uprawnień ograniczonych czasowo."
   },
   "277": {
     "q_pl": "You work for a large organization that is using Cloud Identity as the identity provider (IdP) on Google Cloud. Your InfoSec team has mandated the enforcement of a strong password with a length between 12 and 16 characters for all users. After configuring this requirement, users are still able to access the Google Cloud console with passwords that are less than 12 characters. You need to fix this problem within the Admin console. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 277).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo CI/CD.",
+    "interpret": "Używaj VPC SC do ochrony projektu CI/CD przed exfiltracją danych."
   },
   "278": {
     "q_pl": "Your organization is preparing to build business services in Google Cloud for the first time. You must determine where to apply appropriate controls or policies. You must also identify what aspects of your cloud deployment are managed by Google. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 278).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Rotacja kluczy KMS.",
+    "interpret": "Zgodność z audytem wymaga regularnej rotacji kluczy w KMS."
   },
   "279": {
     "q_pl": "Your organization operates a hybrid cloud environment and has recently deployed a private Artifact Registry repository in Google Cloud. On-premises developers cannot resolve the Artifact Registry hostname and therefore cannot push or pull artifacts. You've verified the following: • Connectivity to Google Cloud is established by Cloud VPN or Cloud Interconnect. • No custom DNS configurations exist on-premises. • There is no route to the internet from the on-premises network. You need to identify the cause and enable the developers to push and pull artifacts. What is likely causing the issue and what should you do to fix the issue?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 279).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Szyfrowanie BigQuery.",
+    "interpret": "CMEK w BQ wymaga nadania uprawnień dla konta serwisowego BQ do klucza KMS."
   },
   "280": {
     "q_pl": "Your organization has an application hosted in Cloud Run. You must control access to the application by using Cloud Identity-Aware Proxy (IAP) with these requirements: • Only users from the AppDev group may have access. • Access must be restricted to internal network IP addresses. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 280).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczne API.",
+    "interpret": "Używaj API Gateway do zarządzania limitami i autoryzacją."
   },
   "281": {
     "q_pl": "You just implemented a Secure Web Proxy instance on Google Cloud for your organization. You were able to reach the internet when you tested this configuration on your test instance. However, developers cannot access the allowed URLs on the Secure Web Proxy instance from their Linux instance on Google Cloud. You want to solve this problem with developers. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 281).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Monitorowanie GKE.",
+    "interpret": "Włącz Container Threat Detection w Security Command Center."
   },
   "282": {
     "q_pl": "You have just created a new log bucket to replace the _Default log bucket. You want to route all log entries that are currently routed to the _Default log bucket to this new log bucket, in the most efficient manner. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 282).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zarządzanie rolami IAM.",
+    "interpret": "Regularnie używaj IAM Recommender do usuwania nadmiarowych dostępów."
   },
   "283": {
     "q_pl": "Your organization's use of the Google Cloud has grown substantially and there are many different groups using different cloud resources independently. You must identify common misconfigurations and compliance violations across the organization and track findings for remedial action in a dashboard. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 283).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Ochrona sieci VPC.",
+    "interpret": "Packet Mirroring jest kluczowy dla głębokiej inspekcji ruchu w VPC."
   },
   "284": {
     "q_pl": "You are responsible for a set of Cloud Functions running on your organization's Google Cloud environment. During the last annual security review, secrets were identified in environment variables of some of these Cloud Functions. You must ensure that secrets are identified in a timely manner. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 284).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zarządzanie sekretami.",
+    "interpret": "Secret Manager wspiera automatyczną rotację sekretów."
   },
   "285": {
     "q_pl": "Your organization is developing a new SaaS application on Google Cloud. Stringent compliance standards require visibility into privileged account activity, and potentially unauthorized changes and misconfigurations to the application's infrastructure. You need to monitor administrative actions, log changes to IAM roles and permissions, and be able to trace potentially unauthorized configuration changes. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 285).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Szyfrowanie w tranzycie.",
+    "interpret": "Wymuszaj TLS 1.2+ dla wszystkich aplikacji."
   },
   "286": {
     "q_pl": "Your application development team is releasing a new critical feature. To complete their final testing, they requested 10 thousand real transaction records. The new feature includes format checking on the primary account number (PAN) of a credit card. You must support the request and minimize the risk of unintended personally identifiable information (PII) exposure. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 286).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo kont serwisowych.",
+    "interpret": "Nie używaj ról podstawowych (Owner/Editor) dla kont serwisowych."
   },
   "287": {
     "q_pl": "You work for a banking organization. You are migrating sensitive customer data to Google Cloud that is currently encrypted at rest while on-premises. There are strict regulatory requirements when moving sensitive data to the cloud. Independent of the cloud service provider, you must be able to audit key usage and be able to deny certain types of decrypt requests. You must choose an encryption strategy that will ensure robust security and compliance with the regulations. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 287).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zabezpieczenie przed atakiem DDoS.",
+    "interpret": "Cloud Armor integruje się z globalnym Load Balancerem."
   },
   "288": {
     "q_pl": "Your organization is developing an application that will have both corporate and public end-users. You want to centrally manage those customers' identities and authorizations. Corporate end users must access the application by using their corporate user and domain name. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 288).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Logowanie.",
+    "interpret": "Centralizuj logi dla celów bezpieczeństwa i audytu."
   },
   "289": {
     "q_pl": "You work for an organization that handles sensitive customer data. You must secure a series of Google Cloud Storage buckets housing this data and meet these requirements:\n- Multiple teams need varying access levels (some read-only, some read-write).\n- Data must be protected in storage and at rest.\n- It's critical to track file changes and audit access for compliance purposes.\n- For compliance purposes, the organization must have control over the encryption keys.",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 289).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo storage.",
+    "interpret": "Użyj IAM zamiast ACL dla spójnego zarządzania."
   },
   "290": {
     "q_pl": "You are implementing communications restrictions for specific services in your Google Cloud organization. Your data analytics team works in a dedicated folder. You need to ensure that access to BigQuery is controlled for that folder and its projects. The data analytics team must be able to control the restrictions only at the folder level. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 290).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zabezpieczenie przed wyciekiem (DLP).",
+    "interpret": "DLP API pozwala na inspekcję danych w locie."
   },
   "291": {
     "q_pl": "Your organization is using a third-party identity and authentication provider to centrally manage users. You want to use this identity provider to grant access to the Google Cloud console without syncing identities to Google Cloud. Users should receive permissions based on attributes. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 291).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Monitorowanie konfiguracji.",
+    "interpret": "Security Health Analytics wykrywa błędne konfiguracje."
   },
   "292": {
     "q_pl": "You are implementing a new web application on Google Cloud that will be accessed from your on-premises network. To provide protection from threats like malware, you must implement transport layer security (TLS) interception for incoming traffic to your application. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 292).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Kontrola dostępu.",
+    "interpret": "Grupy Google ułatwiają zarządzanie uprawnieniami."
   },
   "293": {
     "q_pl": "Your organization has hired a small, temporary partner team for 18 months. The temporary team will work alongside your DevOps team to develop your organization's application that is hosted on Google Cloud. You must give the temporary partner team access to your application's resources on Google Cloud and ensure that partner employees lose access if they are removed from their employer's organization. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 293).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo Cloud Run.",
+    "interpret": "Użyj IAP dla zabezpieczenia serwisów Cloud Run."
   },
   "294": {
     "q_pl": "Your organization has an internet-facing application behind a load balancer. Your regulators require end-to-end encryption of user login credentials. You must implement this requirement. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 294).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Szyfrowanie tranzytu.",
+    "interpret": "Wymuś TLS dla usług backendowych."
   },
   "295": {
     "q_pl": "Your organization heavily utilizes serverless applications while prioritizing security best practices. You are responsible for enforcing image provenance and compliance with security standards before deployment. You leverage Cloud Build as your continuous integration and continuous deployment (CI/CD) tool for building container images. You must configure Binary Authorization to ensure that only images built by your Cloud Build pipeline are deployed and that the images pass security standard compliance checks. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 295).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zarządzanie kluczami.",
+    "interpret": "Zasady rotacji kluczy powinny być zgodne z polityką organizacji."
   },
   "296": {
     "q_pl": "Your organization operates in a highly regulated industry and uses multiple Google Cloud services. You need to identify potential risks to regulatory compliance. Which situation introduces the greatest risk?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 296).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczna sieć.",
+    "interpret": "Stosuj Service Accounts w regułach firewall."
   },
   "297": {
     "q_pl": "Your multinational organization is undergoing rapid expansion within Google Cloud. New teams and projects are added frequently. You are concerned about the potential for inconsistent security policy application and permission sprawl across the organization. You must enforce consistent standards while maintaining the autonomy of regional teams. You need to design a strategy to effectively manage IAM and organization policies at scale, ensuring security and administrative efficiency. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 297).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Detekcja zagrożeń.",
+    "interpret": "SCC Premium zawiera detekcję zagrożeń w czasie rzeczywistym."
   },
   "298": {
     "q_pl": "A security audit uncovered several inconsistencies in your project's Identity and Access Management (IAM) configuration. Some service accounts have overly permissive roles, and a few external collaborators have more access than necessary. You need to gain detailed visibility into changes to IAM policies, user activity, service account behavior, and access to sensitive projects. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 298).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zarządzanie tożsamością.",
+    "interpret": "Federacja tożsamości pozwala uniknąć przechowywania kluczy."
   },
   "299": {
     "q_pl": "You manage multiple internal-only applications that are hosted within different Google Cloud projects. You are deploying a new application that requires external internet access. To maintain security, you want to clearly separate this new application from internal systems. Your solution must have effective security isolation for the new externally-facing application. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 299).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Ochrona przed atakiem.",
+    "interpret": "Cloud Armor blokuje ataki na poziomie L7."
   },
   "300": {
     "q_pl": "You work for an ecommerce company that stores sensitive customer data across multiple Google Cloud regions. The development team has built a new 3-tier application to process orders and must integrate the application into the production environment. You must design the network architecture to ensure strong security boundaries and isolation for the new application, facilitate secure remote maintenance by authorized third-party vendors, and follow the principle of least privilege. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 300).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Zgodność (Compliance).",
+    "interpret": "Używaj SCC do raportowania zgodności."
   },
   "301": {
     "q_pl": "Your organization is implementing separation of duties in a Google Cloud project. A group of developers must deploy new code, but cannot have permission to change network firewall rules. What should you do?",
