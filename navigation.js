@@ -432,13 +432,24 @@ document.body.addEventListener('click', function(e) {
         e.preventDefault();
         const container = e.target.closest('.q-card');
         const mainContainer = container.closest('.q-page');
+        
+        // Target answer sections. They might have d-none class or style="display:none"
         const sections = mainContainer.querySelectorAll('.q-answer, .ai-analysis-container');
         
         sections.forEach(sec => {
-            sec.classList.toggle('d-none');
+            // Remove d-none if present
+            sec.classList.remove('d-none');
+            // Toggle display style
+            if (sec.style.display === 'none') {
+                sec.style.display = '';
+            } else {
+                sec.style.display = 'none';
+            }
         });
         
-        e.target.textContent = sections[0].classList.contains('d-none') ? 'Show Suggested Answer' : 'Hide Suggested Answer';
+        // Update button text
+        const isHidden = sections[0].style.display === 'none';
+        e.target.textContent = isHidden ? 'Show Suggested Answer' : 'Hide Suggested Answer';
     }
 });
 
