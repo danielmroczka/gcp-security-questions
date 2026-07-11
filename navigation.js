@@ -1,3 +1,4 @@
+
 // navigation.js
 
 // Theme Initialization (Run immediately to avoid Flash of Unstyled Content)
@@ -14,12 +15,8 @@
     }
 })();
 
-// Dynamic loading of interpretations.js & Styling Injection
-(function() {
-    const script = document.createElement('script');
-    script.src = 'interpretations.js';
-    script.async = true;
-    document.head.appendChild(script);
+    // Force load interpretations.js
+    const s = document.createElement("script"); s.src = "interpretations.js"; document.head.appendChild(s);
 
     // Inject modal, general, and dark mode styles
     const style = document.createElement('style');
@@ -388,13 +385,17 @@
         let hintHtml = '';
         if (window.questionInterpretations && window.questionInterpretations[qNum]) {
             const item = window.questionInterpretations[qNum];
+            // Try to get question text from HTML if missing in interpretations.js
+            const questionEl = document.querySelector('.card-text.text-muted');
+            const questionText = item.q || (questionEl ? questionEl.textContent : "Brak pytania");
+            
             hintHtml = `
                 <div class="hint-modal-section-title" style="color: #f43f5e; font-size: 1.1rem; margin-top: 0;">Pytanie po polsku:</div>
-                <div class="hint-modal-text" style="font-style: italic; color: #f1f5f9; background: rgba(0,0,0,0.25); padding: 12px; border-radius: 8px; border-left: 4px solid #f43f5e; margin-bottom: 16px;">${item.q}</div>
+                <div class="hint-modal-text" style="font-style: italic; color: #f1f5f9; background: rgba(0,0,0,0.25); padding: 12px; border-radius: 8px; border-left: 4px solid #f43f5e; margin-bottom: 16px;">${questionText}</div>
                 <div class="hint-modal-section-title">O co właściwie chodzi w tym pytaniu?</div>
-                <div class="hint-modal-text">${item.about}</div>
+                <div class="hint-modal-text">${item.about || 'Brak opisu'}</div>
                 <div class="hint-modal-section-title">Jak je interpretować? (Klucz / Pułapka)</div>
-                <div class="hint-modal-text">${item.interpret}</div>
+                <div class="hint-modal-text">${item.interpret || 'Brak interpretacji'}</div>
                 <div class="hint-keyboard-tip">Naciśnij <code>Esc</code> lub <code>h</code> aby zamknąć</div>
             `;
         } else {
