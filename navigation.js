@@ -433,23 +433,28 @@ document.body.addEventListener('click', function(e) {
         const container = e.target.closest('.q-card');
         const mainContainer = container.closest('.q-page');
         
-        // Target answer sections. They might have d-none class or style="display:none"
+        // Target answer sections. 
         const sections = mainContainer.querySelectorAll('.q-answer, .ai-analysis-container');
         
+        // Determine intended state: If any section is hidden, show all; else, hide all.
+        const isCurrentlyHidden = Array.from(sections).some(sec => 
+            sec.classList.contains('d-none') || sec.style.display === 'none'
+        );
+        
         sections.forEach(sec => {
-            // Remove d-none if present
-            sec.classList.remove('d-none');
-            // Toggle display style
-            if (sec.style.display === 'none') {
+            if (isCurrentlyHidden) {
+                // Show
+                sec.classList.remove('d-none');
                 sec.style.display = '';
             } else {
+                // Hide
+                sec.classList.add('d-none');
                 sec.style.display = 'none';
             }
         });
         
         // Update button text
-        const isHidden = sections[0].style.display === 'none';
-        e.target.textContent = isHidden ? 'Show Suggested Answer' : 'Hide Suggested Answer';
+        e.target.textContent = isCurrentlyHidden ? 'Hide Suggested Answer' : 'Show Suggested Answer';
     }
 });
 
