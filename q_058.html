@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 58</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -87,7 +95,7 @@ Which two security characteristics are related to the use of VPC peering to conn
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -120,7 +128,10 @@ VPC Network Peering umożliwia bezpośrednią komunikację sieciową o niskich o
 </div>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

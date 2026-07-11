@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 13</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -66,6 +74,7 @@
 <p class="card-text">
 A customer's data science group wants to use Google Cloud Platform (GCP) for their analytics workloads. Company policy dictates that all data must be company-owned and all user authentications must go through their own Security Assertion Markup Language (SAML) 2.0 Identity Provider (IdP). The Infrastructure Operations Systems Engineer was trying to set up Cloud Identity for the customer and realized that their domain was already being used by G Suite. How should you best advise the Systems Engineer to proceed with the least disruption?
 </p>
+<p class="card-text text-muted" style="margin-top: 10px;">Grupa ds. nauki o danych klienta chce korzystać z Google Cloud Platform (GCP) do swoich obciążeń analitycznych. Polityka firmy stanowi, że wszystkie dane muszą być własnością firmy, a wszelkie uwierzytelnianie użytkowników musi odbywać się za pośrednictwem ich własnego dostawcy tożsamości (IdP) Security Assertion Markup Language (SAML) 2.0. Inżynier systemów operacyjnych infrastruktury próbował skonfigurować Cloud Identity dla klienta i zdał sobie sprawę, że ich domena jest już używana przez G Suite. W jaki sposób najlepiej doradzić inżynierowi systemów, aby postępował z najmniejszymi zakłóceniami?</p>
 <div class="question-choices-container">
 <ul>
 <li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Contact Google Support and initiate the Domain Contestation Process to use the domain name in your new Cloud Identity domain.</li>
@@ -87,7 +96,7 @@ A customer's data science group wants to use Google Cloud Platform (GCP) for the
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -118,7 +127,10 @@ W tej sytuacji mamy do czynienia z tzw. "Shadow IT" – inny dział firmy bez wi
 </div>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

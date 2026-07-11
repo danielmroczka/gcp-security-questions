@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 4</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -66,6 +74,7 @@
 <p class="card-text">
 Your team wants to centrally manage GCP IAM permissions from their on-premises Active Directory Service. Your team wants to manage permissions by AD group membership. What should your team do to meet these requirements?
 </p>
+<p class="card-text text-muted" style="margin-top: 10px;">Twój zespół chce centralnie zarządzać uprawnieniami GCP IAM z lokalnej usługi Active Directory. Twój zespół chce zarządzać uprawnieniami na podstawie przynależności do grup AD. Co powinien zrobić Twój zespół, aby spełnić te wymagania?</p>
 <div class="question-choices-container">
 <ul>
 <li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Set up Cloud Directory Sync to sync groups, and set IAM permissions on the groups.</li>
@@ -86,7 +95,7 @@ Your team wants to centrally manage GCP IAM permissions from their on-premises A
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -117,7 +126,10 @@ Wymaganie polega na centralnym zarządzaniu uprawnieniami IAM w GCP na podstawie
 </div>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

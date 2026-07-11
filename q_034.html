@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 34</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -66,6 +74,7 @@
 <p class="card-text">
 Your company is using Cloud Dataproc for its Spark and Hadoop jobs. You want to be able to create, rotate, and destroy symmetric encryption keys used for the persistent disks used by Cloud Dataproc. Keys can be stored in the cloud. <br>What should you do?
 </p>
+<p class="card-text text-muted" style="margin-top: 10px;">Translation for question 34</p>
 <div class="question-choices-container">
 <ul>
 <li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Use the Cloud Key Management Service to manage the data encryption key (DEK).</li>
@@ -86,7 +95,7 @@ Your company is using Cloud Dataproc for its Spark and Hadoop jobs. You want to 
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -122,7 +131,7 @@ Klient chce samodzielnie zarządzać (tworzyć, rotować, niszczyć) kluczami sz
 
 
 
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 <h2>Wyjaśnienie Audytowe</h2>
 <pre>
 <strong>Reguła Egzaminacyjna (Exam Rule):</strong>
@@ -137,7 +146,10 @@ W każdym pytaniu analizuj warstwy: IAM (dostęp), Encryption (at rest/in transi
 </pre>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

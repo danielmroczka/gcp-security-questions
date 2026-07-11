@@ -21,6 +21,14 @@
     }
     .question-body { font-size: 1.05rem; }
     .ai-analysis-container { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 5px solid #2196F3; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 259</title>
 </head>
@@ -96,7 +104,10 @@ D. Create a filtered copy of the dataset and replace the sensitive data with has
 
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

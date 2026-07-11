@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 6</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -66,6 +74,7 @@
 <p class="card-text">
 A customer needs to launch a 3-tier internal web application on Google Cloud Platform (GCP). The customer's internal compliance requirements dictate that end-user access may only be allowed if the traffic seems to originate from a specific known good CIDR. The customer accepts the risk that their application will only have SYN flood DDoS protection. They want to use GCP's native SYN flood protection. Which product should be used to meet these requirements?
 </p>
+<p class="card-text text-muted" style="margin-top: 10px;">Klient musi uruchomić 3-warstwową wewnętrzną aplikację internetową w Google Cloud Platform (GCP). Wewnętrzne wymagania zgodności klienta określają, że dostęp użytkownika końcowego może być dozwolony tylko wtedy, gdy ruch wydaje się pochodzić z określonego znanego, poprawnego CIDR. Klient akceptuje ryzyko, że jego aplikacja będzie miała tylko ochronę przed atakami SYN flood DDoS. Chcą korzystać z natywnej ochrony GCP przed atakami SYN flood. Którego produktu należy użyć, aby spełnić te wymagania?</p>
 <div class="question-choices-container">
 <ul>
 <li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Cloud Armor</li>
@@ -86,7 +95,7 @@ A customer needs to launch a 3-tier internal web application on Google Cloud Pla
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -121,7 +130,10 @@ Dla aplikacji wewnętrznej (czyli bez zewnętrznego Load Balancera) najlepszym i
 </div>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

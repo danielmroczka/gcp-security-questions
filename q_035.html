@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 35</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -66,6 +74,7 @@
 <p class="card-text">
 You are a member of the security team at an organization. Your team has a single GCP project with credit card payment processing systems alongside web applications and data processing systems. You want to reduce the scope of systems subject to PCI audit standards. <br>What should you do?
 </p>
+<p class="card-text text-muted" style="margin-top: 10px;">Translation for question 35</p>
 <div class="question-choices-container">
 <ul>
 <li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Use multi-factor authentication for admin access to the web application.</li>
@@ -86,7 +95,7 @@ You are a member of the security team at an organization. Your team has a single
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -120,7 +129,7 @@ Celem organizacji jest ograniczenie zakresu audytu zgodności z normą PCI DSS (
 
 
 
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 <h2>Wyjaśnienie Audytowe</h2>
 <pre>
 <strong>Reguła Egzaminacyjna (Exam Rule):</strong>
@@ -135,7 +144,10 @@ W każdym pytaniu analizuj warstwy: IAM (dostęp), Encryption (at rest/in transi
 </pre>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 37</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -66,6 +74,7 @@
 <p class="card-text">
 A company allows every employee to use Google Cloud Platform. Each department has a Google Group, with all department members as group members. If a department member creates a new project, all members of that department should automatically have read-only access to all new project resources. Members of any other department should not have access to the project. You need to configure this behavior. <br>What should you do to meet these requirements?
 </p>
+<p class="card-text text-muted" style="margin-top: 10px;">Translation for question 37</p>
 <div class="question-choices-container">
 <ul>
 <li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Create a Folder per department under the Organization. For each department's Folder, assign the Project Viewer role to the Google Group related to that department.</li>
@@ -86,7 +95,7 @@ A company allows every employee to use Google Cloud Platform. Each department ha
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -119,7 +128,7 @@ Wymagane jest automatyczne przydzielanie uprawnień do odczytu (read-only) wszys
 
 
 
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 <h2>Wyjaśnienie Audytowe</h2>
 <pre>
 <strong>Reguła Egzaminacyjna (Exam Rule):</strong>
@@ -134,7 +143,10 @@ W każdym pytaniu analizuj warstwy: IAM (dostęp), Encryption (at rest/in transi
 </pre>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

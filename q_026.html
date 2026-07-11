@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 26</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -66,6 +74,7 @@
 <p class="card-text">
 An organization is migrating from their current on-premises productivity software systems to G Suite. Some network security controls were in place that were mandated by a regulatory body in their region for their previous on-premises system. The organization's risk team wants to ensure that network security controls are maintained and effective in G Suite. A security architect supporting this migration has been asked to ensure that network security controls are in place as part of the new shared responsibility model between the organization and Google Cloud. <br>What solution would help meet the requirements?
 </p>
+<p class="card-text text-muted" style="margin-top: 10px;">Organizacja migruje ze swoich obecnych lokalnych systemów oprogramowania produktywności do G Suite. Niektóre kontrolki bezpieczeństwa sieci były na miejscu, co było wymagane przez organ regulacyjny w ich regionie dla ich poprzedniego systemu lokalnego. Zespół ds. ryzyka organizacji chce upewnić się, że kontrolki bezpieczeństwa sieci są utrzymywane i skuteczne w G Suite. Architekt bezpieczeństwa wspierający tę migrację został poproszony o upewnienie się, że kontrolki bezpieczeństwa sieci są na miejscu w ramach nowego modelu wspólnej odpowiedzialności między organizacją a Google Cloud. Jakie rozwiązanie pomogłoby spełnić te wymagania?</p>
 <div class="question-choices-container">
 <ul>
 <li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Ensure that firewall rules are in place to meet the required controls.</li>
@@ -85,7 +94,7 @@ An organization is migrating from their current on-premises productivity softwar
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -116,7 +125,10 @@ G Suite (obecnie Google Workspace) jest produktem typu SaaS (Software as a Servi
 </div>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

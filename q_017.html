@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 17</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -66,6 +74,7 @@
 <p class="card-text">
 An employer wants to track how bonus compensations have changed over time to identify employee outliers and correct earning disparities. This task must be performed without exposing the sensitive compensation data for any individual and must be reversible to identify the outlier. Which Cloud Data Loss Prevention API technique should you use to accomplish this?
 </p>
+<p class="card-text text-muted" style="margin-top: 10px;">Pracodawca chce śledzić, jak zmiany w wynagrodzeniach premiowych zmieniały się w czasie, aby identyfikować wartości odstające wśród pracowników i korygować dysproporcje w zarobkach. To zadanie musi zostać wykonane bez ujawniania wrażliwych danych dotyczących wynagrodzenia dla jakiejkolwiek osoby i musi być odwracalne w celu zidentyfikowania wartości odstającej. Którą technikę interfejsu API Cloud Data Loss Prevention należy zastosować, aby to osiągnąć?</p>
 <div class="question-choices-container">
 <ul>
 <li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Generalization</li>
@@ -86,7 +95,7 @@ An employer wants to track how bonus compensations have changed over time to ide
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -121,7 +130,10 @@ Te kryteria idealnie spełnia technika z użyciem Cloud DLP:
 </div>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>

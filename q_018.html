@@ -49,6 +49,14 @@
     .q-answer { width: 100% !important; max-width: 100% !important; }
     .q-answer pre { white-space: pre-wrap; word-wrap: break-word; max-width: 100%; overflow-x: auto; }
     .ai-analysis-container { width: 100% !important; max-width: 100% !important; }
+
+    /* Progress Tracking UI Styling */
+    .progress-ui label { cursor: pointer; }
+    
+    @media (prefers-color-scheme: dark) {
+        .progress-ui { color: #a0aec0 !important; }
+    }
+    
 </style>
 <title>PCS 18</title>
 <link rel="icon" type="image/x-icon" href="https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/favicon.ico">
@@ -66,6 +74,7 @@
 <p class="card-text">
 An organization adopts Google Cloud Platform (GCP) for application hosting services and needs guidance on setting up password requirements for their Cloud Identity account. The organization has a password policy requirement that corporate employee passwords must have a minimum number of characters. Which Cloud Identity password guidelines can the organization use to inform their new requirements?
 </p>
+<p class="card-text text-muted" style="margin-top: 10px;">Organizacja przyjmuje Google Cloud Platform (GCP) do usług hostingu aplikacji i potrzebuje wskazówek dotyczących konfigurowania wymagań dotyczących haseł dla swojego konta Cloud Identity. Organizacja ma wymóg polityki haseł, że hasła pracowników korporacyjnych muszą mieć minimalną liczbę znaków. Jakich wytycznych dotyczących haseł Cloud Identity może użyć organizacja, aby poinformować o swoich nowych wymaganiach?</p>
 <div class="question-choices-container">
 <ul>
 <li class="multi-choice-item"><span class="multi-choice-letter" data-choice-letter="A">A.</span> Set the minimum length for passwords to be 8 characters.</li>
@@ -86,7 +95,7 @@ An organization adopts Google Cloud Platform (GCP) for application hosting servi
 </div>
 </div>
 </div>
-<div class="q-card q-answer mb-4 d-none"  >
+<div class="q-card q-answer mb-4 d-none" id="explanation-card">
 
 <h2>Wyjaśnienie</h2>
 <pre>
@@ -115,7 +124,10 @@ Organizacja konfiguruje wymagania dotyczące haseł w Cloud Identity. Zgodnie z 
 </div>
 </div>
 
-<script src="navigation.js"></script></body>
+<script src="navigation.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/question_ui.js"></script>
+</body>
 
 
 </html>
