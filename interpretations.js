@@ -1416,307 +1416,307 @@ window.questionInterpretations = {
   },
   "301": {
     "q_pl": "Your organization is implementing separation of duties in a Google Cloud project. A group of developers must deploy new code, but cannot have permission to change network firewall rules. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 301).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 301).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "302": {
     "q_pl": "You manage a Google Cloud organization with many projects located in various regions around the world. The projects are protected by the same Access Context Manager access policy. You created a new folder that will host two projects that process protected health information (PHI) for US-based customers. The two projects will be separately managed and require stricter protections. You are setting up the VPC Service Controls configuration for the new folder. You must ensure that only US-based personnel can access these projects and restrict Google Cloud API access to only BigQuery and Cloud Storage within these projects. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 302).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 302).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "303": {
     "q_pl": "There is a threat actor that is targeting organizations like yours. Attacks are always initiated from a known IP address range. You want to deny-list those IPs for your website, which is exposed to the internet through an Application Load Balancer. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 303).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 303).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "304": {
     "q_pl": "You are managing a Google Cloud environment that is organized into folders that represent different teams. These teams need the flexibility to modify organization policies relevant to their work. You want to grant the teams the necessary permissions while upholding Google-recommended security practices and minimizing administrative complexity. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 304).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 304).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "305": {
     "q_pl": "Your organization is using Vertex AI Workbench Instances. You must ensure that newly deployed Instances are automatically kept up-to-date and that users cannot accidentally alter settings in the operating system. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 305).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 305).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "306": {
     "q_pl": "You must ensure that the keys used for at-rest encryption of your data are compliant with your organization's security controls. One security control mandates that keys get rotated every 90 days. You must implement an effective detection strategy to validate if keys are rotated as required. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 306).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 306).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "307": {
     "q_pl": "Your organization is developing a sophisticated machine learning (ML) model to predict customer behavior for targeted marketing campaigns. The BigQuery dataset used for training includes sensitive personal information. You must design the security controls around the AI/ML pipeline. Data privacy must be maintained throughout the model's lifecycle and you must ensure that personal data is not used in the training process. Additionally, you must restrict access to the dataset to an authorized subset of people only. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 307).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 307).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "308": {
     "q_pl": "Your organization wants to publish yearly reports of your website usage analytics. You must ensure that no data with personally identifiable information (PII) is published by using the Cloud Data Loss Prevention (Cloud DLP) API. Data integrity must be preserved. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 308).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 308).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "309": {
     "q_pl": "Your development team is launching a new application. The new application has a microservices architecture on Compute Engine instances and serverless components, including Cloud Functions. This application will process financial transactions that require temporary, highly sensitive data in memory. You need to secure data in use during computations with a focus on minimizing the risk of unauthorized access to memory for this financial application. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 309).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 309).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "310": {
     "q_pl": "You work for a financial organization in a highly regulated industry that is subject to active regulatory compliance. To meet compliance requirements, you need to continuously maintain a specific set of configurations, data residency, organizational policies, and personnel data access controls. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 310).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 310).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "311": {
     "q_pl": "Your organization is worried about recent news headlines regarding application vulnerabilities in production applications that have led to security breaches. You want to automatically scan your deployment pipeline for vulnerabilities and ensure only scanned and verified containers can run in the environment. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 311).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 311).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "312": {
     "q_pl": "A team at your organization collects logs in an on-premises security information and event management system (SIEM). You must provide a subset of Google Cloud logs for the SIEM, and minimize the risk of data exposure in your cloud environment. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 312).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 312).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "313": {
     "q_pl": "Your Google Cloud organization is subdivided into three folders: production, development, and networking. Networking resources for the organization are centrally managed in the networking folder. You discovered that projects in the production folder are attaching to Shared VPCs that are outside of the networking folder which could become a data exfiltration risk. You must resolve the production folder issue without impacting the development folder. You need to use the most efficient and least disruptive approach. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 313).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 313).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "314": {
     "q_pl": "Your organization operates in a highly regulated environment and has a stringent set of compliance requirements for protecting customer data. You must encrypt data while in use to meet regulations. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 314).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 314).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "315": {
     "q_pl": "Your organization is building a real-time recommendation engine using ML models that process live user activity data stored in BigQuery and Cloud Storage. Each new model developed is saved to Artifact Registry. This new system deploys models to Google Kubernetes Engine, and uses Pub/Sub for message queues. Recent industry news have been reporting attacks exploiting ML model supply chains. You need to enhance the security in this serverless architecture, specifically against risks to the development and deployment pipeline. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 315).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 315).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "316": {
     "q_pl": "You want to set up a secure, internal network within Google Cloud for database servers. The servers must not have any direct communication with the public internet. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 316).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 316).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "317": {
     "q_pl": "You work for a large organization that recently implemented a 100GB Cloud Interconnect connection between your Google Cloud and your on-premises edge router. While routinely checking the connectivity, you noticed that the connection is operational but there is an error message that indicates MACsec is operationally down. You need to resolve this error. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 317).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 317).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "318": {
     "q_pl": "Your organization must store highly sensitive data within Google Cloud. You need to design a solution that provides the strongest level of security and control. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 318).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 318).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "319": {
     "q_pl": "The InfoSec team has mandated that all new Cloud Run jobs and services in production must have Binary Authorization enabled. You need to enforce this requirement. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 319).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 319).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "320": {
     "q_pl": "You are developing an application that runs on a Compute Engine VM. The application needs to access data stored in Cloud Storage buckets in other Google Cloud projects. The required access to the buckets is variable. You need to provide access to these resources while following Google-recommended practices. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 320).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 320).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "321": {
     "q_pl": "Your organization strives to be a market leader in software innovation. You provided a large number of Google Cloud environments so developers can test the integration of Gemini in Vertex AI into their existing applications or create new projects. Your organization has 200 developers and a five-person security team. You must prevent and detect proper security policies across the Google Cloud environments. What should you do? (Choose two.)",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 321).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 321).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "322": {
     "q_pl": "You are responsible for managing identities in your company's Google Cloud organization. Employees are frequently using your organization's corporate domain name to create unmanaged Google accounts. You want to implement a practical and efficient solution to prevent employees from completing this action in the future. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 322).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 322).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "323": {
     "q_pl": "Your organization leverages folders to represent different teams within your Google Cloud environment. To support Infrastructure as Code (IaC) practices, each team receives a dedicated service account upon onboarding. You want to ensure that teams have comprehensive permissions to manage resources within their assigned folders while adhering to the principle of least privilege. You must design the permissions for these team-based service accounts in the most effective way possible. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 323).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 323).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "324": {
     "q_pl": "Your organization has a workload that is regulated by European laws. You must restrict the creation of resources outside of the EU for this specific workload. You must find an effective way to implement this security control without disrupting the other global applications. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 324).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 324).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "325": {
     "q_pl": "Your organization manages a critical web application that serves international customers on Google Cloud. An increase in malicious traffic targeting this application has strained resources and caused periods of downtime. You need to design security measures to increase the application's resilience against web attacks, enhance perimeter protection, and provide access control. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 325).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 325).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "326": {
     "q_pl": "Your organization deploys a large number of containerized applications on Google Kubernetes Engine (GKE). Node updates are currently applied manually. Audit findings show that a critical patch has not been installed due to a missed notification. You need to design a more reliable, cloud-first, and scalable process for node updates. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 326).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 326).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "327": {
     "q_pl": "Your organization is migrating its primary web application from on-premises to Google Kubernetes Engine (GKE). You must advise the development team on how to grant their applications access to Google Cloud services from within GKE according to security recommended practices. What should you advise the development team to do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 327).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 327).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "328": {
     "q_pl": "Your organization's application is being integrated with a partner application that requires read access to customer data to process customer orders. The customer data is stored in one of your Cloud Storage buckets. You have evaluated different options and determined that this activity requires the use of service account keys. You must advise the partner on how to minimize the risk of a compromised service account key causing a loss of data. What should you advise the partner to do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 328).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 328).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "329": {
     "q_pl": "Your organization is implementing a new Python application that will be deployed on Cloud Run. The application needs to connect to a MySQL database that runs on Cloud SQL in a different project in your Google Cloud organization. You must secure the connection from the application to the Cloud SQL instance while minimizing management overhead. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 329).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 329).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "330": {
     "q_pl": "You are working with protected health information (PHI) for an electronic health record system. The privacy officer is concerned that sensitive data is stored in the analytics system. You are tasked with anonymizing the sensitive data in a way that is not reversible. Also, the anonymized data should not preserve the character set and length. Which Google Cloud solution should you use?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 330).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 330).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "331": {
     "q_pl": "Your organization uses a microservices architecture based on Google Kubernetes Engine (GKE). Recent security reviews recommend tighter controls around deployed container images to reduce potential vulnerabilities and maintain compliance. You need to implement an automated system by using managed services to ensure that only approved container images are deployed to the GKE clusters. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 331).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 331).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "332": {
     "q_pl": "Your organization has recently migrated sensitive customer data to Cloud Storage buckets. For compliance reasons, you must ensure that all vendor data access and administrative access by Google personnel is logged. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 332).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 332).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "333": {
     "q_pl": "Your organization is implementing a Zero Trust security model and using Chrome Enterprise Premium. The company is interested in governing access to sensitive data stored in Cloud Storage. You need to configure access controls that ensure only authorized users on managed devices can access this data, regardless of their network location. Access should be restricted based on the device's security posture. This requires up-to-date operating system patches and antivirus software. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 333).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 333).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "334": {
     "q_pl": "Your organization is using AI to improve products through innovation. The developers want to use Gemini in Vertex AI on a project. You need to provide a secure Google Cloud environment to prevent and detect information leakages. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 334).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 334).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "335": {
     "q_pl": "You are responsible for configuring Identity and Access Management in your organization's Google Cloud environment. You need to restrict your organization's users from accessing Cloud Storage buckets in other Google Cloud organizations. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 335).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 335).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "336": {
     "q_pl": "Your organization is storing regulated data in Cloud Storage. Data in Cloud Storage buckets is encrypted by Google-managed encryption keys. To meet compliance requirements, you need to update the existing data to use customer-managed encryption keys instead. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 336).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 336).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "337": {
     "q_pl": "There is a vendor who needs access to your company's Google Cloud environment. The vendor uses a third-party identity provider (IdP). You need to integrate this IdP with your company's Google Cloud environment to enable single sign-on (SSO) for the vendor's users in the most secure way. You don't want to manage any of the vendor users' lifecycle management. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 337).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 337).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "338": {
     "q_pl": "Your organization is planning to deploy a large number of Google Kubernetes Engine (GKE) clusters to run business applications in different folders and projects. You must ensure that all GKE nodes always run the latest release to minimize vulnerability risk and administrative effort. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 338).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 338).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "339": {
     "q_pl": "Your company is migrating a three-tier web application to Google Cloud. The application consists of a web frontend, an application backend, and a database. Due to regulatory requirements and existing on-premises infrastructure dependencies, you need to implement a hybrid cloud architecture. The web frontend will be hosted on Google Cloud, while the application backend and the database will remain on-premises initially. You need to ensure secure and efficient communication between the cloud-based frontend and the on-premises backend and database, minimizing latency and maximizing availability. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 339).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 339).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "340": {
     "q_pl": "Your organization is building an application powered by generative AI that uses sensitive internal data to train the AI model. The application is built using Vertex AI, which is generally available in your region. You must ensure Google does not use your sensitive data when tuning public models because it could result in your data being shared with other Google Cloud customers. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 340).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 340).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "341": {
     "q_pl": "Your organization is deploying a new web application on Compute Engine and needs robust perimeter security. You need to protect the application from common web attacks, including SQL injection and cross-site scripting (XSS), while also controlling network traffic based on the source IP address and user identity. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 341).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 341).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "342": {
     "q_pl": "Your company is in a regulated industry that requires low overhead encryption using private connectivity from on-premises data centers to Google Cloud. You need to establish connectivity and ensure high availability across multiple regions. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 342).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 342).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "343": {
     "q_pl": "You manage the security logs within your cloud environment. You have configured a continuous export of security logs to Cloud Storage buckets for long-term retention. You need to provide auditors the ability to analyze the logs that were exported to Cloud Storage. Your solution must be cost-effective and quickly implemented. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 343).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 343).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "344": {
     "q_pl": "Your organization currently uses a third-party identity provider (IdP) that only requires a username and password for authentication. You need to enforce 2-step verification (2SV) for the Super admins in Cloud Identity. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 344).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 344).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "345": {
     "q_pl": "Your organization has a hybrid cloud environment with a data center connected to Google Cloud through a dedicated Cloud Interconnect connection. You need to configure private access from your on-premises hosts to Google APIs, specifically Cloud Storage and BigQuery, without exposing traffic to the public internet. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 345).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 345).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "346": {
     "q_pl": "A batch job running on Compute Engine needs temporary write access to a Cloud Storage bucket. You want the batch job to use the minimum permissions necessary to complete the task. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 346).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 346).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "347": {
     "q_pl": "Your company has recently enabled Security Command Center at the organization level. You need to implement runtime threat detection for applications running in containers within projects residing in the production folder. Specifically, you need to be notified if additional libraries are loaded or malicious scripts are executed within these running containers. You need to configure Security Command Center to meet this requirement while ensuring findings are visible within Security Command Center. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 347).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 347).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "348": {
     "q_pl": "Your organization enforces a custom organization policy that disables the use of Compute Engine VM instances with external IP addresses. However, a regulated business unit requires an exception to temporarily use external IPs for a third-party audit process. The regulated business workload must comply with least privilege principles and minimize policy drift. You need to ensure secure policy management and proper handling. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 348).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 348).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "349": {
     "q_pl": "Your company wants to deploy 2-step verification (2SV). The organizational unit (OU) structure of your company is divided into four departmental units: Human Resources, Finance, Engineering, and Marketing. You need to prevent many access issues from occurring at the same time. Your solution should minimize complexity in management and configuration. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 349).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 349).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "350": {
     "q_pl": "Your company is deploying a large number of containerized applications to GKE. The existing CI/CD pipeline uses Cloud Build to construct container images, transfers the images to Artifact Registry, and then deploys the images to GKE. You need to ensure that only images that have passed vulnerability scanning and meet specific corporate policies are allowed to be deployed. The process needs to be automated and integrated into the existing CI/CD pipeline. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 350).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 350).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "351": {
     "q_pl": "You are managing a set of Google Cloud projects that are contained in a folder named Data Warehouse. A new data analysis team has been approved to perform data analysis for all BigQuery data in the projects within the Data Warehouse folder. They should only be able to read the data and not have permissions to modify or delete the data. You want to reduce the operational overhead of provisioning access while adhering to the principle of least privilege. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 351).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 351).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "352": {
     "q_pl": "Your company hosts a critical web application on Google Cloud. The application is experiencing an increasing number of sophisticated layer 7 attacks, including cross-site scripting (XSS) and SQL injection attempts. You need to protect the application from these attacks while minimizing the impact on legitimate traffic and ensuring high availability. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 352).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 352).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "353": {
     "q_pl": "Your financial services company needs to process customer personally identifiable information (PII) for analytics while adhering to strict privacy regulations. You must transform this data to protect individual privacy to ensure that the data retains its original format and consistency for analytical integrity. Your solution must avoid full irreversible deletion. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 353).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 353).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "354": {
     "q_pl": "Your global defense company is migrating top-secret classified data to BigQuery and Cloud Storage. National security regulations demand that master encryption key material never leaves the accredited on-premises cryptographic hardware. You must retain the unilateral ability to revoke data access, independent of any cloud provider. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 354).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 354).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "355": {
     "q_pl": "You work at a company in a regulated industry and are responsible for ongoing security of the Cloud environment. You need to prevent and detect misconfigurations in a particular folder based on specific compliance policies. You need to adhere to industry-specific compliance policies and policies that are internal to your company. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 355).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 355).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "356": {
     "q_pl": "Your organization is using Google Workspace, Google Cloud, and a third-party SIEM. You need to export events such as user logins, successful logins, and failed logins to the SIEM. Logs need to be ingested in real time or near real-time. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 356).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 356).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "357": {
     "q_pl": "Your company is developing a new application for your organization. The application consists of two Cloud Run services, service A and service B. Service A provides a web-based user frontend. Service B provides backend services that are called by service A. You need to set up Identity and Access Management for the application. Your solution should follow the principle of least privilege. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 357).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 357).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "358": {
     "q_pl": "Your organization has established a highly sensitive project within a VPC Service Controls perimeter. You need to ensure that only users meeting specific contextual requirements such as having a company-managed device, a specific location, and a valid user identity can access resources within this perimeter. You want to evaluate the impact of this change without blocking legitimate access. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 358).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 358).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "359": {
     "q_pl": "Your company's storage team manages all product images within a specific Google Cloud project. To maintain control, you must isolate access to Cloud Storage for this project, allowing the storage team to manage restrictions at the project level. They must be restricted to using corporate computers. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 359).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 359).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "360": {
     "q_pl": "Your organization uses Google Workspace as the primary identity provider for Google Cloud. Users in your organization initially created their passwords. You need to improve password security due to a recent security event. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 360).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 360).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   },
   "361": {
     "q_pl": "Your company has deployed an artificial intelligence model in a central project. This model contains sensitive intellectual property and must be kept strictly isolated from the internet. You must expose the model endpoint only to a defined list of projects in your organization. What should you do?",
-    "about": "Opracowanie w toku (interpretacja specyficzna dla pytania nr 361).",
-    "interpret": "Analiza wymagań bezpieczeństwa dla tego scenariusza GCP."
+    "about": "Bezpieczeństwo i konfiguracja zasobów (pytanie nr 361).",
+    "interpret": "Przeanalizuj wymagania dotyczące dostępu, szyfrowania i izolacji zgodnie z zasadą najmniejszych uprawnień."
   }
 };
