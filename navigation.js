@@ -10,7 +10,11 @@
     // Font size initialization
     const savedFontSize = localStorage.getItem('fontSize');
     if (savedFontSize) {
-        document.documentElement.style.fontSize = savedFontSize + 'px';
+        const size = parseInt(savedFontSize, 10) || 16;
+        const scale = size / 16;
+        document.documentElement.style.setProperty('--font-scale-factor', scale);
+    } else {
+        document.documentElement.style.setProperty('--font-scale-factor', 1.0);
     }
 })();
 
@@ -265,6 +269,61 @@
         .q-nav .theme-toggle-nav, .q-nav .font-size-btn {
             margin: 0 5px;
         }
+
+        /* Dedicated scaling targeting only questions, choices, and explanations with comfortable line-height */
+        :root {
+            --font-scale-factor: 1.0;
+        }
+        
+        .question-body .card-text,
+        .question-body p.card-text {
+            font-size: calc(1.05rem * var(--font-scale-factor)) !important;
+            line-height: 1.65 !important;
+        }
+        
+        .question-choices-container .multi-choice-item,
+        .multi-choice-item {
+            font-size: calc(0.98rem * var(--font-scale-factor)) !important;
+            line-height: 1.65 !important;
+        }
+        
+        .q-answer pre {
+            font-size: calc(0.98rem * var(--font-scale-factor)) !important;
+            line-height: 1.65 !important;
+        }
+        
+        .ai-analysis-container {
+            font-size: calc(0.95rem * var(--font-scale-factor)) !important;
+            line-height: 1.65 !important;
+        }
+        
+        .ai-analysis-container h2 {
+            font-size: calc(1.4rem * var(--font-scale-factor)) !important;
+            line-height: 1.4 !important;
+        }
+        
+        .ai-analysis-container h3 {
+            font-size: calc(1.15rem * var(--font-scale-factor)) !important;
+            line-height: 1.4 !important;
+        }
+        
+        .ai-analysis-container p {
+            font-size: calc(0.95rem * var(--font-scale-factor)) !important;
+            line-height: 1.65 !important;
+        }
+        
+        .question-answer,
+        .correct-answer-box,
+        .hint-modal-text,
+        .hint-modal-body {
+            font-size: calc(1rem * var(--font-scale-factor)) !important;
+            line-height: 1.65 !important;
+        }
+
+        .hint-modal-section-title {
+            font-size: calc(1.05rem * var(--font-scale-factor)) !important;
+            line-height: 1.4 !important;
+        }
     `;
     document.head.appendChild(style);
 
@@ -332,8 +391,9 @@
                 if (delta === 0) size = 16;
                 else size += delta;
                 
-                size = Math.max(10, Math.min(30, size));
-                document.documentElement.style.fontSize = size + 'px';
+                size = Math.max(10, Math.min(50, size));
+                const scale = size / 16;
+                document.documentElement.style.setProperty('--font-scale-factor', scale);
                 localStorage.setItem('fontSize', size);
             });
             return btn;
@@ -356,14 +416,8 @@
         } else {
             nav.appendChild(fsControls);
         }
-    } else {
-        // Fallback for index.html - add near the top header
-        const header = document.querySelector('.q-list h2');
-        if (header) {
-            const fsControls = createFontSizeControls();
-            header.after(fsControls);
-        }
     }
+    // Fallback for index.html removed as per user request to only target questions/answers/explanations.
 
 
     // Modal helpers
