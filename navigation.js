@@ -20,6 +20,12 @@
 
 // Dynamic loading of interpretations.js & Styling Injection
 (function() {
+    // Inject Google Fonts for better readability
+    const fontLink = document.createElement('link');
+    fontLink.rel = 'stylesheet';
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap';
+    document.head.appendChild(fontLink);
+
     const script = document.createElement('script');
     script.src = 'interpretations.js';
     script.async = true;
@@ -275,6 +281,21 @@
             --font-scale-factor: 1.0;
         }
         
+        .question-body .card-text,
+        .question-body p.card-text,
+        .question-choices-container .multi-choice-item,
+        .multi-choice-item,
+        .q-answer pre,
+        .ai-analysis-container,
+        .ai-analysis-container p,
+        .question-answer,
+        .correct-answer-box,
+        .hint-modal-text,
+        .hint-modal-body {
+            font-family: 'Inter', 'Open Sans', system-ui, -apple-system, sans-serif !important;
+            letter-spacing: -0.011em;
+        }
+
         .question-body .card-text,
         .question-body p.card-text {
             font-size: calc(1.05rem * var(--font-scale-factor)) !important;
