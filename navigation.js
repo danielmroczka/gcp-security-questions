@@ -7,6 +7,11 @@
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         document.body.classList.add('dark-theme');
     }
+})();
+
+// Theme Initialization (Run immediately to avoid Flash of Unstyled Content)
+(function() {
+    
     // Font size initialization
     const savedFontSize = localStorage.getItem('fontSize');
     if (savedFontSize) {
