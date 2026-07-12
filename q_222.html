@@ -1,6 +1,52 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark-theme');
+            }
+        })();
+    </script>
+    <style id="fouc-fix-style">
+        html.dark-theme,
+        html.dark-theme body,
+        .dark-theme,
+        .dark-theme body,
+        .dark-theme .q-card,
+        .dark-theme .c-card,
+        .dark-theme .q-page {
+            background-color: #0f172a !important;
+            color: #f1f5f9 !important;
+        }
+        /* Specifically override hardcoded white backgrounds in the base style */
+        body {
+            background-color: #f6f8fa; /* Default light */
+        }
+        html.dark-theme body {
+            background-color: #0f172a !important;
+        }
+    </style>
+    
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark-theme');
+            }
+        })();
+    </script>
+    <style>
+        html.dark-theme,
+        html.dark-theme body {
+            background-color: #0f172a !important;
+            color: #f1f5f9 !important;
+        }
+    </style>
+    
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://www.examtopics.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>

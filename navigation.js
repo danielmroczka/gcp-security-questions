@@ -146,98 +146,98 @@
         }
 
         /* --- Dark Mode Styles --- */
-        body.dark-theme {
+        .dark-theme {
             background-color: #0f172a !important;
             color: #f1f5f9 !important;
         }
-        body.dark-theme .q-card {
+        .dark-theme .q-card {
             background-color: #1e293b !important;
             color: #f1f5f9 !important;
             border-color: rgba(255, 255, 255, 0.1) !important;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3) !important;
         }
-        body.dark-theme .c-card {
+        .dark-theme .c-card {
             background-color: #1e293b !important;
             color: #e2e8f0 !important;
             border-color: rgba(255, 255, 255, 0.1) !important;
         }
-        body.dark-theme .c-date {
+        .dark-theme .c-date {
             color: #94a3b8 !important;
         }
-        body.dark-theme .c-badge {
+        .dark-theme .c-badge {
             background: #334155 !important;
             border-color: #475569 !important;
             color: #cbd5e1 !important;
         }
-        body.dark-theme .c-upvotes {
+        .dark-theme .c-upvotes {
             color: #38bdf8 !important;
         }
-        body.dark-theme .correct-answer-box {
+        .dark-theme .correct-answer-box {
             background-color: #1e293b !important;
             color: #38bdf8 !important;
         }
-        body.dark-theme .bg-light {
+        .dark-theme .bg-light {
             background-color: #1e293b !important;
             color: #f1f5f9 !important;
         }
-        body.dark-theme .question-answer {
+        .dark-theme .question-answer {
             background-color: #1e293b !important;
             color: #cbd5e1 !important;
         }
-        body.dark-theme h1, body.dark-theme h2, body.dark-theme h3 {
+        .dark-theme h1, .dark-theme h2, .dark-theme h3 {
             color: #f1f5f9 !important;
         }
-        body.dark-theme .q-id {
+        .dark-theme .q-id {
             color: #38bdf8 !important;
         }
-        body.dark-theme .q-item {
+        .dark-theme .q-item {
             background-color: #1e293b !important;
             color: #cbd5e1 !important;
             border-color: rgba(255, 255, 255, 0.08) !important;
         }
-        body.dark-theme .q-item:hover {
+        .dark-theme .q-item:hover {
             background-color: #334155 !important;
             color: #f1f5f9 !important;
         }
-        body.dark-theme .multi-choice-item {
+        .dark-theme .multi-choice-item {
             color: #cbd5e1 !important;
         }
-        body.dark-theme .btn-outline-primary {
+        .dark-theme .btn-outline-primary {
             color: #38bdf8 !important;
             border-color: #38bdf8 !important;
         }
-        body.dark-theme .btn-outline-primary:hover {
+        .dark-theme .btn-outline-primary:hover {
             background-color: #38bdf8 !important;
             color: #0f172a !important;
         }
-        body.dark-theme .btn-outline-secondary {
+        .dark-theme .btn-outline-secondary {
             color: #cbd5e1 !important;
             border-color: #475569 !important;
         }
-        body.dark-theme .btn-outline-secondary:hover {
+        .dark-theme .btn-outline-secondary:hover {
             background-color: #475569 !important;
             color: #f1f5f9 !important;
         }
-        body.dark-theme .ai-analysis-container {
+        .dark-theme .ai-analysis-container {
             background-color: #1e293b !important;
             color: #e2e8f0 !important;
             border-left: 5px solid #38bdf8 !important;
         }
-        body.dark-theme pre {
+        .dark-theme pre {
             background-color: #0b1020 !important;
             color: #e6edf3 !important;
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
         }
-        body.dark-theme .text-dark {
+        .dark-theme .text-dark {
             color: #f1f5f9 !important;
         }
-        body.dark-theme .text-muted {
+        .dark-theme .text-muted {
             color: #94a3b8 !important;
         }
-        body.dark-theme .card-text {
+        .dark-theme .card-text {
             color: #e2e8f0 !important;
         }
-        body.dark-theme .correct-answer {
+        .dark-theme .correct-answer {
             color: #10b981 !important;
             font-weight: bold;
         }
@@ -269,7 +269,7 @@
             transform: scale(1.05);
             box-shadow: 0 6px 14px rgba(0,0,0,0.2);
         }
-        body.dark-theme .theme-toggle-btn {
+        .dark-theme .theme-toggle-btn {
             background: #1e293b;
             border: 1px solid rgba(255,255,255,0.15);
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
@@ -378,7 +378,7 @@
         btn.setAttribute('title', 'Przełącz tryb (skrót: T)');
         
         function updateLabel() {
-            const isDark = document.body.classList.contains('dark-theme');
+            const isDark = document.documentElement.classList.contains('dark-theme');
             if (isNav) {
                 btn.innerHTML = isDark ? '☀️ Jasny' : '🌙 Ciemny';
             } else {
@@ -387,8 +387,8 @@
         }
         
         btn.addEventListener('click', function() {
-            document.body.classList.toggle('dark-theme');
-            const isDarkNow = document.body.classList.contains('dark-theme');
+            document.documentElement.classList.toggle('dark-theme');
+            const isDarkNow = document.documentElement.classList.contains('dark-theme');
             localStorage.setItem('theme', isDarkNow ? 'dark' : 'light');
             document.querySelectorAll('.theme-toggle-btn, .theme-toggle-nav').forEach(b => {
                 const isBNav = b.classList.contains('theme-toggle-nav');
