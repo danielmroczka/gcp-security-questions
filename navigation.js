@@ -1,18 +1,14 @@
 // navigation.js
 
-// Theme Initialization (Run immediately to avoid Flash of Unstyled Content)
+// Theme & Font Initialization
 (function() {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark-theme');
         document.body.classList.add('dark-theme');
     }
-})();
-
-// Theme Initialization (Run immediately to avoid Flash of Unstyled Content)
-(function() {
     
-    // Font size initialization
     const savedFontSize = localStorage.getItem('fontSize');
     if (savedFontSize) {
         const size = parseInt(savedFontSize, 10) || 16;
@@ -468,15 +464,23 @@
         let hintHtml = '';
         if (window.questionInterpretations && window.questionInterpretations[qNum]) {
             const item = window.questionInterpretations[qNum];
-            const qDisplay = item.q_pl || item.q;
             hintHtml = `
-                <div class="hint-modal-section-title" style="color: #f43f5e; font-size: 1.1rem; margin-top: 0;">Pytanie po polsku:</div>
-                <div class="hint-modal-text" style="font-style: italic; color: #f1f5f9; background: rgba(0,0,0,0.25); padding: 12px; border-radius: 8px; border-left: 4px solid #f43f5e; margin-bottom: 16px;">${qDisplay}</div>
-                <div class="hint-modal-section-title">O co właściwie chodzi w tym pytaniu?</div>
-                <div class="hint-modal-text">${item.about}</div>
-                <div class="hint-modal-section-title">Jak je interpretować? (Klucz / Pułapka)</div>
-                <div class="hint-modal-text">${item.interpret}</div>
-                <div class="hint-keyboard-tip">Naciśnij <code>Esc</code> lub <code>h</code> aby zamknąć</div>
+                <div style="margin-bottom: 16px;">
+                    <div class="hint-modal-section-title" style="color: #38bdf8; margin-top: 0; display: flex; align-items: center; gap: 8px;">
+                        🎯 O co chodzi w tym pytaniu?
+                    </div>
+                    <div class="hint-modal-text" style="color: #f1f5f9; line-height: 1.5;">${item.about}</div>
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <div class="hint-modal-section-title" style="color: #10b981; display: flex; align-items: center; gap: 8px;">
+                        💡 Jak wybrać poprawną odpowiedź?
+                    </div>
+                    <div class="hint-modal-text" style="color: #f1f5f9; line-height: 1.5;">${item.interpret}</div>
+                </div>
+                <div style="margin-top: 20px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: #94a3b8; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Skrót: <code>h</code> lub <code>Esc</code></span>
+                    <span style="opacity: 0.7;">PCS Helper</span>
+                </div>
             `;
         } else {
             hintHtml = `
