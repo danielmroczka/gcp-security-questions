@@ -1,123 +1,123 @@
 window.questionInterpretations = {
   "1": {
-    "about": "Pytanie dotyczy całkowitego zablokowania dostępu instancji Compute Engine (VM) do publicznego internetu oraz do wszelkich usług i API Google.",
-    "interpret": "Kluczem jest wyłączenie przypisywania zewnętrznego IP (Public IP) oraz wyłączenie funkcji Private Google Access (PGA), która domyślnie pozwala maszynom z prywatnymi adresami IP na łączenie się z usługami Google (np. Cloud Storage, BigQuery)."
+    "about": "Pytanie sprawdza wiedzę o tym, jak całkowicie odciąć maszynę Compute Engine od internetu i usług Google.",
+    "interpret": "Kluczem jest wyłączenie dwóch opcji na poziomie karty sieciowej VM: 1. Publicznego IP (brak dostępu do/z internetu) oraz 2. Private Google Access (brak dostępu do API Google po sieci wewnętrznej). Bez tych dwóch, maszyna staje się odizolowana."
   },
   "2": {
-    "about": "Pytanie sprawdza wiedzę na temat domyślnych, wbudowanych reguł zapory sieciowej (implied firewall rules) w sieciach VPC Google Cloud.",
-    "interpret": "Zawsze istnieją dwie reguły implied (o najniższym priorytecie 65535): zezwalaj na cały ruch wychodzący (allow egress) i blokuj cały ruch przychodzący (deny ingress). Nie można ich usunąć, jedynie nadpisać."
+    "about": "Pytanie dotyczy wiedzy o domyślnych regułach firewall (implied rules) w każdej sieci VPC.",
+    "interpret": "Pamiętaj: domyślnie każda sieć ma dwie ukryte reguły o priorytecie 65535: 1. Zezwalaj na cały ruch wychodzący (Allow Egress) oraz 2. Blokuj cały ruch przychodzący (Deny Ingress). Tych reguł nie można usunąć, można je tylko nadpisać regułami o wyższym priorytecie (niższy numer)."
   },
   "3": {
     "about": "Chodzi o bezpieczne przechowywanie kluczy i sekretów bez umieszczania ich w postaci jawnego tekstu w repozytorium kodu (SCM).",
     "interpret": "Wskazówka historyczna: Chociaż Secret Manager to nowoczesny standard, w starszych pytaniach najbezpieczniejszym wyborem jest szyfrowanie sekretów kluczami zarządzanymi przez klienta (CMEK) w Cloud KMS i przechowywanie ich w Cloud Storage."
   },
   "4": {
-    "about": "Pytanie dotyczy centralnego zarządzania uprawnieniami GCP IAM z poziomu lokalnego Active Directory (AD) na podstawie przynależności do grup.",
-    "interpret": "Rozwiązaniem jest użycie Google Cloud Directory Sync (GCDS) do synchronizacji grup AD do Google Workspace/Cloud Identity, a następnie przypisywanie ról IAM bezpośrednio do tych zsynchronizowanych grup."
+    "about": "Integracja lokalnego Active Directory (AD) z GCP IAM dla zarządzania uprawnieniami poprzez grupy.",
+    "interpret": "Kluczem jest użycie GCDS (Google Cloud Directory Sync) do synchronizacji grup z AD do Cloud Identity/Google Workspace. Role IAM przypisujemy do tych zsynchronizowanych grup, a nie bezpośrednio do użytkowników, co zapewnia łatwe zarządzanie cyklem życia użytkownika."
   },
   "5": {
-    "about": "Chodzi o najlepsze praktyki bezpieczeństwa podczas budowania i zabezpieczania obrazów kontenerów dla środowisk produkcyjnych.",
-    "interpret": "Aby zminimalizować powierzchnię ataku, należy używać minimalnych obrazów bazowych (np. alpine lub distroless) pozbawionych niepotrzebnych pakietów/powłok oraz wdrożyć skanowanie podatności w potoku CI/CD."
+    "about": "Bezpieczeństwo kontenerów w środowiskach produkcyjnych.",
+    "interpret": "Stosuj zasadę 'minimalizmu': obrazy bazowe typu 'distroless' lub 'alpine' drastycznie zmniejszają powierzchnię ataku (brak shella, brak menedżerów pakietów). Obowiązkowe jest skanowanie obrazów w CI/CD (np. Artifact Analysis)."
   },
   "6": {
-    "about": "Zaprojektowanie bezpiecznego i odizolowanego dostępu do 3-warstwowej aplikacji internetowej (frontend, backend, baza danych) w GCP.",
-    "interpret": "Zabezpiecz warstwy wewnętrzne (backend i bazę danych) poprzez brak publicznych adresów IP oraz precyzyjną kontrolę komunikacji przy użyciu reguł firewall opartych na kontach serwisowych (Service Accounts)."
+    "about": "Zabezpieczenie 3-warstwowej aplikacji wewnętrznej w GCP zgodnie z wymogami zgodności.",
+    "interpret": "To typowe pytanie o architekturę: frontend w publicznej sieci (przez Load Balancer), backend/baza danych w sieci prywatnej (tylko prywatne IP). Kluczem jest firewall oparty na kontach serwisowych (Service Accounts) zamiast tagów, aby ograniczyć komunikację tylko do niezbędnych połączeń."
   },
   "7": {
-    "about": "Pytanie dotyczy migracji obciążeń z fizycznego centrum danych do chmury GCP z zachowaniem poufności i integralności danych.",
-    "interpret": "Kluczem jest zrozumienie modelu współdzielonej odpowiedzialności oraz wdrożenie szyfrowania na każdym etapie – zarówno dla danych w spoczynku (at rest), jak i w tranzycie."
+    "about": "Bezpieczna migracja danych z on-premises do GCP.",
+    "interpret": "Kluczowe jest szyfrowanie: dane w tranzycie (TLS/IPsec VPN/Interconnect) oraz dane w spoczynku (CMEK w Cloud KMS). Pamiętaj o modelu współdzielonej odpowiedzialności – GCP zapewnia bezpieczną infrastrukturę, Ty odpowiadasz za konfigurację i szyfrowanie danych."
   },
   "8": {
-    "about": "Zabezpieczenie dostępu do systemu ERP hostowanego na Compute Engine przy użyciu Cloud IAP (Identity-Aware Proxy).",
-    "interpret": "Cloud IAP pozwala na bezpieczny dostęp i uwierzytelnianie użytkowników bez konieczności korzystania z VPN. Działa na poziomie warstwy aplikacyjnej, weryfikując tożsamość i kontekst żądania."
+    "about": "Zabezpieczenie dostępu do ERP przez Cloud IAP.",
+    "interpret": "Cloud IAP działa jako warstwa uwierzytelniania przed aplikacją. Aby aplikacja akceptowała ruch TYLKO z IAP, musisz skonfigurować firewall tak, aby zezwalał na ruch tylko z zakresu adresów IP używanych przez IAP (35.191.0.0/16)."
   },
   "9": {
-    "about": "Wykrywanie podatności i błędów konfiguracyjnych w systemach operacyjnych maszyn wirtualnych Compute Engine.",
-    "interpret": "Do skanowania systemów pod kątem podatności (Vulnerability Assessment) i konfiguracji OS najlepiej wykorzystać Security Command Center (SCC) wraz z agentami skanującymi."
+    "about": "Wykrywanie podatności systemów operacyjnych (OS) na maszynach wirtualnych.",
+    "interpret": "Do systematycznej oceny podatności (vulnerability assessment) służy Security Command Center (SCC) – wersja Premium integruje się z agentami skanującymi systemy operacyjne w poszukiwaniu brakujących poprawek."
   },
   "10": {
-    "about": "Uzyskanie spójnego i scentralizowanego widoku logów ze wszystkich projektów deweloperskich w zewnętrznym systemie SIEM.",
-    "interpret": "Najlepszą praktyką jest skonfigurowanie sinka logów (Log Sink) na poziomie organizacji lub folderu, który przesyła logi zbiorczo do Cloud Pub/Sub, skąd system SIEM może je pobierać."
+    "about": "Scentralizowane zbieranie logów ze wszystkich projektów dla systemu SIEM.",
+    "interpret": "Najlepsza praktyka to Aggregated Log Sink na poziomie folderu/organizacji. Logi trafiają do Cloud Pub/Sub, skąd system SIEM (np. Splunk) konsumuje je w czasie rzeczywistym. To rozwiązanie skalowalne i odporne na awarie."
   },
   "11": {
-    "about": "Zapobieganie porwaniom domen/IP oraz atakom typu hijacking poprzez przekierowywanie użytkowników na złośliwe strony.",
-    "interpret": "Rozwiązaniem chroniącym przed zatruciem DNS i zapewniającym autentyczność odpowiedzi DNS jest wdrożenie DNSSEC (Domain Name System Security Extensions) w Cloud DNS."
+    "about": "Ochrona przed atakami typu DNS Hijacking i zatruwaniem rekordów DNS.",
+    "interpret": "DNSSEC (Domain Name System Security Extensions) w Cloud DNS jest jedynym mechanizmem kryptograficznym w GCP, który gwarantuje, że otrzymana odpowiedź z serwera DNS jest autentyczna i nie została zmodyfikowana przez atakującego (tzw. 'man-in-the-middle')."
   },
   "12": {
-    "about": "Skanowanie wdrożonej aplikacji w App Engine pod kątem podatności bezpieczeństwa z listy OWASP Top 10.",
-    "interpret": "Natywnym narzędziem w GCP dedykowanym do automatycznego skanowania aplikacji webowych (App Engine, GKE, Compute Engine) pod kątem luk bezpieczeństwa jest Web Security Scanner."
+    "about": "Automatyczne skanowanie aplikacji webowych (App Engine, GKE, Compute) pod kątem podatności OWASP Top 10.",
+    "interpret": "Natywnym narzędziem do tego celu jest **Web Security Scanner**. Jest on zintegrowany z SCC i pozwala na automatyczne, cykliczne uruchamianie skanowań aplikacji w celu wykrycia luk takich jak XSS czy wstrzykiwanie SQL."
   },
   "13": {
-    "about": "Umożliwienie analitykom danych pracy w środowisku GCP przy jednoczesnym zapobieganiu wyciekowi wrażliwych danych (Data Exfiltration).",
-    "interpret": "Wymaga to zastosowania VPC Service Controls (VPC-SC), które tworzy perymetr bezpieczeństwa wokół usług takich jak Cloud Storage czy BigQuery, uniemożliwiając kopiowanie danych poza ten perymetr."
+    "about": "Zapobieganie eksfiltracji danych z usług typu Cloud Storage lub BigQuery przez autoryzowanych użytkowników.",
+    "interpret": "Gdy musisz ograniczyć kopiowanie danych *poza* perymetr projektów, **VPC Service Controls (VPC-SC)** jest jedynym rozwiązaniem. Tworzy ono 'obszar zaufania' dla API Google – próba skopiowania danych do bucketa poza tym obszarem zostanie zablokowana na poziomie API, nawet przy posiadaniu poprawnych uprawnień IAM."
   },
   "14": {
-    "about": "Zapewnienie zgodności z ładem korporacyjnym i bezpieczeństwem w nowo utworzonej organizacji GCP.",
-    "interpret": "Wdrożenie struktur hierarchii zasobów (organizacja, foldery, projekty) oraz zdefiniowanie polityk organizacji (Organization Policies) w celu ograniczenia niepożądanych zachowań."
+    "about": "Wdrażanie ładu korporacyjnego (governance) i polityk bezpieczeństwa w nowej organizacji GCP.",
+    "interpret": "Hierarchia: Organizacja -> Folder -> Projekt. Narzędziem wymuszającym reguły jest **Organization Policy Service** (np. ograniczenia dotyczące lokalizacji zasobów, dozwolonych obrazów czy zakazu Public IP). IAM zarządza tym, *kto* może co robić, a Org Policy zarządza tym, *co* można zrobić technicznie."
   },
   "15": {
-    "about": "Zapewnienie bezpiecznego dostępu do zasobów Cloud Storage z poziomu aplikacji działającej na Compute Engine.",
-    "interpret": "Unikaj kluczy Service Account zapisanych na dysku. Zamiast tego przypisz Service Account bezpośrednio do instancji VM i pozwól aplikacji korzystać z tożsamości metadanych instancji."
+    "about": "Bezpieczny dostęp aplikacji na Compute Engine do zasobów Cloud Storage.",
+    "interpret": "Nigdy nie używaj JSON Service Account Keys – to ryzyko wycieku. Używaj **Workload Identity** (lub tożsamości metadanych instancji). Przypisujesz Service Account do VM, a aplikacja automatycznie używa jego uprawnień (np. `storage.objectViewer`) bez konieczności zarządzania plikami z kluczami."
   },
   "16": {
-    "about": "Zabezpieczenie i monitorowanie ruchu sieciowego w tranzycie między podsieciami oraz chmurą a środowiskiem lokalnym.",
-    "interpret": "Użyj VPC Flow Logs do szczegółowego audytu połączeń sieciowych oraz wdróż Cloud IDS lub zapory sieciowe partnerów (Next-Gen Firewall) do głębokiej inspekcji pakietów (DPI)."
+    "about": "Monitorowanie ruchu sieciowego (tranzyt i lokalizacja anomalii).",
+    "interpret": "VPC Flow Logs pokazują *kto* z kim rozmawiał (metadane). Jeśli potrzebujesz głębokiej inspekcji pakietów (DPI) dla celów zgodności (np. PCI DSS), musisz wdrożyć **Cloud IDS** lub zewnętrzne urządzenia (Next-Gen Firewall) w modelu 'bump-in-the-wire'."
   },
   "17": {
-    "about": "Analiza zmian w poufnych danych płacowych w czasie przy jednoczesnym zapobieganiu identyfikacji konkretnych pracowników.",
-    "interpret": "Należy zastosować Cloud DLP API w celu deidentyfikacji lub maskowania danych wrażliwych (np. tokenizacja, k-anonimowość) przed udostępnieniem ich do analizy."
+    "about": "Deidentyfikacja danych płacowych w celu bezpiecznej analizy (k-anonimowość, maskowanie).",
+    "interpret": "Kluczem jest **Cloud DLP API**. Posiada ono wbudowane transformacje: maskowanie (np. XXXXX1234), tokenizacja (zamiana danych na nieodwracalne tokeny) czy 'bucketing' (np. wiek 20-30 lat zamiast konkretnego wieku). To standard przy zachowaniu zgodności z RODO/GDPR."
   },
   "18": {
-    "about": "Wybór odpowiedniej strategii uwierzytelniania i autoryzacji dla użytkowników zewnętrznych w chmurze GCP.",
-    "interpret": "Kluczowym rozróżnieniem jest Cloud Identity (dla pracowników i tożsamości wewnętrznych) kontra Firebase Authentication / Identity Platform (dla klientów i użytkowników końcowych aplikacji)."
+    "about": "Wybór strategii uwierzytelniania dla użytkowników zewnętrznych (klienci aplikacji).",
+    "interpret": "Cloud Identity to rozwiązanie dla pracowników (zarządzanie tożsamością wewnątrz firmy). Jeśli aplikacja jest skierowana do klientów zewnętrznych, właściwym wyborem jest **Identity Platform** (dawniej Firebase Authentication), które oferuje łatwą integrację z dostawcami takimi jak Google, Facebook, czy e-mail/hasło."
   },
   "19": {
-    "about": "Wdrożenie szyfrowania kopertowego (envelope encryption) do ochrony danych za pomocą własnych kluczy szyfrujących.",
-    "interpret": "Dane szyfruje się lokalnym kluczem danych (DEK), a sam klucz DEK jest następnie szyfrowany kluczem głównym (KEK) zarządzanym centralnie w Cloud KMS."
+    "about": "Implementacja szyfrowania kopertowego (Envelope Encryption).",
+    "interpret": "W procesie tym generujesz lokalny klucz danych (DEK), szyfrujesz nim dane (szybkie), a następnie DEK szyfrujesz kluczem głównym (KEK) w Cloud KMS. W razie potrzeby rotacji zmieniasz tylko KEK, bez konieczności przesyłania i ponownego szyfrowania terabajtów danych."
   },
   "20": {
-    "about": "Przesyłanie logów z GCP do lokalnego systemu SIEM w sposób niezawodny i odporny na awarie.",
-    "interpret": "Prawidłowy potok przesyłania logów to: Cloud Logging -> Log Sink -> Cloud Pub/Sub -> Integrator SIEM (np. Splunk) pobierający dane z subskrypcji Pub/Sub."
+    "about": "Niezawodne przesyłanie logów do zewnętrznego SIEM (np. Splunk).",
+    "interpret": "Logi z Cloud Logging -> Log Sink -> **Cloud Pub/Sub**. Pub/Sub pełni tutaj rolę bufora (kolejki), co zapewnia odporność na awarie (jeśli SIEM będzie chwilowo niedostępny, logi bezpiecznie czekają w kolejce Pub/Sub)."
   },
   "21": {
-    "about": "Zapewnienie, że cały ruch wychodzący z maszyn wirtualnych do internetu przechodzi przez autoryzowane punkty kontrolne w celu spełnienia wymogów PCI DSS.",
-    "interpret": "Należy usunąć domyślną trasę do internetu z sieci VPC i skierować ruch wychodzący (egress) przez dedykowane bramy proxy, zapory sieciowe lub NAT z włączonym logowaniem."
+    "about": "Wymóg PCI DSS: ruch wychodzący do internetu tylko przez autoryzowane punkty kontrolne.",
+    "interpret": "Kluczem jest usunięcie 'default route' (0.0.0.0/0) do internetu z VPC i zastąpienie jej trasą kierującą ruch przez **Next-Gen Firewall (NGFW)** lub dedykowane proxy, które dokonuje inspekcji pakietów i logowania."
   },
   "22": {
-    "about": "Zapewnienie bezpiecznego dostępu administracyjnego do aplikacji App Engine w środowisku programistycznym i produkcyjnym.",
-    "interpret": "Zastosuj role IAM na poziomie projektu lub usługi App Engine oraz wdróż Identity-Aware Proxy (IAP) w celu precyzyjnej kontroli dostępu do konsoli administracyjnej."
+    "about": "Bezpieczny dostęp administracyjny do App Engine (dev/prod).",
+    "interpret": "Użyj **Identity-Aware Proxy (IAP)**. IAP wymaga uwierzytelnienia użytkownika (konto Google + 2FA) przed dopuszczeniem żądania do samej aplikacji. To eliminuje potrzebę wystawiania admin panelu na publiczny internet."
   },
   "23": {
-    "about": "Wykrywanie i automatyczne maskowanie wrażliwych danych, takich jak numery kart płatniczych, w czatach wsparcia klientów.",
-    "interpret": "Użyj Cloud DLP API w czasie rzeczywistym do skanowania przesyłanego tekstu czatu i zastępowania wykrytych informacji wrażliwych (infoTypes) maskami (np. [CREDIT_CARD_NUMBER])."
+    "about": "Automatyczne maskowanie danych wrażliwych (PII) w czasie rzeczywistym (np. numery kart na czacie).",
+    "interpret": "Zastosuj **Cloud DLP API** z wyzwalaczem (np. w Cloud Functions) skanującym dane w locie. Wykryte `infoTypes` (np. CREDIT_CARD_NUMBER) zamień na zdefiniowany 'mask' (np. '######')."
   },
   "24": {
-    "about": "Zapobieganie ryzyku związanemu z wyciekiem lub kompromitacją długożyjących kluczy kont serwisowych (Service Account Keys).",
-    "interpret": "Najlepszą praktyką jest unikanie pobierania kluczy w formacie JSON. Zamiast tego należy korzystać z tożsamości powiązanych (np. Workload Identity w GKE) lub krótkotrwałych poświadczeń (short-lived credentials)."
+    "about": "Ryzyko związane z długożyjącymi kluczami kont serwisowych (Service Account JSON keys).",
+    "interpret": "Klucze JSON są skarbem dla atakujących. Rozwiązaniem jest **Workload Identity** (dla GKE) lub przypisywanie konta serwisowego bezpośrednio do instancji VM/Cloud Run, aby aplikacja używała krótkotrwałych poświadczeń (tokenów OAuth) zamiast statycznych plików JSON."
   },
   "25": {
-    "about": "Konfiguracja centralnego zbierania i analizowania audytowych logów dostępu w dużej organizacji z wieloma projektami GCP.",
-    "interpret": "Stwórz dedykowany projekt bezpieczeństwa, w którym skonfigurujesz zagregowane logi (Aggregated Sinks) na poziomie organizacji, kierujące ruch do jednego bezpiecznego kubła Cloud Storage lub datasetu BigQuery."
+    "about": "Centralne zbieranie logów audytowych z wielu projektów.",
+    "interpret": "Użyj **Aggregated Sink** na poziomie folderu lub organizacji, który przesyła logi (`_Default` bucket) do centralnego projektu bezpieczeństwa (Security Project). To zapewnia separację obowiązków (audytorzy widzą logi, ale nie mają dostępu do infrastruktury)."
   },
   "26": {
-    "about": "Migracja tożsamości z lokalnego Active Directory do Google Workspace/Cloud Identity z obsługą jednokrotnego logowania (SSO).",
-    "interpret": "Użyj GCDS do synchronizacji kont, a jako dostawcę tożsamości (IdP) dla logowania jednokrotnego skonfiguruj system wspierający standard SAML 2.0 (np. AD FS, Okta)."
+    "about": "Migracja tożsamości z lokalnego AD do Google Cloud.",
+    "interpret": "Zastosuj **GCDS** (Google Cloud Directory Sync) dla synchronizacji użytkowników/grup oraz **SAML Federation** (np. z ADFS lub Okta), aby logowanie odbywało się przez lokalne źródło prawdy (Single Sign-On)."
   },
   "27": {
-    "about": "Podział sieci i rozliczeń między różne jednostki biznesowe w ramach jednej organizacji w GCP.",
-    "interpret": "Zastosuj strukturę folderów dla jednostek biznesowych, a zasoby sieciowe odizoluj przy użyciu Shared VPC lub osobnych sieci VPC połączonych za pomocą Peeringu."
+    "about": "Podział sieci i rozliczeń między jednostki biznesowe.",
+    "interpret": "Kluczem jest **Shared VPC** (centralna sieć, separacja projektów usługowych) oraz **Organization Policies** (np. `constraints/compute.restrictSharedVpcHostProjects`), aby kontrolować, kto może tworzyć zasoby w centralnej sieci."
   },
   "28": {
-    "about": "Rozpraszanie i kierowanie ruchu pocztowego (SMTP) do zapasowych serwerów w różnych regionach GCP w celu zapewnienia wysokiej dostępności.",
-    "interpret": "Skonfiguruj odpowiednie rekordy MX w Cloud DNS z przypisanymi priorytetami (niższa wartość to wyższy priorytet), wskazujące na adresy IP serwerów pocztowych w poszczególnych regionach."
+    "about": "Redundancja i wysoka dostępność ruchu pocztowego (SMTP).",
+    "interpret": "W GCP nie można bezpośrednio nasłuchiwać na porcie 25. SMTP musi być przekierowane przez **Load Balancer (L4 TCP)** lub dedykowane bramy pocztowe (np. SendGrid, Mailgun) z odpowiednimi rekordami MX/SPF w DNS."
   },
   "29": {
-    "about": "Zarządzanie siecią w architekturze Shared VPC, gdzie projektem hosta jest co-vpc-prod, a projekty usługowe to projekty deweloperskie.",
-    "interpret": "Użytkownicy w projektach usługowych (Service Projects) muszą mieć przypisaną rolę `Network User` na poziomie podsieci projektu hosta, aby móc podpinać swoje maszyny do tej sieci."
+    "about": "Zarządzanie siecią w architekturze Shared VPC.",
+    "interpret": "Administracja jest rozdzielona: admin sieci (w projekcie hosta) zarządza VPC, a admin projektu usługowego może tworzyć instancje VM i podpinać je do podsieci, ale nie może modyfikować reguł firewall w VPC (separacja obowiązków)."
   },
   "30": {
-    "about": "Bezpieczne połączenie lokalnego centrum danych z siecią VPC w GCP z zapewnieniem redundancji i niskich opóźnień.",
-    "interpret": "Dla połączeń o krytycznym znaczeniu wybierz Dedicated Interconnect (lub Partner Interconnect) z dwoma łączami w osobnych lokalizacjach brzegowych (Edge Colocation) dla pełnej niezawodności."
+    "about": "Bezpieczne połączenie hybrydowe (on-premises <-> GCP) z redundancją.",
+    "interpret": "Zastosuj **Cloud Interconnect** (Dedicated lub Partner) z dwoma łączami w osobnych lokalizacjach brzegowych dla pełnej niezawodności i BGP do dynamicznego routingu."
   },
   "31": {
     "about": "Migracja zasobów do GCP z zachowaniem istniejących polityk bezpieczeństwa i standardów nazewnictwa maszyn.",
@@ -200,8 +200,8 @@ window.questionInterpretations = {
     "interpret": "Wdróż Cloud IDS (Intrusion Detection System) lub zintegruj wirtualne zapory sieciowe innych firm (NGFW) w celu inspekcji i analizy ruchu sieciowego."
   },
   "51": {
-    "about": "Ograniczenie możliwości uruchamiania maszyn wirtualnych wyłącznie z autoryzowanych i bezpiecznych obrazów systemowych.",
-    "interpret": "Użyj polityki organizacji (Organization Policy) o nazwie `constraints/compute.trustedImageProjects`, aby zdefiniować listę projektów, z których można pobierać obrazy dysków."
+    "about": "Pytanie dotyczy wymuszenia polityki, która dopuszcza tworzenie dysków startowych tylko z obrazów znajdujących się w konkretnym, zaufanym projekcie.",
+    "interpret": "Poprawną metodą jest użycie usługi Organization Policy Service i nałożenie ograniczenia `compute.trustedImageProjects` na poziomie organizacji. W tej polityce należy zdefiniować tzw. 'whitelist' (listę dozwolonych) projektów. To najbardziej natywny, bezpieczny i wydajny sposób na zablokowanie korzystania z obrazów publicznych (np. Debian, Ubuntu z publicznych repozytoriów) i wymuszenie korzystania tylko z obrazów własnych, zabezpieczonych i 'wypieczonych' wewnątrz firmy. Opcja z 'deny' byłaby zbyt skomplikowana w utrzymaniu."
   },
   "52": {
     "about": "Scentralizowana kontrola nad tym, kto w firmie może zakładać nowe projekty w strukturze organizacji GCP.",
