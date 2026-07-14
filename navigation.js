@@ -277,6 +277,34 @@
             margin: 0 5px;
         }
 
+        /* Auto-hiding navigation bar */
+        @media screen and (display-mode: fullscreen) {
+            .q-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: var(--nav-bg, rgba(255, 255, 255, 0.95));
+                z-index: 1000;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                padding: 10px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            .dark-theme .q-nav {
+                --nav-bg: rgba(15, 23, 42, 0.95);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .q-nav:hover,
+            .q-nav.visible {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+
         /* Dedicated scaling targeting only questions, choices, and explanations with comfortable line-height */
         :root {
             --font-scale-factor: 1.0;
@@ -690,3 +718,18 @@ function handleSwipe() {
         if (prev) prev.click();
     }
 }
+
+// 4. Auto-hiding navigation bar logic (Mouse move)
+document.addEventListener('mousemove', function(e) {
+    if (!document.fullscreenElement) return;
+
+    const nav = document.querySelector('.q-nav');
+    if (!nav) return;
+
+    // If mouse is near the top of the screen, show the nav
+    if (e.clientY < 50) {
+        nav.classList.add('visible');
+    } else {
+        nav.classList.remove('visible');
+    }
+}, { passive: true });
