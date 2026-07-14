@@ -562,11 +562,33 @@ document.addEventListener('keydown', function(e) {
     } else if (e.key === 'ArrowRight') {
         const next = getNavLink('Następne');
         if (next) next.click();
-    } else if (e.key === ' ' || e.key === 'Spacebar' || e.key === 'Enter' || e.key.toLowerCase() === 'a' || e.key.toLowerCase() === 's') {
-        // Shortcuts: Space, Enter, 'A', or 'S' keys to show/hide the Suggested Answer
+    } else if (e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+
+        const btn = document.querySelector('.reveal-solution');
+        const answer = document.querySelector('.q-answer:not(.d-none), .ai-analysis-container:not(.d-none)');
+
+        if (answer) {
+            // Answer is already visible - hide it and scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (btn) btn.click();
+        } else {
+            // Answer not visible - show it
+            if (btn) btn.click();
+            
+            // Wait briefly for elements to appear (in case of transition) then scroll
+            setTimeout(() => {
+                const newAnswer = document.querySelector('.q-answer:not(.d-none), .ai-analysis-container:not(.d-none)');
+                if (newAnswer) {
+                    newAnswer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
+    } else if (e.key === 'Enter' || e.key.toLowerCase() === 'a' || e.key.toLowerCase() === 's') {
+        // Shortcuts: Enter, 'A', or 'S' keys to show/hide the Suggested Answer
         const btn = document.querySelector('.reveal-solution');
         if (btn) {
-            e.preventDefault(); // Prevent scrolling when pressing Space
+            e.preventDefault();
             btn.click();
         }
     } else if (e.key.toLowerCase() === 'h') {

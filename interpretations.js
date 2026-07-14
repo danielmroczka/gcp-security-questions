@@ -120,20 +120,20 @@ window.questionInterpretations = {
     "interpret": "Zastosuj **Cloud Interconnect** (Dedicated lub Partner) z dwoma łączami w osobnych lokalizacjach brzegowych dla pełnej niezawodności i BGP do dynamicznego routingu."
   },
   "31": {
-    "about": "Migracja zasobów do GCP z zachowaniem istniejących polityk bezpieczeństwa i standardów nazewnictwa maszyn.",
-    "interpret": "Wykorzystaj polityki organizacji (Organization Policies) oraz mechanizmy Infrastructure as Code (IaC, np. Terraform) do wymuszenia ujednoliconej konfiguracji zasobów."
+    "about": "Migracja zasobów do GCP z zachowaniem istniejących standardów bezpieczeństwa.",
+    "interpret": "Wykorzystaj polityki organizacji (Organization Policies) oraz mechanizmy IaC (Terraform) do wymuszenia ujednoliconej konfiguracji zasobów już w momencie ich tworzenia."
   },
   "32": {
-    "about": "Autoryzacja aplikacji App Engine do wykonywania operacji w imieniu użytkownika na jego Dysku Google.",
-    "interpret": "Należy zaimplementować przepływ OAuth 2.0 z delegowaniem uprawnień na poziomie domeny (domain-wide delegation) dla konta serwisowego (Service Account)."
+    "about": "Delegowanie uprawnień aplikacji do działania w imieniu użytkownika na Google Drive.",
+    "interpret": "Wymaga to OAuth 2.0 z 'domain-wide delegation'. Konto serwisowe (Service Account) z odpowiednimi zakresami (scopes) musi uzyskać zgodę administratora domeny na dostęp do danych użytkowników."
   },
   "33": {
-    "about": "Zapewnienie poufności i bezpieczeństwa danych przetwarzanych w pamięci RAM na maszynach Compute Engine.",
-    "interpret": "Użyj funkcji Confidential VMs (dostępnej np. na procesorach AMD EPYC), która szyfruje dane w pamięci RAM za pomocą kluczy sprzętowych generowanych w procesorze (SEV)."
+    "about": "Bezpieczeństwo danych przetwarzanych w pamięci RAM na Compute Engine.",
+    "interpret": "Użyj **Confidential VMs**. Kluczowe jest szyfrowanie pamięci (SEV) przez procesor – nawet jeśli intruz przejmie fizyczny serwer, nie odczyta danych z RAM-u maszyny."
   },
   "34": {
-    "about": "Zabezpieczenie klastra Cloud Dataproc (Hadoop/Spark) i kontrola dostępu do danych w nim przetwarzanych.",
-    "interpret": "Włącz integrację z protokołem Kerberos w klastrze Dataproc w celu silnego uwierzytelniania wewnątrz klastra oraz zarządzaj dostępem do Cloud Storage za pomocą ról IAM."
+    "about": "Zabezpieczenie klastra Cloud Dataproc i kontrola dostępu do danych.",
+    "interpret": "Włącz silne uwierzytelnianie przez **Kerberos** w klastrze oraz użyj precyzyjnych ról IAM na poziomie kubłów Cloud Storage (`roles/storage.objectViewer` lub `objectAdmin`) dla konta serwisowego klastra."
   },
   "35": {
     "about": "Audyt i monitorowanie uprawnień administratorów w celu wykrycia nadmiarowego dostępu (Overprivileged Users).",
